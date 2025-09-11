@@ -31,7 +31,6 @@ async def add_settings(
         new_settings = Settings(
             user_id=user.id,
             native_language=request.native_language,
-            activities=request.activities
         )
         db.add(new_settings)
         db.commit()
@@ -42,7 +41,6 @@ async def add_settings(
             "data": {
                 "user_id": new_settings.user_id,
                 "native_language": new_settings.native_language,
-                "activities": new_settings.activities
             },
             "message": "Settings added successfully",
             "status_code": status.HTTP_201_CREATED
@@ -76,8 +74,7 @@ async def update_settings(
 
         if request.native_language is not None:
             settings.native_language = request.native_language
-        if request.activities is not None:
-            settings.activities = request.activities
+    
 
         db.commit()
         db.refresh(settings)
@@ -87,7 +84,6 @@ async def update_settings(
             "data": {
                 "user_id": settings.user_id,
                 "native_language": settings.native_language,
-                "activities": settings.activities
             },
             "message": "Settings updated successfully",
             "status_code": status.HTTP_200_OK
@@ -123,7 +119,6 @@ async def get_settings(
             "data": {
                 "user_id": settings.user_id,
                 "native_language": settings.native_language,
-                "activities": settings.activities
             },
             "message": "Settings fetched successfully",
             "status_code": status.HTTP_200_OK
