@@ -8,6 +8,8 @@ from app.routers.settings import router as settings
 from app.routers.recommendation import router as recommendation
 from app.routers.trips import router as trips
 from app.routers.authentication_react import router as react
+from app.routers.user_preferences import router as user_preferences
+
 
 
 
@@ -42,6 +44,8 @@ app.include_router(recommendation)
 app.include_router(settings)
 app.include_router(trips)
 app.include_router(react)
+app.include_router(user_preferences)
+
 
 
 
