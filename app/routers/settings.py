@@ -107,7 +107,8 @@ async def update_settings(
 
 
 # ---------- Get Settings ----------
-@router.get("/get", response_model=SettingsResponse)
+@router.get("/get", response_model=SettingsResponse,
+            description="Fetch the user settings. Returns native language, real-time updates, and auto-booking preferences.")
 async def get_settings(
     db: db_dependency,
     user: user_dependency
