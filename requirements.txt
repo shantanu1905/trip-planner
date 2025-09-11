@@ -16,3 +16,4 @@ httpx
 bcrypt
 pandas
 google-auth
+langchain
