@@ -31,6 +31,8 @@ async def add_settings(
         new_settings = Settings(
             user_id=user.id,
             native_language=request.native_language,
+            real_time_updates=request.real_time_updates,
+            auto_booking_enabled=request.auto_booking_enabled
         )
         db.add(new_settings)
         db.commit()
@@ -41,6 +43,8 @@ async def add_settings(
             "data": {
                 "user_id": new_settings.user_id,
                 "native_language": new_settings.native_language,
+                "real_time_updates": new_settings.real_time_updates,
+                "auto_booking_enabled": new_settings.auto_booking_enabled,
             },
             "message": "Settings added successfully",
             "status_code": status.HTTP_201_CREATED
@@ -73,7 +77,9 @@ async def update_settings(
             }
 
         if request.native_language is not None:
-            settings.native_language = request.native_language
+            settings.native_language = request.native_language 
+            settings.real_time_updates  = request.real_time_updates
+            settings.auto_booking_enabled  = request.auto_booking_enabled
     
 
         db.commit()
@@ -84,6 +90,8 @@ async def update_settings(
             "data": {
                 "user_id": settings.user_id,
                 "native_language": settings.native_language,
+                "real_time_updates": settings.real_time_updates,
+                "auto_booking_enabled": settings.auto_booking_enabled,
             },
             "message": "Settings updated successfully",
             "status_code": status.HTTP_200_OK
@@ -119,6 +127,9 @@ async def get_settings(
             "data": {
                 "user_id": settings.user_id,
                 "native_language": settings.native_language,
+                "real_time_updates": settings.real_time_updates,
+                "auto_booking_enabled": settings.auto_booking_enabled,
+                
             },
             "message": "Settings fetched successfully",
             "status_code": status.HTTP_200_OK
