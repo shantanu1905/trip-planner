@@ -25,7 +25,7 @@ async def call_webhook_and_save_places(db, trip, user_id: int):
 
     try:
         # 2. Call webhook asynchronously
-        async with httpx.AsyncClient(timeout=300.0) as client:
+        async with httpx.AsyncClient(timeout=800.0) as client:
             response = await client.post(WEBHOOK_URL, json=payload)
             print(f"Webhook called: {response.status_code}")
 
