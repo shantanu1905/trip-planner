@@ -3,6 +3,8 @@ from app.database.models import Settings, NativeLanguageEnum, ActivityEnum, Trav
 from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
+
+
 class CreateUserRequest(BaseModel):
     username: str
     password: str
@@ -29,7 +31,10 @@ class RefreshTokenRequest(BaseModel):
 # ---------- Schemas ----------
 class SettingsRequest(BaseModel):
     native_language: Optional[NativeLanguageEnum] = None
-    activities: Optional[List[ActivityEnum]] = None
+    real_time_updates: Optional[bool] = True
+    auto_booking_enabled: Optional[bool] = False
+
+
 
 
 class SettingsResponse(BaseModel):
