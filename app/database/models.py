@@ -211,8 +211,6 @@ class UserPreferences(Base):
     activities = Column(JSONB, nullable=True, default=[])
     travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
     travelling_with = Column(PGEnum(TravellingWithEnum, name="travelling_with_enum", create_type=True), nullable=True)
-
-    # Relationship
     
     # Relationship
     user = _orm.relationship("User", back_populates="preferences", passive_deletes=True)

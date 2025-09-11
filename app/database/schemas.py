@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from app.database.models import Settings, NativeLanguageEnum, ActivityEnum, TravellingWithEnum, TravelModeEnum
+from app.database.models import Settings, NativeLanguageEnum, ActivityEnum, TravellingWithEnum, TravelModeEnum , FoodPreferenceEnum , PropertyTypeEnum
 from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
@@ -36,10 +36,9 @@ class SettingsRequest(BaseModel):
 
 
 
-
 class SettingsResponse(BaseModel):
     status: bool
-    data: dict
+    data: Optional[dict] = None  # ✅ allow None if no settings
     message: str
     status_code: int
 
@@ -65,3 +64,18 @@ class UpdateTripRequest(BaseModel):
     num_people: Optional[int] = None
     activities: Optional[List] = None  # ✅ Updated field name
     travelling_with: Optional[TravellingWithEnum] = None
+
+
+
+# ---- Request Schema ----
+class PreferencesRequest(BaseModel):
+    default_budget: Optional[int] = None
+    property_type: Optional[PropertyTypeEnum] = None
+    hotel_room_price_per_night: Optional[float] = None
+    num_people: Optional[int] = None
+    food_preference: Optional[FoodPreferenceEnum] = None
+    base_location: Optional[str] = None
+    activities: Optional[List[str]] = []
+    travel_mode: Optional[TravelModeEnum] = None
+    travelling_with: Optional[TravellingWithEnum] = None
+
