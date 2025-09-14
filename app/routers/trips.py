@@ -439,10 +439,12 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
 #             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
 #         }
 
+from app.database.models import Trip, Settings, TouristPlace, Itinerary, ItineraryPlace, TravelOptions
 
 @router.get("/{trip_id}")
 async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
     try:
+        # 1. Fetch trip
         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
         if not trip:
             return {
@@ -452,7 +454,7 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        # Fetch tourist places
+        # 2. Fetch tourist places
         tourist_places = [
             {
                 "id": place.id,
@@ -471,7 +473,7 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             tourist_places_status = False
             tourist_places_status_message = "Fetching tourist places based on your preferences..."
 
-        # Fetch itineraries
+        # 3. Fetch itineraries
         itineraries = []
         for itinerary in trip.itinerary:
             itineraries.append({
@@ -493,14 +495,25 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 ]
             })
 
-        # Flags for itineraries
         itineraries_status = True
         itineraries_status_message = "Itineraries fetched successfully!"
         if not itineraries:
             itineraries_status = False
             itineraries_status_message = "No itineraries found. Please generate one first."
 
-        # Prepare trip data
+        # 4. Fetch travel options
+        travel_options_data = None
+        travel_options_status = True
+        travel_options_status_message = "Recommended travel options fetched successfully! "
+
+        travel_options = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
+        if travel_options:
+            travel_options_data = travel_options.travel_data
+        else:
+            travel_options_status = False
+            travel_options_status_message = "No travel options found. Please generate travel Options for your trip first."
+
+        # 5. Prepare trip data
         trip_data = {
             "trip_id": trip.id,
             "trip_name": trip.trip_name,
@@ -518,10 +531,13 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "tourist_places_list": tourist_places,
             "itineraries_status": itineraries_status,
             "itineraries_status_message": itineraries_status_message,
-            "itineraries": itineraries
+            "itineraries": itineraries,
+            "travel_options_status": travel_options_status,
+            "travel_options_status_message": travel_options_status_message,
+            "travel_options": travel_options_data
         }
 
-        # Translate if needed
+        # 6. Translate if needed
         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
@@ -542,7 +558,6 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "message": f"Error fetching trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
-
 
 
 

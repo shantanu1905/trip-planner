@@ -102,7 +102,7 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
             return {
                 "status": True,
                 "data": existing_travel.travel_data,
-                "message": "Travel modes fetched from database",
+                "message": "Travel options fetched from cache",
                 "status_code": status.HTTP_200_OK
             }
 
@@ -128,21 +128,34 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
         if response.status_code != 200:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to fetch travel modes from webhook"
+                detail="Failed to fetch travel option for this trip"
             )
 
-        travel_data = response.json()
+        full_data = response.json()
 
-        # 5. Save response to DB
-        new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_data)
+        # 5. Extract only `travel_options`
+        travel_options = None
+        if isinstance(full_data, list) and "output" in full_data[0]:
+            travel_options = full_data[0]["output"].get("travel_options")
+        elif "output" in full_data:
+            travel_options = full_data["output"].get("travel_options")
+
+        if not travel_options:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Invalid travel options format received from webhook"
+            )
+
+        # 6. Save only travel_options in DB
+        new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_options)
         db.add(new_travel)
         db.commit()
         db.refresh(new_travel)
 
-        # 6. Return saved response
+        # 7. Return saved response
         return {
             "status": True,
-            "data": travel_data,
+            "data": travel_options,
             "message": "Travel modes fetched and saved successfully",
             "status_code": status.HTTP_200_OK
         }
