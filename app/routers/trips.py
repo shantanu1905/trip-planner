@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status , BackgroundTasks
-from app.database.models import Trip , Settings
+from app.database.models import Trip , Settings, TouristPlace , Itinerary , ItineraryPlace
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
@@ -8,6 +8,7 @@ from app.utils.language_translation import translate_with_cache
 from fastapi.responses import JSONResponse
 import json
 import datetime
+import httpx
 router = APIRouter(prefix="/trips", tags=["Trips"])
 
 
@@ -361,6 +362,84 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
 
 
 
+# @router.get("/{trip_id}")
+# async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
+#     try:
+#         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+#         if not trip:
+#             return {
+#                 "status": False,
+#                 "data": None,
+#                 "message": "Trip not found or doesn't belong to you.",
+#                 "status_code": status.HTTP_404_NOT_FOUND
+#             }
+
+#         # Fetch associated tourist places
+#         tourist_places = [
+#             {
+#                 "id": place.id,
+#                 "name": place.name,
+#                 "description": place.description,
+#                 "latitude": place.latitude,
+#                 "longitude": place.longitude,
+#                 "image_url": place.image_url
+#             }
+#             for place in trip.tourist_places
+#         ]
+#         # Default values first
+#         tourist_places_status = True
+#         tourist_places_status_message = "Tourist places fetched successfully!"
+
+#         if not tourist_places:
+#                 tourist_places = []
+#                 tourist_places_status = False
+#                 tourist_places_status_message = "Fetching tourist places based on your preferences..."
+
+
+
+#         # Prepare trip data
+#         trip_data = {
+#             "trip_id": trip.id,
+#             "trip_name": trip.trip_name,
+#             "destination": trip.destination,
+#             "base_location": trip.base_location,
+#             "start_date": trip.start_date.isoformat() if trip.start_date else None,
+#             "end_date": trip.end_date.isoformat() if trip.end_date else None,
+#             "budget": trip.budget,
+#             "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
+#             "num_people": trip.num_people,
+#             "activities": trip.activities or [],
+#             "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
+#             "tourist_places_status": tourist_places_status,
+#             "tourist_places_status_message": tourist_places_status_message if tourist_places_status_message else "Tourist places saved successfully!",
+#             "tourist_places_list": tourist_places
+                        
+#         }
+
+#         # Fetch user's preferred language
+#         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+#         target_lang = settings.native_language if settings and settings.native_language else "English"
+
+#         # Translate full JSON if needed
+#         if target_lang != "English":
+#             trip_data = await translate_with_cache(db, trip_data, target_lang)
+
+#         return {
+#             "status": True,
+#             "data": trip_data,
+#             "message": "Trip fetched successfully",
+#             "status_code": status.HTTP_200_OK
+#         }
+
+#     except Exception as e:
+#         return {
+#             "status": False,
+#             "data": None,
+#             "message": f"Error fetching trip: {str(e)}",
+#             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+#         }
+
+
 @router.get("/{trip_id}")
 async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
     try:
@@ -373,7 +452,7 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        # Fetch associated tourist places
+        # Fetch tourist places
         tourist_places = [
             {
                 "id": place.id,
@@ -385,8 +464,41 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             }
             for place in trip.tourist_places
         ]
+        tourist_places_status = True
+        tourist_places_status_message = "Tourist places fetched successfully!"
         if not tourist_places:
-            tourist_places = "No tourist places found for this trip."
+            tourist_places = []
+            tourist_places_status = False
+            tourist_places_status_message = "Fetching tourist places based on your preferences..."
+
+        # Fetch itineraries
+        itineraries = []
+        for itinerary in trip.itinerary:
+            itineraries.append({
+                "day": itinerary.day,
+                "date": itinerary.date.isoformat() if itinerary.date else None,
+                "travel_tips": itinerary.travel_tips,
+                "food": itinerary.food or [],
+                "culture": itinerary.culture or [],
+                "places": [
+                    {
+                        "id": p.id,
+                        "name": p.name,
+                        "description": p.description,
+                        "latitude": p.latitude,
+                        "longitude": p.longitude,
+                        "best_time_to_visit": p.best_time_to_visit
+                    }
+                    for p in itinerary.places
+                ]
+            })
+
+        # Flags for itineraries
+        itineraries_status = True
+        itineraries_status_message = "Itineraries fetched successfully!"
+        if not itineraries:
+            itineraries_status = False
+            itineraries_status_message = "No itineraries found. Please generate one first."
 
         # Prepare trip data
         trip_data = {
@@ -401,14 +513,18 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "num_people": trip.num_people,
             "activities": trip.activities or [],
             "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
-            "tourist_places": tourist_places
+            "tourist_places_status": tourist_places_status,
+            "tourist_places_status_message": tourist_places_status_message,
+            "tourist_places_list": tourist_places,
+            "itineraries_status": itineraries_status,
+            "itineraries_status_message": itineraries_status_message,
+            "itineraries": itineraries
         }
 
-        # Fetch user's preferred language
+        # Translate if needed
         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
-        # Translate full JSON if needed
         if target_lang != "English":
             trip_data = await translate_with_cache(db, trip_data, target_lang)
 
@@ -426,6 +542,10 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "message": f"Error fetching trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+
+
+
+
 
 
 # ✅ Delete Trip Endpoint
@@ -455,3 +575,253 @@ async def delete_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "message": f"Error deleting trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+    
+
+
+# ✅ Delete Tourist Place Endpoint
+@router.delete("/place/{place_id}")
+async def delete_tourist_place(place_id: int, db: db_dependency, user: user_dependency):
+    try:
+        # Check if tourist place exists and belongs to the user's trip
+        tourist_place = (
+            db.query(TouristPlace)
+            .join(Trip)  # join with trips table to check ownership
+            .filter(TouristPlace.id == place_id, Trip.user_id == user.id)
+            .first()
+        )
+
+        if not tourist_place:
+            return {
+                "status": False,
+                "message": "Tourist place not found or doesn't belong to your trip.",
+                "status_code": status.HTTP_404_NOT_FOUND
+            }
+
+        # Delete the tourist place
+        db.delete(tourist_place)
+        db.commit()
+
+        return {
+            "status": True,
+            "message": "Tourist place deleted successfully",
+            "status_code": status.HTTP_200_OK
+        }
+
+    except Exception as e:
+        return {
+            "status": False,
+            "message": f"Error deleting tourist place: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+
+
+
+
+WEBHOOK_ITINERARY_URL = "http://localhost:5678/webhook/generate-trip-itinerary"
+
+
+# @router.get("/generate-itinerary/{trip_id}")
+# async def generate_itinerary(
+#     trip_id: int,
+#     db: db_dependency, 
+#     user: user_dependency
+# ):
+#     try:
+#         # 1. Fetch trip details
+#         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+#         if not trip:
+#             return {
+#                 "status": False,
+#                 "message": "Trip not found or doesn't belong to you.",
+#                 "status_code": status.HTTP_404_NOT_FOUND
+#             }
+
+#         # 2. Fetch tourist places for this trip
+#         tourist_places = db.query(TouristPlace).filter(TouristPlace.trip_id == trip_id).all()
+
+#         # 3. Prepare data for webhook
+#         payload = {
+#             "trip_id": trip.id,
+#             "trip_name": trip.trip_name,
+#             "destination": trip.destination,
+#             "base_location": trip.base_location,
+#             "start_date": trip.start_date.isoformat() if trip.start_date else None,
+#             "end_date": trip.end_date.isoformat() if trip.end_date else None,
+#             "budget": trip.budget,
+#             "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
+#             "num_people": trip.num_people,
+#             "activities": trip.activities or [],
+#             "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
+#             "tourist_places": [
+#                 {
+#                     "id": place.id,
+#                     "name": place.name,
+#                     "description": place.description,
+#                     "latitude": place.latitude,
+#                     "longitude": place.longitude,
+#                     "image_url": place.image_url
+#                 }
+#                 for place in tourist_places
+#             ]
+#         }
+
+#         # 4. Call the external webhook
+#         async with httpx.AsyncClient(timeout=500.0) as client:
+#             response = await client.post(WEBHOOK_ITINERARY_URL, json=payload)
+
+#         # 5. Return the webhook response
+#         return {
+#             "status": True,
+#             "data": response.json() if response.status_code == 200 else None,
+#             "message": "Itinerary generated successfully" if response.status_code == 200 else "Failed to generate itinerary",
+#             "status_code": response.status_code
+#         }
+
+#     except Exception as e:
+#         return {
+#             "status": False,
+#             "message": f"Error generating itinerary: {str(e)}",
+#             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+#         }
+
+
+
+
+
+@router.get("/generate-itinerary/{trip_id}")
+async def generate_itinerary(trip_id: int,db: db_dependency,user: user_dependency):
+    try:
+        # 1. Fetch trip details
+        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        if not trip:
+            raise HTTPException(status_code=404, detail="Trip not found or doesn't belong to you.")
+
+        # 2. Check if itinerary already exists
+        existing_itinerary = db.query(Itinerary).filter(Itinerary.trip_id == trip_id).all()
+        if existing_itinerary:
+            # Load itinerary from DB
+            result = []
+            for item in existing_itinerary:
+                places = [
+                    {
+                        "name": p.name,
+                        "description": p.description,
+                        "latitude": p.latitude,
+                        "longitude": p.longitude,
+                        "best_time_to_visit": p.best_time_to_visit
+                    }
+                    for p in item.places
+                ]
+                result.append({
+                    "day": item.day,
+                    "date": item.date.isoformat(),
+                    "places": places,
+                    "travel_tips": item.travel_tips,
+                    "food": item.food,
+                    "culture": item.culture
+                })
+            return {
+                "status": True,
+                "data": {
+                    "trip_id": trip_id,
+                    "itinerary": result
+                },
+                "message": "Itinerary loaded from database",
+                "status_code": status.HTTP_200_OK
+            }
+
+        # 3. Fetch tourist places for this trip
+        tourist_places = db.query(TouristPlace).filter(TouristPlace.trip_id == trip_id).all()
+
+        # 4. Prepare data for webhook
+        payload = {
+            "trip_id": trip.id,
+            "trip_name": trip.trip_name,
+            "destination": trip.destination,
+            "base_location": trip.base_location,
+            "start_date": trip.start_date.isoformat() if trip.start_date else None,
+            "end_date": trip.end_date.isoformat() if trip.end_date else None,
+            "budget": trip.budget,
+            "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
+            "num_people": trip.num_people,
+            "activities": trip.activities or [],
+            "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
+            "tourist_places": [
+                {
+                    "id": place.id,
+                    "name": place.name,
+                    "description": place.description,
+                    "latitude": place.latitude,
+                    "longitude": place.longitude,
+                    "image_url": place.image_url
+                }
+                for place in tourist_places
+            ]
+        }
+
+        # 5. Call the external webhook
+        async with httpx.AsyncClient(timeout=500.0) as client:
+            response = await client.post(WEBHOOK_ITINERARY_URL, json=payload)
+            if response.status_code != 200:
+                raise HTTPException(status_code=response.status_code, detail="Failed to generate itinerary")
+
+            response_json = response.json()
+            if isinstance(response_json, list) and len(response_json) > 0:
+                output_data = response_json[0].get("output", {})
+                itinerary_data = output_data.get("itinerary", [])
+            else:
+                itinerary_data = []
+            # 6. Save itinerary to DB
+            for day_item in itinerary_data:
+                itinerary_entry = Itinerary(
+                    day=day_item["day"],
+                    date=datetime.date.fromisoformat(day_item["date"]),
+                    travel_tips=day_item.get("travel_tips"),
+                    food=day_item.get("food", []),
+                    culture=day_item.get("culture", []),
+                    trip_id=trip_id
+                )
+                db.add(itinerary_entry)
+                db.flush()  # Get the ID before adding places
+
+                for place in day_item.get("places", []):
+                    place_entry = ItineraryPlace(
+                        name=place["name"],
+                        description=place.get("description"),
+                        latitude=place.get("latitude"),
+                        longitude=place.get("longitude"),
+                        best_time_to_visit=place.get("best_time_to_visit"),
+                        itinerary_id=itinerary_entry.id
+                    )
+                    db.add(place_entry)
+
+            db.commit()
+
+        return {
+            "status": True,
+            "data": {
+                "trip_id": trip_id,
+                "itinerary": itinerary_data
+            },
+            "message": "Itinerary generated and saved successfully",
+            "status_code": status.HTTP_200_OK
+        }
+
+    except Exception as e:
+        db.rollback()
+        return {
+            "status": False,
+            "message": f"Error generating itinerary: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+    
+
+
+
+
+
+
+
+
+
+
