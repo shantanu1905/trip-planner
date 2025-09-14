@@ -1,6 +1,6 @@
 import datetime as _dt
 from sqlalchemy import (
-    Column, Integer, String, Boolean, DateTime, ForeignKey, Text, JSON, Float
+    Column, Integer, String, Boolean, DateTime, ForeignKey, Text, JSON, Float ,Date
 )
 from sqlalchemy.dialects.postgresql import ENUM as PGEnum, ARRAY
 import enum
@@ -134,33 +134,47 @@ class Trip(Base):
     activities = Column(JSONB, nullable=True, default=[])  # Will store ["Adventure", "Nightlife"]
     travelling_with = Column(PGEnum(TravellingWithEnum, name="travelling_with_enum", create_type=True), nullable=True)
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
+
+    
     user = _orm.relationship("User", back_populates="trips")
     itinerary = _orm.relationship("Itinerary", back_populates="trip", cascade="all, delete-orphan")
     tourist_places = _orm.relationship("TouristPlace", back_populates="trip", cascade="all, delete-orphan")
+    travel_options = _orm.relationship("TravelOptions", back_populates="trip", cascade="all, delete-orphan")
+
 
 
 # ---------------- ITINERARY MODEL ----------------
 class Itinerary(Base):
-    __tablename__ = "itineraries"
+    __tablename__ = "itinerary"
 
     id = Column(Integer, primary_key=True, index=True)
+    day = Column(Integer, nullable=False)
+    date = Column(Date, nullable=False)
+
+    # JSON fields for storing arrays and tips
+    travel_tips = Column(JSONB, nullable=True)  # Can store as {"tips": "..."} or array
+    food = Column(JSONB, nullable=True)         # Array of food items
+    culture = Column(JSONB, nullable=True)      # Array of cultural experiences
+
     trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
-    day_number = Column(Integer, nullable=False)
-    date = Column(DateTime, nullable=False)
-    place = Column(Text, nullable=True)
-    description = Column(Text, nullable=True)
-
-    food = Column(JSON, nullable=True)         
-    culture = Column(Text, nullable=True)      
-    travel_tips = Column(JSON, nullable=True)  
-    sources = Column(JSON, nullable=True)      
-    cost_breakdown = Column(JSON, nullable=True)
-
-    total_cost = Column(Float, nullable=True)
-    created_at = Column(DateTime, default=_dt.datetime.utcnow)
-
     trip = _orm.relationship("Trip", back_populates="itinerary")
 
+    # One-to-many relationship with places
+    places = _orm.relationship("ItineraryPlace", back_populates="itinerary", cascade="all, delete-orphan")
+
+
+class ItineraryPlace(Base):
+    __tablename__ = "itinerary_places"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    description = Column(Text, nullable=True)
+    latitude = Column(String, nullable=True)
+    longitude = Column(String, nullable=True)
+    best_time_to_visit = Column(String, nullable=True)
+
+    itinerary_id = Column(Integer, ForeignKey("itinerary.id", ondelete="CASCADE"), nullable=False)
+    itinerary = _orm.relationship("Itinerary", back_populates="places")
 
 
 
@@ -214,3 +228,15 @@ class UserPreferences(Base):
     
     # Relationship
     user = _orm.relationship("User", back_populates="preferences", passive_deletes=True)
+
+
+class TravelOptions(Base):
+    __tablename__ = "travel_options"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
+    travel_data = Column(JSONB, nullable=False)  # Full JSON response from webhook
+    created_at = Column(DateTime, default=_dt.datetime.utcnow, nullable=False)
+
+    # Relationship with Trip
+    trip = _orm.relationship("Trip", back_populates="travel_options")
