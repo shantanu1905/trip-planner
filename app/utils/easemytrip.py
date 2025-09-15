@@ -38,6 +38,7 @@ def search_trains(from_station, to_station, travel_date, coupon_code=""):
                     'fromStnName': train.get('fromStnName'),
                     'fromStnCode': train.get('fromStnCode'),
                     'toStnName': train.get('toStnName'),
+                    'toStnCode': train.get('toStnCode'),
                     'ArrivalDate': train.get('ArrivalDate'),
                     'departuredate': train.get('departuredate'),
                     'avlClasses': train.get('avlClasses', []),
