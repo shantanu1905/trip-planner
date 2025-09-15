@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from app.database.models import Settings, NativeLanguageEnum, ActivityEnum, TravellingWithEnum, TravelModeEnum , FoodPreferenceEnum , PropertyTypeEnum
+from app.database.models import *
 from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
@@ -78,4 +78,10 @@ class PreferencesRequest(BaseModel):
     activities: Optional[List[str]] = []
     travel_mode: Optional[TravelModeEnum] = None
     travelling_with: Optional[TravellingWithEnum] = None
+    preferred_train_class: Optional[TrainClassEnum] = None
+    preferred_departure_time: Optional[DepartureTimeEnum] = None
+    preferred_from_station: Optional[str] = None
+    flexible_station_option:Optional[bool] = None
+
+    
 
