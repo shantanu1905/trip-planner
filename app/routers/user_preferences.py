@@ -33,6 +33,12 @@ async def set_user_preferences(
             preferences.activities = request.activities or []
             preferences.travel_mode = request.travel_mode
             preferences.travelling_with = request.travelling_with
+            preferences.preferred_train_class = request.preferred_train_class
+            preferences.preferred_departure_time = request.preferred_departure_time
+            preferences.preferred_from_station = request.preferred_from_station
+            preferences.flexible_station_option = request.flexible_station_option
+
+
             message = "Preferences updated successfully"
         else:
             # Create new preferences
@@ -46,7 +52,11 @@ async def set_user_preferences(
                 base_location=request.base_location,
                 activities=request.activities or [],
                 travel_mode=request.travel_mode,
-                travelling_with=request.travelling_with
+                travelling_with=request.travelling_with,
+                preferred_train_class = request.preferred_train_class,
+                preferred_departure_time = request.preferred_departure_time,
+                preferred_from_station = request.preferred_from_station,
+                flexible_station_option = request.flexible_station_option
             )
             db.add(preferences)
             message = "Preferences created successfully"

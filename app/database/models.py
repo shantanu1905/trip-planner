@@ -73,10 +73,24 @@ class FoodPreferenceEnum(enum.Enum):
     ANYTHING = "Anything"
 
 
+class TrainClassEnum(enum.Enum):
+    Sleeper_Class="SL"
+    AC_3_Tier="3A"
+    AC_3_Tier_Economy="3E"
+    AC_2_tier= "2A"
+    First_AC="1A"
+
+
+class DepartureTimeEnum(enum.Enum):
+    Morning="Morning"
+    Afternoon="Afternoon"
+    Evening="Evening"
+    Night="Night"
 
 
 
-# ------------------ USER MODEL ------------------
+
+#---------------- USER MODEL ------------------
 
 class User(Base):
     __tablename__ = "users"
@@ -225,6 +239,13 @@ class UserPreferences(Base):
     activities = Column(JSONB, nullable=True, default=[])
     travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
     travelling_with = Column(PGEnum(TravellingWithEnum, name="travelling_with_enum", create_type=True), nullable=True)
+
+    #Train
+    preferred_train_class = Column(PGEnum(TrainClassEnum, name="train_class_enum", create_type=True), nullable=True)
+    preferred_departure_time = Column(PGEnum(DepartureTimeEnum, name="departure_time_enum", create_type=True), nullable=True)  
+    # Station Preferences
+    preferred_from_station = Column(String, nullable=True)  # e.g., "Nagpur"
+    flexible_station_option = Column(Boolean, default=False)  # Allow nearby stations if main one not available
     
     # Relationship
     user = _orm.relationship("User", back_populates="preferences", passive_deletes=True)
