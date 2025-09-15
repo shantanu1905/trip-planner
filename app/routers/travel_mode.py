@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status, Query
-from app.database.models import Trip , TravelOptions
+from app.database.models import Trip , TravelOptions , UserPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 
@@ -166,4 +166,95 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error fetching travel modes: {str(e)}"
+        )
+
+
+
+
+@router.get("/get-travel-booking-suggestion/{trip_id}")
+async def get_travel_booking_suggestion(
+    trip_id: int,
+    db: db_dependency,
+    user: user_dependency
+):
+    try:
+        # 1. Fetch Trip
+        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        if not trip:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Trip not found or doesn't belong to you."
+            )
+
+        # 2. Fetch User Preferences (Only required fields)
+        user_pref = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
+        user_pref_data = {
+            "flexible_station_option": user_pref.flexible_station_option if user_pref else None,
+            "preferred_from_station": user_pref.preferred_from_station if user_pref else None,
+            "preferred_departure_time": user_pref.preferred_departure_time.value if user_pref and user_pref.preferred_departure_time else None,
+            "preferred_train_class": user_pref.preferred_train_class.value if user_pref and user_pref.preferred_train_class else None
+        }
+
+        # 3. Fetch existing travel options if any
+        existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
+
+        # 4. Prepare payload
+        payload = {
+            "trip": {
+                "trip_id": trip.id,
+                "trip_name": trip.trip_name,
+                "destination": trip.destination,
+                "base_location": trip.base_location,
+                "start_date": trip.start_date.isoformat() if trip.start_date else None,
+                "end_date": trip.end_date.isoformat() if trip.end_date else None,
+                "budget": trip.budget,
+                "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
+                "num_people": trip.num_people,
+                "activities": trip.activities or [],
+                "travelling_with": trip.travelling_with.value if trip.travelling_with else None
+            },
+            "user_preferences": user_pref_data,
+            "existing_travel_options": existing_travel.travel_data if existing_travel else None
+        }
+
+        # 5. Call external webhook
+        async with httpx.AsyncClient(timeout=600.0) as client:
+            response = await client.post("http://localhost:5678/webhook/get-travel-booking-suggestion", json=payload)
+
+        if response.status_code != 200:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to fetch travel booking suggestion"
+            )
+
+        full_data = response.json()
+
+        # 6. Extract travel_options from response
+        travel_options = full_data.get("travel_options")
+        if not travel_options:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Invalid response from travel booking suggestion webhook"
+            )
+
+        # 7. Save new travel options if not cached
+        if not existing_travel:
+            new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_options)
+            db.add(new_travel)
+            db.commit()
+            db.refresh(new_travel)
+
+        return {
+            "status": True,
+            "data": travel_options,
+            "message": "Travel booking suggestions fetched successfully",
+            "status_code": status.HTTP_200_OK
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error fetching travel booking suggestions: {str(e)}"
         )
