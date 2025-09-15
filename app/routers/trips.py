@@ -4,6 +4,7 @@ from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 from app.utils.n8n import call_webhook_and_save_places , call_webhook_and_save_places_on_update
+from app.task.trip_tasks import process_trip_webhook
 from app.utils.language_translation import translate_with_cache
 from fastapi.responses import JSONResponse
 import json
@@ -13,78 +14,14 @@ router = APIRouter(prefix="/trips", tags=["Trips"])
 
 
   
-@router.post("/create") # without translation
-async def create_trip(
-    request: CreateTripRequest,
-    db: db_dependency,
-    user: user_dependency
-):
-    try:
-        # 1. Check if trip with same name exists for this user
-        existing_trip = db.query(Trip).filter(
-            Trip.user_id == user.id,
-            Trip.trip_name == request.trip_name
-        ).first()
-        if existing_trip:
-            return {
-                "status": False,
-                "message": "Trip with this name already exists.",
-                "status_code": status.HTTP_400_BAD_REQUEST
-            }
-
-        # 2. Create new trip
-        new_trip = Trip(
-            user_id=user.id,
-            trip_name=request.trip_name,
-            budget=request.budget,
-            start_date=request.start_date,
-            end_date=request.end_date,
-            destination=request.destination,
-            base_location=request.base_location,
-            travel_mode=request.travel_mode,
-            num_people=request.num_people,
-            activities=request.activities or [],  # ✅ store list of strings, default empty list
-            travelling_with=request.travelling_with
-        )
-
-        db.add(new_trip)
-        db.commit()
-        db.refresh(new_trip)
-
-        # Call webhook first → save places only if webhook succeeds
-        result = await call_webhook_and_save_places(db, new_trip, user.id)   #Add to non blocking io
-    
-
-        return {
-            "status": True,
-            "data": {
-                "trip_id": new_trip.id,
-                "trip_name": new_trip.trip_name,
-                "places_saved": result["places_saved"]
-            },
-            "message": "Trip created successfully",
-            "status_code": status.HTTP_201_CREATED
-        }
-
-    except Exception as e:
-        return {
-            "status": False,
-            "message": f"Error creating trip: {str(e)}",
-            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
-        }
-
-
-
-
-
-# @router.post("/create")
+# @router.post("/create") # without translation
 # async def create_trip(
 #     request: CreateTripRequest,
 #     db: db_dependency,
-#     user: user_dependency,
-#     background_tasks: BackgroundTasks
+#     user: user_dependency
 # ):
 #     try:
+#         # 1. Check if trip with same name exists for this user
 #         existing_trip = db.query(Trip).filter(
 #             Trip.user_id == user.id,
 #             Trip.trip_name == request.trip_name
@@ -96,6 +33,7 @@ async def create_trip(
 #                 "status_code": status.HTTP_400_BAD_REQUEST
 #             }
 
+#         # 2. Create new trip
 #         new_trip = Trip(
 #             user_id=user.id,
 #             trip_name=request.trip_name,
@@ -106,7 +44,7 @@ async def create_trip(
 #             base_location=request.base_location,
 #             travel_mode=request.travel_mode,
 #             num_people=request.num_people,
-#             activities=request.activities or [],
+#             activities=request.activities or [],  # ✅ store list of strings, default empty list
 #             travelling_with=request.travelling_with
 #         )
 
@@ -114,29 +52,18 @@ async def create_trip(
 #         db.commit()
 #         db.refresh(new_trip)
 
-#         #background_tasks.add_task(call_webhook_and_save_places, db, new_trip, user.id)
-
-#         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
-#         target_lang = settings.native_language if settings and settings.native_language else "English"
-
-#         response_data = {
-#             "trip_id": new_trip.id,
-#             "trip_name": new_trip.trip_name
-#         }
-
-#         # ✅ Translate entire JSON block if language is not English
-#         if target_lang != "English":
-#             response_data = await translate_with_cache(db, response_data, target_lang)
-
-#             # try:
-#             #     response_data = json.loads(translated_string)
-#             # except json.JSONDecodeError:
-#             #     pass  # fallback to original if translation fails
+#         # Call webhook first → save places only if webhook succeeds
+#         result = await call_webhook_and_save_places(db, new_trip, user.id)   #Add to non blocking io
+    
 
 #         return {
 #             "status": True,
-#             "data": response_data,
-#             "message": "Trip created successfully. Places will be saved in the background.",
+#             "data": {
+#                 "trip_id": new_trip.id,
+#                 "trip_name": new_trip.trip_name,
+#                 "places_saved": result["places_saved"]
+#             },
+#             "message": "Trip created successfully",
 #             "status_code": status.HTTP_201_CREATED
 #         }
 
@@ -148,6 +75,55 @@ async def create_trip(
 #         }
 
 
+
+@router.post("/create")
+async def create_trip(
+    request: CreateTripRequest,
+    db: db_dependency,
+    user: user_dependency
+):
+    existing_trip = db.query(Trip).filter(
+        Trip.user_id == user.id,
+        Trip.trip_name == request.trip_name
+    ).first()
+    if existing_trip:
+        return {
+            "status": False,
+            "message": "Trip with this name already exists.",
+            "status_code": status.HTTP_400_BAD_REQUEST
+        }
+
+    # Create trip
+    new_trip = Trip(
+        user_id=user.id,
+        trip_name=request.trip_name,
+        budget=request.budget,
+        start_date=request.start_date,
+        end_date=request.end_date,
+        destination=request.destination,
+        base_location=request.base_location,
+        travel_mode=request.travel_mode,
+        num_people=request.num_people,
+        activities=request.activities or [],
+        travelling_with=request.travelling_with
+    )
+
+    db.add(new_trip)
+    db.commit()
+    db.refresh(new_trip)
+
+    # Run webhook processing in background
+    process_trip_webhook.delay(new_trip.id, user.id)
+
+    return {
+        "status": True,
+        "data": {
+            "trip_id": new_trip.id,
+            "trip_name": new_trip.trip_name
+        },
+        "message": "Trip created successfully. Processing places in background.",
+        "status_code": status.HTTP_201_CREATED
+    }
 
 
 @router.put("/update/{trip_id}")

@@ -17,3 +17,5 @@ bcrypt
 pandas
 google-auth
 langchain
+redis 
+celery[redis]
