@@ -1,11 +1,11 @@
 from fastapi import APIRouter
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency 
-from app.database.models import Settings 
-
+from app.database.models import *
+from typing import List, Dict, Any
 from app.database.schemas import SettingsRequest,SettingsResponse
 from fastapi import status
-
+from enum import Enum
 
 router = APIRouter(prefix="/settings", tags=["Settings"])
 
@@ -146,5 +146,40 @@ async def get_settings(
     
 
 
+def get_enum_values_list(enum_class: Enum) -> List[str]:
+    """Convert Enum class to a simple list of values."""
+    return [e.value for e in enum_class]
 
 
+@router.get("/getenums", response_model=Dict[str, Any])
+def get_all_enums(
+    db: db_dependency,
+    user: user_dependency
+):
+    """Endpoint to send all enum values as simple lists with user auth."""
+
+    try:
+        # Return enum values as lists
+        return {
+            "status": True,
+            "data": {
+                "native_languages": get_enum_values_list(NativeLanguageEnum),
+                "activities": get_enum_values_list(ActivityEnum),
+                "travelling_with": get_enum_values_list(TravellingWithEnum),
+                "travel_modes": get_enum_values_list(TravelModeEnum),
+                "property_types": get_enum_values_list(PropertyTypeEnum),
+                "food_preferences": get_enum_values_list(FoodPreferenceEnum),
+                "train_classes": get_enum_values_list(TrainClassEnum),
+                "departure_times": get_enum_values_list(DepartureTimeEnum)
+            },
+            "message": "Settings fetched successfully",
+            "status_code": status.HTTP_200_OK
+        }
+
+    except Exception as e:
+        return {
+            "status": False,
+            "data": None,
+            "message": f"Error fetching settings: {str(e)}",
+            "status_code": status.HTTP_400_BAD_REQUEST
+        }
