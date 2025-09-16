@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, status, Query
 from app.database.models import Trip , TravelOptions , UserPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
+from app.task.trip_tasks import process_travel_modes
 
 from typing import List, Optional
 from app.utils.easemytrip import search_trains 
@@ -79,16 +80,9 @@ async def search_train(
     
 
 
-
-
-
-WEBHOOK_TRAVEL_MODE_URL = "http://localhost:5678/webhook/get-travel-mode"
-
-
 @router.get("/get/{trip_id}")
 async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependency):
     try:
-        # 1. Fetch trip
         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
         if not trip:
             raise HTTPException(
@@ -96,7 +90,7 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
                 detail="Trip not found or doesn't belong to you."
             )
 
-        # 2. Check if travel options already exist in DB
+        # Check if travel options already exist
         existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
         if existing_travel:
             return {
@@ -106,68 +100,23 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
                 "status_code": status.HTTP_200_OK
             }
 
-        # 3. Prepare payload for webhook
-        payload = {
-            "trip_id": trip.id,
-            "trip_name": trip.trip_name,
-            "destination": trip.destination,
-            "base_location": trip.base_location,
-            "start_date": trip.start_date.isoformat() if trip.start_date else None,
-            "end_date": trip.end_date.isoformat() if trip.end_date else None,
-            "budget": trip.budget,
-            "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
-            "num_people": trip.num_people,
-            "activities": trip.activities or [],
-            "travelling_with": trip.travelling_with.value if trip.travelling_with else None
-        }
+        # Trigger background task for travel modes
+        process_travel_modes.delay(trip.id, user.id)
 
-        # 4. Call webhook for travel modes
-        async with httpx.AsyncClient(timeout=600.0) as client:
-            response = await client.post(WEBHOOK_TRAVEL_MODE_URL, json=payload)
-
-        if response.status_code != 200:
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to fetch travel option for this trip"
-            )
-
-        full_data = response.json()
-
-        # 5. Extract only `travel_options`
-        travel_options = None
-        if isinstance(full_data, list) and "output" in full_data[0]:
-            travel_options = full_data[0]["output"].get("travel_options")
-        elif "output" in full_data:
-            travel_options = full_data["output"].get("travel_options")
-
-        if not travel_options:
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Invalid travel options format received from webhook"
-            )
-
-        # 6. Save only travel_options in DB
-        new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_options)
-        db.add(new_travel)
-        db.commit()
-        db.refresh(new_travel)
-
-        # 7. Return saved response
         return {
             "status": True,
-            "data": travel_options,
-            "message": "Travel modes fetched and saved successfully",
-            "status_code": status.HTTP_200_OK
+            "data": None,
+            "message": "Travel modes processing started in background",
+            "status_code": status.HTTP_202_ACCEPTED
         }
 
-    except HTTPException as e:
-        raise e
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error fetching travel modes: {str(e)}"
+            detail=f"Error triggering travel modes processing: {str(e)}"
         )
-
 
 
 
