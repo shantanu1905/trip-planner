@@ -48,8 +48,10 @@ class CreateTripRequest(BaseModel):
     budget: Optional[int] = None
     start_date: datetime
     end_date: datetime
+    journey_start_date : datetime
+    return_journey_date : datetime
     destination: str
-    base_location: Optional[str] = None
+    base_location: str
     travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = 1
     activities: Optional[List] = None  # ✅ Updated field name
@@ -60,6 +62,8 @@ class UpdateTripRequest(BaseModel):
     budget: Optional[int] = None
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
+    journey_start_date : Optional[datetime] = None
+    return_journey_date : Optional[datetime] = None
     travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = None
     activities: Optional[List] = None  # ✅ Updated field name

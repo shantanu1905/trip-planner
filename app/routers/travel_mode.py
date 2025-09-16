@@ -13,7 +13,6 @@ import json
 router = APIRouter(prefix="/travel_mode", tags=["Trains/Bus/Flight"])
 
 
-
 # ---------- Search Trains ----------
 @router.get("/searchtrain",
            description="Search for trains between stations on a specific date")
@@ -76,8 +75,12 @@ async def search_train(
             "status": False,
             "data": None,
             "message": f"Error searching trains: {str(e)}",
-            "status_code": status.HTTP_500_INTER}
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR}
     
+
+
+
+
 
 
 @router.get("/get/{trip_id}")
@@ -118,8 +121,6 @@ async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependenc
             detail=f"Error triggering travel modes processing: {str(e)}"
         )
 
-
-
 @router.get("/get-travel-booking-suggestion/{trip_id}")
 async def get_travel_booking_suggestion(
     trip_id: int,
@@ -128,47 +129,58 @@ async def get_travel_booking_suggestion(
 ):
     try:
         # 1. Fetch Trip
-        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        trip = db.query(Trip).filter(
+            Trip.id == trip_id,
+            Trip.user_id == user.id
+        ).first()
+
         if not trip:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail="Trip not found or doesn't belong to you."
             )
 
-        # 2. Fetch User Preferences (Only required fields)
-        user_pref = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
-        user_pref_data = {
-            "flexible_station_option": user_pref.flexible_station_option if user_pref else None,
-            "preferred_from_station": user_pref.preferred_from_station if user_pref else None,
-            "preferred_departure_time": user_pref.preferred_departure_time.value if user_pref and user_pref.preferred_departure_time else None,
-            "preferred_train_class": user_pref.preferred_train_class.value if user_pref and user_pref.preferred_train_class else None
+        # 2. Minimal Trip data
+        trip_data = {
+            "trip_id": trip.id,
+            "journey_start_date": trip.journey_start_date.isoformat() if trip.journey_start_date else None,
+            "return_journey_date": trip.return_journey_date.isoformat() if trip.return_journey_date else None,
+            "travel_mode": trip.travel_mode.value if trip.travel_mode else None
         }
 
-        # 3. Fetch existing travel options if any
-        existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
+        # 3. UserPreferences only for Train or Train&Road
+        user_pref_data = {}
+        if trip.travel_mode and trip.travel_mode.value in ["Train", "Train&Road"]:
+            user_pref = db.query(UserPreferences).filter(
+                UserPreferences.user_id == user.id
+            ).first()
+            if user_pref:
+                user_pref_data = {
+                    "preferred_train_class": user_pref.preferred_train_class.value if user_pref.preferred_train_class else None,
+                    "preferred_departure_time": user_pref.preferred_departure_time.value if user_pref.preferred_departure_time else None,
+                    "preferred_from_station": user_pref.preferred_from_station,
+                    "flexible_station_option": user_pref.flexible_station_option
+                }
 
-        # 4. Prepare payload
+        # 4. Fetch saved TravelOptions (if any)
+        saved_travel_options = db.query(TravelOptions).filter(
+            TravelOptions.trip_id == trip.id
+        ).first()
+        travel_options_data = saved_travel_options.travel_data if saved_travel_options else None
+
+        # 5. Prepare final payload
         payload = {
-            "trip": {
-                "trip_id": trip.id,
-                "trip_name": trip.trip_name,
-                "destination": trip.destination,
-                "base_location": trip.base_location,
-                "start_date": trip.start_date.isoformat() if trip.start_date else None,
-                "end_date": trip.end_date.isoformat() if trip.end_date else None,
-                "budget": trip.budget,
-                "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
-                "num_people": trip.num_people,
-                "activities": trip.activities or [],
-                "travelling_with": trip.travelling_with.value if trip.travelling_with else None
-            },
+            "trip": trip_data,
             "user_preferences": user_pref_data,
-            "existing_travel_options": existing_travel.travel_data if existing_travel else None
+            "saved_travel_options": travel_options_data
         }
 
-        # 5. Call external webhook
+        # 6. Call external webhook
         async with httpx.AsyncClient(timeout=600.0) as client:
-            response = await client.post("http://localhost:5678/webhook/get-travel-booking-suggestion", json=payload)
+            response = await client.post(
+                "http://localhost:5678/webhook/Get-booking-suggestions",
+                json=payload
+            )
 
         if response.status_code != 200:
             raise HTTPException(
@@ -178,7 +190,7 @@ async def get_travel_booking_suggestion(
 
         full_data = response.json()
 
-        # 6. Extract travel_options from response
+        # 7. Extract travel_options
         travel_options = full_data.get("travel_options")
         if not travel_options:
             raise HTTPException(
@@ -186,8 +198,8 @@ async def get_travel_booking_suggestion(
                 detail="Invalid response from travel booking suggestion webhook"
             )
 
-        # 7. Save new travel options if not cached
-        if not existing_travel:
+        # 8. Save new travel options if not already cached
+        if not saved_travel_options:
             new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_options)
             db.add(new_travel)
             db.commit()
@@ -195,7 +207,11 @@ async def get_travel_booking_suggestion(
 
         return {
             "status": True,
-            "data": travel_options,
+            "data": {
+                "trip": trip_data,
+                "user_preferences": user_pref_data,
+                "travel_options": travel_options
+            },
             "message": "Travel booking suggestions fetched successfully",
             "status_code": status.HTTP_200_OK
         }

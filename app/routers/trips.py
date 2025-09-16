@@ -34,6 +34,8 @@ async def create_trip(
         budget=request.budget,
         start_date=request.start_date,
         end_date=request.end_date,
+        journey_start_date = request.journey_start_date,
+        return_journey_date = request.return_journey_date,
         destination=request.destination,
         base_location=request.base_location,
         travel_mode=request.travel_mode,
@@ -85,6 +87,8 @@ async def update_trip(
         trip.budget = request.budget
         trip.start_date = request.start_date
         trip.end_date = request.end_date
+        trip.journey_start_date = request.journey_start_date
+        trip.return_journey_date = request.return_journey_date
         trip.travel_mode = request.travel_mode
         trip.num_people = request.num_people
         trip.activities = request.activities if request.activities else []
@@ -139,6 +143,8 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
                 "base_location": t.base_location,
                 "start_date": t.start_date,
                 "end_date": t.end_date,
+                "journey_start_date" : t.journey_start_date,
+                "return_journey_date" : t.return_journey_date,
                 "budget": t.budget,
                 "travel_mode": t.travel_mode.value if t.travel_mode else None,
                 "num_people": t.num_people,
@@ -255,6 +261,8 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "base_location": trip.base_location,
             "start_date": trip.start_date.isoformat() if trip.start_date else None,
             "end_date": trip.end_date.isoformat() if trip.end_date else None,
+            "journey_start_date" : trip.journey_start_date.isoformat() if trip.journey_start_date else None,
+            "return_journey_date" : trip.return_journey_date.isoformat() if trip.return_journey_date else None,
             "budget": trip.budget,
             "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
             "num_people": trip.num_people,
