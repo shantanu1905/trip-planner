@@ -41,7 +41,7 @@ def search_trains(from_station, to_station, travel_date, coupon_code=""):
                     'toStnCode': train.get('toStnCode'),
                     'ArrivalDate': train.get('ArrivalDate'),
                     'departuredate': train.get('departuredate'),
-                    'avlClasses': train.get('avlClasses', []),
+                    # 'avlClasses': train.get('avlClasses', []),
                     'classes': []
                 }
                 
@@ -73,21 +73,28 @@ def search_trains(from_station, to_station, travel_date, coupon_code=""):
         print(f"Error: {e}")
         return None
 
-# # Example usage:
-# if __name__ == "__main__":
-   
-#     result = search_trains("NGP", "NDLS", "30/10/2025")
 
-#     print(result)
+
+
+def get_station_code(station_name: str):
+    """
+    Fetch station code using EaseMyTrip Train AutoSuggest API.
+    Returns the first station object with Code if available.
+    """
+    url = f"https://solr.easemytrip.com/v1/api/auto/GetTrainAutoSuggest/{station_name}"
     
-#     # if result:
-#     #     for train in result:
-#     #         print(f"\nTrain: {train['trainName']} ({train['trainNumber']})")
-#     #         print(f"Route: {train['fromStnName']} to {train['toStnName']}")
-#     #         print(f"Departure: {train['departureTime']} | Arrival: {train['arrivalTime']}")
-#     #         print(f"Duration: {train['duration']} | Distance: {train['distance']} km")
-#     #         print(f"Classes available:")
-#     #         for cls in train['classes']:
-#     #             print(f"  - {cls['className']}: ₹{cls['totalFare']} | Status: {cls['availablityStatus']}")
-#     # else:
-#     #     print("Failed to get train data")
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        stations = response.json()
+
+        if stations and isinstance(stations, list):
+            first_station = stations[0]  # Take first object
+            return first_station["Code"] , first_station["Name"]
+        return None  # If no station found
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching station code: {e}")
+        return None
+
+
