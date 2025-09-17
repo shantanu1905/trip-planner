@@ -48,8 +48,8 @@ class CreateTripRequest(BaseModel):
     budget: Optional[int] = None
     start_date: datetime
     end_date: datetime
-    journey_start_date : datetime
-    return_journey_date : datetime
+    journey_start_date:Optional[datetime]  = None
+    return_journey_date: Optional[datetime]  = None
     destination: str
     base_location: str
     travel_mode: Optional[TravelModeEnum] = None
@@ -89,3 +89,10 @@ class PreferencesRequest(BaseModel):
 
     
 
+# --- Request Body Schema ---
+class TrainSearchRequest(BaseModel):
+    from_station: str
+    to_station: str
+    travel_date: str  # Accepts DD/MM/YYYY or YYYY-MM-DD
+    coupon_code: Optional[str] = ""
+    time_filter:Optional[str] = ""

@@ -8,7 +8,11 @@ from app.task.trip_tasks import process_trip_webhook , process_itinerary
 from app.utils.language_translation import translate_with_cache
 import datetime
 router = APIRouter(prefix="/trips", tags=["Trips"])
-
+from datetime import timedelta
+from fastapi import status
+import datetime
+from datetime import timedelta
+from fastapi import status
 
 @router.post("/create")
 async def create_trip(
@@ -27,15 +31,23 @@ async def create_trip(
             "status_code": status.HTTP_400_BAD_REQUEST
         }
 
+    # request.start_date and request.end_date are already datetime objects
+    start_date = request.start_date
+    end_date = request.end_date
+
+    # Calculate journey_start_date & return_journey_date
+    journey_start_date = (start_date - timedelta(days=1)).date()
+    return_journey_date = (end_date + timedelta(days=1)).date()
+
     # Create trip
     new_trip = Trip(
         user_id=user.id,
         trip_name=request.trip_name,
         budget=request.budget,
-        start_date=request.start_date,
-        end_date=request.end_date,
-        journey_start_date = request.journey_start_date,
-        return_journey_date = request.return_journey_date,
+        start_date=start_date,
+        end_date=end_date,
+        journey_start_date=journey_start_date,
+        return_journey_date=return_journey_date,
         destination=request.destination,
         base_location=request.base_location,
         travel_mode=request.travel_mode,
@@ -55,15 +67,13 @@ async def create_trip(
         "status": True,
         "data": {
             "trip_id": new_trip.id,
-            "trip_name": new_trip.trip_name
+            "trip_name": new_trip.trip_name,
+            "journey_start_date": str(journey_start_date),
+            "return_journey_date": str(return_journey_date)
         },
         "message": "Trip created successfully. Processing places in background.",
         "status_code": status.HTTP_201_CREATED
     }
-
-
-
-
 
 
 @router.put("/update/{trip_id}")
@@ -74,7 +84,6 @@ async def update_trip(
     user: user_dependency
 ):
     try:
-        # 1. Check if trip exists
         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
         if not trip:
             return {
@@ -83,12 +92,20 @@ async def update_trip(
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        # 2. Update trip fields
+        # request.start_date and request.end_date are already datetime objects
+        start_date = request.start_date
+        end_date = request.end_date
+
+        # Calculate journey_start_date & return_journey_date
+        journey_start_date = (start_date - timedelta(days=1)).date()
+        return_journey_date = (end_date + timedelta(days=1)).date()
+
+        # Update trip fields
         trip.budget = request.budget
-        trip.start_date = request.start_date
-        trip.end_date = request.end_date
-        trip.journey_start_date = request.journey_start_date
-        trip.return_journey_date = request.return_journey_date
+        trip.start_date = start_date
+        trip.end_date = end_date
+        trip.journey_start_date = journey_start_date
+        trip.return_journey_date = return_journey_date
         trip.travel_mode = request.travel_mode
         trip.num_people = request.num_people
         trip.activities = request.activities if request.activities else []
@@ -97,7 +114,6 @@ async def update_trip(
         db.commit()
         db.refresh(trip)
 
-        # 3. Call webhook via Celery (Non-blocking)
         process_trip_webhook.delay(trip.id, user.id)
 
         return {
@@ -105,6 +121,8 @@ async def update_trip(
             "data": {
                 "trip_id": trip.id,
                 "trip_name": trip.trip_name,
+                "journey_start_date": str(journey_start_date),
+                "return_journey_date": str(return_journey_date),
                 "activities": trip.activities
             },
             "message": "Trip updated successfully. Processing places in background.",
@@ -117,7 +135,6 @@ async def update_trip(
             "message": f"Error updating trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
-
 
 @router.get("/")
 async def get_all_trips(db: db_dependency, user: user_dependency):

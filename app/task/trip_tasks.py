@@ -38,7 +38,7 @@ def process_trip_webhook(trip_id: int, user_id: int):
                 "num_people": trip.num_people,
                 "activities": trip.activities or []
             }
-            response = requests.post(WEBHOOK_URL_GMAP_SCRAPPER_PLACEDESC_GEOCORDINATES, json=payload, timeout=500)
+            response = requests.post(WEBHOOK_URL_GMAP_SCRAPPER_PLACEDESC_GEOCORDINATES, json=payload, timeout=1000)
             response.raise_for_status()
             webhook_data = response.json()
         except Exception as e:
