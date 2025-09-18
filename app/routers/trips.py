@@ -175,6 +175,10 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
                 trip["start_date"] = trip["start_date"].isoformat()
             if isinstance(trip.get("end_date"), datetime.datetime):
                 trip["end_date"] = trip["end_date"].isoformat()
+            if isinstance(trip.get("journey_start_date"), datetime.datetime):
+                trip["journey_start_date"] = trip["journey_start_date"].isoformat()
+            if isinstance(trip.get("return_journey_date"), datetime.datetime):
+                trip["return_journey_date"] = trip["return_journey_date"].isoformat()
 
         # ✅ Translate entire trips list once if needed
         if target_lang != "English":
