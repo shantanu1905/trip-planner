@@ -1,0 +1,969 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Vishakhapatnam, India",
+      "TouristPlaces": [
+        {
+          "Name": "Ramakrishna Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7179171,
+            "lng": 83.3321509
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np52iuP6BvDha-GTVMvtMqh6r8D3GJcdDmyybg6Jew8NO4Kb3tGTldQh-qQdIO64GSw2puCPLKYzURWpTSwt5Mexi0oolIo0UDK-UHGL47DpHqg3Ot5_lwn0_pcpSmoo54aFQQw=w408-h883-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ramakrishna+Beach/data=!4m7!3m6!1s0x3a3943fe899c5675:0xdeec2cc2923cf23c!8m2!3d17.7179171!4d83.3321509!16s%2Fg%2F11h_48w1gk!19sChIJdVacif5DOToRPPI8ksIs7N4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Victory At Sea War Memorial",
+          "Description": "Seaside park dedicated to Indian naval victory in 1971, with a tall red memorial, a tank & planes.",
+          "GeoCoordinates": {
+            "lat": 17.7186785,
+            "lng": 83.3322376
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nocX5lS5bs7QgJBRXkICHKjkNU5WswCh2uUn6tn8S5ryLbVFJLfJuRASyUAYH2huFV_JyCEGgcClJaILm6Ko1AtYnsl81BZTEtT7qfb_b6BF7X_e2VTwEUIknvii0HKZQkTM50=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Victory+At+Sea+War+Memorial/data=!4m7!3m6!1s0x3a3943611fc2206b:0x3fc8b13eecb3543d!8m2!3d17.7186785!4d83.3322376!16s%2Fg%2F11f0krnds8!19sChIJayDCH2FDOToRPVSz7D6xyD8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vizag Yarada beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6521264,
+            "lng": 83.2640629
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqjzAu6VeKHgxQaO4lSPhvrXVV7Tki1xZhGDOhe-ZklhBRB8IJgrakKOdd6q_B9YHmOijfp-tsJ3Npb5HY4hzsr0Kj9_36mib6s0-f_feoiI2Er4Yk_tqkos9WpUJ2XQWo4q1mK=w408-h287-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Vizag+Yarada+beach/data=!4m7!3m6!1s0x3a3941bc297b6f0b:0x4c4bb491cb77eb55!8m2!3d17.6521264!4d83.2640629!16s%2Fg%2F11ry27gzgc!19sChIJC297KbxBOToRVet3y5G0S0w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Love Vizag",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7169311,
+            "lng": 83.3293776
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqDH7AsQwjtl50wT17tmLSeW-BvRGHMCqhUwz_1Rr7M3CMvMHhIpsvPr7EJOmrkIH7OuVv6CaclFyWrSBcZNE4SRifzQhOt7u4VanOnlmqBby20lXpgjh8nA1UihidrPXZ4MKbL=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Love+Vizag/data=!4m7!3m6!1s0x3a39439ad1185305:0x7405e1b5b4b0f06d!8m2!3d17.7169311!4d83.3293776!16s%2Fg%2F11gy6cyrtm!19sChIJBVMY0ZpDOToRbfCwtLXhBXQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dolphin's Nose Lighthouse",
+          "Description": "Scenic destination featuring an old lighthouse offering panoramic vistas of the city & ocean.",
+          "GeoCoordinates": {
+            "lat": 17.676469,
+            "lng": 83.2925877
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrtBOLQ-o5a4ODhGKf8JXK07qJjUJmigPWgUtsQRrruwdxDE3I70dkEaoygWAIrPhipksvCfVaaFu9485hJuYHZC5de_kTCrEXo-mDYc7bPYgWd67kCKzFBd_kxmG5e1LQP2Qrs8Q=w408-h404-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Dolphin%27s+Nose+Lighthouse/data=!4m7!3m6!1s0x3a394317a3792365:0x3a507428c1c289f!8m2!3d17.676469!4d83.2925877!16s%2Fg%2F11f04dtszs!19sChIJZSN5oxdDOToRnygcjEIHpQM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Indira Gandhi Zoological Park",
+          "Description": "Big wildlife park, toured by vehicle or on foot, showcasing diverse animals, including white tigers.",
+          "GeoCoordinates": {
+            "lat": 17.765657,
+            "lng": 83.3488338
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqMicXkidZpN4gTtSbmWMpFCYRBb3cdq3k0dlThSyxptiHFMgqVfWPDDirM7IbeHA7PwvqgGsDVnwISEUXP8bKT8Tcd302VXS27lpjxVngE2mak-WWYdNcW-IxcFZMa4wTGiODP=w408-h408-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Indira+Gandhi+Zoological+Park/data=!4m7!3m6!1s0x3a395b43288df2d3:0xa383735f6e0e0a2f!8m2!3d17.765657!4d83.3488338!16s%2Fm%2F02qz932!19sChIJ0_KNKENbOToRLwoObl9zg6M?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VMRDA INS Kursura Submarine Museum",
+          "Description": "Submarine museum & former navy vessel offering cabin tours by retired military personnel.",
+          "GeoCoordinates": {
+            "lat": 17.7172432,
+            "lng": 83.3300912
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqTxuS9xyUZkYKJVciVwiofQlo3En5Jv_xgayWTbgAjuCJ_rNMTFsZNJ8Q4X2cpfBiaQhknis0w6fTlw5pj_A0Ef4Sb6KcgirOAwCMW0g8soObkhsjgyYJIih3XfhsBtq4CepfW=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/VMRDA+INS+Kursura+Submarine+Museum/data=!4m7!3m6!1s0x3a394366bf4c70eb:0x954398b1ff5d09f2!8m2!3d17.7172432!4d83.3300912!16s%2Fm%2F076ybs3!19sChIJ63BMv2ZDOToR8gld_7GYQ5U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Matsya Darshini",
+          "Description": "An array of freshwater & saltwater fish, plus tortoises, are exhibited in this roomy aquarium.",
+          "GeoCoordinates": {
+            "lat": 17.7127277,
+            "lng": 83.3201019
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqqI1c6axEBXGUA7Nc5FLjlIm567-tHnzehGhfULeD8iAB2c1u97bB3SeiZ1UUXOWdTBpsWLA-9HVDBD0LcAL_a9gwMJHKt5YrtQDwyc4SV8rs25q-nBqUhTxDgPUZ8F1MP4eI=w408-h305-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Matsya+Darshini/data=!4m7!3m6!1s0x3a39436c29390a65:0xe06708f1a513c894!8m2!3d17.7127277!4d83.3201019!16s%2Fg%2F1x5f8sj1!19sChIJZQo5KWxDOToRlMgTpfEIZ-A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "MV MAA Ship",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7472596,
+            "lng": 83.3507542
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np8DHUrsoKvhm0o3CveFuejAJK_F_jNWLPl6MDW11GL6TdZFqiZTzFPuLh7BS__PlKk_AtNCsmcuIx8C9j_8AsFxcpxukSoifF8fdLVd0UldOSbUplJqccqacOdeveC8vYB7xWbsg=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/MV+MAA+Ship/data=!4m7!3m6!1s0x3a395bcbe0803e01:0xb52f855d9c9f111e!8m2!3d17.7472596!4d83.3507542!16s%2Fg%2F11n2z1hqct!19sChIJAT6A4MtbOToRHhGfnF2FL7U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gangavaram beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6111155,
+            "lng": 83.2352939
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noB3N5_OLwZl9YSqLc0TXc93J-UGOJ2p90fdCuLNLjRKs8_TXp3PHUt20sXiYnHVn6UTctU0uP9n-My6jBPsP7Be4j2JmYY3BaadVVC9Mh5H56MoBCDz7XfPF5QkBE041JRDo8=w408-h307-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Gangavaram+beach/data=!4m7!3m6!1s0x3a396b0045ca9227:0xff5665df7a0d85ec!8m2!3d17.6111155!4d83.2352939!16s%2Fg%2F11vk785wp5!19sChIJJ5LKRQBrOToR7IUNet9lVv8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kailasa Giri",
+          "Description": "Paragliding, mini-railway rides & landmark Hindu statues in a hilltop park accessed by cable car.",
+          "GeoCoordinates": {
+            "lat": 17.7473896,
+            "lng": 83.3461086
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrQhx50XOZqySSkOEMjYX0V4rFIDtaIZtPi4VM7vTLsIrhSaOMBEVZfaJCqSpLjCDOH9UdTORkpP02E98_TtO1ZNtjHJf06YIMcvBOiMvvh8etVy4DmVCjRwhrbdrPwq79NLso=w408-h449-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kailasa+Giri/data=!4m7!3m6!1s0x3a395b16645eb1b5:0x87443d1f15900176!8m2!3d17.7473896!4d83.3461086!16s%2Fg%2F11gmwftw07!19sChIJtbFeZBZbOToRdgGQFR89RIc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hawa Mahal",
+          "Description": "Built as a king's summer residence, this historical palace with sea views is now a wedding venue.",
+          "GeoCoordinates": {
+            "lat": 17.7073879,
+            "lng": 83.3118133
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrT7CwRZy7lr-AOLw1hKuljpaIzaOHTmqfHKOfch1SBjMjjv4fhLSjGULxLdRscOmzDFWrskfv61wrCXjS9MkBynhkEkX7JVU7Ni3x4Ovk_LQF4rveG4IUsAgyMrzhtE_CErnYd=w408-h326-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Hawa+Mahal/data=!4m7!3m6!1s0x3a39430da726a423:0x9cd4b5d36ad0460a!8m2!3d17.7073879!4d83.3118133!16s%2Fg%2F11h1hq_d1c!19sChIJI6Qmpw1DOToRCkbQatO11Jw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VMRDA-Kailasagiri",
+          "Description": "Hilltop park & gardens known for huge Shiva statue & picturesque views of forest & sea.",
+          "GeoCoordinates": {
+            "lat": 17.7489421,
+            "lng": 83.3421514
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noszm24OyHg_RAZ0NPDyu3SEafxOupHYXDdJbiCcLlS0m2CPq37Rkci-jB_Gw_TMS598gXZDv9OybI2XJvojOwKxnIUUGkoXp1h2u9z9TdkWSudrwqg4UXsMQd1U3SUv8BSXwNQJXFljNdl=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/VMRDA-Kailasagiri/data=!4m7!3m6!1s0x3a395b538452a445:0xcf4f040d44ed5c61!8m2!3d17.7489421!4d83.3421514!16s%2Fm%2F010qp4gv!19sChIJRaRShFNbOToRYVztRA0ET88?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Appikonda Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.5743142,
+            "lng": 83.1744503
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no35SSoxBgEJ9ZIUjV5QiHCA4kLyJwXfoGi2reWZp1rM8GUlKfB3gxme8Gp5AWA7CIYhnXYZzbwAQ0O9cXTzmWdg3WU78jxfY-NCmbP7Y_SDGjZ7r0hEb-yK8Yn5hjj-tWU2yQ=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Appikonda+Beach/data=!4m7!3m6!1s0x3a396b1a8245df0f:0xf7389289c0a9b94b!8m2!3d17.5743142!4d83.1744503!16s%2Fg%2F11c2plyc72!19sChIJD99FghprOToRS7mpwImSOPc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.757605,
+            "lng": 83.2543758
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrymZwxI_RkwJWCMMZagPACUZdsz2YPz7cRWfG3neeiadPogY1MI26UZMzz4zZvwj13joJsqERzvxcWHrY2J6LopNsdnUMxrMDv-fEnx_Tck3JAXXeWE3X8Ks43uJWbSs7qvdeMkw=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/View+point/data=!4m7!3m6!1s0x3a395d3beb28d461:0x9debc92ce9b1b947!8m2!3d17.757605!4d83.2543758!16s%2Fg%2F11fpr7dfd0!19sChIJYdQo6ztdOToRR7mx6SzJ650?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rushikonda Hill",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7785625,
+            "lng": 83.3817344
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rushikonda+Hill/data=!4m7!3m6!1s0x3a395b09216c0fa7:0xb8038889de5b8ae4!8m2!3d17.7785625!4d83.3817344!16s%2Fg%2F11kc29gjy4!19sChIJpw9sIQlbOToR5Ipb3omIA7g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Varahalakshmi Narasimha Swami Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7663525,
+            "lng": 83.2505322
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Varahalakshmi+Narasimha+Swami+Temple/data=!4m7!3m6!1s0x3a39678adaf94731:0x6789f78c46d2ec2b!8m2!3d17.7663525!4d83.2505322!16zL20vMDdkaGZw!19sChIJMUf52opnOToRK-zSRoz3iWc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Meghadri gedda waterfalls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7588598,
+            "lng": 83.1960602
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Meghadri+gedda+waterfalls/data=!4m7!3m6!1s0x3a3967c285913e03:0x2f014d6c1013507e!8m2!3d17.7588598!4d83.1960602!16s%2Fg%2F11ll0szcym!19sChIJAz6RhcJnOToRflATEGxNAS8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tikkavanipalem Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.5476118,
+            "lng": 83.1165635
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tikkavanipalem+Beach/data=!4m7!3m6!1s0x3a3912d361eb24c5:0x5834a88c7439bc5f!8m2!3d17.5476118!4d83.1165635!16s%2Fg%2F11gcdntvh1!19sChIJxSTrYdMSOToRX7w5dIyoNFg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Visakha Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7208269,
+            "lng": 83.333863
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Visakha+Museum/data=!4m7!3m6!1s0x3a39436065fc2ee3:0x8d8850454a543e45!8m2!3d17.7208269!4d83.333863!16s%2Fm%2F09v7znk!19sChIJ4y78ZWBDOToRRT5USkVQiI0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Visakha Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7208269,
+            "lng": 83.333863
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Visakha+Museum/data=!4m7!3m6!1s0x3a39436065fc2ee3:0x8d8850454a543e45!8m2!3d17.7208269!4d83.333863!16s%2Fm%2F09v7znk!19sChIJ4y78ZWBDOToRRT5USkVQiI0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gokul Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7066797,
+            "lng": 83.3116073
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gokul+Park/data=!4m7!3m6!1s0x3a39430da998d59f:0x54cee429cfb656df!8m2!3d17.7066797!4d83.3116073!16s%2Fg%2F1tdqy45f!19sChIJn9WYqQ1DOToR31a2zynkzlQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kailasgiri Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7477077,
+            "lng": 83.3457976
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kailasgiri+Park/data=!4m7!3m6!1s0x3a395bbe9136ecf7:0x7a93109bff2fb231!8m2!3d17.7477077!4d83.3457976!16s%2Fg%2F11h2cb8j6n!19sChIJ9-w2kb5bOToRMbIv_5sQk3o?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VMRDA PARK",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7240843,
+            "lng": 83.3395295
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/VMRDA+PARK/data=!4m7!3m6!1s0x3a3944a1a65f31a7:0xa0fd4e20edb032ba!8m2!3d17.7240843!4d83.3395295!16s%2Fg%2F11cls7vxdr!19sChIJpzFfpqFEOToRujKw7SBO_aA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mermaid statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7112309,
+            "lng": 83.3184262
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mermaid+statue/data=!4m7!3m6!1s0x3a394316618bceed:0x503ed2e8afbd54e0!8m2!3d17.7112309!4d83.3184262!16s%2Fg%2F11s3wkkrfv!19sChIJ7c6LYRZDOToR4FS9r-jSPlA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Simhadri Sarovar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.571644,
+            "lng": 83.0948839
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Simhadri+Sarovar/data=!4m7!3m6!1s0x3a396d6c4b610c1b:0x1371ee8641e49bec!8m2!3d17.571644!4d83.0948839!16s%2Fg%2F11mv4927f8!19sChIJGwxhS2xtOToR7JvkQYbucRM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sea View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7459721,
+            "lng": 83.3491335
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sea+View+Point/data=!4m7!3m6!1s0x3a395b3ea00f7b65:0xe12cb7a175ef3664!8m2!3d17.7459721!4d83.3491335!16s%2Fg%2F11ryg_h9dr!19sChIJZXsPoD5bOToRZDbvdaG3LOE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "RK Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7107627,
+            "lng": 83.3184668
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/RK+Beach/data=!4m7!3m6!1s0x3a395af936ec1537:0xf531a507459cc11d!8m2!3d17.7107627!4d83.3184668!16s%2Fg%2F11dfj9zwr3!19sChIJNxXsNvlaOToRHcGcRQelMfU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Titanic Sea View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7478619,
+            "lng": 83.3462998
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Titanic+Sea+View+Point/data=!4m7!3m6!1s0x3a395b529ad5975b:0x3f6083844625ccba!8m2!3d17.7478619!4d83.3462998!16s%2Fg%2F11c5_63d2j!19sChIJW5fVmlJbOToRuswlRoSDYD8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Matsya Kanya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7131194,
+            "lng": 83.3206635
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Matsya+Kanya/data=!4m7!3m6!1s0x3a39436e9ad40415:0xc74465955829e5e0!8m2!3d17.7131194!4d83.3206635!16s%2Fg%2F11gdw2b0r4!19sChIJFQTUmm5DOToR4OUpWJVlRMc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VMRDA - The Deck",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7212733,
+            "lng": 83.3191099
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/VMRDA+-+The+Deck/data=!4m7!3m6!1s0x3a394300317ac619:0xb9c3b1d20ee85f9b!8m2!3d17.7212733!4d83.3191099!16s%2Fg%2F11yczdcgdy!19sChIJGcZ6MQBDOToRm1_oDtKxw7k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mr Weeknd View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7605732,
+            "lng": 83.3570014
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mr+Weeknd+View+Point/data=!4m7!3m6!1s0x3a395bf5be4e2509:0x6ffbe15bc2ed6f14!8m2!3d17.7605732!4d83.3570014!16s%2Fg%2F11twt11v4l!19sChIJCSVOvvVbOToRFG_twlvh-28?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shivaji Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7362523,
+            "lng": 83.3312093
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shivaji+Park/data=!4m7!3m6!1s0x3a394356c47a259b:0x5c833e2a723024a9!8m2!3d17.7362523!4d83.3312093!16s%2Fm%2F011cchsn!19sChIJmyV6xFZDOToRqSQwcio-g1w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "INS Kalvari",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7201955,
+            "lng": 83.3343639
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/INS+Kalvari/data=!4m7!3m6!1s0x3a3943600b15d171:0x5257b725f9ea9bee!8m2!3d17.7201955!4d83.3343639!16s%2Fg%2F11dzt3dxc0!19sChIJcdEVC2BDOToR7pvq-SW3V1I?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kambalakonda Wildlife Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7783843,
+            "lng": 83.3348916
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kambalakonda+Wildlife+Sanctuary/data=!4m7!3m6!1s0x3a395c3aaaacd46b:0x569ff813fc544485!8m2!3d17.7783843!4d83.3348916!16s%2Fm%2F03gvs93!19sChIJa9SsqjpcOToRhURU_BP4n1Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "ISKCON Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7677556,
+            "lng": 83.3666993
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/ISKCON+Temple/data=!4m7!3m6!1s0x3a395b3d6a9db6dd:0x6630873762ac823c!8m2!3d17.7677556!4d83.3666993!16s%2Fg%2F1tk9p5l6!19sChIJ3badaj1bOToRPIKsYjeHMGY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "vizag ship view teneti park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7465021,
+            "lng": 83.349554
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/vizag+ship+view+teneti+park/data=!4m7!3m6!1s0x3a395b8e3af5c343:0x1d9cec8cbbd92f91!8m2!3d17.7465021!4d83.349554!16s%2Fg%2F11ptzv015l!19sChIJQ8P1Oo5bOToRkS_Zu4zsnB0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kailash mountain",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7492105,
+            "lng": 83.3418016
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kailash+mountain/data=!4m7!3m6!1s0x3a395ba01a0d3021:0xed3b2da0ae3f944d!8m2!3d17.7492105!4d83.3418016!16s%2Fg%2F11l390rcp3!19sChIJITANGqBbOToRTZQ_rqAtO-0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kondakarla ava",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6035639,
+            "lng": 82.998
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kondakarla+ava/data=!4m7!3m6!1s0x3a3973e3a2146b0b:0xa8da934ed59abef!8m2!3d17.6035639!4d82.998!16s%2Fg%2F11f2cnb_y0!19sChIJC2sUouNzOToR76tZ7TSpjQo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sri Krishna Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7065043,
+            "lng": 83.311491
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sri+Krishna+Statue/data=!4m7!3m6!1s0x3a39430071a336c3:0xda8794ab7a0c3dcf!8m2!3d17.7065043!4d83.311491!16s%2Fg%2F11vjvqwt0w!19sChIJwzajcQBDOToRzz0MequUh9o?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kambalakonda Eco Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7751006,
+            "lng": 83.3408941
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kambalakonda+Eco+Park/data=!4m7!3m6!1s0x3a395b63fd2ee565:0x5b1332f3ad80631c!8m2!3d17.7751006!4d83.3408941!16s%2Fg%2F1tmxpffl!19sChIJZeUu_WNbOToRHGOArfMyE1s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rushikonda Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.781547,
+            "lng": 83.3851101
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rushikonda+Beach/data=!4m7!3m6!1s0x3a395b494832754f:0x3eb9ce6bc714e0d6!8m2!3d17.781547!4d83.3851101!16s%2Fm%2F010vq13_!19sChIJT3UySElbOToR1uAUx2vOuT4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Beach Rocks Rushikonda",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7804109,
+            "lng": 83.38718
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Beach+Rocks+Rushikonda/data=!4m7!3m6!1s0x3a395b001c9d6495:0xac26c727ca9c8fd4!8m2!3d17.7804109!4d83.38718!16s%2Fg%2F11y288wh1d!19sChIJlWSdHABbOToR1I-cyifHJqw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Port view vizag",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.686176,
+            "lng": 83.2934726
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Port+view+vizag/data=!4m7!3m6!1s0x3a39431cec1fc021:0xb3d4bf044551cc2e!8m2!3d17.686176!4d83.2934726!16s%2Fg%2F11kj_llyfd!19sChIJIcAf7BxDOToRLsxRRQS_1LM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Visakhapatnam Dock View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6871042,
+            "lng": 83.2934039
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Visakhapatnam+Dock+View+Point/data=!4m7!3m6!1s0x3a394252cd4b3dd1:0x7a976f5e5bb6bc3b!8m2!3d17.6871042!4d83.2934039!16s%2Fg%2F11c310g4w5!19sChIJ0T1LzVJCOToRO7y2W15vl3o?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lumbini Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7412713,
+            "lng": 83.3441335
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lumbini+Park/data=!4m7!3m6!1s0x3a3944ac348a44f9:0xcdcf20d1e6497995!8m2!3d17.7412713!4d83.3441335!16s%2Fg%2F1q5gnx283!19sChIJ-USKNKxEOToRlXlJ5tEgz80?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gangavaram beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6110785,
+            "lng": 83.2350682
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gangavaram+beach/data=!4m7!3m6!1s0x3a396b8472bb196d:0xbfee491f5aeeaab4!8m2!3d17.6110785!4d83.2350682!16s%2Fg%2F11mbkhzjzt!19sChIJbRm7coRrOToRtKruWh9J7r8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rock Beach View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7028053,
+            "lng": 83.3079167
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rock+Beach+View+Point/data=!4m7!3m6!1s0x3a3943a1a5e3266f:0x979a8f8a49b06927!8m2!3d17.7028053!4d83.3079167!16s%2Fg%2F11s6xb80sc!19sChIJbybjpaFDOToRJ2mwSYqPmpc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VMRDA - Kailashgiri Glass Bridge",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7476415,
+            "lng": 83.3466696
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/VMRDA+-+Kailashgiri+Glass+Bridge/data=!4m7!3m6!1s0x3a395b006f657ca7:0x72e0dcd03c7938aa!8m2!3d17.7476415!4d83.3466696!16s%2Fg%2F11xp9ksfhq!19sChIJp3xlbwBbOToRqjh5PNDc4HI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Beach View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6628846,
+            "lng": 83.2838506
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Beach+View+Point/data=!4m7!3m6!1s0x3a3942306bd1d775:0x357f50d5a251c15!8m2!3d17.6628846!4d83.2838506!16s%2Fg%2F11b8znpknj!19sChIJddfRazBCOToRFRwlWg31VwM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tenneti Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7484465,
+            "lng": 83.3495482
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tenneti+Park/data=!4m7!3m6!1s0x3a395b4ce0399ef1:0x688be122e27d0e78!8m2!3d17.7484465!4d83.3495482!16s%2Fg%2F11c5gjcfwp!19sChIJ8Z454ExbOToReA594iLhi2g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunny Isles Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7942898,
+            "lng": 83.3918538
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sunny+Isles+Beach/data=!4m7!3m6!1s0x3a395ba5cda52c81:0xfd189e5c4a191037!8m2!3d17.7942898!4d83.3918538!16s%2Fg%2F11rqcgf2lh!19sChIJgSylzaVbOToRNxAZSlyeGP0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kailasagiri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7484018,
+            "lng": 83.344452
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kailasagiri/data=!4m7!3m6!1s0x3a395b57ce5cab07:0x70fd98cf1b4609b4!8m2!3d17.7484018!4d83.344452!16s%2Fg%2F11j2fkslhj!19sChIJB6tczldbOToRtAlGG8-Y_XA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "West View Point Kailasagiri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7526327,
+            "lng": 83.3343428
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/West+View+Point+Kailasagiri/data=!4m7!3m6!1s0x3a395ca9bd5abe5b:0x8ce75a0849db8e32!8m2!3d17.7526327!4d83.3343428!16s%2Fg%2F11gf9pg3xj!19sChIJW75avalcOToRMo7bSQha54w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shilparamam (Jatara)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.8052027,
+            "lng": 83.3531753
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shilparamam+%28Jatara%29/data=!4m7!3m6!1s0x3a395b9737bfd085:0x821634f1faa426!8m2!3d17.8052027!4d83.3531753!16s%2Fg%2F11f0k_37mv!19sChIJhdC_N5dbOToRJqT68TQWggA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ross Hill Church",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6904294,
+            "lng": 83.287096
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ross+Hill+Church/data=!4m7!3m6!1s0x3a3942513615f841:0x41ba04263e9761e!8m2!3d17.6904294!4d83.287096!16s%2Fg%2F1td1zp8x!19sChIJQfgVNlFCOToRHnbpY0KgGwQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Pipeline view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6837103,
+            "lng": 83.2963684
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Pipeline+view+point/data=!4m7!3m6!1s0x3a3943004a7dbfc7:0xa433a555915dfdaf!8m2!3d17.6837103!4d83.2963684!16s%2Fg%2F11lcmyhmmk!19sChIJx799SgBDOToRr_1dkVWlM6Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.759016,
+            "lng": 83.1915722
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+point,+meghadrigedda+Dam+Site/data=!4m7!3m6!1s0x3a3967494f239331:0x7c160f26c316a4fd!8m2!3d17.759016!4d83.1915722!16s%2Fg%2F11ft40rr2m!19sChIJMZMjT0lnOToR_aQWwyYPFnw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Central park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7218003,
+            "lng": 83.3055362
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Central+park/data=!4m7!3m6!1s0x3a39433d6bf6573f:0x3c69eac950b0b4d3!8m2!3d17.7218003!4d83.3055362!16s%2Fg%2F11fxb8ts60!19sChIJP1f2az1DOToR07SwUMnqaTw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maev Viewpoint",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7444697,
+            "lng": 83.2931568
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maev+Viewpoint/data=!4m7!3m6!1s0x3a395dabe13511d3:0x49619f352202d8a9!8m2!3d17.7444697!4d83.2931568!16s%2Fg%2F11l29zzk7s!19sChIJ0xE14atdOToRqdgCIjWfYUk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Quarry Cheruvu",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7415778,
+            "lng": 83.1732743
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Quarry+Cheruvu/data=!4m7!3m6!1s0x3a39670e031d18b1:0xfebdedb3484787fd!8m2!3d17.7415778!4d83.1732743!16s%2Fg%2F11l_fxsql8!19sChIJsRgdAw5nOToR_YdHSLPtvf4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Footpath Bridge to Megadhri Gedda",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7862517,
+            "lng": 83.1895226
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Footpath+Bridge+to+Megadhri+Gedda/data=!4m7!3m6!1s0x3a396775262f1f5b:0x9edbf1ca1083f495!8m2!3d17.7862517!4d83.1895226!16s%2Fg%2F11k3qvx8p_!19sChIJWx8vJnVnOToRlfSDEMrx254?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dolphin Pool",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7589949,
+            "lng": 83.3541928
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dolphin+Pool/data=!4m7!3m6!1s0x3a395b09b94ea305:0x70f044520e9f0a63!8m2!3d17.7589949!4d83.3541928!16s%2Fg%2F11q8j_xcqf!19sChIJBaNOuQlbOToRYwqfDlJE8HA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "City view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6837256,
+            "lng": 83.2702336
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/City+view+point/data=!4m7!3m6!1s0x3a39435ac685c097:0x5b9603def05ff505!8m2!3d17.6837256!4d83.2702336!16s%2Fg%2F11t7dvff7d!19sChIJl8CFxlpDOToRBfVf8N4Dlls?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Coastal battery beach junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7052708,
+            "lng": 83.3098814
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Coastal+battery+beach+junction,+beach+view+point/data=!4m7!3m6!1s0x3a3943000734d3cd:0x6cd95cb96e7fb14f!8m2!3d17.7052708!4d83.3098814!16s%2Fg%2F11vzg0dzmn!19sChIJzdM0BwBDOToRT7F_brlc2Ww?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Simhachalam gosala junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7711742,
+            "lng": 83.2359188
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Simhachalam+gosala+junction/data=!4m7!3m6!1s0x3a3967d8ce9cb903:0x2bcc0068baa441a2!8m2!3d17.7711742!4d83.2359188!16s%2Fg%2F11rrtxm6r2!19sChIJA7mczthnOToRokGkumgAzCs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mudasarlova park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7629382,
+            "lng": 83.2991482
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mudasarlova+park/data=!4m7!3m6!1s0x3a395cc476170d07:0x87419365fc3c9ece!8m2!3d17.7629382!4d83.2991482!16s%2Fg%2F11g9svs5v1!19sChIJBw0XdsRcOToRzp48_GWTQYc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "East View Point Kailasagiri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7469371,
+            "lng": 83.3473482
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/East+View+Point+Kailasagiri/data=!4m7!3m6!1s0x3a395ba0289c8b81:0xb8cbf7f2b3d13ed3!8m2!3d17.7469371!4d83.3473482!16s%2Fg%2F11h07wzplw!19sChIJgYucKKBbOToR0z7Rs_L3y7g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Srikrishna devaraya Vijaya sthambham",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7689427,
+            "lng": 83.2478141
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Srikrishna+devaraya+Vijaya+sthambham/data=!4m7!3m6!1s0x3a3967bbc710662d:0x8352944fe2c294e6!8m2!3d17.7689427!4d83.2478141!16s%2Fg%2F11scnsgxfh!19sChIJLWYQx7tnOToR5pTC4k-UUoM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Four road Junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7250708,
+            "lng": 83.3088285
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Four+road+Junction/data=!4m7!3m6!1s0x3a3943c35d2310ab:0x658de943ce78942d!8m2!3d17.7250708!4d83.3088285!16s%2Fg%2F11r18scrcj!19sChIJqxAjXcNDOToRLZR4zkPpjWU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Convent junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7172014,
+            "lng": 83.2897142
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Convent+junction/data=!4m7!3m6!1s0x3a3943006c43bcb1:0x6822ee30c3c821a6!8m2!3d17.7172014!4d83.2897142!16s%2Fg%2F11xgw9h8b7!19sChIJsbxDbABDOToRpiHIwzDuImg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lawsons Bay Beach Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7337884,
+            "lng": 83.342359
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lawsons+Bay+Beach+Park/data=!4m7!3m6!1s0x3a3944af587dad8f:0x5015c62fc2d0f59a!8m2!3d17.7337884!4d83.342359!16s%2Fg%2F11c1qb3v05!19sChIJj619WK9EOToRmvXQwi_GFVA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sagarnagar Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7647773,
+            "lng": 83.3650229
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sagarnagar+Beach/data=!4m7!3m6!1s0x3a395b4d5fc7a675:0x39d29c1415ff17a4!8m2!3d17.7647773!4d83.3650229!16s%2Fg%2F11kqmylctd!19sChIJdabHX01bOToRpBf_FRSc0jk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vijay varaahi tours and travels",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7401852,
+            "lng": 83.2087081
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vijay+varaahi+tours+and+travels/data=!4m7!3m6!1s0x3a3967573b3a7361:0x896e80606aff3cc!8m2!3d17.7401852!4d83.2087081!16s%2Fg%2F11j2z6fqy6!19sChIJYXM6O1dnOToRzPOvBgbolgg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Travel To Vizag - Best Travel and Tourism Company in Vizag",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7529473,
+            "lng": 83.2185458
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Travel+To+Vizag+-+Best+Travel+and+Tourism+Company+in+Vizag/data=!4m7!3m6!1s0x3a3967abf5bc15b9:0x7dccdbb3724a5679!8m2!3d17.7529473!4d83.2185458!16s%2Fg%2F11j20xy59r!19sChIJuRW89atnOToReVZKcrPbzH0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.753266,
+            "lng": 83.281984
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+point/data=!4m7!3m6!1s0x3a395def915f78d5:0x497bf04e489c51f4!8m2!3d17.753266!4d83.281984!16s%2Fg%2F11pcxpwmgy!19sChIJ1Xhfke9dOToR9FGcSE7we0k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "RK beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7184103,
+            "lng": 83.3321933
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/RK+beach/data=!4m7!3m6!1s0x3a3943006f31effd:0x1f64e09fdf26a833!8m2!3d17.7184103!4d83.3321933!16s%2Fg%2F11ycb5m4zz!19sChIJ_e8xbwBDOToRM6gm35_gZB8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Favourite beach spot",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7182106,
+            "lng": 83.3333001
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Favourite+beach+spot/data=!4m7!3m6!1s0x3a39430012d2fe25:0xe4d4c07d10e34e26!8m2!3d17.7182106!4d83.3333001!16s%2Fg%2F11lny0r531!19sChIJJf7SEgBDOToRJk7jEH3A1OQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "NTPC SEA WATER PUMP HOUSE",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.5431539,
+            "lng": 83.1200853
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/NTPC+SEA+WATER+PUMP+HOUSE/data=!4m7!3m6!1s0x3a3912d670c03d65:0x8a298f976d6607f6!8m2!3d17.5431539!4d83.1200853!16s%2Fg%2F11c5zb0nh5!19sChIJZT3AcNYSOToR9gdmbZePKYo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rushikonda Hill South Road",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7766875,
+            "lng": 83.3829375
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rushikonda+Hill+South+Road/data=!4m7!3m6!1s0x3a395b002d7148b9:0x1249006f5260f8de!8m2!3d17.7766875!4d83.3829375!16s%2Fg%2F11wv0g8rf_!19sChIJuUhxLQBbOToR3vhgUm8ASRI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shimachalam Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7711568,
+            "lng": 83.2358316
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shimachalam+Temple/data=!4m7!3m6!1s0x3a3967005d0a0f1f:0x6c80f5eb0ea338d4!8m2!3d17.7711568!4d83.2358316!16s%2Fg%2F11xtx3j09c!19sChIJHw8KXQBnOToR1DijDuv1gGw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jodugulla Palem Junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7501731,
+            "lng": 83.348814
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jodugulla+Palem+Junction/data=!4m7!3m6!1s0x3a395bd8225abf79:0x58f093150236f72e!8m2!3d17.7501731!4d83.348814!16s%2Fg%2F11t2rth7bn!19sChIJeb9aIthbOToRLvc2AhWT8Fg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maddilapalem Junction",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7353058,
+            "lng": 83.3199688
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maddilapalem+Junction/data=!4m7!3m6!1s0x3a39436b9f21b321:0x4909c07f3899e47c!8m2!3d17.7353058!4d83.3199688!16s%2Fg%2F11ss71zh66!19sChIJIbMhn2tDOToRfOSZOH_ACUk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Child's Big Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7192077,
+            "lng": 83.3345289
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Child%27s+Big+Statue/data=!4m7!3m6!1s0x3a3943c684abb709:0xaaf4f8f6d478cc25!8m2!3d17.7192077!4d83.3345289!16s%2Fg%2F11h4w14_rj!19sChIJCberhMZDOToRJcx41Pb49Ko?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Visit Vizag",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7381034,
+            "lng": 83.2625912
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Visit+Vizag/data=!4m7!3m6!1s0x3a395b221b53cf8f:0xe9bf9f510d6df0f0!8m2!3d17.7381034!4d83.2625912!16s%2Fg%2F11fj_3vw1k!19sChIJj89TGyJbOToR8PBtDVGfv-k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "JC HILLS",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6822041,
+            "lng": 83.2383412
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/JC+HILLS/data=!4m7!3m6!1s0x3a39691995dd56b9:0x63163621147f62df!8m2!3d17.6822041!4d83.2383412!16s%2Fg%2F11ppz9n502!19sChIJuVbdlRlpOToR32J_FCE2FmM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Simhachalam View Point 2",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7698993,
+            "lng": 83.2496447
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Simhachalam+View+Point+2/data=!4m7!3m6!1s0x3a396782d6cabe45:0xe3ef6884b7dbdaee!8m2!3d17.7698993!4d83.2496447!16s%2Fg%2F11ks217d96!19sChIJRb7K1oJnOToR7trbt4Ro7-M?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Radha Krishna Beach Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7069092,
+            "lng": 83.3121298
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Radha+Krishna+Beach+Park/data=!4m7!3m6!1s0x3a3943f09472a379:0xdbd13ce182c5e642!8m2!3d17.7069092!4d83.3121298!16s%2Fg%2F11m7h_f0kn!19sChIJeaNylPBDOToRQubFguE80ds?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Three Temples",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7163003,
+            "lng": 83.2984769
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Three+Temples/data=!4m7!3m6!1s0x3a39431ecbc54b7b:0xfe6d3bc0daa017c0!8m2!3d17.7163003!4d83.2984769!16s%2Fg%2F11fzf79fsm!19sChIJe0vFyx5DOToRwBeg2sA7bf4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chakram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7063944,
+            "lng": 83.3113164
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chakram/data=!4m7!3m6!1s0x3a39430a8254a307:0x2db90c65b57e796d!8m2!3d17.7063944!4d83.3113164!16s%2Fg%2F11t9w579nh!19sChIJB6NUggpDOToRbXl-tWUMuS0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "City View Point 2",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7524849,
+            "lng": 83.335127
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/City+View+Point+2/data=!4m7!3m6!1s0x3a395d4ce1a1e613:0x621abc0522b405f7!8m2!3d17.7524849!4d83.335127!16s%2Fg%2F11h_3nzylq!19sChIJE-ah4UxdOToR9wW0IgW8GmI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Village View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.648065,
+            "lng": 83.237346
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Village+View+point/data=!4m7!3m6!1s0x3a39692ac5e27f3b:0xd6806ec438b6264a!8m2!3d17.648065!4d83.237346!16s%2Fg%2F11s838cyv4!19sChIJO3_ixSppOToRSia2OMRugNY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Butterfly Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7651217,
+            "lng": 83.3532318
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Butterfly+Park/data=!4m7!3m6!1s0x3a395b4169f5ab61:0x1c34a385fc61cb92!8m2!3d17.7651217!4d83.3532318!16s%2Fg%2F11c6w1w6c2!19sChIJYav1aUFbOToRksth_IWjNBw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kondakarla Bird Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6008301,
+            "lng": 82.9979324
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kondakarla+Bird+Sanctuary/data=!4m7!3m6!1s0x3a39738569c760d7:0x4ba745b572c0109e!8m2!3d17.6008301!4d82.9979324!16s%2Fg%2F1tdwt2pb!19sChIJ12DHaYVzOToRnhDAcrVFp0s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vizag sea view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.6526414,
+            "lng": 83.2651277
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vizag+sea+view+point/data=!4m7!3m6!1s0x3a3943001ec13e7f:0x597885f5a4045ce0!8m2!3d17.6526414!4d83.2651277!16s%2Fg%2F11y3pb_625!19sChIJfz7BHgBDOToR4FwEpPWFeFk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kalam View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.7563546,
+            "lng": 83.3537469
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kalam+View+point/data=!4m7!3m6!1s0x3a395b0055fb7579:0xfa22779948a79f1!8m2!3d17.7563546!4d83.3537469!16s%2Fg%2F11w3kddknp!19sChIJeXX7VQBbOToR8XmKlHknog8?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

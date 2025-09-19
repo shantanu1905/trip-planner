@@ -1,0 +1,179 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Chopta, Rudraprayag, Uttarakhand, 246442, India",
+      "TouristPlaces": [
+        {
+          "Name": "Shri Tungnath Temple",
+          "Description": "Rock Hindu temple to Lord Shiva 12,000 feet up a mountain, a challenging 4 to 5 km trek.",
+          "GeoCoordinates": {
+            "lat": 30.4885019,
+            "lng": 79.2167708
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no16MYFNa_1gbc-QWC4CaDDG4w57CQ7TnL3UkSHnW7LO4uGJWOhbRhnqgBGYDLmzd5bu2zxgR2lpKPt3K2Y2kc2yJ_KvEL7yUmF9Dp-0eQh-85sfHJnyZYEZ6qFfFmujIg6-n-Gcw=w408-h398-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Tungnath+Temple,+Panch+Kedar/data=!4m7!3m6!1s0x39082d76a94ee437:0xc9d695bd8994120a!8m2!3d30.4885019!4d79.2167708!16s%2Fm%2F02qldtc!19sChIJN-ROqXYtCDkRChKUib2V1sk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tungnath chopta",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4843248,
+            "lng": 79.2007001
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tungnath+chopta/data=!4m10!3m9!1s0x39082dddfbee1519:0xd0f88afed5f474ed!5m2!4m1!1i2!8m2!3d30.4843248!4d79.2007001!16s%2Fg%2F11ssd8q5wc!19sChIJGRXu-90tCDkR7XT01f6K-NA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta Hill Station",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4959109,
+            "lng": 79.2103563
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+Hill+Station/data=!4m7!3m6!1s0x39082d83270e0d9d:0x9dd0d048aabf20d3!8m2!3d30.4959109!4d79.2103563!16s%2Fg%2F11dzz_z_fc!19sChIJnQ0OJ4MtCDkR0yC_qkjQ0J0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Devriyatal Trek",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5197416,
+            "lng": 79.1292349
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Devriyatal+Trek/data=!4m7!3m6!1s0x390833c41a052f85:0xa068b1149fbd07a0!8m2!3d30.5197416!4d79.1292349!16s%2Fg%2F11c5_62pw6!19sChIJhS8FGsQzCDkRoAe9nxSxaKA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta chandrashila Trek",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4837265,
+            "lng": 79.1838962
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+chandrashila+Trek/data=!4m7!3m6!1s0x390833e2778d4655:0x15488517b688db75!8m2!3d30.4837265!4d79.1838962!16s%2Fg%2F11fm73zf67!19sChIJVUaNd-IzCDkRdduItheFSBU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Uttrakhand",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Uttrakhand/data=!4m7!3m6!1s0x3909cbb57703c6c3:0xfa8294ebf3a73d93!8m2!3d30.3461908!4d79.0485059!16s%2Fg%2F11twg_xcqg!19sChIJw8YDd7XLCTkRkz2n8-uUgvo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Meadows Chopta",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4825134,
+            "lng": 79.180954
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Meadows+Chopta/data=!4m10!3m9!1s0x39083364d6e3b807:0x797e4df05c5ed1a!5m2!4m1!1i2!8m2!3d30.4825134!4d79.180954!16s%2Fg%2F11g0m571pn!19sChIJB7jj1mQzCDkRGu3FBd_klwc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shree kanth camp",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shree+kanth+camp/data=!4m7!3m6!1s0x3909cb4c433f4217:0xb79a295b48a06202!8m2!3d30.3461908!4d79.0485059!16s%2Fg%2F11txfpsxx1!19sChIJF0I_Q0zLCTkRAmKgSFspmrc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sun & Snow Camp Chopta",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4817947,
+            "lng": 79.1804063
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sun+%26+Snow+Camp+Chopta/data=!4m10!3m9!1s0x3908338a5c77cdad:0xeab615b4c7f5b5c6!5m2!4m1!1i2!8m2!3d30.4817947!4d79.1804063!16s%2Fg%2F11lfqngjkt!19sChIJrc13XIozCDkRxrX1x7QVtuo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta shreekanth- stay camp",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+shreekanth-+stay+camp/data=!4m7!3m6!1s0x3909cbc26dcf2737:0xbce6d238aa9be09b!8m2!3d30.3461908!4d79.0485059!16s%2Fg%2F11wc714_9s!19sChIJNyfPbcLLCTkRm-CbqjjS5rw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta/data=!4m7!3m6!1s0x3909ca22d9ac7423:0x7f7643a43eb55580!8m2!3d30.3461908!4d79.0485059!16s%2Fm%2F080pxs8!19sChIJI3Ss2SLKCTkRgFW1PqRDdn8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta Tour",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4817453,
+            "lng": 79.1811904
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+Tour/data=!4m7!3m6!1s0x3909cbf044a7b595:0x9f0b95e9609bd54!8m2!3d30.4817453!4d79.1811904!16s%2Fg%2F11h0yj84v7!19sChIJlbWnRPDLCTkRVL0Jll658Ak?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "CHOPTA The Mini Switzerland AMAR RESORT",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.477937,
+            "lng": 79.2101654
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/CHOPTA+The+Mini+Switzerland+AMAR+RESORT/data=!4m10!3m9!1s0x39082d57e42ea5eb:0xc227f54a2fe0e14a!5m2!4m1!1i2!8m2!3d30.477937!4d79.2101654!16s%2Fg%2F11h4fhqf98!19sChIJ66Uu5FctCDkRSuHgL0r1J8I?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Himrab Chopta Resort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4778335,
+            "lng": 79.2101096
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Himrab+Chopta+Resort/data=!4m10!3m9!1s0x39082d74233377c5:0xdb361e7a9e859e6e!5m2!4m1!1i2!8m2!3d30.4778335!4d79.2101096!16s%2Fg%2F11q3yhzcwl!19sChIJxXczI3QtCDkRbp6FnnoeNts?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Homestays Akashganga Chopta-Hudu",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Homestays+Akashganga+Chopta-Hudu/data=!4m10!3m9!1s0x3909cbff58bc06a7:0x2296bb52af56c4b0!5m2!4m1!1i2!8m2!3d30.3461908!4d79.0485059!16s%2Fg%2F11llfsgdb3!19sChIJpwa8WP_LCTkRsMRWr1K7liI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sainik resort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3461908,
+            "lng": 79.0485059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sainik+resort,+Chaliyakhod/data=!4m7!3m6!1s0x3909cb457def272d:0xe136b5296e0127b3!8m2!3d30.3461908!4d79.0485059!16s%2Fg%2F11vbt5w9rr!19sChIJLSfvfUXLCTkRsycBbim1NuE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta Selfie Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4909389,
+            "lng": 79.1517714
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+Selfie+Point/data=!4m7!3m6!1s0x39083300659fc1df:0x5bb53e391f00a84d!8m2!3d30.4909389!4d79.1517714!16s%2Fg%2F11y6lt1j95!19sChIJ38GfZQAzCDkRTagAHzk-tVs?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

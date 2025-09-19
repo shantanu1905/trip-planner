@@ -1,0 +1,969 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Jaipur",
+      "TouristPlaces": [
+        {
+          "Name": "Jal Mahal",
+          "Description": "In the middle of Man Sagar Lake sits this grand palace made of red sandstone, most of it submerged.",
+          "GeoCoordinates": {
+            "lat": 26.9534584,
+            "lng": 75.8461235
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noaQWG6L_cuNyd21HVaf9JB9Rug5CjnIBRXYA3xcj62fqZ1B22DxW2NwJEg_5GwSWuI48eMmfNEO7mZyqjF6GaDEGu5xQ--kWEzOxFtQR0RdM16ccp2qOZDIEO3MGp9lG7XSqQ=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Jal+Mahal/data=!4m7!3m6!1s0x396db11be9767295:0x97d34f11a313abd2!8m2!3d26.9534584!4d75.8461235!16zL20vMGQ5c3I0!19sChIJlXJ26RuxbTkR0qsToxFP05c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Patrika Gate",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8415923,
+            "lng": 75.8013947
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr9ikW_TEj6WQUY-To4Iu8_FpQMueuCS63hpWOBpNOJ_iVGy-RXuUu_CDVoP66BavdlUPUSiJD-DO2IXLohexlva-rdHh1N1rfDxPZykp5mKZHbSfhMUaPjKgP3UnXUvQWBn8IY=w408-h510-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Patrika+Gate/data=!4m7!3m6!1s0x396db5847621e805:0xcfdd62da74466c9a!8m2!3d26.8415923!4d75.8013947!16s%2Fg%2F11sm7nbd81!19sChIJBeghdoS1bTkRmmxGdNpi3c8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hawa Mahal",
+          "Description": "Palace built in the form of a high wall to screen royal ladies as they watched street festivities.",
+          "GeoCoordinates": {
+            "lat": 26.9240458,
+            "lng": 75.8267144
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noR_krqhTG8QwXcCtdIzaEKttSsVPFU0abKicYG4-FtrcEWAJQwOKTySAyWQGtd24RkCntRWHgTlAK1H3jqugmPIMyoG5Kiso3dUDBvn32lNGznI-TCeFSNeuw6udCi16PmvGqZ2A=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Hawa+Mahal/data=!4m7!3m6!1s0x396db14b1bd30ba5:0x860e5d531eccb20c!8m2!3d26.9240458!4d75.8267144!16zL20vMDZrN3Fj!19sChIJpQvTG0uxbTkRDLLMHlNdDoY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The City Palace",
+          "Description": "Opulent 18th-century palace of Maharaja Sawai Jai Singh II, now a museum & royal residence.",
+          "GeoCoordinates": {
+            "lat": 26.9257943,
+            "lng": 75.8236714
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqMLH9eRfImGewXJj9sLlp6P7sfpEv1sqfpKky0vFFwiWDXFzAoSAUIakE6I1zTn99WuWsaLFIsEdChOBjca0-lhZe46D6v3XqcsMyUUXpLkKCi8HDyB2kSvqEJ5n7tYP9ElZzAXDD3NRw=w408-h430-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/The+City+Palace/data=!4m7!3m6!1s0x396db40b8620b0c1:0x44801531017d7b60!8m2!3d26.9257943!4d75.8236714!16s%2Fm%2F07kctys!19sChIJwbAghgu0bTkRYHt9ATEVgEQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaigarh Fort",
+          "Description": "Built to protect the Amber Fort complex below, this 3-km-long fort offers a museum & views.",
+          "GeoCoordinates": {
+            "lat": 26.9816052,
+            "lng": 75.8447917
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npEAgrNLCOcZXM1-RGh7vfJ7reASRwWxuAByS1QEktssJHATDcdQuc5U7GlqTF2vacbQO2cuplDZqSQ3XS4iqRPewx7OgK9eVLLGBvxJqwJ_6wxuPp4cNhO5lLY-grgzmJyUm7-=w408-h401-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Jaigarh+Fort/data=!4m7!3m6!1s0x396db1b1b15f49c7:0xbc19c49ec4a15381!8m2!3d26.9816052!4d75.8447917!16zL20vMGdsa3Rf!19sChIJx0lfsbGxbTkRgVOhxJ7EGbw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ajmeri Gate",
+          "Description": "Pink city gate in shopping area with 3 arches inscribed with white floral designs.",
+          "GeoCoordinates": {
+            "lat": 26.917647,
+            "lng": 75.8166568
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np9__DJKq9EJgXwIitaqBQbTEBYGmKRwEj29Wcz5rvTicDaGjeC39OivrRPNXGgltt8iE3CfBZrNFevleIAVMMr4uQdA5c49k9wEJzhg10mB95W_yvZ4I9vnujNugO-6W6W-hM=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ajmeri+Gate/data=!4m7!3m6!1s0x396db6ada40e4423:0xb418daa896e9de87!8m2!3d26.917647!4d75.8166568!16s%2Fg%2F1q5bky0_f!19sChIJI0QOpK22bTkRh97plqjaGLQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chand Pol (Moon Gate)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9871777,
+            "lng": 75.8509255
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrTdCANONzuK8t6NTYqkXOisGX5tTsySKg196WzpjksleEoTYss_lnZ_HplE-iCXcA7lGBP7zgYFxGh2jHAtkhyzY92fIUvWz5jK8VDyx7NTSR-o9CuMw82w1F6zIAaBVde3HM=w408-h270-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Chand+Pol+%28Moon+Gate%29/data=!4m7!3m6!1s0x396db1b31b1b6435:0xe194b873c2da2dde!8m2!3d26.9871777!4d75.8509255!16s%2Fg%2F11c5bnpm04!19sChIJNWQbG7OxbTkR3i3awnO4lOE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nahargarh Fort",
+          "Description": "Elaborate fort built in 1734 in the hills above Jaipur, offering sweeping views of the city.",
+          "GeoCoordinates": {
+            "lat": 26.9401659,
+            "lng": 75.8170373
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nooYBL2TGYIgME9NQOxT376dZFJRLWnzLORzK1e3TdXUaZKNndoSnJ9jj1IjiPxmIHmleWLQrBqOSN2Rcrtzw2q3fPy2n6zrfqz9xX5nZXzWeerTmfzL4K0H18KhGIQtVz_3I-19w=w408-h543-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Nahargarh+Fort/data=!4m7!3m6!1s0x396db15cf347f3d1:0xaaaa6e617ae9e8b!8m2!3d26.9401659!4d75.8170373!16zL20vMGdsbGN6!19sChIJ0fNH81yxbTkRi56uF-amqgo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "World Trade Park View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8532905,
+            "lng": 75.8049513
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nomxf92HSKsY8zKbGDEqo5c_Pt5F5Tpz8PoitzOG3J0UdDSR_TfLjtsjFvYP4WM3INAzLTrkAoe-5hI04WSGn75lwabJdP313orE7RzXNGbm0cXap5zhpIqfs6WmzA4dqzIcefS=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/World+Trade+Park+View+Point/data=!4m7!3m6!1s0x396db565044fdecf:0xdbac8d2863b2fd27!8m2!3d26.8532905!4d75.8049513!16s%2Fg%2F11s1043f1m!19sChIJz95PBGW1bTkRJ_2yYyiNrNs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amer Stepwell",
+          "Description": "This ancient site features an architecturally unique arrangement of steps leading down to a well.",
+          "GeoCoordinates": {
+            "lat": 26.991213,
+            "lng": 75.851147
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrLeNPmyBzmunZ-jejiKXyG0nYwcYscd6wcjdRYzgaSBGeuw92rkvRr514YCXZrUMzz-ZzFHjc6UqsVpU7MQfIFhAW8a7Y9xHVSJj_UINGY4DDG_lIwZJ-qwwmOW7Bqg_erZFDS=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Amer+Stepwell/data=!4m7!3m6!1s0x396db1b504d15b83:0x1c864714ccf1a5d8!8m2!3d26.991213!4d75.851147!16s%2Fg%2F1hm52_hvn!19sChIJg1vRBLWxbTkR2KXxzBRHhhw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sheesh Mahal",
+          "Description": "Pavilion in the Amber Fort built for use by the imperial family, famous for intricate mirrorwork.",
+          "GeoCoordinates": {
+            "lat": 26.9857093,
+            "lng": 75.8506434
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqK3FBiXtk4dH9SL9FirqqzOQxKJCVfioG_AaF1LzqNRWOZd1oYdN33uTxZo_uOtIAn_bH8h8FNEDLg1DoU9WqVVDUnfmoveUUkrMEkKls6xHbef-kTJshN37dLNC_xxlPLzb0=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sheesh+Mahal,+Amber+Fort/data=!4m7!3m6!1s0x396db17dbc3a7771:0x4f4a5a2ff62ec26d!8m2!3d26.9857093!4d75.8506434!16s%2Fg%2F12qfr08xy!19sChIJcXc6vH2xbTkRbcIu9i9aSk8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tripolia Gate",
+          "Description": "A bustling bazaar surrounds this 18th-century palace entry gate with dramatic night lighting.",
+          "GeoCoordinates": {
+            "lat": 26.9240497,
+            "lng": 75.8227516
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noSnJDWQPSlkP4SN_CpGwFKsdaUPWNTA5wmU-P80Z9g6APQRwctQe3wUtyw-9iD7KFfjteNgZSuLW-ErjuHXvSVaCH3Am9e3P_ArsLlx04Wi3mCx9XhlDfBjdlkjRqHCXqYlVjc_w=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Tripolia+Gate/data=!4m7!3m6!1s0x396db14cf38f2209:0xec88b405adfca400!8m2!3d26.9240497!4d75.8227516!16s%2Fg%2F1v9gsw21!19sChIJCSKP80yxbTkRAKT8rQW0iOw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jantar Mantar",
+          "Description": "18th-century park & heritage site with fixed instruments for making astronomical observations.",
+          "GeoCoordinates": {
+            "lat": 26.924762,
+            "lng": 75.82456
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noUbwub7XpV7Pmy87A-uT98IBPUSwQ1vXsiaI7twE5xZaET4OF4en5AVxGTHVj0A-3zzgBpN1XmRyD_jzil-tADG1OF08mxJLN1k1k094kxAJk423SAvUpSD7Rguj4HpWUBPICN=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Jantar+Mantar/data=!4m7!3m6!1s0x396db14c7ff57069:0xe94a0429a18dabbe!8m2!3d26.924762!4d75.82456!16zL20vMDdyNjdx!19sChIJaXD1f0yxbTkRvquNoSkESuk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sisodia Rani ka Bagh",
+          "Description": "Romantic 18th-century palace with formal gardens, fountains, temples & pavilions.",
+          "GeoCoordinates": {
+            "lat": 26.8994218,
+            "lng": 75.8587309
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq9FHyXma4d1ytG2vk8uAUAvPXR5wLUbOk1AXd0bxMSVEkff5XNxMApNMgTEzGLP5Hp0qAPRGb9SsUlgCbvqTy6UKNriVwUlzNPrl5ZRvNEXkr4JkxhfqyWwiVBNniSusHbAOsffg=w408-h326-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sisodia+Rani+ka+Bagh/data=!4m7!3m6!1s0x396db7192ae33693:0xf5ea40e7e7932036!8m2!3d26.8994218!4d75.8587309!16s%2Fm%2F0c4037m!19sChIJkzbjKhm3bTkRNiCT5-dA6vU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tal Katora Lake",
+          "Description": "3,000-capacity indoor arena for boxing, badminton & table-tennis matches, comedy shows & concerts.",
+          "GeoCoordinates": {
+            "lat": 26.9338978,
+            "lng": 75.8253257
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npfNJ6kNm5dZdT5nnzuW-8odGlpxs2hHGztBfR3OQ2sOz74rxIXLlYoN9a8snm4-ZSU4fyul0bnc3Z2YNcj6BVYKS4e4VWHwv3Fzn934phZe6ZLk2siAyuP8TJ4bX_fRe1-1QPQ=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Tal+Katora+Lake/data=!4m7!3m6!1s0x396db148afa214bb:0x8219344743d14e31!8m2!3d26.9338978!4d75.8253257!16s%2Fg%2F1tf5j0_n!19sChIJuxSir0ixbTkRMU7RQ0c0GYI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Albert Hall Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9115849,
+            "lng": 75.819412
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Albert+Hall+Museum/data=!4m7!3m6!1s0x396db6b03af9295f:0x5bb4333133c6968!8m2!3d26.9115849!4d75.819412!16s%2Fm%2F0c3xt3y!19sChIJXyn5OrC2bTkRaGk8EzNDuwU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amar Jawan Jyoti",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8956032,
+            "lng": 75.7999567
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amar+Jawan+Jyoti/data=!4m7!3m6!1s0x396db4220c698bdf:0xfaf43316e71bc141!8m2!3d26.8956032!4d75.7999567!16s%2Fg%2F1vvr4n3d!19sChIJ34tpDCK0bTkRQcEb5xYz9Po?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amber Palace",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9854865,
+            "lng": 75.8513454
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amber+Palace/data=!4m7!3m6!1s0x396db05acbd20dfb:0x6221df6747147e2b!8m2!3d26.9854865!4d75.8513454!16zL20vMDgxanYz!19sChIJ-w3Sy1qwbTkRK34UR2ffIWI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Zoo",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9123097,
+            "lng": 75.8211759
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Zoo/data=!4m7!3m6!1s0x396db6ad95344595:0xd163a51d7f8f3362!8m2!3d26.9123097!4d75.8211759!16s%2Fm%2F0ch5y4b!19sChIJlUU0la22bTkRYjOPfx2lY9E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Elephant Fun Park | Elephant Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9232207,
+            "lng": 75.8211115
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Elephant+Fun+Park+%7C+Elephant+Sanctuary/data=!4m7!3m6!1s0x396db126fbb28d51:0xe11263c6d0ac747b!8m2!3d26.9232207!4d75.8211115!16s%2Fg%2F11t55pd0c8!19sChIJUY2y-yaxbTkRe3Ss0MZjEuE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amber Fort View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9943334,
+            "lng": 75.858811
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amber+Fort+View/data=!4m7!3m6!1s0x396db04a0751c5f7:0x393fcdfd9f2fb264!8m2!3d26.9943334!4d75.858811!16s%2Fg%2F11f40p0z7h!19sChIJ98VRB0qwbTkRZLIvn_3NPzk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Zoo",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9123097,
+            "lng": 75.8211759
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Zoo/data=!4m7!3m6!1s0x396db6ad95344595:0xd163a51d7f8f3362!8m2!3d26.9123097!4d75.8211759!16s%2Fm%2F0ch5y4b!19sChIJlUU0la22bTkRYjOPfx2lY9E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Isarlat Sargasooli",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.924445,
+            "lng": 75.8208366
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Isarlat+Sargasooli/data=!4m7!3m6!1s0x396db14da8e0ebdb:0xa365ead4fb9b564b!8m2!3d26.924445!4d75.8208366!16s%2Fg%2F1z44rz9k7!19sChIJ2-vgqE2xbTkRS1ab-9TqZaM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9202425,
+            "lng": 75.8484503
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Park/data=!4m7!3m6!1s0x396db6d46e7a8541:0xd9ec04ae9ac97605!8m2!3d26.9202425!4d75.8484503!16s%2Fg%2F11c5_7hb34!19sChIJQYV6btS2bTkRBXbJmq4E7Nk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ramniwas Bagh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9150353,
+            "lng": 75.8179325
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ramniwas+Bagh/data=!4m7!3m6!1s0x396db6b0066cba4f:0x9e722942030dd711!8m2!3d26.9150353!4d75.8179325!16s%2Fm%2F064lwfb!19sChIJT7psBrC2bTkREdcNA0Ipcp4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Elefunenjoy| Elephant Sanctuary In Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9165642,
+            "lng": 75.8139164
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Elefunenjoy%7C+Elephant+Sanctuary+In+Jaipur/data=!4m7!3m6!1s0x396db6ac6bbb3b15:0xcce63d07427173a9!8m2!3d26.9165642!4d75.8139164!16s%2Fg%2F11hc_2h9lj!19sChIJFTu7a6y2bTkRqXNxQgc95sw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "JAWAHAR KALA KENDRA",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8763415,
+            "lng": 75.8091635
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/JAWAHAR+KALA+KENDRA/data=!4m7!3m6!1s0x396db680eea85cc5:0xd001942ad1e99630!8m2!3d26.8763415!4d75.8091635!16s%2Fm%2F0bx_f6q!19sChIJxVyo7oC2bTkRMJbp0SqUAdA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amar Jawan Jyoti",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8956032,
+            "lng": 75.7999567
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amar+Jawan+Jyoti/data=!4m7!3m6!1s0x396db4220c698bdf:0xfaf43316e71bc141!8m2!3d26.8956032!4d75.7999567!16s%2Fg%2F1vvr4n3d!19sChIJ34tpDCK0bTkRQcEb5xYz9Po?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gaitor Ki Chhatriyan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9430691,
+            "lng": 75.8246528
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gaitor+Ki+Chhatriyan/data=!4m7!3m6!1s0x396db1418be047c5:0x4d3bfabe899e5ae5!8m2!3d26.9430691!4d75.8246528!16s%2Fg%2F1ttyv43s!19sChIJxUfgi0GxbTkR5Vqeib76O00?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Wax Museum Nahargarh Fort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9391796,
+            "lng": 75.8162745
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Wax+Museum+Nahargarh+Fort/data=!4m7!3m6!1s0x396db15c8e6e50c3:0xeec0c9079befe796!8m2!3d26.9391796!4d75.8162745!16s%2Fg%2F11csb0fpwy!19sChIJw1BujlyxbTkRlufvmwfJwO4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chaar Darwaze Chowkdi",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9281095,
+            "lng": 75.8368518
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chaar+Darwaze+Chowkdi/data=!4m7!3m6!1s0x396db12929e48e45:0x4ee392766d3697e8!8m2!3d26.9281095!4d75.8368518!16s%2Fg%2F11sh4b9y9s!19sChIJRY7kKSmxbTkR6Jc2bXaS404?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandra Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9270086,
+            "lng": 75.8235041
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chandra+Mahal/data=!4m7!3m6!1s0x396db14c1a1543ad:0x358ff9d6c12dddf9!8m2!3d26.9270086!4d75.8235041!16s%2Fg%2F11f3m9d_yy!19sChIJrUMVGkyxbTkR-d0twdb5jzU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Eleday (office)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9180184,
+            "lng": 75.8116253
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Eleday+%28office%29/data=!4m7!3m6!1s0x396db06a92bb8fed:0xbef3e3933033d844!8m2!3d26.9180184!4d75.8116253!16s%2Fg%2F11bbx15flc!19sChIJ7Y-7kmqwbTkRRNgzMJPj874?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "EleSafari",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9947247,
+            "lng": 75.8854686
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/EleSafari/data=!4m7!3m6!1s0x396db0465e08b337:0x10d55cad5c38b046!8m2!3d26.9947247!4d75.8854686!16s%2Fg%2F11cp5jcd48!19sChIJN7MIXkawbTkRRrA4XK1c1RA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sagar Lake Amer",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9903818,
+            "lng": 75.8471431
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sagar+Lake+Amer/data=!4m7!3m6!1s0x396db1871e992c19:0xa1f655f471ade066!8m2!3d26.9903818!4d75.8471431!16s%2Fg%2F11ny4hdqv0!19sChIJGSyZHoexbTkRZuCtcfRV9qE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sanganeri Gate",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9158487,
+            "lng": 75.8248989
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sanganeri+Gate/data=!4m7!3m6!1s0x396db6b6a9bb9b5b:0xdd64fb1c15b35fae!8m2!3d26.9158487!4d75.8248989!16s%2Fg%2F11hbblls0d!19sChIJW5u7qba2bTkRrl-zFRz7ZN0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganesh Pol",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9860613,
+            "lng": 75.8506427
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganesh+Pol/data=!4m7!3m6!1s0x396db1b31b1b6435:0x4f3e08491efe7e3a!8m2!3d26.9860613!4d75.8506427!16s%2Fg%2F11c5blxkxc!19sChIJNWQbG7OxbTkROn7-HkkIPk8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vidyadhar Bagh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8997912,
+            "lng": 75.853619
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vidyadhar+Bagh/data=!4m7!3m6!1s0x396db71fd9249cab:0xc818d7aba68c0f2f!8m2!3d26.8997912!4d75.853619!16s%2Fg%2F1q6j3j3py!19sChIJq5wk2R-3bTkRLw-MpqvXGMg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Khole Ke Hanuman Ji Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9341587,
+            "lng": 75.8538285
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Khole+Ke+Hanuman+Ji+Temple,+Jaipur/data=!4m7!3m6!1s0x396db6d50c5ede3d:0xa9c133c6a0afb844!8m2!3d26.9341587!4d75.8538285!16s%2Fg%2F1tfc0f5x!19sChIJPd5eDNW2bTkRRLivoMYzwak?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Pink City",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9247923,
+            "lng": 75.8185061
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Pink+City/data=!4m7!3m6!1s0x396db110dc11266f:0x6a0ede1ac07b8cc4!8m2!3d26.9247923!4d75.8185061!16s%2Fg%2F11tftm7skl!19sChIJbyYR3BCxbTkRxIx7wBreDmo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "EleFanJoy Best Wildlife Elephant sanctuary in Jaipur (Office)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9231407,
+            "lng": 75.818142
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/EleFanJoy+Best+Wildlife+Elephant+sanctuary+in+Jaipur+%28Office%29/data=!4m7!3m6!1s0x3a5ad3006ccdb151:0x2b5f56d9d6e34f15!8m2!3d26.9231407!4d75.818142!16s%2Fg%2F11bbrh0sxp!19sChIJUbHNbADTWjoRFU_j1tlWXys?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Prabhat Puri Ka Khola",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9644125,
+            "lng": 75.8368281
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Prabhat+Puri+Ka+Khola/data=!4m7!3m6!1s0x396db138ea5451eb:0x5be5554c569b0410!8m2!3d26.9644125!4d75.8368281!16s%2Fg%2F11g22wwd5j!19sChIJ61FU6jixbTkREASbVkxV5Vs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amber Fort Light and Sound Show",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9843649,
+            "lng": 75.8522919
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amber+Fort+Light+and+Sound+Show/data=!4m7!3m6!1s0x396db1890321eb89:0x1acefe50b2cf8efc!8m2!3d26.9843649!4d75.8522919!16s%2Fg%2F11s60wz_yb!19sChIJieshA4mxbTkR_I7PslD-zho?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Selfie Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9544312,
+            "lng": 75.8428992
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Selfie+Point,+Jal+Mahal/data=!4m7!3m6!1s0x396db10b31f189cb:0xfca645985b9e7bde!8m2!3d26.9544312!4d75.8428992!16s%2Fg%2F11pw405y8v!19sChIJy4nxMQuxbTkR3nueW5hFpvw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hathni Kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.95844,
+            "lng": 75.8235524
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Hathni+Kund/data=!4m7!3m6!1s0x396db12665860f59:0xe92ce9f04135d90f!8m2!3d26.95844!4d75.8235524!16s%2Fg%2F11fb0q7jvz!19sChIJWQ-GZSaxbTkRD9k1QfDpLOk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kanak Vrindavan Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9636218,
+            "lng": 75.8486341
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kanak+Vrindavan+Park/data=!4m7!3m6!1s0x396db1013a95f78b:0x2d9772d78492b5d0!8m2!3d26.9636218!4d75.8486341!16s%2Fm%2F0tkg24p!19sChIJi_eVOgGxbTkR0LWShNdyly0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Moti Dungri Ganesh Ji Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8946582,
+            "lng": 75.8167154
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Moti+Dungri+Ganesh+Ji+Temple/data=!4m7!3m6!1s0x396db40b8621fc13:0x12647111cf46c7fa!8m2!3d26.8946582!4d75.8167154!16s%2Fg%2F11c55hzpqh!19sChIJE_whhgu0bTkR-sdGzxFxZBI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kanak Vrindavan Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9633998,
+            "lng": 75.848337
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kanak+Vrindavan+Mahal/data=!4m7!3m6!1s0x396db10408f96ef3:0x193a828816bbac23!8m2!3d26.9633998!4d75.848337!16s%2Fg%2F1ttp8q68!19sChIJ8275CASxbTkRI6y7FoiCOhk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Elephant Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9357913,
+            "lng": 75.8243532
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Elephant+Park/data=!4m7!3m6!1s0x396db1d70839a60d:0x867680871b5839ec!8m2!3d26.9357913!4d75.8243532!16s%2Fg%2F11gy2hpq3q!19sChIJDaY5CNexbTkR7DlYG4eAdoY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Panna Meena ka Kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9912309,
+            "lng": 75.8512851
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Panna+Meena+ka+Kund/data=!4m7!3m6!1s0x396db1b51b5383f7:0xdf4b05c4e5f91270!8m2!3d26.9912309!4d75.8512851!16s%2Fg%2F1q67ckj1z!19sChIJ94NTG7WxbTkRcBL55cQFS98?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amrapali Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9151715,
+            "lng": 75.8017919
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Amrapali+Museum/data=!4m7!3m6!1s0x396db40137f43a49:0xf670585bc2fa2815!8m2!3d26.9151715!4d75.8017919!16s%2Fg%2F11gfn98k1h!19sChIJSTr0NwG0bTkRFSj6wltYcPY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jai Niwas Garden",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.93,
+            "lng": 75.8247222
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jai+Niwas+Garden/data=!4m7!3m6!1s0x396db1492ab0ebb1:0xda1efbbbcb376f05!8m2!3d26.93!4d75.8247222!16s%2Fg%2F1tf68g6r!19sChIJseuwKkmxbTkRBW83y7v7Hto?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Elefantastic - Elephant Wildlife Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9910201,
+            "lng": 75.87529
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Elefantastic+-+Elephant+Wildlife+Sanctuary/data=!4m7!3m6!1s0x396db05acbd20dbb:0x6870fe0ab2c0d27a!8m2!3d26.9910201!4d75.87529!16s%2Fg%2F11dflfh2fr!19sChIJuw3Sy1qwbTkRetLAsgr-cGg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Moti Doongri Fort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8933704,
+            "lng": 75.816761
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Moti+Doongri+Fort/data=!4m7!3m6!1s0x396db699bfc69423:0xee6d04f0e8d1dfe7!8m2!3d26.8933704!4d75.816761!16s%2Fg%2F1tf7f1__!19sChIJI5TGv5m2bTkR59_R6PAEbe4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaldhara",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8699171,
+            "lng": 75.8080553
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaldhara/data=!4m7!3m6!1s0x396db67f67e1d8b5:0x6a46537774c6240c!8m2!3d26.8699171!4d75.8080553!16s%2Fg%2F1vjdngkq!19sChIJtdjhZ3-2bTkRDCTGdHdTRmo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaipur Food Tours by Hungryhitchhiker",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8456702,
+            "lng": 75.8100586
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaipur+Food+Tours+by+Hungryhitchhiker/data=!4m7!3m6!1s0xa095602b4171d7ab:0x92515b8789d3c5ac!8m2!3d26.8456702!4d75.8100586!16s%2Fg%2F11tny3vhh1!19sChIJq9dxQStglaARrMXTiYdbUZI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sawai Man Singh Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9138443,
+            "lng": 75.8200424
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sawai+Man+Singh+Statue/data=!4m7!3m6!1s0x396db6b1c0a77617:0x9d2a0f1729c98dd5!8m2!3d26.9138443!4d75.8200424!16s%2Fg%2F11bztgk8m8!19sChIJF3anwLG2bTkR1Y3JKRcPKp0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Step well of Nahargarh Fort Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9383033,
+            "lng": 75.8152275
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Step+well+of+Nahargarh+Fort+Jaipur/data=!4m7!3m6!1s0x396db1eae2f36473:0x5b48c5edf5180bd4!8m2!3d26.9383033!4d75.8152275!16s%2Fg%2F11thc_bg12!19sChIJc2Tz4uqxbTkR1AsY9e3FSFs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Heritage Walk Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9204385,
+            "lng": 75.8243402
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Heritage+Walk+Jaipur/data=!4m7!3m6!1s0x396db18c5cea6b7f:0x17ef2805153acce5!8m2!3d26.9204385!4d75.8243402!16s%2Fg%2F11h5dmcg8_!19sChIJf2vqXIyxbTkR5cw6FQUo7xc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shaheed Smarak(Trimurti Circle)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8989039,
+            "lng": 75.8161901
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shaheed+Smarak%28Trimurti+Circle%29/data=!4m7!3m6!1s0x396db6a28e7b60a7:0xe0095dd8feb648be!8m2!3d26.8989039!4d75.8161901!16s%2Fg%2F1tfn141g!19sChIJp2B7jqK2bTkRvki2_thdCeA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dolls Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9003345,
+            "lng": 75.817227
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dolls+Museum/data=!4m7!3m6!1s0x396db6a2c2ff3125:0x7028ba9c5570f739!8m2!3d26.9003345!4d75.817227!16s%2Fg%2F1vfn516f!19sChIJJTH_wqK2bTkROfdwVZy6KHA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunrise Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9399738,
+            "lng": 75.8170363
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sunrise+Point/data=!4m7!3m6!1s0x396db1e81a22bc67:0x15fc2c7da68f30f0!8m2!3d26.9399738!4d75.8170363!16s%2Fg%2F11s38gqhc3!19sChIJZ7wiGuixbTkR8DCPpn0s_BU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nahargarh Sunset Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9611609,
+            "lng": 75.8314153
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nahargarh+Sunset+Point/data=!4m7!3m6!1s0x396db118c52694e5:0xb31c57ff45ea6362!8m2!3d26.9611609!4d75.8314153!16s%2Fg%2F11rlk6lgvp!19sChIJ5ZQmxRixbTkRYmPqRf9XHLM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Exzept",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.807384,
+            "lng": 75.8710592
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Exzept/data=!4m7!3m6!1s0x396db76fa22c6f89:0xe890220978dd44c0!8m2!3d26.807384!4d75.8710592!16s%2Fg%2F11t4wsq6wt!19sChIJiW8som-3bTkRwETdeAkikOg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maharaja Sawai Man Singh II Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9264111,
+            "lng": 75.8233599
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maharaja+Sawai+Man+Singh+II+Museum/data=!4m7!3m6!1s0x396db149570e8b0d:0x5a07a87da195ff82!8m2!3d26.9264111!4d75.8233599!16s%2Fg%2F11b88m22f3!19sChIJDYsOV0mxbTkRgv-VoX2oB1o?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "DOGMA JAIPUR SAFARI",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.849457,
+            "lng": 75.8097182
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/DOGMA+JAIPUR+SAFARI/data=!4m7!3m6!1s0x396db7d9c95114a5:0xacf7a64f5349fbce!8m2!3d26.849457!4d75.8097182!16s%2Fg%2F11j1c_jtds!19sChIJpRRRydm3bTkRzvtJU0-m96w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nehru Bal Udyan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.883344,
+            "lng": 75.8023328
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nehru+Bal+Udyan/data=!4m7!3m6!1s0x396db428c7ebc9ef:0xaca764c375a58abf!8m2!3d26.883344!4d75.8023328!16s%2Fg%2F1tgm17v6!19sChIJ78nrxyi0bTkRv4qldcNkp6w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kadamb Kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9458588,
+            "lng": 75.8235621
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kadamb+Kund/data=!4m7!3m6!1s0x396db169ed92dcc3:0x3ce45dcaf8661ae8!8m2!3d26.9458588!4d75.8235621!16s%2Fg%2F11cn6b5w25!19sChIJw9yS7WmxbTkR6Bpm-Mpd5Dw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "BAPS Shri Swaminarayan Akshardham Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9022189,
+            "lng": 75.7406225
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/BAPS+Shri+Swaminarayan+Akshardham+Mandir,+Jaipur/data=!4m7!3m6!1s0x396db499daa64d33:0xdf2938c5f09a5ece!8m2!3d26.9022189!4d75.7406225!16s%2Fg%2F1ptwdj8ns!19sChIJM02m2pm0bTkRzl6a8MU4Kd8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "EleJungle Elephant Ride & Activities in Amer Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9941724,
+            "lng": 75.8779686
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/EleJungle+Elephant+Ride+%26+Activities+in+Amer+Jaipur/data=!4m7!3m6!1s0x396db06a924203bd:0x2cd1a972e1d3f070!8m2!3d26.9941724!4d75.8779686!16s%2Fg%2F11dx9hdv3b!19sChIJvQNCkmqwbTkRcPDT4XKp0Sw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jaiban Cannon",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9799242,
+            "lng": 75.843796
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jaiban+Cannon/data=!4m7!3m6!1s0x396db1afc7a2a5f3:0xf8b869e776f2981a!8m2!3d26.9799242!4d75.843796!16s%2Fg%2F11b6dktg99!19sChIJ86Wix6-xbTkRGpjydudpuPg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "tourist guide for foreigners and Indians",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9229701,
+            "lng": 75.8270586
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/tourist+guide+for+foreigners+and+Indians/data=!4m7!3m6!1s0x396db114df6afa7d:0x1e250c97822b0c45!8m2!3d26.9229701!4d75.8270586!16s%2Fg%2F11vzrwptc8!19sChIJffpq3xSxbTkRRQwrgpcMJR4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jagatpura / KhoNagoriyan Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8753593,
+            "lng": 75.8662552
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jagatpura+%2F+KhoNagoriyan+Waterfall/data=!4m7!3m6!1s0x396db797f2d5cec1:0x650bbf8b0d218e60!8m2!3d26.8753593!4d75.8662552!16s%2Fg%2F11ny22zscz!19sChIJwc7V8pe3bTkRYI4hDYu_C2U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shaheed Smarak",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9173821,
+            "lng": 75.8016753
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shaheed+Smarak/data=!4m7!3m6!1s0x396db400cfafad31:0x30289e593f7fe51c!8m2!3d26.9173821!4d75.8016753!16s%2Fg%2F11c5xswnwf!19sChIJMa2vzwC0bTkRHOV_P1meKDA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Surya Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9170859,
+            "lng": 75.852356
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Surya+Mandir/data=!4m7!3m6!1s0x396db6d63eed3bfb:0x340d3027ec24ff86!8m2!3d26.9170859!4d75.852356!16s%2Fg%2F1tjpnxj_!19sChIJ-zvtPta2bTkRhv8k7CcwDTQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Arizona tour and travels",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9245983,
+            "lng": 75.7883096
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Arizona+tour+and+travels/data=!4m7!3m6!1s0x396db338b8611047:0xa18159020482ba2f!8m2!3d26.9245983!4d75.7883096!16s%2Fg%2F11fpvbxhq9!19sChIJRxBhuDizbTkRL7qCBAJZgaE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Pariyon Ka Bagh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9789695,
+            "lng": 75.851556
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Pariyon+Ka+Bagh/data=!4m7!3m6!1s0x396db1ad23bd4c45:0x8fc5e320bc77e2bc!8m2!3d26.9789695!4d75.851556!16s%2Fg%2F11bzv4zzb8!19sChIJRUy9I62xbTkRvOJ3vCDjxY8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Book Elephant Safari & Activity in Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9384479,
+            "lng": 75.836087
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Book+Elephant+Safari+%26+Activity+in+Jaipur/data=!4m7!3m6!1s0x396db5ec41542fb1:0xb43ac723abd40c9f!8m2!3d26.9384479!4d75.836087!16s%2Fg%2F11h1yx6xbv!19sChIJsS9UQey1bTkRnwzUqyPHOrQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Galta Kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9175801,
+            "lng": 75.8569796
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Galta+Kund/data=!4m7!3m6!1s0x396db7290ddd23bd:0x806596d8949f2d6f!8m2!3d26.9175801!4d75.8569796!16s%2Fg%2F1pty4c2hs!19sChIJvSPdDSm3bTkRby2flNiWZYA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Deer Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9047818,
+            "lng": 75.7979577
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Deer+Park/data=!4m7!3m6!1s0x396db41a559cb569:0xbcf23e4a20ddfa31!8m2!3d26.9047818!4d75.7979577!16s%2Fg%2F1xtd_zqb!19sChIJabWcVRq0bTkRMfrdIEo-8rw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Statue Of Earth",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8567865,
+            "lng": 75.7610432
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Statue+Of+Earth/data=!4m7!3m6!1s0x396db5a20d9c327f:0x7c2548a2f1ce04d0!8m2!3d26.8567865!4d75.7610432!16s%2Fg%2F11tk8ztz5d!19sChIJfzKcDaK1bTkR0ATO8aJIJXw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Royal Tour Guide India",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.909946,
+            "lng": 75.8308644
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Royal+Tour+Guide+India/data=!4m7!3m6!1s0x396db738708e6855:0x2c0391cba20a4cfd!8m2!3d26.909946!4d75.8308644!16s%2Fg%2F11hjbs9jh_!19sChIJVWiOcDi3bTkR_UwKosuRAyw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Pink Pearl Water Park & Fun City",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.860591,
+            "lng": 75.6686362
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Pink+Pearl+Water+Park+%26+Fun+City/data=!4m10!3m9!1s0x396c4b080880d75d:0xd9071e47110005da!5m2!4m1!1i2!8m2!3d26.860591!4d75.6686362!16s%2Fg%2F1tct_v65!19sChIJXdeACAhLbDkR2gUAEUceB9k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View Point Nahargarh Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9711747,
+            "lng": 75.8428401
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+Point+Nahargarh+Jaipur/data=!4m7!3m6!1s0x396db127ebe81ff3:0x653bf931548dee90!8m2!3d26.9711747!4d75.8428401!16s%2Fg%2F11v5yvpnjl!19sChIJ8x_o6yexbTkRkO6NVDH5O2U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Central Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9049037,
+            "lng": 75.8087219
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Central+Park/data=!4m7!3m6!1s0x396db6a72196d157:0x4dc28e5450b9dbde!8m2!3d26.9049037!4d75.8087219!16s%2Fm%2F0w_2zb0!19sChIJV9GWIae2bTkR3tu5UFSOwk0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hanuman Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.917223,
+            "lng": 75.85815
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Hanuman+Temple/data=!4m7!3m6!1s0x396db7292bce9dd5:0x2b9fb4448e8a0673!8m2!3d26.917223!4d75.85815!16s%2Fg%2F11b6sy4sys!19sChIJ1Z3OKym3bTkRcwaKjkS0nys?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Saan valley natata Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 27.0150218,
+            "lng": 75.920194
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Saan+valley+natata+Jaipur/data=!4m7!3m6!1s0x396dbb0051f9eb47:0x68d266558b853771!8m2!3d27.0150218!4d75.920194!16s%2Fg%2F11vm86h9ry!19sChIJR-v5UQC7bTkRcTeFi1Vm0mg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Raj Mandir Cinema",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9155899,
+            "lng": 75.809866
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Raj+Mandir+Cinema/data=!4m7!3m6!1s0x396db31a28182b79:0xc9438f5db3be090!8m2!3d26.9155899!4d75.809866!16s%2Fm%2F0br_2lj!19sChIJeSsYKBqzbTkRkOA72_U4lAw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Elefun-Best elephant sanctuary in Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.993693,
+            "lng": 75.8762721
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Elefun-Best+elephant+sanctuary+in+Jaipur/data=!4m7!3m6!1s0x396db1ad767fbf01:0x69db626543c40f9c!8m2!3d26.993693!4d75.8762721!16s%2Fg%2F11w4jz7px9!19sChIJAb9_dq2xbTkRnA_EQ2Vi22k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "SHRI GARH GANESH Ji TEMPLE",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9450787,
+            "lng": 75.8280498
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/SHRI+GARH+GANESH+Ji+TEMPLE/data=!4m7!3m6!1s0x396db141f12ec6f7:0x54a6a5a68331fcbc!8m2!3d26.9450787!4d75.8280498!16s%2Fm%2F0gfd_lw!19sChIJ98Yu8UGxbTkRvPwxg6alplQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Arjun Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8926148,
+            "lng": 75.8064218
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Arjun+Statue/data=!4m7!3m6!1s0x396db420989846d1:0xe334d5d82d9ba33!8m2!3d26.8926148!4d75.8064218!16s%2Fg%2F11cjpt9821!19sChIJ0UaYmCC0bTkRM7rZgl1NMw4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "KULISH SMRITI VAN",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.8705759,
+            "lng": 75.8091365
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/KULISH+SMRITI+VAN/data=!4m7!3m6!1s0x396db70012a13bf9:0xfecb66ae4bb290c1!8m2!3d26.8705759!4d75.8091365!16s%2Fg%2F11x6xpmd69!19sChIJ-TuhEgC3bTkRwZCyS65my_4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Musical Fountain",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.83981,
+            "lng": 75.800938
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Musical+Fountain/data=!4m7!3m6!1s0x396db5e4a0e73379:0xb0da70a9390ae12e!8m2!3d26.83981!4d75.800938!16s%2Fg%2F1thsdb60!19sChIJeTPnoOS1bTkRLuEKOalw2rA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mubarak Mahal City Palace",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9257401,
+            "lng": 75.8236617
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mubarak+Mahal+City+Palace/data=!4m7!3m6!1s0x396db14c72655555:0xf1ff9432e3638629!8m2!3d26.9257401!4d75.8236617!16s%2Fg%2F11f3kyd9sc!19sChIJVVVlckyxbTkRKYZj4zKU__E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shree Sanjay Sharma Museum & Research Institute",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.9557055,
+            "lng": 75.8424066
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shree+Sanjay+Sharma+Museum+%26+Research+Institute/data=!4m7!3m6!1s0x396db6adbe0a7c29:0x956d55c87567be73!8m2!3d26.9557055!4d75.8424066!16s%2Fg%2F1tjbqksg!19sChIJKXwKvq22bTkRc75ndchVbZU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Elephant Village and Safari in Jaipur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 26.993255,
+            "lng": 75.8762784
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Elephant+Village+and+Safari+in+Jaipur/data=!4m7!3m6!1s0x396db1b19d153c3f:0x6667b5e0752c3ef1!8m2!3d26.993255!4d75.8762784!16s%2Fg%2F11wvls3qcf!19sChIJPzwVnbGxbTkR8T4sdeC1Z2Y?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

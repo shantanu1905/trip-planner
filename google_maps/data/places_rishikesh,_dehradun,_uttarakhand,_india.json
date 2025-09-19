@@ -1,0 +1,969 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Rishikesh, Dehradun, Uttarakhand, India",
+      "TouristPlaces": [
+        {
+          "Name": "Triveni Ghat",
+          "Description": "Elaborate statues & other structures line this spiritual site on the banks of the Ganges River.",
+          "GeoCoordinates": {
+            "lat": 30.1037136,
+            "lng": 78.2993118
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqkUF2Iazh6__HpKfGcvdGqA4woAmrgbbQdfsY9A28z0IlFFwMaTqJ5OZ4YMRGwl-WU5fOhPhel8jPIr24p5kopiFEVAOyUucXbwjRw0NwZRsnN35JbRt-PvmJ43sHnngZzxHkNnA=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Triveni+Ghat/data=!4m7!3m6!1s0x39093dc68378a127:0x5bb66364573c04cb!8m2!3d30.1037136!4d78.2993118!16s%2Fm%2F011l2lpm!19sChIJJ6F4g8Y9CTkRywQ8V2Rjtls?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ram Jhula",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1239532,
+            "lng": 78.3141266
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr1yJbh6Ndpn9_jhtPytBjAqSD3NTUK4fHHLWZhrLiW_cBmDrtqNKhWDneA7Bygsz0PWKWLW1wm_u7SC3a1AsbWRj6T99zP5Eljp7Soj7PulkJPUQ84SGxPuv3XVWS_AS3OhfyN7iW30Po=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ram+Jhula/data=!4m7!3m6!1s0x390917a558cfae0f:0x369c529a2b199db4!8m2!3d30.1239532!4d78.3141266!16s%2Fm%2F0j439np!19sChIJD67PWKUXCTkRtJ0ZK5pSnDY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Patna Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1244001,
+            "lng": 78.3543983
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3s1aIr65OHUixrEveBttMl78zbJcDuF6-SWQHXmIkuPaCNFuBH1HLI-u3BdwzTxTTd8qvzRnyxBXar7CcG6emZOxDN18RzUXCx21kgSjxB_9YKjOUdLaBXCW-IMLpve4jWCPruQ=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Patna+Waterfall/data=!4m7!3m6!1s0x390916ec4f24ee3f:0xbbb29801ab00572e!8m2!3d30.1244001!4d78.3543983!16s%2Fg%2F11hbc12zzx!19sChIJP-4kT-wWCTkRLlcAqwGYsrs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Goa Beach Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1329473,
+            "lng": 78.3343505
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqYj5VepnqbGzgvouXTZgMmDWTCjZZ-6aHJRF7Ao8omLBGqVKZDb_vP-ywZZaZVNll5AOzre-naYzHz5SzccCQrw7coXwG6AMl8FcC5ZGm9AaKb6KPw2rZjttuwPWpVMmYix7DY=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Goa+Beach+Rishikesh/data=!4m7!3m6!1s0x3909172bac8ecf87:0x49ba678ac8445d9e!8m2!3d30.1329473!4d78.3343505!16s%2Fg%2F11lh2ttj6m!19sChIJh8-OrCsXCTkRnl1EyIpnukk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Neer Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1303702,
+            "lng": 78.3421168
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqBh1phSnTy3RNSNgF7OWBCzEOeuMr5vWEKPfOT_BFRq2DGnGiw9d2S2KQu9j4j6Y80NPzE_LvFaN6FfyCSIIFsjvazpuWlbD8cYaPJRQ2gm4c9gwvxIvKGhVdpRco78QW1ITu22g=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Neer+Waterfall/data=!4m7!3m6!1s0x3909173969dec43d:0x989a2ae3a954390d!8m2!3d30.1303702!4d78.3421168!16s%2Fg%2F11qsmgbxys!19sChIJPcTeaTkXCTkRDTlUqeMqmpg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "HimShail WaterFall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.116059,
+            "lng": 78.3212677
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nre-mS0Ef_DlBXAcqozwAl2GjFhKKGCvFyDAk77skX9Rqdvq2RfJx5nvPWHN0skwErIUejUG0FGnlXVdhtEDVdzHVvm_xGwg8Vf2AydY8yGtBVQBrJIb-DNzHj9BCbr5uU7--o=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/HimShail+WaterFall/data=!4m7!3m6!1s0x3909166bdc202943:0x54fe425dbd8a0f17!8m2!3d30.116059!4d78.3212677!16s%2Fg%2F11b6gqv9ft!19sChIJQykg3GsWCTkRFw-KvV1C_lQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga River",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1216428,
+            "lng": 78.309709
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4norF6NiJiwjNy60ypR9264vank98sXDC4YzczFim1A3T4GehgQSnIEASCUaYaya5-786MxqhO5ib7JbJjkJtz40oXg7JuSMpk3SD67H-tOIhw9rt9wC05Im8pxQidnJPCTgnbEsXg=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+River,+Rishikesh/data=!4m7!3m6!1s0x390917f197ba9553:0x6402958df26cf8e9!8m2!3d30.1216428!4d78.309709!16s%2Fg%2F11sq5jg2yy!19sChIJU5W6l_EXCTkR6fhs8o2VAmQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Garud Chatti Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1244099,
+            "lng": 78.3545981
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqIkNvHZBpYAEtlpshwtohspmo85xtq0vRjz5XHH_Rmnr-EsQ_knBNjcJpygFWXZ47TiH1bWlmWyVTslXik2-isVFb-BeJnTQJ2wWS0EYh8ZzOSbo3wTfnaIJ-Dxy08Gsc8FphR=w408-h725-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Garud+Chatti+Waterfall/data=!4m7!3m6!1s0x39091694f0e42c31:0x345d66b7dfdf314!8m2!3d30.1244099!4d78.3545981!16s%2Fg%2F11b6sqk0hm!19sChIJMSzk8JQWCTkRFPP9fWvWRQM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nilkanth waterfalls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1026502,
+            "lng": 78.3180349
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4byxaHm62STe51yU0CL1xofROQRPGulfA7Vlvuyg-S1kpm2KRiD8zcDM54c2U8KZ37xwfWavHRdik61cS6zcgJRWvfd3bRGKkS4x0GuXTzyQAyI7Xmm2Q4WX3tHR8Zuy_Vurvh3AYPR6m=w408-h541-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Nilkanth+waterfalls/data=!4m7!3m6!1s0x390917b405ca1af3:0x18d2d9058a6fde6!8m2!3d30.1026502!4d78.3180349!16s%2Fg%2F11rxs0dzb7!19sChIJ8xrKBbQXCTkR5v2mWJAtjQE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sai ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1281386,
+            "lng": 78.33002
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no0pAI6RjWjnnvC0nPdusFOnDegyssLWwQ2AWf5usZCt6_09t4JB5xjN-FD5yFSex23UYmUBXRH72HHHLNIyH6cMmezOyZdpYnVjA8sHFshsnVeJGWvqDRkiQv-urW7wOo3IXo3eA=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sai+ghat/data=!4m7!3m6!1s0x39091770f7e9a0eb:0xdf43efa48620ed17!8m2!3d30.1281386!4d78.33002!16s%2Fg%2F11tmw7m09z!19sChIJ66Dp93AXCTkRF-0ghqTvQ98?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh Trip.",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1315815,
+            "lng": 78.3272592
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipMMj6vKMHzWnMWQIpGR_zvM6S31Mrqn-p8Nd6NO=w428-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+Trip./data=!4m7!3m6!1s0x3909164fbfb87ecb:0xe9f9a1bf3de61139!8m2!3d30.1315815!4d78.3272592!16s%2Fg%2F11csrgysyr!19sChIJy364v08WCTkRORHmPb-h-ek?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tapovan Public Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1280493,
+            "lng": 78.3299339
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrDMLvIXp8HHr5SN07nHfzAB4hACq7VIy1ssiht6k4TbEv9rnsH8Mi2s_UuVEC6wEt_7JOiAPDT6iw2aN4Xqc3x2tKb2dpSToUafuM1SamMb0YLOwamNFu60FX6SBvzY--OUoHS=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Tapovan+Public+Ghat/data=!4m7!3m6!1s0x39091733d0964307:0x6de5dbfc35621668!8m2!3d30.1280493!4d78.3299339!16s%2Fg%2F11rr2rn6jl!19sChIJB0OW0DMXCTkRaBZiNfzb5W0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Secret Waterfall Rishikesh - DhaulSrot",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1488131,
+            "lng": 78.3149825
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noElogSdMCB73kDlPtvNo8vwxStFdPIIR9kPbuUWn7iR5TwP273n3mGkL1TLqHhZmpGMIJv7amR2B0-D5Oyh4YSo4v3AyMea6paFOPsehJ1WFIlnqQxgOdcdbCRLKSEwznIEPjb=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/The+Secret+Waterfall+Rishikesh+-+DhaulSrot/data=!4m7!3m6!1s0x390917445dbe8f3b:0x1bbefe0fbe472975!8m2!3d30.1488131!4d78.3149825!16s%2Fg%2F11rc3nbbnp!19sChIJO4--XUQXCTkRdSlHvg_-vhs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Triveni Ghat Walking Area",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1028538,
+            "lng": 78.3031171
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrZ_a2EvaYsd3uX3Rb-xWa-MiNv3kRcaFxA05EkHavyPpWMsLQ07MlxY-71iedXKKuPRWdUoDMPKfzO8NRyrwD08erO0C6b4x7uucpp5hLlJj00pBaw1copp0aYmds9zbbXwEe4mQ=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Triveni+Ghat+Walking+Area/data=!4m7!3m6!1s0x39091605bf4cf5a3:0x4176446f099705c9!8m2!3d30.1028538!4d78.3031171!16s%2Fg%2F11c0rtzk_p!19sChIJo_VMvwUWCTkRyQWXCW9EdkE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1212342,
+            "lng": 78.3271974
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npBAZVKLNpHBB2jVSZGusBpNShVFAeOwRuZTpRd6O1zcI3VlVncho5h_FC-F_qSQyaGZMzzjyF4EKlFXbQyfdjk7XtkaWe9fTvpek9-hp-scfY6c1bbmabZJGBuJUkpQUrWlOI=w408-h243-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+View+Point/data=!4m7!3m6!1s0x39091642ad6dbf0b:0x80f4599421691af8!8m2!3d30.1212342!4d78.3271974!16s%2Fg%2F11dfx3h9hn!19sChIJC79trUIWCTkR-BppIZRZ9IA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Parmarth Niketan Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1195969,
+            "lng": 78.31267
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Parmarth+Niketan+Ashram/data=!4m7!3m6!1s0x39091615b6b94e37:0xc4ce4b75dd8890ae!8m2!3d30.1195969!4d78.31267!16s%2Fm%2F09gl0tm!19sChIJN065thUWCTkRrpCI3XVLzsQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Beatles Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1127675,
+            "lng": 78.3121592
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Beatles+Ashram/data=!4m7!3m6!1s0x3909161244761373:0x80d30af77937aea9!8m2!3d30.1127675!4d78.3121592!16s%2Fg%2F11f60y1sp1!19sChIJcxN2RBIWCTkRqa43efcK04A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh River Rafting",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0908226,
+            "lng": 78.2878279
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+River+Rafting/data=!4m7!3m6!1s0x39093e0795555531:0x1c56740694be8cb0!8m2!3d30.0908226!4d78.2878279!16s%2Fg%2F11bxgkzsxg!19sChIJMVVVlQc-CTkRsIy-lAZ0Vhw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Aastha Path Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0765686,
+            "lng": 78.2874094
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Aastha+Path+Rishikesh/data=!4m7!3m6!1s0x39093e195244ff79:0x9ba8bbec13295f04!8m2!3d30.0765686!4d78.2874094!16s%2Fg%2F124yjc5fg!19sChIJef9EUhk-CTkRBF8pE-y7qJs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ram Jhoola Ganga Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1219831,
+            "lng": 78.3141103
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ram+Jhoola+Ganga+Ghat/data=!4m7!3m6!1s0x3909163fa6bc4625:0x44378220e2cf8160!8m2!3d30.1219831!4d78.3141103!16s%2Fg%2F11g72lj3bz!19sChIJJUa8pj8WCTkRYIHP4iCCN0Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Himnish waterfall Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1318923,
+            "lng": 78.3441955
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Himnish+waterfall+Rishikesh/data=!4m7!3m6!1s0x39091748c7dfcae9:0xa9f3aa581a3a68b!8m2!3d30.1318923!4d78.3441955!16s%2Fg%2F11r_v25qch!19sChIJ6crfx0gXCTkRi6ajgaU6nwo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh Ganga Arti Purnanand Ghat Janki Jhula",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.118155,
+            "lng": 78.307325
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+Ganga+Arti+Purnanand+Ghat+Janki+Jhula/data=!4m7!3m6!1s0x3909177391d080a1:0x609b778709b3eae9!8m2!3d30.118155!4d78.307325!16s%2Fg%2F11pzh1qpmq!19sChIJoYDQkXMXCTkR6eqzCYd3m2A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Great Banyan Tree - Photo View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1382273,
+            "lng": 78.3163838
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Great+Banyan+Tree+-+Photo+View+Point/data=!4m7!3m6!1s0x390917fa87ed9c8f:0x28476913517e1d74!8m2!3d30.1382273!4d78.3163838!16s%2Fg%2F11rc3qbdqr!19sChIJj5zth_oXCTkRdB1-URNpRyg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sai ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1281386,
+            "lng": 78.33002
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sai+ghat/data=!4m7!3m6!1s0x39091770f7e9a0eb:0xdf43efa48620ed17!8m2!3d30.1281386!4d78.33002!16s%2Fg%2F11tmw7m09z!19sChIJ66Dp93AXCTkRF-0ghqTvQ98?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Beatles Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1127675,
+            "lng": 78.3121592
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Beatles+Ashram/data=!4m7!3m6!1s0x3909161244761373:0x80d30af77937aea9!8m2!3d30.1127675!4d78.3121592!16s%2Fg%2F11f60y1sp1!19sChIJcxN2RBIWCTkRqa43efcK04A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shree Neelkanth Mahadev Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.081059,
+            "lng": 78.340565
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shree+Neelkanth+Mahadev+Temple/data=!4m7!3m6!1s0x390914348dccceb9:0x1c2f4c719a505597!8m2!3d30.081059!4d78.340565!16s%2Fm%2F0c0054l!19sChIJuc7MjTQUCTkRl1VQmnFMLxw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sun Set Point Ganga View Trek",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.137185,
+            "lng": 78.3476398
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sun+Set+Point+Ganga+View+Trek/data=!4m7!3m6!1s0x390917fb571f43ef:0xcdc6eb6ddc6eec24!8m2!3d30.137185!4d78.3476398!16s%2Fg%2F11j7yn1593!19sChIJ70MfV_sXCTkRJOxu3G3rxs0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh family beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1332187,
+            "lng": 78.3313986
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+family+beach/data=!4m7!3m6!1s0x3909175623653d21:0x3408a2e2e317dac!8m2!3d30.1332187!4d78.3313986!16s%2Fg%2F11pcnbvd5_!19sChIJIT1lI1YXCTkRrH0xLi6KQAM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bliss Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1278964,
+            "lng": 78.3298263
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bliss+Ghat/data=!4m7!3m6!1s0x3909176b580a7313:0xa72c0cfa799d1fa5!8m2!3d30.1278964!4d78.3298263!16s%2Fg%2F11nx9r_309!19sChIJE3MKWGsXCTkRpR-defoMLKc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ramjhula View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1228773,
+            "lng": 78.3161963
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ramjhula+View+Point/data=!4m7!3m6!1s0x39091762d14045b9:0x457ebd0c8b69b248!8m2!3d30.1228773!4d78.3161963!16s%2Fg%2F11ss87ztcb!19sChIJuUVA0WIXCTkRSLJpiwy9fkU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Little goa beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1344539,
+            "lng": 78.3344172
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Little+goa+beach/data=!4m7!3m6!1s0x390917d186d27965:0x52c6c99fc7e5329c!8m2!3d30.1344539!4d78.3344172!16s%2Fg%2F11n01mvnxr!19sChIJZXnShtEXCTkRnDLlx5_JxlI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh - The City Of Love",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1031293,
+            "lng": 78.2983348
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+-+The+City+Of+Love/data=!4m7!3m6!1s0x3909170b16db6195:0x4fa3a8e363d24a8b!8m2!3d30.1031293!4d78.2983348!16s%2Fg%2F11rz3g42l3!19sChIJlWHbFgsXCTkRi0rSY-Ooo08?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh River Rafting",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0908226,
+            "lng": 78.2878279
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+River+Rafting/data=!4m7!3m6!1s0x39093e0795555531:0x1c56740694be8cb0!8m2!3d30.0908226!4d78.2878279!16s%2Fg%2F11bxgkzsxg!19sChIJMVVVlQc-CTkRsIy-lAZ0Vhw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Barrage View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0704077,
+            "lng": 78.2842903
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Barrage+View+Point/data=!4m7!3m6!1s0x39093fd61e6463c1:0xa948a4b4c4a93e45!8m2!3d30.0704077!4d78.2842903!16s%2Fg%2F11szbvnpsg!19sChIJwWNkHtY_CTkRRT6pxLSkSKk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Secret waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1433601,
+            "lng": 78.3152755
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Secret+waterfall/data=!4m7!3m6!1s0x390917f276e78f17:0x75614d2d7dac0464!8m2!3d30.1433601!4d78.3152755!16s%2Fg%2F11p9wq6c5k!19sChIJF4_ndvIXCTkRZASsfS1NYXU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tani waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0848207,
+            "lng": 78.3000808
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tani+waterfall/data=!4m7!3m6!1s0x39091530a4573cdd:0x204b405dd3e11e09!8m2!3d30.0848207!4d78.3000808!16s%2Fg%2F11p5tgx32v!19sChIJ3TxXpDAVCTkRCR7h011ASyA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Foreign beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1233564,
+            "lng": 78.3169597
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Foreign+beach/data=!4m7!3m6!1s0x390917a960fd1ec3:0xf0f8d76985ffbef9!8m2!3d30.1233564!4d78.3169597!16s%2Fg%2F11vkh8b0pt!19sChIJwx79YKkXCTkR-b7_hWnX-PA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "NCA ISLAND",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1341263,
+            "lng": 78.3360537
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/NCA+ISLAND/data=!4m7!3m6!1s0x390917589bcd6c6f:0xe5399a741e416b57!8m2!3d30.1341263!4d78.3360537!16s%2Fg%2F11h5vfybsd!19sChIJb2zNm1gXCTkRV2tBHnSaOeU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Pebble's beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1245204,
+            "lng": 78.3276825
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Pebble%27s+beach,+Rishikesh/data=!4m7!3m6!1s0x390917b54d797b7d:0xf5cf3b6eb0fe95f1!8m2!3d30.1245204!4d78.3276825!16s%2Fg%2F11rqklz4v5!19sChIJfXt5TbUXCTkR8ZX-sG47z_U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Bharat Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1059278,
+            "lng": 78.3019621
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Bharat+Mandir/data=!4m7!3m6!1s0x39091604d8217807:0x6d155f6671f057f5!8m2!3d30.1059278!4d78.3019621!16s%2Fg%2F1hm4qyg8t!19sChIJB3gh2AQWCTkR9VfwcWZfFW0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maa Ganga Aarti Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1169631,
+            "lng": 78.3071204
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maa+Ganga+Aarti+Rishikesh/data=!4m7!3m6!1s0x3909176ff5a77a03:0x3c4ed8cd3f5c6eff!8m2!3d30.1169631!4d78.3071204!16s%2Fg%2F11xrd08xxg!19sChIJA3qn9W8XCTkR_25cP83YTjw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Adventure14 Uttarakhand in Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1334647,
+            "lng": 78.3256153
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Adventure14+Uttarakhand+in+Rishikesh/data=!4m7!3m6!1s0x3909175e718c54dd:0x2f2977c0967d7ec0!8m2!3d30.1334647!4d78.3256153!16s%2Fg%2F11stz45y6q!19sChIJ3VSMcV4XCTkRwH59lsB3KS8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sifaira Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1148032,
+            "lng": 78.3100533
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sifaira+Beach/data=!4m7!3m6!1s0x39091701cdb01d7b:0xd6b7b77f2a290bad!8m2!3d30.1148032!4d78.3100533!16s%2Fg%2F11rpbmn55f!19sChIJex2wzQEXCTkRrQspKn-3t9Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shivpuri Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1363955,
+            "lng": 78.3942895
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shivpuri+Beach/data=!4m7!3m6!1s0x390911b7eb8584e7:0x267dcaaa5274ffbd!8m2!3d30.1363955!4d78.3942895!16s%2Fg%2F11tmj15jfv!19sChIJ54SF67cRCTkRvf90UqrKfSY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhootnath Temple Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1165981,
+            "lng": 78.318098
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhootnath+Temple+Rishikesh/data=!4m7!3m6!1s0x3909166b0356aa91:0x8b90c9c0e951c9f8!8m2!3d30.1165981!4d78.318098!16s%2Fg%2F11cssy6q2t!19sChIJkapWA2sWCTkR-MlR6cDJkIs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Trayambakeshwar Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1264006,
+            "lng": 78.3309607
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Trayambakeshwar+Temple,+Rishikesh/data=!4m7!3m6!1s0x3909165c77b8b521:0xd3b66faf32b8cef5!8m2!3d30.1264006!4d78.3309607!16s%2Fg%2F1pyqst7ty!19sChIJIbW4d1wWCTkR9c64Mq9vttM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandrabhaga Pull",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1084535,
+            "lng": 78.3013221
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chandrabhaga+Pull/data=!4m7!3m6!1s0x390917e13ebd0ad3:0xa229f4bc294af162!8m2!3d30.1084535!4d78.3013221!16s%2Fg%2F11h336jd6p!19sChIJ0wq9PuEXCTkRYvFKKbz0KaI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tapovan road (तपोवन) Rishikesh View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1280296,
+            "lng": 78.3202784
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tapovan+road+%28%E0%A4%A4%E0%A4%AA%E0%A5%8B%E0%A4%B5%E0%A4%A8%29+Rishikesh+View+Point/data=!4m7!3m6!1s0x390917f6a460ba5f:0x6036e5e25d4a5ff1!8m2!3d30.1280296!4d78.3202784!16s%2Fg%2F11v5fczmfr!19sChIJX7pgpPYXCTkR8V9KXeLlNmA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vishwanath Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1235849,
+            "lng": 78.3127547
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vishwanath+Ghat/data=!4m7!3m6!1s0x390917a4c5befeeb:0x2e89477dd045d96e!8m2!3d30.1235849!4d78.3127547!16s%2Fg%2F11nngvrn50!19sChIJ6_6-xaQXCTkRbtlF0H1HiS4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ziro Falls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0949644,
+            "lng": 78.4359877
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ziro+Falls/data=!4m7!3m6!1s0x390913a06be12625:0x8c9d7ddc2e14fcd8!8m2!3d30.0949644!4d78.4359877!16s%2Fg%2F11td985jxh!19sChIJJSbha6ATCTkR2PwULtx9nYw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dream rides",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0836455,
+            "lng": 78.2425012
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dream+rides/data=!4m7!3m6!1s0x39093f47ca822f81:0xe0f0d6fc615c4383!8m2!3d30.0836455!4d78.2425012!16s%2Fg%2F11rr8n420c!19sChIJgS-Cykc_CTkRg0NcYfzW8OA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "IDPL Guest House",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.072984,
+            "lng": 78.2674813
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/IDPL+Guest+House/data=!4m7!3m6!1s0x39093e6ba9b7d40f:0xdcff13d03755fdd!8m2!3d30.072984!4d78.2674813!16s%2Fg%2F11g8p6ggt8!19sChIJD9S3qWs-CTkR3V91Az3xzw0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Madhuban Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1175311,
+            "lng": 78.3048499
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Madhuban+Ashram/data=!4m7!3m6!1s0x39093e748063f12b:0xadbd20b31724499c!8m2!3d30.1175311!4d78.3048499!16s%2Fg%2F11xfk2yfc!19sChIJK_FjgHQ-CTkRnEkkF7Mgva0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Garud Chatti Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.125575,
+            "lng": 78.3536206
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Garud+Chatti+Temple/data=!4m7!3m6!1s0x390917f567598a95:0x56fe7ed756da6eed!8m2!3d30.125575!4d78.3536206!16s%2Fg%2F11f6f_bl7q!19sChIJlYpZZ_UXCTkR7W7aVtd-_lY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shatrughana Temple Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1227349,
+            "lng": 78.311483
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shatrughana+Temple+Ghat/data=!4m7!3m6!1s0x3909163e8d80f801:0x648a933922d49eac!8m2!3d30.1227349!4d78.311483!16s%2Fg%2F11bbtnjv52!19sChIJAfiAjT4WCTkRrJ7UIjmTimQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1288377,
+            "lng": 78.3294434
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+View+Point/data=!4m7!3m6!1s0x390917fce63644ff:0xdeafd1c1869d0972!8m2!3d30.1288377!4d78.3294434!16s%2Fg%2F11rn23msjw!19sChIJ_0Q25vwXCTkRcgmdhsHRr94?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Laxman Jhula View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1264068,
+            "lng": 78.3291349
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Laxman+Jhula+View+Point/data=!4m7!3m6!1s0x3909165b65516f0d:0xa42f9047954883ef!8m2!3d30.1264068!4d78.3291349!16s%2Fg%2F11dxkbz34h!19sChIJDW9RZVsWCTkR74NIlUeQL6Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh Ganga River Rafting",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.12451,
+            "lng": 78.3246753
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+Ganga+River+Rafting/data=!4m7!3m6!1s0x39091645c01dcd55:0xbfb4f6ddafe7305!8m2!3d30.12451!4d78.3246753!16s%2Fg%2F12vr8t1q_!19sChIJVc0dwEUWCTkRBXP-2m1P-ws?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Astha path rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0772595,
+            "lng": 78.2878296
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Astha+path+rishikesh/data=!4m7!3m6!1s0x39093f321526ec49:0xdbe49171e3d2bebc!8m2!3d30.0772595!4d78.2878296!16s%2Fg%2F11khx2qtmd!19sChIJSewmFTI_CTkRvL7S43GR5Ns?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "72 Seedhi Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1024179,
+            "lng": 78.2935437
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/72+Seedhi+Ghat/data=!4m7!3m6!1s0x3909177894b03367:0xfd59a9e338d8847f!8m2!3d30.1024179!4d78.2935437!16s%2Fg%2F11t3d1km51!19sChIJZzOwlHgXCTkRf4TYOOOpWf0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lord SHIVA",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1093245,
+            "lng": 78.2788556
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lord+SHIVA/data=!4m7!3m6!1s0x39093d38083aca0d:0xe15fe38e0922b33b!8m2!3d30.1093245!4d78.2788556!16s%2Fg%2F11nm9lq1cg!19sChIJDco6CDg9CTkRO7MiCY7jX-E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh Rafting",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.107158,
+            "lng": 78.29511
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+Rafting/data=!4m7!3m6!1s0x3909161d3a596d97:0x6760dfbcb44b17b5!8m2!3d30.107158!4d78.29511!16s%2Fg%2F11fzfdvj6x!19sChIJl21ZOh0WCTkRtRdLtLzfYGc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "DUSHERA Rishikesh INDIA",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1027164,
+            "lng": 78.2998147
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/DUSHERA+Rishikesh+INDIA/data=!4m7!3m6!1s0x39091780f03db9e1:0x80557f5feaa84024!8m2!3d30.1027164!4d78.2998147!16s%2Fg%2F11tdbd6hbm!19sChIJ4bk98IAXCTkRJECo6l9_VYA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kyarki Viewpoint",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1371441,
+            "lng": 78.347427
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kyarki+Viewpoint/data=!4m7!3m6!1s0x39091717b5276fd7:0xd45598bc041a1b6c!8m2!3d30.1371441!4d78.347427!16s%2Fg%2F11p6678_5j!19sChIJ128ntRcXCTkRbBsaBLyYVdQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tapovan Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.14968,
+            "lng": 78.31554
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tapovan+Waterfall,+Tapovan/data=!4m7!3m6!1s0x3909172137c5dcc5:0x87d837e764210d10!8m2!3d30.14968!4d78.31554!16s%2Fg%2F11v0h0csn1!19sChIJxdzFNyEXCTkREA0hZOc32Ic?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Laddu fall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1422472,
+            "lng": 78.376369
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Laddu+fall/data=!4m7!3m6!1s0x390917a0b91e09f5:0x47896be13942271f!8m2!3d30.1422472!4d78.376369!16s%2Fg%2F11rrq8pl4d!19sChIJ9QkeuaAXCTkRHydCOeFriUc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maharishi Mahesh Yogi's Ashram \"Shankaracharya Nagar\" (Rishikesh)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.109597,
+            "lng": 78.3122108
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maharishi+Mahesh+Yogi%27s+Ashram+%22Shankaracharya+Nagar%22+%28Rishikesh%29/data=!4m7!3m6!1s0x39091612438603af:0x7f36c360864bd80b!8m2!3d30.109597!4d78.3122108!16s%2Fg%2F1pyqpqd3k!19sChIJrwOGQxIWCTkRC9hLhmDDNn8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganges Darshan Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1222553,
+            "lng": 78.3144904
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganges+Darshan+Ghat/data=!4m7!3m6!1s0x390917002cea328d:0x788e119e331d74d8!8m2!3d30.1222553!4d78.3144904!16s%2Fg%2F11lv965fg6!19sChIJjTLqLAAXCTkR2HQdM54Rjng?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Green View Adventure",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1175113,
+            "lng": 78.3057857
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Green+View+Adventure/data=!4m7!3m6!1s0x39091617ea9592d5:0xcc10b0e593761fe4!8m2!3d30.1175113!4d78.3057857!16s%2Fg%2F11cmcv355h!19sChIJ1ZKV6hcWCTkR5B92k-WwEMw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh View Point Neelkanth mahadev track",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0894398,
+            "lng": 78.3314937
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh+View+Point+Neelkanth+mahadev+track/data=!4m7!3m6!1s0x390915c5cbddde37:0x3ac59ccfc48cce59!8m2!3d30.0894398!4d78.3314937!16s%2Fg%2F11tf1s1k2q!19sChIJN97dy8UVCTkRWc6MxM-cxTo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tj's fall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1433728,
+            "lng": 78.3152713
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tj%27s+fall/data=!4m7!3m6!1s0x390917d929ca601f:0x91fa5a50ea69e913!8m2!3d30.1433728!4d78.3152713!16s%2Fg%2F11p9wq_nb_!19sChIJH2DKKdkXCTkRE-lp6lBa-pE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Actual Triveni Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1029918,
+            "lng": 78.3004571
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Actual+Triveni+Ghat/data=!4m7!3m6!1s0x39091700649b4b2b:0x78dc5bc96ef105c1!8m2!3d30.1029918!4d78.3004571!16s%2Fg%2F11vjtny25p!19sChIJK0ubZAAXCTkRwQXxbslb3Hg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Himalaya natural water source",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.100324,
+            "lng": 78.314332
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Himalaya+natural+water+source/data=!4m7!3m6!1s0x3909171792a17edf:0x43f0b1a1e1bbc9a1!8m2!3d30.100324!4d78.314332!16s%2Fg%2F11stjhy05w!19sChIJ336hkhcXCTkRocm74aGx8EM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lakshman Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1267306,
+            "lng": 78.3264631
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lakshman+Temple/data=!4m7!3m6!1s0x39091644a46abf41:0xbc02753ea5488e2!8m2!3d30.1267306!4d78.3264631!16s%2Fg%2F1tgn_56z!19sChIJQb9qpEQWCTkR4ohU6lMnwAs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Taliyal Water Fall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.089232,
+            "lng": 78.3788597
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Taliyal+Water+Fall/data=!4m7!3m6!1s0x39091408cc04e8c5:0x72bda82b81a5e182!8m2!3d30.089232!4d78.3788597!16s%2Fg%2F11g8wp7p0_!19sChIJxegEzAgUCTkRguGlgSuovXI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga view & Rest point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1175032,
+            "lng": 78.3108724
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+view+%26+Rest+point/data=!4m7!3m6!1s0x3909177eb77bb7e7:0x54835f989cf47901!8m2!3d30.1175032!4d78.3108724!16s%2Fg%2F11p6d5m4sp!19sChIJ57d7t34XCTkRAXn0nJhfg1Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Goa beach rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1240849,
+            "lng": 78.3173104
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Goa+beach+rishikesh/data=!4m7!3m6!1s0x390917b59387556f:0x4e03283d5c37031!8m2!3d30.1240849!4d78.3173104!16s%2Fg%2F11t7mpq4gh!19sChIJb1WHk7UXCTkRMXDD1YMy4AQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ronit River Rafting Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1087585,
+            "lng": 78.2939333
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ronit+River+Rafting+Rishikesh/data=!4m7!3m6!1s0x39091720ff075f27:0xf61e8c81cb798820!8m2!3d30.1087585!4d78.2939333!16s%2Fg%2F11k3xbvy57!19sChIJJ18H_yAXCTkRIIh5y4GMHvY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Purnanand Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1163125,
+            "lng": 78.3070625
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Purnanand+Ghat/data=!4m7!3m6!1s0x39091617aeaee459:0x2d9c0db62d6bf20d!8m2!3d30.1163125!4d78.3070625!16s%2Fg%2F1hf3lbw9j!19sChIJWeSurhcWCTkRDfJrLbYNnC0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lakshman Jhoola Shortcut",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1276146,
+            "lng": 78.3254771
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lakshman+Jhoola+Shortcut/data=!4m7!3m6!1s0x3909172efc6b0c4f:0x97ef86cdf61158d5!8m2!3d30.1276146!4d78.3254771!16s%2Fg%2F11q3qh4t4_!19sChIJTwxr_C4XCTkR1VgR9s2G75c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Patna Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.114637,
+            "lng": 78.3650024
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Patna+Waterfall/data=!4m7!3m6!1s0x390916bce560a943:0x73a6019c7daff5af!8m2!3d30.114637!4d78.3650024!16s%2Fg%2F11cn2mc0h0!19sChIJQ6lg5bwWCTkRr_WvfZwBpnM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "River Rafting Adventure in Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1245142,
+            "lng": 78.3094876
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/River+Rafting+Adventure+in+Rishikesh/data=!4m7!3m6!1s0x39091784a78d254b:0xddd1e8521c7ce20a!8m2!3d30.1245142!4d78.3094876!16s%2Fg%2F11scl29kkg!19sChIJSyWNp4QXCTkRCuJ8HFLo0d0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sahaj Retreat - A Holistic Wellness Centre",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0761323,
+            "lng": 78.3737283
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sahaj+Retreat+-+A+Holistic+Wellness+Centre/data=!4m10!3m9!1s0x390914726271232f:0x1f3b6c9dd20df3d4!5m2!4m1!1i2!8m2!3d30.0761323!4d78.3737283!16s%2Fg%2F11cm0n_knt!19sChIJLyNxYnIUCTkR1PMN0p1sOx8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "LAKSHMAN CHOWK",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1261712,
+            "lng": 78.3287651
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/LAKSHMAN+CHOWK/data=!4m7!3m6!1s0x39091763f2e2c7ff:0x1479459294df45ad!8m2!3d30.1261712!4d78.3287651!16s%2Fg%2F11rd2cc7z9!19sChIJ_8fi8mMXCTkRrUXflJJFeRQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Neem Beach Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1350849,
+            "lng": 78.3904224
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Neem+Beach+Rishikesh/data=!4m7!3m6!1s0x390911001c87f587:0x897b2148d3bd11e6!8m2!3d30.1350849!4d78.3904224!16s%2Fg%2F11m71kntph!19sChIJh_WHHAARCTkR5hG900ghe4k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandeshwar Nagar Rishikesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1115449,
+            "lng": 78.3055671
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chandeshwar+Nagar+Rishikesh/data=!4m7!3m6!1s0x3909174543ecce0f:0x6ddbbb74198eed21!8m2!3d30.1115449!4d78.3055671!16s%2Fg%2F11tcw08vnz!19sChIJD87sQ0UXCTkRIe2OGXS7220?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Virbhadra Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.0675946,
+            "lng": 78.2800767
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Virbhadra+Temple/data=!4m7!3m6!1s0x39093e3ce6f33ded:0xc6dd8704d1263f0c!8m2!3d30.0675946!4d78.2800767!16s%2Fg%2F11gh3fjc_m!19sChIJ7T3z5jw-CTkRDD8m0QSH3cY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahadev Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1169965,
+            "lng": 78.3132266
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mahadev+Mandir/data=!4m7!3m6!1s0x390916150775aaab:0x46e7839c10badba!8m2!3d30.1169965!4d78.3132266!16s%2Fg%2F11dfl18l2j!19sChIJq6p1BxUWCTkRuq0LwTl4bgQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Medico Freak's Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1130949,
+            "lng": 78.3104533
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Medico+Freak%27s+Beach/data=!4m7!3m6!1s0x39091703e5c0ec65:0xc07e248624821e00!8m2!3d30.1130949!4d78.3104533!16s%2Fg%2F11rpbl1jdz!19sChIJZezA5QMXCTkRAB6CJIYkfsA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rishikesh-Valley View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1599746,
+            "lng": 78.2903239
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rishikesh-Valley+View+Point/data=!4m7!3m6!1s0x39093d73a13b2beb:0x6582c9b160f1c43d!8m2!3d30.1599746!4d78.2903239!16s%2Fg%2F11j8z7q_3c!19sChIJ6ys7oXM9CTkRPcTxYLHJgmU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mama bhanja beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1035442,
+            "lng": 78.4355777
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mama+bhanja+beach/data=!4m7!3m6!1s0x390913058ace0aa3:0x416f7db2a7a00456!8m2!3d30.1035442!4d78.4355777!16s%2Fg%2F11tspmbr8_!19sChIJowrOigUTCTkRVgSgp7J9b0E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "RANA ADVENTURE",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1101135,
+            "lng": 78.4358714
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/RANA+ADVENTURE/data=!4m7!3m6!1s0x390911805aaaaac5:0x21e753d1f06c0b65!8m2!3d30.1101135!4d78.4358714!16s%2Fg%2F11byxfx6q8!19sChIJxaqqWoARCTkRZQts8NFT5yE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shatrughana Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.123091,
+            "lng": 78.311109
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shatrughana+Temple/data=!4m7!3m6!1s0x3909163e972f3a35:0xb177f2f686a99593!8m2!3d30.123091!4d78.311109!16zL20vMGRuaDQ0!19sChIJNTovlz4WCTkRk5Wphvbyd7E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga river view",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1291785,
+            "lng": 78.3492297
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+river+view/data=!4m7!3m6!1s0x3909174f9b7c4971:0xe783a951debf5fdf!8m2!3d30.1291785!4d78.3492297!16s%2Fg%2F11v0ry9pr1!19sChIJcUl8m08XCTkR31-_3lGpg-c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga River View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1220027,
+            "lng": 78.310044
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+River+View+Point/data=!4m7!3m6!1s0x390917259f4174cd:0x5dc765ba18d9184c!8m2!3d30.1220027!4d78.310044!16s%2Fg%2F11tg7m8b8_!19sChIJzXRBnyUXCTkRTBjZGLplx10?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Khiska banda's Rishikesh view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1342492,
+            "lng": 78.3303362
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Khiska+banda%27s+Rishikesh+view+point/data=!4m7!3m6!1s0x3909172821312615:0x44bdf7ac3a3e238e!8m2!3d30.1342492!4d78.3303362!16s%2Fg%2F11rxvv8_b2!19sChIJFSYxISgXCTkRjiM-Oqz3vUQ?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1209 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "bhopal",
+      "TouristPlaces": [
+        {
+          "Name": "Madhya Pradesh Tribal Museum",
+          "Description": "Museum with a collection of tribal clothing, crafts & tools, plus a space for events & performances.",
+          "GeoCoordinates": {
+            "lat": 23.2343968,
+            "lng": 77.3847649
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipPDwl3CH1gsG2YpD3IzKOSAZ4LMc28XU1F3EmVU=w427-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Madhya+Pradesh+Tribal+Museum/data=!4m7!3m6!1s0x397c42b15aa23a3f:0xc256a10ddabc3b64!8m2!3d23.2343968!4d77.3847649!16s%2Fg%2F11g6bk7x70!19sChIJPzqiWrFCfDkRZDu82g2hVsI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Birla Museum",
+          "Description": "Archeological collections of prehistoric artifacts, including coins, papers & terracotta sculpture.",
+          "GeoCoordinates": {
+            "lat": 23.2377832,
+            "lng": 77.4081588
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np6w2Q_AWGfTkMhld2Rteh5jjLCio_BzFH--2gVIb4vtK4-Wk1JnnfaY7Sx4KDtwQjfLyhIIHop-LbHh2VLMK9dqbs-ZAyUlKrUQYXJEK-JcXEig9DYN0NNmvOz6ajRIlVAZGA=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Birla+Museum/data=!4m7!3m6!1s0x397c4291235f5d3b:0x543043f07577fa38!8m2!3d23.2377832!4d77.4081588!16s%2Fg%2F11c20972kt!19sChIJO11fI5FCfDkROPp3dfBDMFQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tekri - Bhopal View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2818901,
+            "lng": 77.3647859
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqnuw9SymWHIiNVCe0fjDu2fx05VGT3BBqeeOOgSpKVn-hD-pgFrkbw1uDnTbqB_1uicGprKkK6m9XYsyGBjs1QpKdMVlwlhGeDUA7ks2cGUIC20bO4EI_qOJ1Skt0qADLm5L9w=w408-h594-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Tekri+-+Bhopal+View+Point/data=!4m7!3m6!1s0x397c67c509a098fd:0xe96b0747e5f2b50!8m2!3d23.2818901!4d77.3647859!16s%2Fg%2F11g8bwppjh!19sChIJ_ZigCcVnfDkRUCtffnSwlg4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Picnic Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.167775,
+            "lng": 77.3730283
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no3TV7bhCqUayLc3zPeBgu-vkbKBxfq3J7PBMqieVF6GGpAAICdo8_ciU5-KgYPLZOiAGR7IiF7mjy-OcdnCRB6kVrtEumM34yK4ebjZte8wV9FM1qN1V7xKQ2qzBRnSh77vuGi=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Picnic+Bhopal/data=!4m7!3m6!1s0x397c5cadfb846701:0x7d3a37ebf65c5ea7!8m2!3d23.167775!4d77.3730283!16s%2Fg%2F1q64typx_!19sChIJAWeE-61cfDkRp15c9us3On0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lake View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2418174,
+            "lng": 77.3796899
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npA9_Z8dsPhkHxpBYJywZtt5Evr2efNAvly88eTA-QWWLHDuPUeenrHKiLp2qr0qCtG7a_Gp6J_NLm70yOYsBg2dx5Ie0p4Er_s1XV_1IWjIvpvG9E4GXRo2Fdr58dyNfF4UX3F=w427-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Lake+View,+Bhopal/data=!4m7!3m6!1s0x397c430890ba4849:0x4f1eb58019e009cf!8m2!3d23.2418174!4d77.3796899!16s%2Fg%2F11rk2y7p0_!19sChIJSUi6kAhDfDkRzwngGYC1Hk8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Van Vihar National Park Bhopal",
+          "Description": "National park featuring animals in their natural habitats, including tigers, lions & hyenas.",
+          "GeoCoordinates": {
+            "lat": 23.232214,
+            "lng": 77.3664318
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrlC58Cutu_oGl8tOfrLAoS8j8Drb7Tn3KohL8KqSLUotGAApTHRU-SComFkmFOd5h31ywXNltOUn_m4sUhp9r3t-rn-KiwFWPHwXyg2AbuWUL7FPT3oo6wbsVqN7TfcdaZqe8FkA=w408-h294-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Van+Vihar+National+Park+Bhopal/data=!4m7!3m6!1s0x397c5d4884b722b5:0xa5feafcbfd12da6!8m2!3d23.232214!4d77.3664318!16zL20vMDhfcnhw!19sChIJtSK3hEhdfDkRpi3Rv_zqXwo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "bhopal tourism",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2499173,
+            "lng": 77.4415118
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrLuRH_QMpZHjDAlA-FgIu1t2PKlJqSabAzuxdJAapd6qsiaejpU_zyE0YTH9vvm9D2P13aV7saa5XObQWZlGemlDcIdFRE236ypYAIAxRHeP1F_aTcoEiiSLjyYZtkPZuCfNcsT4_tCG2Z=w408-h725-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/bhopal+tourism/data=!4m7!3m6!1s0x397c437be6332bef:0x732c089a5199e21b!8m2!3d23.2499173!4d77.4415118!16s%2Fg%2F11rpgmkng5!19sChIJ7ysz5ntDfDkRG-KZUZoILHM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sair Sapata",
+          "Description": "Expansive entertainment complex with food kiosks, children's play areas & water views.",
+          "GeoCoordinates": {
+            "lat": 23.2162633,
+            "lng": 77.3759657
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqhuCU3IffcfMMqLiWQHsZZUZKmgNbsKXZpog18eSWCca4LWp-YWQkPok28cyp_SifKjt-uT1_BjOu4dHXkDuVzjZcQ4-Fa5qXlAKVS81jM7PJf1qOHwcnqUQG2qmsbjXd8sJyN=w408-h261-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sair+Sapata,+Bhopal/data=!4m7!3m6!1s0x397c5d2d86e5ad31:0x2a5eb2945731c2e!8m2!3d23.2162633!4d77.3759657!16s%2Fm%2F0q57bzt!19sChIJMa3lhi1dfDkRLhxzRSnrpQI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Darul-Uloom Taj-ul Masajid",
+          "Description": "Massive, 19th-century red-stone mosque featuring white domes, imposing minarets & carved arches.",
+          "GeoCoordinates": {
+            "lat": 23.262987,
+            "lng": 77.3928231
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npXLCOMYk3SWAe5o_5jrEm693HhjdESrJtvLhZf1LACYQcX2VDLpFqOmGtXlJdnyTASPZTQA1cWxs2EywktDiE3N_k_1uZJcqyv9l4pC7C2USLPIlbHbxz8z8Bwfh138VmMC1U=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Darul-Uloom+Taj-ul+Masajid/data=!4m7!3m6!1s0x397c681a7d83af6b:0x7dda3ac9601ed629!8m2!3d23.262987!4d77.3928231!16s%2Fm%2F02pzv2d!19sChIJa6-DfRpofDkRKdYeYMk62n0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bharat Bhavan Bhopal",
+          "Description": "Cultural space with galleries & an open-air theater, hosting art exhibits, performances & events.",
+          "GeoCoordinates": {
+            "lat": 23.2468308,
+            "lng": 77.3924647
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqX5yidqn76740sVa1xP1-bG8v51ZSe-VrclQJ63FzEmtnyTxeArf565yykOCNeAaRIQyn1ETh3hWBAEpLoNkf_x8LZmnXNu75199wTIer9WGuijhh2IbD_Iv5KzjT-Jomp8VxzKFthdy4=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bharat+Bhavan+Bhopal/data=!4m7!3m6!1s0x397c42a6897105eb:0x795d7fb9864aeee2!8m2!3d23.2468308!4d77.3924647!16s%2Fm%2F0vpltmw!19sChIJ6wVxiaZCfDkR4u5Khrl_XXk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rani Kamlapati Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2510188,
+            "lng": 77.3979896
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrMRlAsgcK2FqAQIWxImqZVG8bckV6DFSLR3y7jSVnSlW6Z-2xNaMV79p5kiiJw_QpHHytzBnCmjySTjYaezoJhlRfa3n4_kXgmyL86pW9b6VSKXj7MJ05Fsd9g3FyTjYAesHUm=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rani+Kamlapati+Mahal/data=!4m7!3m6!1s0x397c42a08db0d5a9:0xfd49266c70ef45e4!8m2!3d23.2510188!4d77.3979896!16s%2Fg%2F11clw8ts8n!19sChIJqdWwjaBCfDkR5EXvcGwmSf0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rani kamlapati Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.249587,
+            "lng": 77.3980157
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nodrNCuz6xn2LVy0lA7ZrqE_O_3tCXYIVrBX6pYR5rc0TkQSbaruCIBEynq0fE7CGYd-ds8LbnJ4IF6shI48uKoD-pHq84RacSio0QA_lqqUzJ3BuD1ZsknweBsodERT82NHRfQlA=w408-h906-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rani+kamlapati+Statue/data=!4m7!3m6!1s0x397c43da9c62b3dd:0xff8f7ce48f774920!8m2!3d23.249587!4d77.3980157!16s%2Fg%2F11jwdprwcr!19sChIJ3bNinNpDfDkRIEl3j-R8j_8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kamla Park",
+          "Description": "Lakefront park with a jogging path, food court & historic remains of the Kamlapati Mahal.",
+          "GeoCoordinates": {
+            "lat": 23.2509766,
+            "lng": 77.3970535
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq2EESLEmU_Ax7J4ek8Pmov4pmzXhK0gZ1FRmCyWvv4dBIlvtbEXa5bzfRdBOi6AbXDd7jLMSj1EGzleBaJih8lRxLTrAHB7m9kpxgxXEWdIQ_E38g9_edLXkqRxXtYXoMnJ1Fp1A=w408-h541-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kamla+Park/data=!4m7!3m6!1s0x397c42a0eaec0115:0xd7d81af90e97d677!8m2!3d23.2509766!4d77.3970535!16s%2Fg%2F1tmxczmz!19sChIJFQHs6qBCfDkRd9aXDvka2Nc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hathaikheda Dam",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2706532,
+            "lng": 77.4968012
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqEW3-C4QpuXF1X21yet8u_8uWtPkRwP4QO30gCuabIGaJELo35ZW50ICS_JU38u1c-tIX4hL-_FPANzz3pnIjeTGhD_VoSvBnPHWojGsDiI9X5HFl-txIboXuUB5WZ73X6zmSr=w408-h302-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Hathaikheda+Dam/data=!4m7!3m6!1s0x397c6a74453e47bf:0x6dee500f1681aaa!8m2!3d23.2706532!4d77.4968012!16s%2Fg%2F11f03_q7dm!19sChIJv0c-RXRqfDkRqhpo8QDl3gY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gauhar Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2549257,
+            "lng": 77.398051
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nprRaRNcTyUSy-GajDWLin_tpdvHBvfffTniE0rdQSM0aM7o07gBgWLWwEqohLyXpY4_60CFHWnZpgZxSgF1l7ItM3Vc8AophcCmy6L-qlWJMJ0jTTX_XDaz4-DESdL4W328-4=w408-h508-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Gauhar+Mahal/data=!4m7!3m6!1s0x397c681e56db062f:0x5ff21493a538387c!8m2!3d23.2549257!4d77.398051!16s%2Fg%2F1q62hzmpv!19sChIJLwbbVh5ofDkRfDg4pZMU8l8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "People’s Mall Taj Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3045813,
+            "lng": 77.4221758
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/People%E2%80%99s+Mall+Taj+Mahal/data=!4m7!3m6!1s0x397c68fde79c18ff:0x32e45d27246d313e!8m2!3d23.3045813!4d77.4221758!16s%2Fg%2F11g8_v7h28!19sChIJ_xic5_1ofDkRPjFtJCdd5DI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kerwa Dam Lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.16617,
+            "lng": 77.37234
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kerwa+Dam+Lake/data=!4m7!3m6!1s0x397c5cae773ba175:0x91cdb9ef4f76c3bd!8m2!3d23.16617!4d77.37234!16s%2Fg%2F1q64sq4gb!19sChIJdaE7d65cfDkRvcN2T--5zZE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Birla Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2382834,
+            "lng": 77.4085385
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Birla+Mandir/data=!4m7!3m6!1s0x397c42911c6ab2f1:0x447448bb949198d2!8m2!3d23.2382834!4d77.4085385!16s%2Fg%2F1vvr4n62!19sChIJ8bJqHJFCfDkR0piRlLtIdEQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Raja Bhoj Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2565537,
+            "lng": 77.3930873
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Raja+Bhoj+Statue/data=!4m7!3m6!1s0x397c681c61386b19:0xa706c43437308978!8m2!3d23.2565537!4d77.3930873!16s%2Fg%2F1hhlztgk0!19sChIJGWs4YRxofDkReIkwNzTEBqc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kanha Fun City",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1365521,
+            "lng": 77.4920713
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kanha+Fun+City/data=!4m7!3m6!1s0x397c46eb5359ee09:0xb4456d8d6a0ce852!8m2!3d23.1365521!4d77.4920713!16s%2Fg%2F1thkq2qw!19sChIJCe5ZU-tGfDkRUugMao1tRbQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Regional Science Center",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2360581,
+            "lng": 77.3900396
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Regional+Science+Center/data=!4m7!3m6!1s0x397c42b082a94ca9:0x126e973cc3fabd48!8m2!3d23.2360581!4d77.3900396!16s%2Fm%2F0jt6b13!19sChIJqUypgrBCfDkRSL36wzyXbhI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "RMNH- Regional Museum Of Natural History",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2127971,
+            "lng": 77.4256707
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/RMNH-+Regional+Museum+Of+Natural+History/data=!4m7!3m6!1s0x397c4255ec6680c1:0x8a06c6dabf1ac29e!8m2!3d23.2127971!4d77.4256707!16s%2Fg%2F11df0pn0sj!19sChIJwYBm7FVCfDkRnsIav9rGBoo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Golghar Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.268154,
+            "lng": 77.3901653
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Golghar+Museum/data=!4m7!3m6!1s0x397c6811e1c4c845:0x187761b7eb967da2!8m2!3d23.268154!4d77.3901653!16s%2Fg%2F11cs0_p9xd!19sChIJRcjE4RFofDkRon2W67dhdxg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Indira Gandhi Rashtriya Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2321108,
+            "lng": 77.3776468
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Indira+Gandhi+Rashtriya+Manav+Sangrahalaya/data=!4m7!3m6!1s0x397c5d52c51e9e93:0x31433bafdd6a7cbd!8m2!3d23.2321108!4d77.3776468!16s%2Fm%2F0gwzwqz!19sChIJk54exVJdfDkRvXxq3a87QzE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Upper Lake View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2403788,
+            "lng": 77.3641294
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Upper+Lake+View+Point/data=!4m7!3m6!1s0x397c5d0038afb773:0x95acd781a52c3e9c!8m2!3d23.2403788!4d77.3641294!16s%2Fg%2F11vyr6bz27!19sChIJc7evOABdfDkRnD4spYHXrJU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sair Sapata Bridge",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2152517,
+            "lng": 77.3758426
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sair+Sapata+Bridge/data=!4m7!3m6!1s0x397c433598c26acd:0xbe2bd290cc9887f6!8m2!3d23.2152517!4d77.3758426!16s%2Fg%2F11ncbvlndt!19sChIJzWrCmDVDfDkR9oeYzJDSK74?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lake View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2451224,
+            "lng": 77.388449
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lake+View+Point/data=!4m7!3m6!1s0x397c43820cb19fbf:0xecd15b0c0c716a18!8m2!3d23.2451224!4d77.388449!16s%2Fg%2F11h0g_1qpr!19sChIJv5-xDIJDfDkRGGpxDAxb0ew?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kerwa Dam Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1647022,
+            "lng": 77.3720507
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kerwa+Dam+Bhopal/data=!4m7!3m6!1s0x397c5d229437b8fb:0xd11039fa76d71e4f!8m2!3d23.1647022!4d77.3720507!16s%2Fg%2F11jjk3k5sh!19sChIJ-7g3lCJdfDkRTx7Xdvo5ENE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahadev Paani Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2983125,
+            "lng": 77.6251875
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mahadev+Paani+Waterfall/data=!4m7!3m6!1s0x397c15b924ea1e95:0x431e259a9179f2a9!8m2!3d23.2983125!4d77.6251875!16s%2Fg%2F11bt_hfg5h!19sChIJlR7qJLkVfDkRqfJ5kZolHkM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Artificial Water Fall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2451834,
+            "lng": 77.3890531
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Artificial+Water+Fall/data=!4m7!3m6!1s0x397c42af4e389e25:0x67077f6395d83c7c!8m2!3d23.2451834!4d77.3890531!16s%2Fg%2F11ggr4mk5n!19sChIJJZ44Tq9CfDkRfDzYlWN_B2c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Neelam Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2526233,
+            "lng": 77.4132661
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Neelam+Park/data=!4m7!3m6!1s0x397c4282b197dbf7:0x79285931e18fa443!8m2!3d23.2526233!4d77.4132661!16s%2Fg%2F11c5gbz88s!19sChIJ99uXsYJCfDkRQ6SP4TFZKHk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jama Masjid Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2586917,
+            "lng": 77.4020743
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jama+Masjid+Bhopal/data=!4m7!3m6!1s0x397c682203661a4d:0x73e16b03f85dd7a1!8m2!3d23.2586917!4d77.4020743!16s%2Fg%2F1tdvsqn2!19sChIJTRpmAyJofDkRoddd-ANr4XM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tribal Habitat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2292262,
+            "lng": 77.378858
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tribal+Habitat/data=!4m7!3m6!1s0x397c42b5322163e5:0x53163c29fcd923fc!8m2!3d23.2292262!4d77.378858!16s%2Fg%2F11xb_mj7p!19sChIJ5WMhMrVCfDkR_CPZ_Ck8FlM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lal Qila model",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3083182,
+            "lng": 77.4227384
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lal+Qila+model,+people%27s+mall+bhopal/data=!4m7!3m6!1s0x397c68fdc0afb701:0x6fc96776f4ca6ea0!8m2!3d23.3083182!4d77.4227384!16s%2Fg%2F11gfg07tvn!19sChIJAbevwP1ofDkRoG7K9HZnyW8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Manuabhan Ki Tekri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2796101,
+            "lng": 77.3628111
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Manuabhan+Ki+Tekri/data=!4m7!3m6!1s0x397c6733649cf5e1:0xc38c4418dba9ced9!8m2!3d23.2796101!4d77.3628111!16s%2Fg%2F11kbd0jldw!19sChIJ4fWcZDNnfDkR2c6p2xhEjMM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mandir Sheetal Das Ki Bagiya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2503513,
+            "lng": 77.3955207
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mandir+Sheetal+Das+Ki+Bagiya/data=!4m7!3m6!1s0x397c42a0cacb5e93:0x1309e8599338f463!8m2!3d23.2503513!4d77.3955207!16s%2Fg%2F11bymtxhly!19sChIJk17LyqBCfDkRY_Q4k1noCRM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kaliasoth Walking Trail",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1995738,
+            "lng": 77.4090098
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kaliasoth+Walking+Trail/data=!4m7!3m6!1s0x397c430b60d5fd7d:0x738b4ff6966e08a2!8m2!3d23.1995738!4d77.4090098!16s%2Fg%2F11lry3k1cx!19sChIJff3VYAtDfDkRoghulvZPi3M?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shahpura Lake View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2027577,
+            "lng": 77.4243883
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shahpura+Lake+View+Point/data=!4m7!3m6!1s0x397c43d5f276b711:0xdc45f34e072c7fba!8m2!3d23.2027577!4d77.4243883!16s%2Fg%2F11qrl5zlcq!19sChIJEbd28tVDfDkRun8sB07zRdw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chaman Mahal jagdishpur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3576833,
+            "lng": 77.4178781
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chaman+Mahal+jagdishpur/data=!4m7!3m6!1s0x397c6f2f1a93204f:0x5e3a54932628e44!8m2!3d23.3576833!4d77.4178781!16s%2Fg%2F1hc29mw6d!19sChIJTyCTGi9vfDkRRI5iMkml4wU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gayatri Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2361372,
+            "lng": 77.4311778
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gayatri+Temple/data=!4m7!3m6!1s0x397c4266a206048b:0x1ef292de26439b53!8m2!3d23.2361372!4d77.4311778!16s%2Fg%2F1td4spgm!19sChIJiwQGomZCfDkRU5tDJt6S8h4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View point lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2600748,
+            "lng": 77.3761611
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+point+lake/data=!4m7!3m6!1s0x397c6785b5c93a73:0x8c6b14dd9a379913!8m2!3d23.2600748!4d77.3761611!16s%2Fg%2F11gk8nl8lk!19sChIJczrJtYVnfDkRE5k3mt0Ua4w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "State Museum Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2355176,
+            "lng": 77.3855837
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/State+Museum+Bhopal/data=!4m7!3m6!1s0x397c431b73225a27:0x49af15b2ea838fb1!8m2!3d23.2355176!4d77.3855837!16s%2Fg%2F11rxhtmzcv!19sChIJJ1oicxtDfDkRsY-D6rIVr0k?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhopal Lake view",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2456683,
+            "lng": 77.3896625
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhopal+Lake+view/data=!4m7!3m6!1s0x397c43f1cd9b8a4d:0x74dc0896cb5a1e0e!8m2!3d23.2456683!4d77.3896625!16s%2Fg%2F11ts2658ft!19sChIJTYqbzfFDfDkRDh5ay5YI3HQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kerwa Dam",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.166306,
+            "lng": 77.3723906
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kerwa+Dam/data=!4m7!3m6!1s0x397c433f52019bbf:0x32b695bcfbbee82d!8m2!3d23.166306!4d77.3723906!16s%2Fg%2F11btrqvqxw!19sChIJv5sBUj9DfDkRLei--7yVtjI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Statue Of Liberty Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3060914,
+            "lng": 77.4217979
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Statue+Of+Liberty+Bhopal/data=!4m7!3m6!1s0x397c68fd86303ad7:0xd0f068fc389e6f4a!8m2!3d23.3060914!4d77.4217979!16s%2Fg%2F11ggsmbqs9!19sChIJ1zowhv1ofDkRSm-eOPxo8NA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chowk Bazaar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2588192,
+            "lng": 77.401676
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chowk+Bazaar/data=!4m7!3m6!1s0x397c681f5aa666bf:0x153181a7b8c55ce8!8m2!3d23.2588192!4d77.401676!16s%2Fg%2F1yg57xfw2!19sChIJv2amWh9ofDkR6FzFuKeBMRU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "VIP road View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2561207,
+            "lng": 77.3946968
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/VIP+road+View+Point/data=!4m7!3m6!1s0x397c691b07667ce3:0x71d56f8a4283cd45!8m2!3d23.2561207!4d77.3946968!16s%2Fg%2F11ptnd8_wt!19sChIJ43xmBxtpfDkRRc2DQopv1XE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rani Mahal Jagdishpur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3567686,
+            "lng": 77.4175429
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rani+Mahal+Jagdishpur/data=!4m7!3m6!1s0x397c6f2f248203d1:0x36352a7c7fdf95dd!8m2!3d23.3567686!4d77.4175429!16s%2Fg%2F11b7lbyrd2!19sChIJ0QOCJC9vfDkR3ZXff3wqNTY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2033355,
+            "lng": 77.3745582
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+Point/data=!4m7!3m6!1s0x397c5dc9f13c8053:0x7b1b00751a47ec0a!8m2!3d23.2033355!4d77.3745582!16s%2Fg%2F11llwym0yl!19sChIJU4A88cldfDkRCuxHGnUAG3s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Moti Mahal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2562533,
+            "lng": 77.3972842
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Moti+Mahal/data=!4m7!3m6!1s0x397c681eeb8de7a9:0x800f69cfee7c9800!8m2!3d23.2562533!4d77.3972842!16s%2Fg%2F11cs2gt52p!19sChIJqeeN6x5ofDkRAJh87s9pD4A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nehru Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.211926,
+            "lng": 77.3953182
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nehru+Park/data=!4m7!3m6!1s0x397c42dbf73f8a5d:0x519dacc8efdc01e9!8m2!3d23.211926!4d77.3953182!16s%2Fg%2F1hm4wj7qd!19sChIJXYo_99tCfDkR6QHc78isnVE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunset Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2165677,
+            "lng": 77.3753799
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sunset+Point/data=!4m7!3m6!1s0x397c5dd219c7b005:0xb801a2bcefcd2369!8m2!3d23.2165677!4d77.3753799!16s%2Fg%2F11n67wkw8t!19sChIJBbDHGdJdfDkRaSPN77yiAbg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kamla Nehru Bal Udhyan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2311018,
+            "lng": 77.4612774
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kamla+Nehru+Bal+Udhyan/data=!4m7!3m6!1s0x397c4222fe8a2afb:0x2656a10894a5bd8b!8m2!3d23.2311018!4d77.4612774!16s%2Fg%2F1tn045zc!19sChIJ-yqK_iJCfDkRi72llAihViY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chinar Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2315537,
+            "lng": 77.4230119
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chinar+Park/data=!4m7!3m6!1s0x397c428a90645211:0xeaf1cd0ab277df50!8m2!3d23.2315537!4d77.4230119!16s%2Fg%2F1xgrlbs_!19sChIJEVJkkIpCfDkRUN93sgrN8eo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Khatlapura Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2499816,
+            "lng": 77.4108585
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Khatlapura+Mandir/data=!4m7!3m6!1s0x397c429d138dc531:0x9946d666aec57c6c!8m2!3d23.2499816!4d77.4108585!16s%2Fg%2F11c5h47tkg!19sChIJMcWNE51CfDkRbHzFrmbWRpk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tiger Enclosure",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2376451,
+            "lng": 77.3609483
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tiger+Enclosure/data=!4m7!3m6!1s0x397c5d5cab1940ef:0xd067c8c80ead7864!8m2!3d23.2376451!4d77.3609483!16s%2Fg%2F1tzgmmpr!19sChIJ70AZq1xdfDkRZHitDsjIZ9A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Moti Masjid",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2556348,
+            "lng": 77.399028
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Moti+Masjid/data=!4m7!3m6!1s0x397c681f09161d8b:0xe5f75339aa736bf4!8m2!3d23.2556348!4d77.399028!16s%2Fg%2F121qyp8q!19sChIJix0WCR9ofDkR9GtzqjlT9-U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shaurya Smarak Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2330274,
+            "lng": 77.4275278
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shaurya+Smarak+Bhopal/data=!4m7!3m6!1s0x397c4260e2cbbbc9:0x62df0cdb10315556!8m2!3d23.2330274!4d77.4275278!16s%2Fg%2F11cs5qgk5j!19sChIJybvL4mBCfDkRVlUxENsM32I?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Golden Jackal Van vihar Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2415791,
+            "lng": 77.3695022
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Golden+Jackal+Van+vihar+Bhopal/data=!4m7!3m6!1s0x397c5d2071ec9375:0xf94a301de306ac39!8m2!3d23.2415791!4d77.3695022!16s%2Fg%2F11kg0q4fvn!19sChIJdZPscSBdfDkROawG4x0wSvk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kaliyasot Dam View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1962637,
+            "lng": 77.4079188
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kaliyasot+Dam+View/data=!4m7!3m6!1s0x397c436ac8f978b3:0xc00d0557d9ef6c55!8m2!3d23.1962637!4d77.4079188!16s%2Fg%2F11k0lc1487!19sChIJs3j5yGpDfDkRVWzv2VcFDcA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Flag staff house",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.262051,
+            "lng": 77.3739956
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Flag+staff+house/data=!4m7!3m6!1s0x397c67e34ab9cd97:0x5ee81e53a372b4a7!8m2!3d23.262051!4d77.3739956!16s%2Fg%2F11c1n6x3x3!19sChIJl825SuNnfDkRp7Ryo1Me6F4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhadbhada Dam Bhopal Mp",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2084455,
+            "lng": 77.3788005
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhadbhada+Dam+Bhopal+Mp/data=!4m7!3m6!1s0x397c5dd0e1c16b7d:0x85af12bdeb0fb98a!8m2!3d23.2084455!4d77.3788005!16s%2Fg%2F11gjltmch8!19sChIJfWvB4dBdfDkRirkP670Sr4U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lake view - Tree art view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2441806,
+            "lng": 77.3859422
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lake+view+-+Tree+art+view+point/data=!4m7!3m6!1s0x397c43ccafda1a95:0x850dae285885b1f0!8m2!3d23.2441806!4d77.3859422!16s%2Fg%2F11k_4g9ynw!19sChIJlRrar8xDfDkR8LGFWCiuDYU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gour Van vihar Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2415502,
+            "lng": 77.3686561
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gour+Van+vihar+Bhopal/data=!4m7!3m6!1s0x397c5da3727724a5:0x23a14d7870712e46!8m2!3d23.2415502!4d77.3686561!16s%2Fg%2F11jqr_jm8r!19sChIJpSR3cqNdfDkRRi5xcHhNoSM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ajnaal Dam",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2376788,
+            "lng": 77.5711001
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ajnaal+Dam/data=!4m7!3m6!1s0x397c3f8dcfd17c6d:0x318ce096401d19b1!8m2!3d23.2376788!4d77.5711001!16s%2Fg%2F11fy_nfw5w!19sChIJbXzRz40_fDkRsRkdQJbgjDE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bada Talaab bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2495608,
+            "lng": 77.3950141
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bada+Talaab+bhopal/data=!4m7!3m6!1s0x397c43397756a0c9:0xb6d03bc894a55889!8m2!3d23.2495608!4d77.3950141!16s%2Fg%2F11f_29r7gy!19sChIJyaBWdzlDfDkRiVillMg70LY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dhai Seedhi Ki Masjid",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2600751,
+            "lng": 77.3901119
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dhai+Seedhi+Ki+Masjid/data=!4m7!3m6!1s0x397c681b2b875f47:0x38facbde07f86aa2!8m2!3d23.2600751!4d77.3901119!16s%2Fg%2F1hc1r8_ys!19sChIJR1-HKxtofDkRomr4B97L-jg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "People’s Mall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.3044489,
+            "lng": 77.4221547
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/People%E2%80%99s+Mall/data=!4m7!3m6!1s0x397c69f8561cc753:0x1b69b2dbddaca47c!8m2!3d23.3044489!4d77.4221547!16s%2Fg%2F11rrj6ch88!19sChIJU8ccVvhpfDkRfKSs3duyaRs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Water stopper laharpur",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1950239,
+            "lng": 77.4785823
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Water+stopper+laharpur/data=!4m7!3m6!1s0x397c41683fdfc999:0x272f4050b84ec1fc!8m2!3d23.1950239!4d77.4785823!16s%2Fg%2F11t7g_xtvn!19sChIJmcnfP2hBfDkR_MFOuFBALyc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhojeshwar Mahadev Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1002646,
+            "lng": 77.5798173
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhojeshwar+Mahadev+Temple/data=!4m7!3m6!1s0x397c3814866a0055:0xe0dca67e894e60f4!8m2!3d23.1002646!4d77.5798173!16s%2Fg%2F122f28wb!19sChIJVQBqhhQ4fDkR9GBOiX6m3OA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hathai kheda Lake View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2620689,
+            "lng": 77.4958849
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Hathai+kheda+Lake+View/data=!4m7!3m6!1s0x397c6a75a940d18b:0x41dac308cdf35d54!8m2!3d23.2620689!4d77.4958849!16s%2Fg%2F11fxc0tq25!19sChIJi9FAqXVqfDkRVF3zzQjD2kE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Retghat Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2546405,
+            "lng": 77.397361
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Retghat+Park/data=!4m7!3m6!1s0x397c69ac47aac293:0x9f4a9322a05ffd6c!8m2!3d23.2546405!4d77.397361!16s%2Fg%2F11j9dslcf3!19sChIJk8KqR6xpfDkRbP1foCKTSp8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunset Point Lake view",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.243758,
+            "lng": 77.3877761
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sunset+Point+Lake+view/data=!4m7!3m6!1s0x397c43a429a4da9b:0x50ec17a7cbcb54b7!8m2!3d23.243758!4d77.3877761!16s%2Fg%2F11p009wnr8!19sChIJm9qkKaRDfDkRt1TLy6cX7FA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhopal Junction New Building PF 1",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2663688,
+            "lng": 77.4135347
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhopal+Junction+New+Building+PF+1/data=!4m7!3m6!1s0x397c695f198c8d43:0x6341b9b0c8645498!8m2!3d23.2663688!4d77.4135347!16s%2Fg%2F11ssyhm444!19sChIJQ42MGV9pfDkRmFRkyLC5QWM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kaliasot View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.190853,
+            "lng": 77.3938436
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kaliasot+View+Point/data=!4m7!3m6!1s0x397c43f25b03264b:0x3cc820ffab64aff0!8m2!3d23.190853!4d77.3938436!16s%2Fg%2F11ls4d9s52!19sChIJSyYDW_JDfDkR8K9kq_8gyDw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Raja Khushwant Rai Saksena ki Chhatri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2615745,
+            "lng": 77.4212672
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Raja+Khushwant+Rai+Saksena+ki+Chhatri/data=!4m7!3m6!1s0x397c69b83235566d:0xfa24fe901ef120ca!8m2!3d23.2615745!4d77.4212672!16s%2Fg%2F11txjcsdwd!19sChIJbVY1MrhpfDkRyiDxHpD-JPo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ghodapachad Dam",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2790934,
+            "lng": 77.5323234
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ghodapachad+Dam/data=!4m7!3m6!1s0x397c6a9138933e91:0x9486e05c5f08d8fd!8m2!3d23.2790934!4d77.5323234!16s%2Fg%2F11c27bj3rc!19sChIJkT6TOJFqfDkR_dgIX1zghpQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shiv Temple piplani road",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2361871,
+            "lng": 77.4718335
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shiv+Temple+piplani+road/data=!4m7!3m6!1s0x397c41f53e11707f:0x588c62515e98687b!8m2!3d23.2361871!4d77.4718335!16s%2Fg%2F1v8x0lc2!19sChIJf3ARPvVBfDkRe2iYXlFijFg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Conveyor & Ropeway Services Tekri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2825797,
+            "lng": 77.3650692
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Conveyor+%26+Ropeway+Services+Tekri/data=!4m7!3m6!1s0x397c673c527bc3f9:0x13d4e66876fada97!8m2!3d23.2825797!4d77.3650692!16s%2Fg%2F11jy2cx4wz!19sChIJ-cN7UjxnfDkRl9r6dmjm1BM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shiv Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1958871,
+            "lng": 77.4772704
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shiv+Mandir/data=!4m7!3m6!1s0x397c41646af36c5d:0xa279f62b49856e77!8m2!3d23.1958871!4d77.4772704!16s%2Fg%2F1hjgrjmsg!19sChIJXWzzamRBfDkRd26FSSv2eaI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhadrakali Ambalam @Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2410735,
+            "lng": 77.3752331
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhadrakali+Ambalam+@Manav+Sangrahalaya,+Bhopal/data=!4m7!3m6!1s0x397c5de0720ba7f9:0x4b46f8cc59ae45da!8m2!3d23.2410735!4d77.3752331!16s%2Fg%2F11n065_q_m!19sChIJ-acLcuBdfDkR2kWuWcz4Rks?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Himalayan Village- Manav Sangharalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2307523,
+            "lng": 77.3765268
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Himalayan+Village-+Manav+Sangharalaya,+Bhopal/data=!4m7!3m6!1s0x397c5da6496cf081:0x129a811f7327cbec!8m2!3d23.2307523!4d77.3765268!16s%2Fg%2F11l8nxlyxw!19sChIJgfBsSaZdfDkR7Msncx-BmhI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chatri - Manav Sangrhalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2396742,
+            "lng": 77.3760636
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chatri+-+Manav+Sangrhalaya,+Bhopal/data=!4m7!3m6!1s0x397c5d5f5a3cca1f:0x478fb6b92a412ab0!8m2!3d23.2396742!4d77.3760636!16s%2Fg%2F11hvfc4msk!19sChIJH8o8Wl9dfDkRsCpBKrm2j0c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nandan Kanan Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2228823,
+            "lng": 77.4235108
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nandan+Kanan+Park/data=!4m7!3m6!1s0x397c42f63aa3fbbf:0x3356e0d02d14f17b!8m2!3d23.2228823!4d77.4235108!16s%2Fg%2F11dxqkg84p!19sChIJv_ujOvZCfDkRe_EULdDgVjM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Manav Sangrahalaya - Gate No.1",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2328447,
+            "lng": 77.3822347
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Manav+Sangrahalaya+-+Gate+No.1/data=!4m7!3m6!1s0x397c4370ce29227b:0x79a41996cdbb1b7e!8m2!3d23.2328447!4d77.3822347!16s%2Fg%2F11ktqss2bc!19sChIJeyIpznBDfDkRfhu7zZYZpHk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Park Of Lower Lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2520354,
+            "lng": 77.4137536
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Park+Of+Lower+Lake,+Jahangirabad/data=!4m7!3m6!1s0x397c4282c77b6f5d:0xb9be871a4a360c72!8m2!3d23.2520354!4d77.4137536!16s%2Fg%2F11c0w1mt7l!19sChIJXW97x4JCfDkRcgw2ShqHvrk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Surya Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1808699,
+            "lng": 77.4214817
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Surya+Mandir/data=!4m7!3m6!1s0x397c4375aa53087b:0x1bbc693ad32e0971!8m2!3d23.1808699!4d77.4214817!16s%2Fg%2F1q64tj4r5!19sChIJewhTqnVDfDkRcQku0zppvBs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rock Shelters of Bhimbetka",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 22.9395461,
+            "lng": 77.6124331
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rock+Shelters+of+Bhimbetka/data=!4m7!3m6!1s0x397c357473b13b3f:0xb8823ee0ae5de8e6!8m2!3d22.9395461!4d77.6124331!16zL20vMDNkcTlz!19sChIJPzuxc3Q1fDkR5uhdruA-grg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kaliyasot Dam View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2027629,
+            "lng": 77.398854
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kaliyasot+Dam+View/data=!4m7!3m6!1s0x397c43205382229f:0x173cb3c25e8f1733!8m2!3d23.2027629!4d77.398854!16s%2Fg%2F11cjkvwpf4!19sChIJnyKCUyBDfDkRMxePXsKzPBc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Boat club",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2418202,
+            "lng": 77.3749005
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Boat+club,+view+point/data=!4m7!3m6!1s0x397c5df28c6e21cb:0x274b02d6ca2b7665!8m2!3d23.2418202!4d77.3749005!16s%2Fg%2F11sct010ct!19sChIJyyFujPJdfDkRZXYrytYCSyc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bharat Mata Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2325471,
+            "lng": 77.4276351
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bharat+Mata+Statue,+Shaurya+Smarak,+Bhopal/data=!4m7!3m6!1s0x397c439845f3e5b1:0x914c574ac3353a03!8m2!3d23.2325471!4d77.4276351!16s%2Fg%2F11kmrll55c!19sChIJseXzRZhDfDkRAzo1w0pXTJE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Cobra Hills - Airport View Tekri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2840271,
+            "lng": 77.3640255
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Cobra+Hills+-+Airport+View+Tekri/data=!4m7!3m6!1s0x397c67d67f0ee5f7:0x5d71831c7e76cad1!8m2!3d23.2840271!4d77.3640255!16s%2Fg%2F11jy2rvsn6!19sChIJ9-UOf9ZnfDkR0cp2fhyDcV0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Museum Shop at Lake end- Manav Sangharalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2399646,
+            "lng": 77.3756417
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Museum+Shop+at+Lake+end-+Manav+Sangharalaya,+Bhopal/data=!4m7!3m6!1s0x397c5defef88cfad:0xe8eba9eaa40c35ff!8m2!3d23.2399646!4d77.3756417!16s%2Fg%2F11mnc3cmnh!19sChIJrc-I7-9dfDkR_zUMpOqp6-g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tropic of Cancer - Madhya Pradesh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.4483045,
+            "lng": 77.5947793
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tropic+of+Cancer+-+Madhya+Pradesh/data=!4m7!3m6!1s0x397c129b6a5be4f1:0xb1fab9780e0742d4!8m2!3d23.4483045!4d77.5947793!16s%2Fg%2F1q67c2y7w!19sChIJ8eRbapsSfDkR1EIHDni5-rE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Introductory Gallery- Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2305917,
+            "lng": 77.3789839
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Introductory+Gallery-+Manav+Sangrahalaya,+Bhopal/data=!4m7!3m6!1s0x397c43af1ff04043:0x2383fb87bc51b188!8m2!3d23.2305917!4d77.3789839!16s%2Fg%2F11m8920qgr!19sChIJQ0DwH69DfDkRiLFRvIf7gyM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "MP TOURS",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2149619,
+            "lng": 77.4307921
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/MP+TOURS/data=!4m7!3m6!1s0x397c439c8306653f:0xe845d54b53ef20a4!8m2!3d23.2149619!4d77.4307921!16s%2Fg%2F11srzm9n0n!19sChIJP2UGg5xDfDkRpCDvU0vVReg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mirdhabaadi @ Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2403384,
+            "lng": 77.3749672
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mirdhabaadi+@+Manav+Sangrahalaya,+Bhopal/data=!4m7!3m6!1s0x397c5d4596b385c1:0x9c76ae20c34d7051!8m2!3d23.2403384!4d77.3749672!16s%2Fg%2F11qprzlqbs!19sChIJwYWzlkVdfDkRUXBNwyCudpw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bird Native",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2823516,
+            "lng": 77.3641213
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bird+Native/data=!4m7!3m6!1s0x397c67340b86c0eb:0x3ba4ff1cdf9ac5f!8m2!3d23.2823516!4d77.3641213!16s%2Fg%2F11kywstlhp!19sChIJ68CGCzRnfDkRX6z5zfFPugM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dashara Rath - Manav Sangrhalaya Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2394705,
+            "lng": 77.3744133
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dashara+Rath+-+Manav+Sangrhalaya+Bhopal/data=!4m7!3m6!1s0x397c5dab4dd55281:0x7bb77dd0ee66dab4!8m2!3d23.2394705!4d77.3744133!16s%2Fg%2F11lx5tqmjw!19sChIJgVLVTatdfDkRtNpm7tB9t3s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Veethi Sankul",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2321299,
+            "lng": 77.377348
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Veethi+Sankul/data=!4m7!3m6!1s0x397c5d4b44825283:0x807e62af798c69c8!8m2!3d23.2321299!4d77.377348!16s%2Fg%2F1th85jg0!19sChIJg1KCREtdfDkRyGmMea9ifoA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Walmi's view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1935222,
+            "lng": 77.4035941
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Walmi%27s+view+point/data=!4m7!3m6!1s0x397c4376d10e5a45:0x3ab202debdcb2191!8m2!3d23.1935222!4d77.4035941!16s%2Fg%2F11j0yzlh2c!19sChIJRVoO0XZDfDkRkSHLvd4Csjo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sun Set Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1919107,
+            "lng": 77.3933779
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sun+Set+Point/data=!4m7!3m6!1s0x397c4325f03f2c15:0x48b662820feb55d0!8m2!3d23.1919107!4d77.3933779!16s%2Fg%2F11qvcjrwmw!19sChIJFSw_8CVDfDkR0FXrD4Jitkg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tree House- Kerwa forest Camp",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1631289,
+            "lng": 77.379156
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tree+House-+Kerwa+forest+Camp/data=!4m7!3m6!1s0x397c43dbef78d657:0xa85ad9be90544440!8m2!3d23.1631289!4d77.379156!16s%2Fg%2F11qj1b9k6x!19sChIJV9Z479tDfDkRQERUkL7ZWqg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dot secret",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.245428,
+            "lng": 77.3133747
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Dot+secret/data=!4m7!3m6!1s0x397c67d2176789e9:0x52720fe4f6d1c268!8m2!3d23.245428!4d77.3133747!16s%2Fg%2F11sz0htfgr!19sChIJ6YlnF9JnfDkRaMLR9uQPclI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Children's Park (BHEL PARK)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2312802,
+            "lng": 77.4627697
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Children%27s+Park+%28BHEL+PARK%29/data=!4m7!3m6!1s0x397c42224c864663:0xde9c8e7bfde2e660!8m2!3d23.2312802!4d77.4627697!16s%2Fg%2F11g9j16gmn!19sChIJY0aGTCJCfDkRYObi_XuOnN4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kerwa Dam Walking Trail",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.1654269,
+            "lng": 77.3721797
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kerwa+Dam+Walking+Trail/data=!4m7!3m6!1s0x397c5d039aec4761:0x53afaf266e29ed4f!8m2!3d23.1654269!4d77.3721797!16s%2Fg%2F11n60cvprf!19sChIJYUfsmgNdfDkRT-0pbiavr1M?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Aankhon Dekha VR and Experience Centre Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.235695,
+            "lng": 77.3855873
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Aankhon+Dekha+VR+and+Experience+Centre+Bhopal/data=!4m7!3m6!1s0x397c4389d25d193d:0xf7559775bfd8b043!8m2!3d23.235695!4d77.3855873!16s%2Fg%2F11x84lll11!19sChIJPRld0olDfDkRQ7DYv3WXVfc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ashoka Pillar Bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2308085,
+            "lng": 77.3872427
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ashoka+Pillar+Bhopal/data=!4m7!3m6!1s0x397c43f626494a75:0x7dd6675430459b59!8m2!3d23.2308085!4d77.3872427!16s%2Fg%2F11hk37nlsd!19sChIJdUpJJvZDfDkRWZtFMFRn1n0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Narmada Chauraha",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2569255,
+            "lng": 77.4296826
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Narmada+Chauraha/data=!4m7!3m6!1s0x397c6919f76ee97f:0x543bc99d12193f5c!8m2!3d23.2569255!4d77.4296826!16s%2Fg%2F11tdrt07tf!19sChIJf-lu9xlpfDkRXD8ZEp3JO1Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2051967,
+            "lng": 77.4072349
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+Point/data=!4m7!3m6!1s0x397c43f69db764af:0xab8a730013393f9b!8m2!3d23.2051967!4d77.4072349!16s%2Fg%2F11kr_1945f!19sChIJr2S3nfZDfDkRmz85EwBziqs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Boulevard Street ( Smart City)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2271591,
+            "lng": 77.3997216
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Boulevard+Street+%28+Smart+City%29/data=!4m7!3m6!1s0x397c434fcac6b07d:0x22cc3ca33c54a63!8m2!3d23.2271591!4d77.3997216!16s%2Fg%2F11nlbxqxty!19sChIJfbDGyk9DfDkRY0rFM8rDLAI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jahangirabad Square",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2522454,
+            "lng": 77.414215
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jahangirabad+Square/data=!4m7!3m6!1s0x397c43002d768a7d:0xa66a11bac51e97d9!8m2!3d23.2522454!4d77.414215!16s%2Fg%2F11k3m6zqrj!19sChIJfYp2LQBDfDkR2ZcexboRaqY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maharaja Bhoj Lake View Park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2514729,
+            "lng": 77.3968755
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maharaja+Bhoj+Lake+View+Park/data=!4m7!3m6!1s0x397c43e109d29ec1:0xe62f2955267a1963!8m2!3d23.2514729!4d77.3968755!16s%2Fg%2F11gk8nf6_7!19sChIJwZ7SCeFDfDkRYxl6JlUpL-Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Interpretation Centre -Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2329332,
+            "lng": 77.3821266
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Interpretation+Centre+-Manav+Sangrahalaya,+Bhopal/data=!4m7!3m6!1s0x397c43514e86f92b:0x1d4afc44e32c9094!8m2!3d23.2329332!4d77.3821266!16s%2Fg%2F11lxl31kjq!19sChIJK_mGTlFDfDkRlJAs40T8Sh0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tekri Turn View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.281726,
+            "lng": 77.3636047
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tekri+Turn+View/data=!4m7!3m6!1s0x397c67dfd500a979:0xd250b5518e23a95d!8m2!3d23.281726!4d77.3636047!16s%2Fg%2F11sfbcy1c2!19sChIJeakA1d9nfDkRXakjjlG1UNI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Badi Masjid",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2806187,
+            "lng": 77.3985418
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Badi+Masjid/data=!4m7!3m6!1s0x397c686a3321474f:0x24ea1c8a1b4361be!8m2!3d23.2806187!4d77.3985418!16s%2Fg%2F1q6j28bm1!19sChIJT0chM2pofDkRvmFDG4oc6iQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Aarapura@Manav Sangrahalaya",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2410701,
+            "lng": 77.3749868
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Aarapura@Manav+Sangrahalaya,+Bhopal/data=!4m7!3m6!1s0x397c5d63b9db61a3:0x27683224a4ffdda2!8m2!3d23.2410701!4d77.3749868!16s%2Fg%2F11qpryph9b!19sChIJo2HbuWNdfDkRot3_pCQyaCc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shahpura Pond",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.205381,
+            "lng": 77.4253361
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shahpura+Pond/data=!4m7!3m6!1s0x397c43a71d0c0569:0x6cd00085ed89194b!8m2!3d23.205381!4d77.4253361!16s%2Fg%2F11lryy92vd!19sChIJaQUMHadDfDkRSxmJ7YUA0Gw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Watch bridge lower lake bhopal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2502558,
+            "lng": 77.398335
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Watch+bridge+lower+lake+bhopal/data=!4m7!3m6!1s0x397c430ed9417c57:0xb5076a8b18fb919c!8m2!3d23.2502558!4d77.398335!16s%2Fg%2F11llp80d74!19sChIJV3xB2Q5DfDkRnJH7GItqB7U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahua House",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 23.2861973,
+            "lng": 77.5584933
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mahua+House/data=!4m7!3m6!1s0x397c6ab5ae88c6fd:0xc4aa12b6d190e8af!8m2!3d23.2861973!4d77.5584933!16s%2Fg%2F11gb3t3l6f!19sChIJ_caIrrVqfDkRr-iQ0bYSqsQ?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

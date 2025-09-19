@@ -1,0 +1,839 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Haridwar, India",
+      "TouristPlaces": [
+        {
+          "Name": "Ganga Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.928835,
+            "lng": 78.1437
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipMuHPR60-SIvxbujMtGGJghzuI-RkTYLb5e1xQP=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+Ghat/data=!4m7!3m6!1s0x3909465b00000001:0x5f6fb9c62f17d8c1!8m2!3d29.928835!4d78.1437!16s%2Fg%2F11bv3vw2k1!19sChIJAQAAAFtGCTkRwdgXL8a5b18?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Saptrishi Ashram",
+          "Description": "Hindu spiritual center offering accommodation, religious instruction, meditation & ritual bathing.",
+          "GeoCoordinates": {
+            "lat": 29.9882402,
+            "lng": 78.195229
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipMqqq0DJ1GZYjcUuxMHbhWZd6aPDq68iI312zJD=w408-h315-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Saptrishi+Ashram,+Haridwar/data=!4m7!3m6!1s0x390947517dceff7b:0x21d12af5c493b182!8m2!3d29.9882402!4d78.195229!16s%2Fg%2F1tdg64tw!19sChIJe__OfVFHCTkRgrGTxPUq0SE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maya Devi Temple",
+          "Description": "Sacred Hindu sanctuary featuring colorful statues, dedicated to the Goddess Maya.",
+          "GeoCoordinates": {
+            "lat": 29.9496201,
+            "lng": 78.1621353
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqsQf1f_taGbRrGfUtkirmnmxLJjEcXDUdFBdSB8R6xdpErt_rad4TjWF_5nIdW3SyWaGBS791vv9yD_eF_wnAEe-1AsH-CwKh6dQyG5fB4mhrWL3tVFMQaFC2_tLjQVh6Xl5bA=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Maya+Devi+Temple,+Haridwar/data=!4m7!3m6!1s0x39094702ecfeed47:0xaf72669ffb7f017b!8m2!3d29.9496201!4d78.1621353!16s%2Fm%2F0b6k12l!19sChIJR-3-7AJHCTkRewF_-59mcq8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bharat Mata Temple",
+          "Description": "This Hindu shrine dedicated to the goddess symbolizing India has a map of the undivided country.",
+          "GeoCoordinates": {
+            "lat": 29.9849402,
+            "lng": 78.1919651
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrxJGTCkb2CH2SxO14LmwziWXNBftiDLPE5taK7nzY2JsVjJPwWUmrwzn0vNTdCSKdkz1CyrylUCF1qMNxpPpohT3eIdgUCwn2G4kJOfElLv7cls66C4QR-cOy79MLb-Ynnl5h_1w=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bharat+Mata+Temple,+Haridwar/data=!4m7!3m6!1s0x390947506a2e985d:0x2545401d17521eca!8m2!3d29.9849402!4d78.1919651!16s%2Fg%2F124yhg29t!19sChIJXZgualBHCTkRyh5SFx1ARSU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maa Mansa Devi Temple",
+          "Description": "Perched on a hilltop, this ancient Hindu temple honors Mansa Devi, the folk goddess of snakes.",
+          "GeoCoordinates": {
+            "lat": 29.9578452,
+            "lng": 78.1653463
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq5Cj9pp_vEXaO6eH3xxxR4Hp2ZzRNauJ7NJwKUJRrOrmXx7-wzoSCmhlLwqRu3dG8Td918hXYQHF8Z3yzTq-ps03lSeArW_x05SHSZeQHnpXbKNnCFzIMA9Obv4yqQC3KnQ5cWgw=w408-h273-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Maa+Mansa+Devi+Temple,+niranjani+akhadaHaridwar/data=!4m7!3m6!1s0x3909470f800fd417:0x7a5878ff300f835b!8m2!3d29.9578452!4d78.1653463!16s%2Fm%2F0b6mfbm!19sChIJF9QPgA9HCTkRW4MPMP94WHo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga Aarti Sthal",
+          "Description": "Lively Hindu place of worship featuring nightly ceremonies along the River Ganges.",
+          "GeoCoordinates": {
+            "lat": 29.9561622,
+            "lng": 78.1707926
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq16NwkAHOiwyUx344nB0bClQg7oj0vF-5ceLsKJ_fS51DVIxeVuaaZRYFCrXUnRNIss29CWl1wTrUyElG-b1ZtBj3WSl4Nrwx5eCx6ipv6oWJL2ug4tAmP5G9kSyIjfjre0y6b=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+Aarti+Sthal,+Haridwar/data=!4m7!3m6!1s0x3909471a57909489:0xa71149d01e2795cd!8m2!3d29.9561622!4d78.1707926!16s%2Fg%2F1hjgm8hhc!19sChIJiZSQVxpHCTkRzZUnHtBJEac?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Maa Chandi Devi Temple",
+          "Description": "Historic Hindu temple accessible by cable car offering picturesque mountaintop views.",
+          "GeoCoordinates": {
+            "lat": 29.9337646,
+            "lng": 78.1805466
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqAwydlpx8K4Xj1bCAcTO3FWWxYgwEFnze3cHJroSADkP9wNW9MejNfeTIr3AMbEQZHd3rYlTQ7fNAJmQZmmAR3r5tCaSdN1oJ6bDa6O3o-iwC2XOX_Y2Jk3X2ICxi-vhak2a4o3g=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Maa+Chandi+Devi+Temple,+Haridwar/data=!4m7!3m6!1s0x390946c287e379ab:0x13be51080ea3959!8m2!3d29.9337646!4d78.1805466!16s%2Fm%2F0b6jdv6!19sChIJq3njh8JGCTkRWTnqgBDlOwE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9475227,
+            "lng": 78.1632567
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npgLxxYmZWgp4IGWw95HyaNPowFtMR-v3eK468AAR85XF2qIeWAXCHl50r4cyMlw7KZEpzyHKRFlovfLkjZ_BAnXM8J3wTssj7WO11uJhLK2w2-W10EtVeokfns4FbA2viYYNbC=w408-h497-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar+Ghat/data=!4m7!3m6!1s0x39094702142534bd:0xad8700f9aae60a49!8m2!3d29.9475227!4d78.1632567!16s%2Fg%2F11c20szyl8!19sChIJvTQlFAJHCTkRSQrmqvkAh60?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Satnam Sakshi ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9304369,
+            "lng": 78.1380577
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noxaC9xnUdsqIBLlTumgcN3u6skvd93NJ5dwl3aoekdJoDwMtWtPHtQywpgGCw9HYSen5-mgZB1wCKwL2aLP8HwlRQi5vT5Wcoj0hW99lHyMvS53Ub9aV6s9_T1B4M1OhE54id3=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Satnam+Sakshi+ghat/data=!4m7!3m6!1s0x390947fefdae9f85:0x4990660c54390bfc!8m2!3d29.9304369!4d78.1380577!16s%2Fg%2F11ng1tpxdq!19sChIJhZ-u_f5HCTkR_As5VAxmkEk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "L point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9355059,
+            "lng": 78.1599905
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no38xxtXlofOv6mXFqLm950OjNE65AnLX6gPDo3CjkvbtIvyg9IWa_jsJdQ8uWRv77L2O8OhgI8_4eS0jap2He-btVbQCQEQV8NRt-N4ndgNUSQJFyvq-XnO4I2qIhETbcUJVYTTUMGon41=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/L+point/data=!4m7!3m6!1s0x390947d47e6440a7:0x6ee7a1265d4575bd!8m2!3d29.9355059!4d78.1599905!16s%2Fg%2F11pzh6zm2m!19sChIJp0BkftRHCTkRvXVFXSah524?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhagirath Deep Sthambh",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.941735,
+            "lng": 78.155911
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruWT_QvAQ_Ybi2wyLfAT1NT8G45HAsE-oDNRUVXG6gKNJs-YJGBPy5HH1ciOcPWHNL0uVavlkSnbTidZ5ipNrAZpCcnbbbEW7qWX_SA1HpaG9nfD9duaTZhq5lNpETsXNzIrFu1g=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bhagirath+Deep+Sthambh/data=!4m7!3m6!1s0x390947dc326215a9:0xc4d9ccf4ea6e5dfe!8m2!3d29.941735!4d78.155911!16s%2Fg%2F11pv3tm8y8!19sChIJqRViMtxHCTkR_l1u6vTM2cQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Amrapur Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9407302,
+            "lng": 78.1544083
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipPwNmX3RSxdl_CrQ_OoSLOoXS66Qx8zA-6smAvV=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Amrapur+Ghat,+Haridwar/data=!4m7!3m6!1s0x3909471b9c96ee13:0x70d2f337614e67e4!8m2!3d29.9407302!4d78.1544083!16s%2Fg%2F11mwzql7f_!19sChIJE-6WnBtHCTkR5GdOYTfz0nA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandi Ghat",
+          "Description": "Waterfront area popular for picnics, with colorful ground murals & steps leading down to the river.",
+          "GeoCoordinates": {
+            "lat": 29.9432694,
+            "lng": 78.1712728
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noixnZrXU0Us7ZSFwuBnt9l4NCOWdCoZBbjLH08IVJUJ0AoJLbnMYWE6ayRnRvvQ7EkZMULMT_J2WLuRUMsrQnAayBGTJKBEDYmW1AgkBueDPxrvcdUUjINJwXqI4Wp6KrDwi237c7EDrS5=w408-h307-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Chandi+Ghat/data=!4m7!3m6!1s0x3909475857188e27:0x2ca790f711927ee4!8m2!3d29.9432694!4d78.1712728!16s%2Fg%2F11h04p0svd!19sChIJJ44YV1hHCTkR5H6SEfeQpyw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhimgoda Barrage",
+          "Description": "Straightforward metal irrigation & hydroelectric dam with wildlife & a sizable reservoir.",
+          "GeoCoordinates": {
+            "lat": 29.9563387,
+            "lng": 78.1803734
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noFEcTJVu5gJzY3BZOChTEk11bJFGu-ERNYIv5DN9bDgVAZtICQVamAnwoohqaOKPFGNBjmQds2OlrCIl1aWh3NtS0QbMWFfvlcmenr1x3z0E7W6D5i9AcACebAQEJdutcwDKuFRA=w442-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bhimgoda+Barrage/data=!4m7!3m6!1s0x390946fd9cc8093d:0xffd83eb037d71bac!8m2!3d29.9563387!4d78.1803734!16s%2Fm%2F0gysr38!19sChIJPQnInP1GCTkRrBvXN7A-2P8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "I Love Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9304154,
+            "lng": 78.1370405
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqyIUv-j_jVx3lzWH5gecWv1Hk-aXArdKUUStq-Gh99vSoeB4OtLnD-z2MRPtE5J5cffuZv764gA5I3ed35KTAtNZUz1kMAM3gFatp01mq3NPVi3M6pYaMek1SGoHDSU6szPkyz=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/I+Love+Haridwar/data=!4m7!3m6!1s0x39094766b2bac66f:0x5cd86a0848563693!8m2!3d29.9304154!4d78.1370405!16s%2Fg%2F11j6vwrcsr!19sChIJb8a6smZHCTkRkzZWSAhq2Fw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Clock tower har ki pauri Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9564773,
+            "lng": 78.1713432
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Clock+tower+har+ki+pauri+Haridwar/data=!4m7!3m6!1s0x390947006bde3d3b:0x4d45d15fc97e4708!8m2!3d29.9564773!4d78.1713432!16s%2Fg%2F11k9kf_ccr!19sChIJOz3eawBHCTkRCEd-yV_RRU0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Bilvkeshwar Mahadev Temple Niranjani Akhada",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9537418,
+            "lng": 78.1555705
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Bilvkeshwar+Mahadev+Temple+Niranjani+Akhada/data=!4m7!3m6!1s0x390947a9e7b5fe07:0xc5ca3ea9d43f6318!8m2!3d29.9537418!4d78.1555705!16s%2Fg%2F1tfqzs_7!19sChIJB_6156lHCTkRGGM_1Kk-ysU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vishnu Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.950987,
+            "lng": 78.1657277
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vishnu+Ghat/data=!4m7!3m6!1s0x3909479a6e7b9bf3:0x27b75446234c967!8m2!3d29.950987!4d78.1657277!16s%2Fg%2F11fhx3x9vy!19sChIJ85t7bppHCTkRZ8k0YkR1ewI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chaudhary Charan Singh Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9278067,
+            "lng": 78.1322138
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chaudhary+Charan+Singh+Ghat/data=!4m7!3m6!1s0x3909478377a63c51:0xeccea1936436de21!8m2!3d29.9278067!4d78.1322138!16s%2Fg%2F11r8nnw3dr!19sChIJUTymd4NHCTkRId42ZJOhzuw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhuma Niketan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9801981,
+            "lng": 78.1880765
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhuma+Niketan/data=!4m7!3m6!1s0x39094745012e4e8d:0xf1a33c783ff1aafb!8m2!3d29.9801981!4d78.1880765!16s%2Fg%2F11c494ztlz!19sChIJjU4uAUVHCTkR-6rxP3g8o_E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chaudhary Charan Singh Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9278067,
+            "lng": 78.1322138
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chaudhary+Charan+Singh+Ghat/data=!4m7!3m6!1s0x3909478377a63c51:0xeccea1936436de21!8m2!3d29.9278067!4d78.1322138!16s%2Fg%2F11r8nnw3dr!19sChIJUTymd4NHCTkRId42ZJOhzuw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga Mata Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9564308,
+            "lng": 78.1709298
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+Mata+Temple/data=!4m7!3m6!1s0x39094719eaaaaaab:0x4b5777eba8f6837e!8m2!3d29.9564308!4d78.1709298!16s%2Fg%2F11c585nlxm!19sChIJq6qq6hlHCTkRfoP2qOt3V0s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhuma Niketan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9801981,
+            "lng": 78.1880765
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhuma+Niketan/data=!4m7!3m6!1s0x39094745012e4e8d:0xf1a33c783ff1aafb!8m2!3d29.9801981!4d78.1880765!16s%2Fg%2F11c494ztlz!19sChIJjU4uAUVHCTkR-6rxP3g8o_E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Indian Flag ShantiKunj",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9908116,
+            "lng": 78.1877454
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Indian+Flag+ShantiKunj/data=!4m7!3m6!1s0x3909472d5b406d57:0xca83d6100e1d459e!8m2!3d29.9908116!4d78.1877454!16s%2Fg%2F11qgkfg9rz!19sChIJV21AWy1HCTkRnkUdDhDWg8o?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Har ki pauri ghat 2",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.95531,
+            "lng": 78.171045
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Har+ki+pauri+ghat+2/data=!4m7!3m6!1s0x390947166530be23:0xe6e65a18586dec3!8m2!3d29.95531!4d78.171045!16s%2Fg%2F11vcxm4_cm!19sChIJI74wZRZHCTkRw96GhaFlbg4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View point ( har ki Pauri )",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9547051,
+            "lng": 78.1657019
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+point+%28+har+ki+Pauri+%29/data=!4m7!3m6!1s0x390947a4c142c269:0xac73666f3999ecd3!8m2!3d29.9547051!4d78.1657019!16s%2Fg%2F11ptmb1glf!19sChIJacJCwaRHCTkR0-yZOW9mc6w?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shree Daksheshwar Mahadev - Daksh Prajapati Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9214804,
+            "lng": 78.1459017
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shree+Daksheshwar+Mahadev+-+Daksh+Prajapati+Temple/data=!4m7!3m6!1s0x3909489baaaaaaab:0x79f9005cafb606d3!8m2!3d29.9214804!4d78.1459017!16s%2Fm%2F05zmjnt!19sChIJq6qqqptICTkR0wa2r1wA-Xk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "HARIDWAR TEMPLES",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9210262,
+            "lng": 78.1402932
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/HARIDWAR+TEMPLES/data=!4m7!3m6!1s0x390947d9299feb4d:0xf0cc906c810415b4!8m2!3d29.9210262!4d78.1402932!16s%2Fg%2F11hkwqkj2v!19sChIJTeufKdlHCTkRtBUEgWyQzPA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shantikunj Gayatri Parivar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.992474,
+            "lng": 78.191736
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shantikunj+Gayatri+Parivar/data=!4m7!3m6!1s0x390947582b7b6af1:0x77cbaeb7a5c4832c!8m2!3d29.992474!4d78.191736!16s%2Fg%2F1pyqg88vl!19sChIJ8Wp7K1hHCTkRLIPEpbeuy3c?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chilla Dam Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9769024,
+            "lng": 78.2204729
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chilla+Dam+Haridwar/data=!4m7!3m6!1s0x390941b97d1dfdf7:0xe940d32f87cc4fa!8m2!3d29.9769024!4d78.2204729!16s%2Fg%2F11kpf1l4ly!19sChIJ9_0dfblBCTkR-sR8-DINlA4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9652168,
+            "lng": 78.1737398
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar/data=!4m7!3m6!1s0x390947fd89559c3f:0x1916c029ab1d510e!8m2!3d29.9652168!4d78.1737398!16s%2Fg%2F11ks21dxk2!19sChIJP5xVif1HCTkRDlEdqynAFhk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar High View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9567248,
+            "lng": 78.1654434
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar+High+View+Point/data=!4m7!3m6!1s0x3909478bf9fe3e01:0x75309755970f01e2!8m2!3d29.9567248!4d78.1654434!16s%2Fg%2F11t_ssv0d2!19sChIJAT7--YtHCTkR4gEPl1WXMHU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shaheed Bhagat Singh Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9291857,
+            "lng": 78.1357279
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shaheed+Bhagat+Singh+Ghat/data=!4m7!3m6!1s0x3909470f10a04a49:0x71e370bbbe904710!8m2!3d29.9291857!4d78.1357279!16s%2Fg%2F11r8nqm29s!19sChIJSUqgEA9HCTkREEeQvrtw43E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Hindu sacred journeys",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9352454,
+            "lng": 78.1368007
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Hindu+sacred+journeys/data=!4m7!3m6!1s0x3909479ed076f467:0xd655be05b46aeda5!8m2!3d29.9352454!4d78.1368007!16s%2Fg%2F11w3lshj0j!19sChIJZ_R20J5HCTkRpe1qtAW-VdY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sati Kund Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.921788,
+            "lng": 78.136732
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sati+Kund+Mandir/data=!4m7!3m6!1s0x39094641d27b025b:0x2797768566164275!8m2!3d29.921788!4d78.136732!16s%2Fg%2F1pyqh8_0y!19sChIJWwJ70kFGCTkRdUIWZoV2lyc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Flyover",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9229948,
+            "lng": 78.1249695
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Flyover/data=!4m7!3m6!1s0x390947538156db0f:0xf4fa65754ff0d373!8m2!3d29.9229948!4d78.1249695!16s%2Fg%2F11tg8qgqdr!19sChIJD9tWgVNHCTkRc9PwT3Vl-vQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Adbhut Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9995439,
+            "lng": 78.207703
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Adbhut+Mandir/data=!4m7!3m6!1s0x39093f56829b7fcf:0x8181825cea943fc6!8m2!3d29.9995439!4d78.207703!16s%2Fg%2F11b_3h5tm_!19sChIJz3-bglY_CTkRxj-U6lyCgYE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "SHIV JI TRISHUL",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9478074,
+            "lng": 78.1614201
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/SHIV+JI+TRISHUL/data=!4m7!3m6!1s0x39094765709b3aa7:0xe2fc8625a8c04ec0!8m2!3d29.9478074!4d78.1614201!16s%2Fg%2F11ks6fgfgb!19sChIJpzqbcGVHCTkRwE7AqCWG_OI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ghat Of Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9573607,
+            "lng": 78.1749687
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ghat+Of+Haridwar/data=!4m7!3m6!1s0x39094719eaaaaaab:0x90cee560ecaf1a72!8m2!3d29.9573607!4d78.1749687!16s%2Fg%2F11ggrrw3cc!19sChIJq6qq6hlHCTkRchqv7GDlzpA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Morning View point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9283323,
+            "lng": 78.1589819
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Morning+View+point/data=!4m7!3m6!1s0x3909477c64eda5e3:0x5a998904dcd65e57!8m2!3d29.9283323!4d78.1589819!16s%2Fg%2F11rx31jy38!19sChIJ46XtZHxHCTkRV17W3ASJmVo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gayatritirth Shantikunj Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9924019,
+            "lng": 78.1889096
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gayatritirth+Shantikunj+Haridwar/data=!4m7!3m6!1s0x3909475846a2ac59:0x57547844a86b1fdf!8m2!3d29.9924019!4d78.1889096!16s%2Fg%2F11c58vr35l!19sChIJWayiRlhHCTkR3x9rqER4VFc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Har ki Pauri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9573607,
+            "lng": 78.1749687
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Har+ki+Pauri/data=!4m7!3m6!1s0x390947000d7e747f:0x813c0177eb3781df!8m2!3d29.9573607!4d78.1749687!16s%2Fg%2F11mcq62njg!19sChIJf3R-DQBHCTkR34E363cBPIE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga Aarti Viewing Spot",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9564535,
+            "lng": 78.171189
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+Aarti+Viewing+Spot/data=!4m7!3m6!1s0x39094720118912e1:0xb8d01e322ac1065c!8m2!3d29.9564535!4d78.171189!16s%2Fg%2F11vkch3pt_!19sChIJ4RKJESBHCTkRXAbBKjIe0Lg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "River view",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9554298,
+            "lng": 78.1711495
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/River+view/data=!4m7!3m6!1s0x3909473d5a8ef589:0x900659d43f22648d!8m2!3d29.9554298!4d78.1711495!16s%2Fg%2F11s2qkwwwk!19sChIJifWOWj1HCTkRjWQiP9RZBpA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Har Ki Pauri - Maa Ganga Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9559546,
+            "lng": 78.1712953
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Har+Ki+Pauri+-+Maa+Ganga+Ghat/data=!4m7!3m6!1s0x3909470008827ecf:0xc0abb21bc46b3ce!8m2!3d29.9559546!4d78.1712953!16s%2Fg%2F11vr95tpds!19sChIJz36CCABHCTkRzrNGvCG7Cgw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9495474,
+            "lng": 78.1666964
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar+Ghat/data=!4m7!3m6!1s0x3909470006507589:0x2af8a70fa5ef029d!8m2!3d29.9495474!4d78.1666964!16s%2Fg%2F11vyr8n_6l!19sChIJiXVQBgBHCTkRnQLvpQ-n-Co?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Watch tower at Rajaji",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9590593,
+            "lng": 78.1055981
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Watch+tower+at+Rajaji/data=!4m7!3m6!1s0x390949cefa27c917:0x19f21cea70f527c5!8m2!3d29.9590593!4d78.1055981!16s%2Fg%2F11rhs1kqv6!19sChIJF8kn-s5JCTkRxSf1cOoc8hk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "ShivDhanush Bridge",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9554842,
+            "lng": 78.1717117
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/ShivDhanush+Bridge/data=!4m7!3m6!1s0x390947003cdf329f:0x678e1357c122830!8m2!3d29.9554842!4d78.1717117!16s%2Fg%2F11xvr_dfrg!19sChIJnzLfPABHCTkRMCgSfDXheAY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tara Mandal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.997594,
+            "lng": 78.1919533
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tara+Mandal/data=!4m7!3m6!1s0x390938a88b1136c9:0x43f19c0435df8447!8m2!3d29.997594!4d78.1919533!16s%2Fg%2F11g873c0_8!19sChIJyTYRi6g4CTkRR4TfNQSc8UM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vyas Mandir Haridwar (Kashi Mutt)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9894325,
+            "lng": 78.1970842
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vyas+Mandir+Haridwar+%28Kashi+Mutt%29/data=!4m7!3m6!1s0x39094756a6d92bed:0x4d5481ae4a11606!8m2!3d29.9894325!4d78.1970842!16s%2Fg%2F11g9djdwts!19sChIJ7SvZplZHCTkRBhah5BpI1QQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Crystal World",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9001268,
+            "lng": 77.9864197
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Crystal+World/data=!4m7!3m6!1s0x39094b90be64eb79:0xd050298d813481be!8m2!3d29.9001268!4d77.9864197!16s%2Fg%2F11rs0vhc1!19sChIJeetkvpBLCTkRvoE0gY0pUNA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Allinharidwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9905398,
+            "lng": 78.1956429
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Allinharidwar/data=!4m7!3m6!1s0x39094756a2edcee9:0x9a251c192175a874!8m2!3d29.9905398!4d78.1956429!16s%2Fg%2F11b6md2cqd!19sChIJ6c7tolZHCTkRdKh1IRkcJZo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vishvakarma Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9311736,
+            "lng": 78.1392888
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vishvakarma+Ghat/data=!4m7!3m6!1s0x39094645df9262cb:0x899c010fc106776d!8m2!3d29.9311736!4d78.1392888!16s%2Fg%2F1tj8_xxq!19sChIJy2KS30VGCTkRbXcGwQ8BnIk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Parad Shivling",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9322711,
+            "lng": 78.1498478
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Parad+Shivling/data=!4m7!3m6!1s0x390947fcf74d6adf:0x9875af3c287c8b5a!8m2!3d29.9322711!4d78.1498478!16s%2Fg%2F11nxnrfscx!19sChIJ32pN9_xHCTkRWot8KDyvdZg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gayatri Mata Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9913564,
+            "lng": 78.1914243
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gayatri+Mata+Temple,+Shantikunj+%28Haridwar%29/data=!4m7!3m6!1s0x39094757773f9529:0x9e126c27fcf85099!8m2!3d29.9913564!4d78.1914243!16s%2Fg%2F11c5bcn1rc!19sChIJKZU_d1dHCTkRmVD4_CdsEp4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bheemgoda braj",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9573607,
+            "lng": 78.1749687
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bheemgoda+braj/data=!4m7!3m6!1s0x390947c2743aeca5:0x2648fe9dccdaa3cc!8m2!3d29.9573607!4d78.1749687!16s%2Fg%2F11smm8cgb3!19sChIJpew6dMJHCTkRzKPazJ3-SCY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Ganga Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9571716,
+            "lng": 78.1713251
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Ganga+Mandir/data=!4m7!3m6!1s0x3909471a6706e5a5:0x6a1a9459635d4fb2!8m2!3d29.9571716!4d78.1713251!16s%2Fg%2F11cs3_ncxp!19sChIJpeUGZxpHCTkRsk9dY1mUGmo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bholagiri Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9508245,
+            "lng": 78.1642248
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bholagiri+Ashram,+Haridwar/data=!4m7!3m6!1s0x39093f54c7cd94bf:0xbc6e37d5765d4adf!8m2!3d29.9508245!4d78.1642248!16s%2Fg%2F1pyqp31jg!19sChIJv5TNx1Q_CTkR30pddtU3brw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Pawan dham",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9737412,
+            "lng": 78.1801965
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Pawan+dham/data=!4m7!3m6!1s0x390947004296d3c7:0xaffebdcef119e3cd!8m2!3d29.9737412!4d78.1801965!16s%2Fg%2F11y3p75_7p!19sChIJx9OWQgBHCTkRzeMZ8c69_q8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandi Devi Ropeway Tickets",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9293072,
+            "lng": 78.1754247
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chandi+Devi+Ropeway+Tickets/data=!4m7!3m6!1s0x390947429fc0f479:0x26616559da75ebcd!8m2!3d29.9293072!4d78.1754247!16s%2Fg%2F11p0zp25vt!19sChIJefTAn0JHCTkRzet12lllYSY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vaishno Devi Temple (Mata Lal devi Ji)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9820676,
+            "lng": 78.1895562
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vaishno+Devi+Temple+%28Mata+Lal+devi+Ji%29/data=!4m7!3m6!1s0x3909472013519209:0x799555d0b2497560!8m2!3d29.9820676!4d78.1895562!16s%2Fg%2F11h6qd27ys!19sChIJCZJREyBHCTkRYHVJstBVlXk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bairagi camp",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.931353,
+            "lng": 78.156317
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bairagi+camp/data=!4m7!3m6!1s0x3909470054e0aec9:0x3db6969995a6a31d!8m2!3d29.931353!4d78.156317!16s%2Fg%2F11w7_9pwl4!19sChIJya7gVABHCTkRHaOmlZmWtj0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Prem Nagar Ashram Ghat New",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9304492,
+            "lng": 78.1365015
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Prem+Nagar+Ashram+Ghat+New/data=!4m7!3m6!1s0x390946464d4a6753:0x5fdfd2f1652dd7!8m2!3d29.9304492!4d78.1365015!16s%2Fg%2F11c6cy3t_5!19sChIJU2dKTUZGCTkR1y1l8dLfXwA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Prem Nagar Ashram",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9326251,
+            "lng": 78.1331124
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Prem+Nagar+Ashram,+Haridwar/data=!4m7!3m6!1s0x390948a0eafffffb:0x87c2549286adaa2c!8m2!3d29.9326251!4d78.1331124!16s%2Fg%2F11fx89q4hc!19sChIJ-___6qBICTkRLKqthpJUwoc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shiv Ji Ka Trishul",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9482446,
+            "lng": 78.1611981
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shiv+Ji+Ka+Trishul/data=!4m7!3m6!1s0x3909470ffef06e43:0x5d7c52c1eee9cd4a!8m2!3d29.9482446!4d78.1611981!16s%2Fg%2F11kjp1dy5k!19sChIJQ27w_g9HCTkRSs3p7sFSfF0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Triveni Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.1037136,
+            "lng": 78.2993118
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Triveni+Ghat/data=!4m7!3m6!1s0x39093dc68378a127:0x5bb66364573c04cb!8m2!3d30.1037136!4d78.2993118!16s%2Fm%2F011l2lpm!19sChIJJ6F4g8Y9CTkRywQ8V2Rjtls?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Watch Tower Har ki Pauri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9559614,
+            "lng": 78.1712132
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Watch+Tower+Har+ki+Pauri/data=!4m7!3m6!1s0x3909476094aa9b89:0xec1d9cf9ab7ba10b!8m2!3d29.9559614!4d78.1712132!16s%2Fg%2F11stzglyc2!19sChIJiZuqlGBHCTkRC6F7q_mcHew?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar Rishikesh Tourism",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9427889,
+            "lng": 78.1501501
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar+Rishikesh+Tourism/data=!4m7!3m6!1s0x3909465489bee7a5:0xcdd079ed383b8a72!8m2!3d29.9427889!4d78.1501501!16s%2Fg%2F119wnj0q5!19sChIJpee-iVRGCTkRcoo7OO150M0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Neel dhara shree ram sharnam",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9354188,
+            "lng": 78.1599663
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Neel+dhara+shree+ram+sharnam/data=!4m7!3m6!1s0x390947b6663df159:0x7bd9cde6b8c71112!8m2!3d29.9354188!4d78.1599663!16s%2Fg%2F11r14brycc!19sChIJWfE9ZrZHCTkREhHHuObN2Xs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga River",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9570874,
+            "lng": 78.1712531
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+River/data=!4m7!3m6!1s0x39094795d5ab841b:0x3bf4b83b9cde2e4c!8m2!3d29.9570874!4d78.1712531!16s%2Fg%2F11v0bd17lc!19sChIJG4Sr1ZVHCTkRTC7enDu49Ds?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9707072,
+            "lng": 78.1837515
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+View+Point/data=!4m7!3m6!1s0x3909470042a436cb:0x7c51ac7fb35ed1c3!8m2!3d29.9707072!4d78.1837515!16s%2Fg%2F11wbvlysh3!19sChIJyzakQgBHCTkRw9Fes3-sUXw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Juna Akhada chowk",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.95111,
+            "lng": 78.162498
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Juna+Akhada+chowk/data=!4m7!3m6!1s0x390947c6db36db75:0xd48729a260381e88!8m2!3d29.95111!4d78.162498!16s%2Fg%2F11l201zpwd!19sChIJdds228ZHCTkRiB44YKIph9Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Swaminarayan Ashram (Temple) Bhupatwala Haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9756783,
+            "lng": 78.180822
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Swaminarayan+Ashram+%28Temple%29+Bhupatwala+Haridwar/data=!4m7!3m6!1s0x39094741f2720abb:0xb97d40d86a41546f!8m2!3d29.9756783!4d78.180822!16s%2Fg%2F1pyqrmslh!19sChIJuwpy8kFHCTkRb1RBathAfbk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Small beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9691875,
+            "lng": 78.1823125
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Small+beach/data=!4m7!3m6!1s0x3909474f58415b9b:0xd82fd1a3f148e264!8m2!3d29.9691875!4d78.1823125!16s%2Fg%2F11tfh7bplz!19sChIJm1tBWE9HCTkRZOJI8aPRL9g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Haridwar Puja Services",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9309238,
+            "lng": 78.1506503
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Haridwar+Puja+Services/data=!4m7!3m6!1s0x3909475aebd823e7:0x1e85e939aa26dd3a!8m2!3d29.9309238!4d78.1506503!16s%2Fg%2F11w2bkb9s_!19sChIJ5yPY61pHCTkROt0mqjnphR4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Anjani Mata Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9339535,
+            "lng": 78.1826307
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Anjani+Mata+Mandir,+Haridwar/data=!4m7!3m6!1s0x39094754a87f540b:0xe84f263d9bedb994!8m2!3d29.9339535!4d78.1826307!16s%2Fg%2F11vkz2c28q!19sChIJC1R_qFRHCTkRlLntmz0mT-g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Siddhapeeth Sree Sureshwari Devi Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.969672,
+            "lng": 78.1072353
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Siddhapeeth+Sree+Sureshwari+Devi+Mandir/data=!4m7!3m6!1s0x3909480bd83fffff:0x7b0ac04f4a22316f!8m2!3d29.969672!4d78.1072353!16s%2Fg%2F11bxjbgfkm!19sChIJ__8_2AtICTkRbzEiSk_ACns?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chardham YatraTravel",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9480933,
+            "lng": 78.1581805
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chardham+YatraTravel/data=!4m7!3m6!1s0x390947000a62abf7:0xc6ac33ca8a088cfa!8m2!3d29.9480933!4d78.1581805!16s%2Fg%2F11hd713v6_!19sChIJ96tiCgBHCTkR-owIisozrMY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rajaji National Park Safari Booking Office",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.976812,
+            "lng": 78.2154489
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Rajaji+National+Park+Safari+Booking+Office/data=!4m7!3m6!1s0x39094118be5f207b:0xf3cc179963834f87!8m2!3d29.976812!4d78.2154489!16s%2Fg%2F11h12j9ky!19sChIJeyBfvhhBCTkRh0-DY5kXzPM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Prachin Daridra Bhanjan Mahadev Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9231604,
+            "lng": 78.1473174
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Prachin+Daridra+Bhanjan+Mahadev+Mandir/data=!4m7!3m6!1s0x3909465d723b2eb9:0x5156f0d7b1f4f365!8m2!3d29.9231604!4d78.1473174!16s%2Fg%2F1pyqnj1ds!19sChIJuS47cl1GCTkRZfP0sdfwVlE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganga Darshan Ghat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9577979,
+            "lng": 78.1721685
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganga+Darshan+Ghat/data=!4m7!3m6!1s0x390947d4ec313d79:0xf210922d20d9dd16!8m2!3d29.9577979!4d78.1721685!16s%2Fg%2F11fsln7mls!19sChIJeT0x7NRHCTkRFt3ZIC2SEPI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "L point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9323815,
+            "lng": 78.1385708
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/L+point/data=!4m7!3m6!1s0x390947e3af48a3ed:0xc5ff56966342bcd6!8m2!3d29.9323815!4d78.1385708!16s%2Fg%2F11sq3cs_h6!19sChIJ7aNIr-NHCTkR1rxCY5ZW_8U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tourism haridwar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 29.9254999,
+            "lng": 78.0908651
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tourism+haridwar/data=!4m7!3m6!1s0x3909496a881df5d3:0x9a3cd2cb75ba393!8m2!3d29.9254999!4d78.0908651!16s%2Fg%2F11y4bdy60s!19sChIJ0_UdiGpJCTkRk6NbtyzNowk?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

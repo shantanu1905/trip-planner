@@ -1,0 +1,849 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Kedarnath, Ukhimath, Rudraprayag, Uttarakhand, India",
+      "TouristPlaces": [
+        {
+          "Name": "Shri Kedarnath Jyotirlinga Temple",
+          "Description": "8th-century Shiva temple and Hindu pilgrimage site with Pali inscriptions and mythological scenes.",
+          "GeoCoordinates": {
+            "lat": 30.7346267,
+            "lng": 79.0668943
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npB3psHyJU9NA_JQ5znJka20jnF3Vt2EnAK5LgP3odDRBf2Lnp0OvjRqteI4AFqR68D35L5Q9QkMkC-JPzOtBxosDohnLfRFTbpKNVls4mPi6cA956BTepzBuHbfknjuH2paoORBg=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Kedarnath+Jyotirlinga+Temple/data=!4m7!3m6!1s0x39083ee08aa6b0b5:0xdbbdae8b9602ee02!8m2!3d30.7346267!4d79.0668943!16s%2Fm%2F026jlcg!19sChIJtbCmiuA-CDkRAu4Clouuvds?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath temple view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7324786,
+            "lng": 79.0700274
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np7tw6PhWqEnWGP_TjllLQoEZs9rH8wYUOASrpDmGmwH4lxaRGddSGOx4wXaLB6BKParQYz0nDr1mPVODsS1tymI26Y3tzTBI44O8w2DDsPJDgQXRZ1YogssU2ZjgHWhQv-OhD7=w408-h273-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+temple+view+point/data=!4m7!3m6!1s0x39083f0040613a3f:0x3ac8cad0c1e9537c!8m2!3d30.7324786!4d79.0700274!16s%2Fg%2F11y3157_s6!19sChIJPzphQAA_CDkRfFPpwdDKyDo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Baba Kedar Camping",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7320106,
+            "lng": 79.0690786
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipOFUzAhRzW9d1DDqm9cwKHYxfGbtH9bad4B0-TU=w408-h725-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Baba+Kedar+Camping/data=!4m7!3m6!1s0x39083f003cc9fdbf:0x10d5098af0e74057!8m2!3d30.7320106!4d79.0690786!16s%2Fg%2F11w3nql3vz!19sChIJv_3JPAA_CDkRV0Dn8IoJ1RA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Bhairavnath Mandir",
+          "Description": "High-altitude Hindu temple to Lord Shiva, with stone prayer halls & views across Himalayan peaks.",
+          "GeoCoordinates": {
+            "lat": 30.732123,
+            "lng": 79.0701941
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npWG6bKALqF5tTHOVSEfz78mbp38QsyAXEVzG6OfloTyARBDazcIzzqwX8Y6QQDLPO4-A9PrnqYNvocn175lPsgbX9J8qEadA1Vu3tjAOAQz9pa_ZBM_VGpiVVS6c3Y_RoReZZt=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Bhairavnath+Mandir/data=!4m7!3m6!1s0x39083ee74cd77489:0xb5af6087921777e5!8m2!3d30.732123!4d79.0701941!16s%2Fg%2F12hkbxrvr!19sChIJiXTXTOc-CDkR5XcXkodgr7U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Adi Shankaracharya Samadhi",
+          "Description": "High-altitude Hindu pilgrimage spot home to the tomb of revered 8th-century sage Adi Shankaracharya.",
+          "GeoCoordinates": {
+            "lat": 30.7361239,
+            "lng": 79.0663642
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nowyO1IrOh1SdGlbLGg8fBRiEGsMiKr6WP_fOSrXsVNrVHKD9MdGsSBhXjuXGN_tPLGPTTsz-nwaNscw5-fHOmZ5UK5mUT4xINbHgOfahqg5SNtjet848qp4oH5zOfoHdqSezem=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Adi+Shankaracharya+Samadhi/data=!4m7!3m6!1s0x39083ee18536b875:0x406af73792c6f2b9!8m2!3d30.7361239!4d79.0663642!16s%2Fg%2F1hjh6hy0c!19sChIJdbg2heE-CDkRufLGkjf3akA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Paragliding",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7359792,
+            "lng": 79.0684583
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npLBzTPxB9wUYt7j34ql8ezMAYBXRi2MmjkREU3TjhxBok2N735rJR2qybflwaJnnCojKMwFYE6jh41m26c4NswWFviQ3hBQZ0ckSQy0hGfUpTX_-ocBXDizvQW_1oO7mjfRh_zF6xMbBk9=w408-h883-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Paragliding/data=!4m7!3m6!1s0x39083f11c814c971:0xd5b0c402211d064f!8m2!3d30.7359792!4d79.0684583!16s%2Fg%2F11kqnp80yp!19sChIJcckUyBE_CDkRTwYdIQLEsNU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Trekking",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7285263,
+            "lng": 79.0665998
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np7HIGNtvghdQI-g48sZK-rkm8hgiZMBHDz1C2bMXe4s-vcdobcdWP0kgaZV4KcpHtRcpJ8m7efHiQ2HOv-RXpxx6wVrTqoC-76jLZ1gPo5dkoJ0Bzx1DBrP0dfuZlD-i-Mpe-JkS9mx0gN=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Trekking/data=!4m7!3m6!1s0x39083fcb3e44a9b1:0xfdb837b388cbe05a!8m2!3d30.7285263!4d79.0665998!16s%2Fg%2F11s0t8ldwq!19sChIJsalEPss_CDkRWuDLiLM3uP0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gaurikund Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6541882,
+            "lng": 79.0276174
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqaBFY_hxG4bkpJ9ufiUUll8Svtbw34Ffq1p5oE8CNiV_7zaXXH1t64FLNFtQJB1x5g26s4vHgC3skaEsZbKyOEW290ZOeqINpCBnzru28vcOSryqpJvQxU5veY0h7eXdcNp0iKsy1v5Zc=w408-h284-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Gaurikund+Temple/data=!4m7!3m6!1s0x3908387b807ef7f9:0x51211812521ed88d!8m2!3d30.6541882!4d79.0276174!16s%2Fg%2F11df1vnbq5!19sChIJ-fd-gHs4CDkRjdgeUhIYIVE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Retas Kund Kedarnath",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7332138,
+            "lng": 79.0684935
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noKzS7XWMDWlwLcW8rCG9xfOb6MmMq7wPnrL_nutaUAaAmFddE9jTAIZu8jUnQn75WaX9nBaKfZtAP0MqKt5oUtCH15qEdo1YSHizWIlxMoPAEoPCyBKD0Y_UpXrzZ5UBC2n04M=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Retas+Kund+Kedarnath/data=!4m7!3m6!1s0x39083f38ebbb5a6d:0xca5a1463dc8027d5!8m2!3d30.7332138!4d79.0684935!16s%2Fg%2F11tdcj00ll!19sChIJbVq76zg_CDkR1SeA3GMUWso?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Wildlife Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7534462,
+            "lng": 79.0645056
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no8hJvgMxAO5cmhtRBYQC2DCqUH0nY9RRGDqxZ6k9pJWYHZQZkpWiSeE5w7q0jLhi6kW72SRXXb7xnyuZ649NwgtrriviSK2LVySZMrchwCX2uHlyvkH4TYkzjdrIMbuMi-0-SBuZYdO5M=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Wildlife+Sanctuary/data=!4m7!3m6!1s0x39083c157561c2bd:0x5e986cf655a69922!8m2!3d30.7534462!4d79.0645056!16s%2Fm%2F06zknz3!19sChIJvcJhdRU8CDkRIpmmVfZsmF4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Trekking Way",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7383863,
+            "lng": 79.0676215
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqkgc7NDEoJyJxFOudOkSqZ1Pi4R6fr7_6OCQTRxgErWaOGtMTNC5zGB1aJFgyOM6bMEgEECkHSgFH8eqnYE6w0vM8gF4gMrp93ov9G8PS1fjU_Cj6Vc8fE-eb9hAX9rnFOjHWW=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Trekking+Way/data=!4m7!3m6!1s0x39083f0da83ddbeb:0x4ac95315cb5bfd9!8m2!3d30.7383863!4d79.0676215!16s%2Fg%2F11s0t61s70!19sChIJ69s9qA0_CDkR2b-1XDGVrAQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Tungnath Temple",
+          "Description": "Rock Hindu temple to Lord Shiva 12,000 feet up a mountain, a challenging 4 to 5 km trek.",
+          "GeoCoordinates": {
+            "lat": 30.4885019,
+            "lng": 79.2167708
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npHI9OXhb2sNcBh0IfqMHlEf9uxKrjj8ss-RGS8TitO55wNnchFJffKvgVz6WB7peBGqXafQY4wLxsLgwDo4kv1mLXfH9lCjQq7JzsvncJ1dmnsqnm0WvgPNppFt303E7PMALneuQ=w408-h398-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Tungnath+Temple,+Panch+Kedar/data=!4m7!3m6!1s0x39082d76a94ee437:0xc9d695bd8994120a!8m2!3d30.4885019!4d79.2167708!16s%2Fm%2F02qldtc!19sChIJN-ROqXYtCDkRChKUib2V1sk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View Point Of Kedarnath Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7246856,
+            "lng": 79.0698393
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noNjpDyPpUZczqpCTULdvSlJ33T0nWhbv_AdwNrKkHltddWZQ8osqUXdsV0AHIy0Vx5p2TaiVdfbom3m9bO8u4MSM4X_00dInWZIWKNWGLGtd_bmCRrAvp_lfFoay-vKQZosPAJKA=w408-h272-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/View+Point+Of+Kedarnath+Temple/data=!4m7!3m6!1s0x39083edfdb4174af:0x16c557242237d537!8m2!3d30.7246856!4d79.0698393!16s%2Fg%2F11fxc7t9jr!19sChIJr3RB298-CDkRN9U3IiRXxRY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bheem Shila",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7354997,
+            "lng": 79.0667924
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr53TqxFAzNuGKgTz6T6b0ynnJaG31HyietGc-uRWDuyf9x0RZuCRzelN5mFPQVjwDM4MQkXwHiQ4hbt-FTgA7L6OCSld0W8Jbsf2UBUhelnI2rqhdakumGKRXzslenGF-2I52JC84ahYfp=w408-h506-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bheem+Shila,+Kedarnath/data=!4m7!3m6!1s0x39083f5dcba60269:0xef3423779c46e1e2!8m2!3d30.7354997!4d79.0667924!16s%2Fg%2F11kj_5xzhd!19sChIJaQKmy10_CDkR4uFGnHcjNO8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The God's Rock",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.735517,
+            "lng": 79.0668413
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrhn3-MVlH_PhzNhlCCRm83A8BFHca9WPuNKUQw4UtTSqOlDtaMGKqLC2LEirfVQvBh5XPCQLhswC-cjmxPeKUIGMEIfTdGv7Brxt7ugWouWQfqGoau8NrYgVrGk4Whl4t9pLQ=w408-h380-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/The+God%27s+Rock/data=!4m7!3m6!1s0x39083ee1a474e2fd:0xeaae5f6985670ae4!8m2!3d30.735517!4d79.0668413!16s%2Fg%2F11dzw6jm9r!19sChIJ_eJ0pOE-CDkR5ApnhWlfruo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ukhimath Omkareshwar Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5184264,
+            "lng": 79.0953454
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ukhimath+Omkareshwar+Temple/data=!4m7!3m6!1s0x3908341a63d014ad:0xe7ae46f38adda84!8m2!3d30.5184264!4d79.0953454!16s%2Fg%2F1hc2kcnzh!19sChIJrRTQYxo0CDkRhNqtOG_keg4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganesh Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7351848,
+            "lng": 79.0669582
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ganesh+Temple/data=!4m7!3m6!1s0x39083f1ecfe89adb:0x1446978a8111605c!8m2!3d30.7351848!4d79.0669582!16s%2Fg%2F11kqdwqv7t!19sChIJ25rozx4_CDkRXGARgYqXRhQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Trekkers Of Kedar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7346267,
+            "lng": 79.0668943
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Trekkers+Of+Kedar/data=!4m7!3m6!1s0x39083fb6a01a5769:0x438784999dbb50d!8m2!3d30.7346267!4d79.0668943!16s%2Fg%2F11l5zcm2hl!19sChIJaVcaoLY_CDkRDbXbmUl4OAQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Koteshwar Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3019638,
+            "lng": 79.0054091
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Koteshwar+Temple/data=!4m7!3m6!1s0x3909b631ba6ee0bf:0x5e57eeeaf75f0b0d!8m2!3d30.3019638!4d79.0054091!16s%2Fm%2F0m0pgsj!19sChIJv-BuujG2CTkRDQtf9-ruV14?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jagadguru Adi Shankaracharya Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7361291,
+            "lng": 79.0663562
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jagadguru+Adi+Shankaracharya+Statue/data=!4m7!3m6!1s0x39083f8c24520f95:0x56497643820b35db!8m2!3d30.7361291!4d79.0663562!16s%2Fg%2F11t6tsd3v2!19sChIJlQ9SJIw_CDkR2zULgkN2SVY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Koteshwar Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3019638,
+            "lng": 79.0054091
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Koteshwar+Temple/data=!4m7!3m6!1s0x3909b631ba6ee0bf:0x5e57eeeaf75f0b0d!8m2!3d30.3019638!4d79.0054091!16s%2Fm%2F0m0pgsj!19sChIJv-BuujG2CTkRDQtf9-ruV14?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gaurikund (Kedarnath)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.652874,
+            "lng": 79.026068
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gaurikund+%28Kedarnath%29/data=!4m7!3m6!1s0x39083900084b8fb3:0xef7317eff6d9477b!8m2!3d30.652874!4d79.026068!16s%2Fg%2F11xnlfwwnp!19sChIJs49LCAA5CDkRe0fZ9u8Xc-8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jangle chatti bazar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6749783,
+            "lng": 79.0424533
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jangle+chatti+bazar/data=!4m7!3m6!1s0x3908393fb8997e47:0x66a0c340e6ad239d!8m2!3d30.6749783!4d79.0424533!16s%2Fg%2F11kjm3vg8j!19sChIJR36ZuD85CDkRnSOt5kDDoGY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Vasuki tal kedarnath",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7262947,
+            "lng": 79.0368331
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Vasuki+tal+kedarnath/data=!4m7!3m6!1s0x39083f3f63ebf805:0x1eb39c92223e72c9!8m2!3d30.7262947!4d79.0368331!16s%2Fg%2F11qnvplt1f!19sChIJBfjrYz8_CDkRyXI-IpKcsx4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kartik Swami Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.3858031,
+            "lng": 79.0987143
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kartik+Swami+Mandir/data=!4m7!3m6!1s0x3909cb9f2ac38259:0x213130cc9e31ce!8m2!3d30.3858031!4d79.0987143!16s%2Fg%2F1hc0t7dc_!19sChIJWYLDKp_LCTkRzjGezDAxIQA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Waterfall Near Ukimath",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5020206,
+            "lng": 79.1250942
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Waterfall+Near+Ukimath/data=!4m7!3m6!1s0x390833e12f539373:0x1be8054c2d289b0b!8m2!3d30.5020206!4d79.1250942!16s%2Fg%2F11sh41y1s6!19sChIJc5NTL-EzCDkRC5soLUwF6Bs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahadev Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6944518,
+            "lng": 79.0551854
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mahadev+Waterfall/data=!4m7!3m6!1s0x3908393ead24cd97:0xf87575fcf8a0a73c!8m2!3d30.6944518!4d79.0551854!16s%2Fg%2F11syylx4mx!19sChIJl80krT45CDkRPKeg-Px1dfg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Devriyatal Trek",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5197416,
+            "lng": 79.1292349
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Devriyatal+Trek/data=!4m7!3m6!1s0x390833c41a052f85:0xa068b1149fbd07a0!8m2!3d30.5197416!4d79.1292349!16s%2Fg%2F11c5_62pw6!19sChIJhS8FGsQzCDkRoAe9nxSxaKA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Namaste Garhwal Camps",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7254506,
+            "lng": 79.0700024
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Namaste+Garhwal+Camps/data=!4m7!3m6!1s0x39083f356c8d02b5:0x2edd3864b8c6116a!8m2!3d30.7254506!4d79.0700024!16s%2Fg%2F11wh30kh11!19sChIJtQKNbDU_CDkRahHGuGQ43S4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Meetha Pani Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6855016,
+            "lng": 79.0468022
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Meetha+Pani+Waterfall/data=!4m7!3m6!1s0x3908390025dd1b4d:0x3e56bfbfaa4a50db!8m2!3d30.6855016!4d79.0468022!16s%2Fg%2F11hzmph5ww!19sChIJTRvdJQA5CDkR21BKqr-_Vj4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Rudranath Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5192847,
+            "lng": 79.318514
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Rudranath+Temple,+Panch+Kedar/data=!4m7!3m6!1s0x39082ba601233907:0x7d966708c387a497!8m2!3d30.5192847!4d79.318514!16s%2Fm%2F06znq4r!19sChIJBzkjAaYrCDkRl6SHwwhnln0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Badarinath Dham",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7448079,
+            "lng": 79.4912552
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Badarinath+Dham/data=!4m7!3m6!1s0x39a78c1fc736a8e5:0xb19c97240a0e94ef!8m2!3d30.7448079!4d79.4912552!16s%2Fm%2F026gvdv!19sChIJ5ag2xx-MpzkR75QOCiSXnLE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Doodhganga falls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7324375,
+            "lng": 79.0636875
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Doodhganga+falls/data=!4m7!3m6!1s0x39083f405ab8da99:0xdbbda2c3bdb23511!8m2!3d30.7324375!4d79.0636875!16s%2Fg%2F11jsf1cb8f!19sChIJmdq4WkA_CDkRETWyvcOivds?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Paragliding",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7359792,
+            "lng": 79.0684583
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Paragliding/data=!4m7!3m6!1s0x39083f11c814c971:0xd5b0c402211d064f!8m2!3d30.7359792!4d79.0684583!16s%2Fg%2F11kqnp80yp!19sChIJcckUyBE_CDkRTwYdIQLEsNU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "रुद्रा पॉइंट",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7174463,
+            "lng": 79.0719053
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/%E0%A4%B0%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%BE+%E0%A4%AA%E0%A5%89%E0%A4%87%E0%A4%82%E0%A4%9F,+%E0%A4%95%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B0+%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%95-+Rudra+Point,/data=!4m7!3m6!1s0x39083f005bb2bb85:0xe6f7157e5e869b53!8m2!3d30.7174463!4d79.0719053!16s%2Fg%2F11wg8l3jdn!19sChIJhbuyWwA_CDkRU5uGXn4V9-Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhairav Glacier Kedarnath",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7151875,
+            "lng": 79.0732031
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhairav+Glacier+Kedarnath/data=!4m7!3m6!1s0x39083fba3c5ed38b:0xe85e3f41d5376c11!8m2!3d30.7151875!4d79.0732031!16s%2Fg%2F11ty5mnd03!19sChIJi9NePLo_CDkREWw31UE_Xug?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kedarnath Stairway",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7131959,
+            "lng": 79.0698041
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kedarnath+Stairway/data=!4m7!3m6!1s0x39083ed40934d0c1:0x876404577052a76!8m2!3d30.7131959!4d79.0698041!16s%2Fg%2F11f4qhbbg8!19sChIJwdA0CdQ-CDkRdioFd0VAdgg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Photo Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4984425,
+            "lng": 79.1677916
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Photo+Waterfall/data=!4m7!3m6!1s0x39083352467f5311:0x67468832a080f163!8m2!3d30.4984425!4d79.1677916!16s%2Fg%2F11s4fsp3c1!19sChIJEVN_RlIzCDkRY_GAoDKIRmc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lincholi Top",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7105467,
+            "lng": 79.0718333
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lincholi+Top/data=!4m7!3m6!1s0x39083f7b37fed087:0x293097e41c7047c5!8m2!3d30.7105467!4d79.0718333!16s%2Fg%2F11ty4tz7j8!19sChIJh9D-N3s_CDkRxUdwHOSXMCk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Corner Stone View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.475785,
+            "lng": 79.2146411
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Corner+Stone+View+Point/data=!4m7!3m6!1s0x39082d004133315f:0x5934061958de191b!8m2!3d30.475785!4d79.2146411!16s%2Fg%2F11lyrlcyf_!19sChIJXzEzQQAtCDkRGxneWBkGNFk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mandakini View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.623483,
+            "lng": 79.008049
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mandakini+View+Point/data=!4m7!3m6!1s0x3908471bda199775:0x862f0eaa180e3428!8m2!3d30.623483!4d79.008049!16s%2Fg%2F11mvq11phs!19sChIJdZcZ2htHCDkRKDQOGKoOL4Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gugul kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.727068,
+            "lng": 79.0696388
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gugul+kund/data=!4m7!3m6!1s0x39083f001f2b247b:0xf491a3e62d50cfb8!8m2!3d30.727068!4d79.0696388!16s%2Fg%2F11w8lmv2y8!19sChIJeyQrHwA_CDkRuM9QLeajkfQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Simhastha water falls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5534957,
+            "lng": 79.0491924
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Simhastha+water+falls/data=!4m7!3m6!1s0x390837416a510d4b:0x3e358bdea883ed1a!8m2!3d30.5534957!4d79.0491924!16s%2Fg%2F11fd6d1lt1!19sChIJSw1RakE3CDkRGu2DqN6LNT4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Madhuganga Falls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7399491,
+            "lng": 79.0623556
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Madhuganga+Falls/data=!4m7!3m6!1s0x39083f62b6372bc3:0x550be998eacf6ea5!8m2!3d30.7399491!4d79.0623556!16s%2Fg%2F11t4fy_070!19sChIJwys3tmI_CDkRpW7P6pjpC1U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jhandi Top",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.526356,
+            "lng": 79.142059
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jhandi+Top/data=!4m7!3m6!1s0x390833714f8befc3:0x5888f3087be325e6!8m2!3d30.526356!4d79.142059!16s%2Fg%2F11fll3jbb4!19sChIJw--LT3EzCDkR5iXjewjziFg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tingri bugyal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5634844,
+            "lng": 79.1708966
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tingri+bugyal/data=!4m7!3m6!1s0x3908310980c3b23f:0xd4d14f3279f88967!8m2!3d30.5634844!4d79.1708966!16s%2Fg%2F11rnk6mvwb!19sChIJP7LDgAkxCDkRZ4n4eTJP0dQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Duraa top",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6412672,
+            "lng": 79.0578422
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Duraa+top/data=!4m7!3m6!1s0x3908394bdcc43c3f:0xc1a7c88e4d838c1a!8m2!3d30.6412672!4d79.0578422!16s%2Fg%2F11s78rjb3b!19sChIJPzzE3Es5CDkRGoyDTY7Ip8E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Glacier View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.699,
+            "lng": 79.0619
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Glacier+View+Point/data=!4m7!3m6!1s0x39083989ea916b69:0x4e16dcd5489e9a41!8m2!3d30.699!4d79.0619!16s%2Fg%2F11s90pwxqm!19sChIJaWuR6ok5CDkRQZqeSNXcFk4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shri Madmaheshwar Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6352032,
+            "lng": 79.2215749
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shri+Madmaheshwar+Temple,+Panch+Kedar/data=!4m7!3m6!1s0x3908255e110b907b:0xb772b4ea14a7fce5!8m2!3d30.6352032!4d79.2215749!16s%2Fm%2F06znw2h!19sChIJe5ALEV4lCDkR5fynFOq0crc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Horse Stopage",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7188363,
+            "lng": 79.0712997
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Horse+Stopage/data=!4m7!3m6!1s0x39083f44e86ff839:0xd87c60aeab63b9c4!8m2!3d30.7188363!4d79.0712997!16s%2Fg%2F11sszksl38!19sChIJOfhv6EQ_CDkRxLljq65gfNg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kund Jharna (Waterfall)",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5207392,
+            "lng": 79.0911103
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kund+Jharna+%28Waterfall%29/data=!4m7!3m6!1s0x390835007dda252b:0x92a8ffe7bb668386!8m2!3d30.5207392!4d79.0911103!16s%2Fg%2F11wfhj2php!19sChIJKyXafQA1CDkRhoNmu-f_qJI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nanu Chatti",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6114277,
+            "lng": 79.2016179
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nanu+Chatti/data=!4m7!3m6!1s0x39082f00449b79c5:0x1032151f1da61d4a!8m2!3d30.6114277!4d79.2016179!16s%2Fg%2F11svm9tjcp!19sChIJxXmbRAAvCDkRSh2mHR8VMhA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "DS View Point Kedar Valley",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6866214,
+            "lng": 79.0477526
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/DS+View+Point+Kedar+Valley/data=!4m7!3m6!1s0x390839e5feb0815d:0xc537587de43042b4!8m2!3d30.6866214!4d79.0477526!16s%2Fg%2F11kqb_343f!19sChIJXYGw_uU5CDkRtEIw5H1YN8U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Waterfall view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6942704,
+            "lng": 79.0541316
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Waterfall+view+point/data=!4m7!3m6!1s0x39083900733d56bf:0x7b01d1d14480b6f6!8m2!3d30.6942704!4d79.0541316!16s%2Fg%2F11wppmqdk9!19sChIJv1Y9cwA5CDkR9raARNHRAXs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Himalayas mountains RAVINDRA JADEJA view point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.470605,
+            "lng": 79.2195874
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Himalayas+mountains+RAVINDRA+JADEJA+view+point/data=!4m7!3m6!1s0x39082da4904ee023:0xac0e2626de14de9d!8m2!3d30.470605!4d79.2195874!16s%2Fg%2F11qg3d5__s!19sChIJI-BOkKQtCDkRnd4U3iYmDqw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Maa Kalishila",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.566518,
+            "lng": 79.1034307
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Maa+Kalishila/data=!4m7!3m6!1s0x390836d1786ca049:0x3346f3d1e6a43f0d!8m2!3d30.566518!4d79.1034307!16s%2Fg%2F11g7z7m_yj!19sChIJSaBseNE2CDkRDT-k5tHzRjM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nandi Kund Lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6042434,
+            "lng": 79.324501
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nandi+Kund+Lake/data=!4m7!3m6!1s0x3908299b62c598a9:0xe9e05e19718c3897!8m2!3d30.6042434!4d79.324501!16s%2Fg%2F11mtm89jxb!19sChIJqZjFYpspCDkRlziMcRle4Ok?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bird watching",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4647269,
+            "lng": 79.2276035
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bird+watching/data=!4m7!3m6!1s0x39082dbdc89564a7:0xea82269f0240e9ad!8m2!3d30.4647269!4d79.2276035!16s%2Fg%2F11v08fr6lm!19sChIJp2SVyL0tCDkRrelAAp8mguo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Masar Tal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7454063,
+            "lng": 78.9870691
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Masar+Tal/data=!4m7!3m6!1s0x39084054fdd49407:0xc660fdba24414986!8m2!3d30.7454063!4d78.9870691!16s%2Fg%2F12lk47r87!19sChIJB5TU_VRACDkRhklBJLr9YMY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Walking into the Himalayas",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5877409,
+            "lng": 79.1410949
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Walking+into+the+Himalayas/data=!4m7!3m6!1s0x390831a3dcfc1e95:0x80d4a1b51515dea4!8m2!3d30.5877409!4d79.1410949!16s%2Fg%2F11xkhzhc6s!19sChIJlR783KMxCDkRpN4VFbWh1IA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Saru Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6527898,
+            "lng": 79.0238636
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Saru+Waterfall/data=!4m7!3m6!1s0x390839507756dae9:0x54d132945e70611a!8m2!3d30.6527898!4d79.0238636!16s%2Fg%2F11tn2vvvv1!19sChIJ6dpWd1A5CDkRGmFwXpQy0VQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lincholi View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.709533,
+            "lng": 79.068993
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lincholi+View+Point/data=!4m7!3m6!1s0x39083f699d741917:0x47a6875b3ebfa437!8m2!3d30.709533!4d79.068993!16s%2Fg%2F11f61pmckn!19sChIJFxl0nWk_CDkRN6S_PluHpkc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Meditation Cave",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7350691,
+            "lng": 79.063563
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Meditation+Cave/data=!4m7!3m6!1s0x39083f66d326949b:0x8bc07d38656021e7!8m2!3d30.7350691!4d79.063563!16s%2Fg%2F11h5drv8jm!19sChIJm5Qm02Y_CDkR5yFgZTh9wIs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jagadguru Adi Shankaracharya Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7361291,
+            "lng": 79.0663562
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jagadguru+Adi+Shankaracharya+Statue/data=!4m7!3m6!1s0x39083f8c24520f95:0x56497643820b35db!8m2!3d30.7361291!4d79.0663562!16s%2Fg%2F11t6tsd3v2!19sChIJlQ9SJIw_CDkR2zULgkN2SVY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mandakini river origin",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7350102,
+            "lng": 79.0667797
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mandakini+river+origin/data=!4m7!3m6!1s0x39083f1b25a4fe0b:0xbe589141ee8376c3!8m2!3d30.7350102!4d79.0667797!16s%2Fg%2F11q22cw6wn!19sChIJC_6kJRs_CDkRw3aD7kGRWL4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahasar tal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6340112,
+            "lng": 78.6831895
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mahasar+tal/data=!4m7!3m6!1s0x39085987e7b77c33:0x5eb0a201d0e770d3!8m2!3d30.6340112!4d78.6831895!16s%2Fg%2F11lccr3097!19sChIJM3y354dZCDkR03Dn0AGisF4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Satopanth lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7443375,
+            "lng": 79.3576406
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Satopanth+lake/data=!4m7!3m6!1s0x3908219e82ba9d45:0x2f756ecdd369347b!8m2!3d30.7443375!4d79.3576406!16s%2Fg%2F1hm1sbf1z!19sChIJRZ26gp4hCDkRezRp081udS8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sari Village",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5182935,
+            "lng": 79.1348822
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Sari+Village/data=!4m7!3m6!1s0x3908330059261773:0x4eda09317734db3b!8m2!3d30.5182935!4d79.1348822!16s%2Fg%2F11vwpr5kkr!19sChIJcxcmWQAzCDkRO9s0dzEJ2k4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lamba Taal",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4881875,
+            "lng": 79.1880625
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lamba+Taal/data=!4m7!3m6!1s0x390833d69ec638c9:0x1438edf05968e8c2!8m2!3d30.4881875!4d79.1880625!16s%2Fg%2F11trg3pr4v!19sChIJyTjGntYzCDkRwuhoWfDtOBQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Waterfall kakola",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.478146,
+            "lng": 79.086382
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Waterfall+kakola/data=!4m7!3m6!1s0x390835f15c1769e3:0xf2fd6e789c8abc30!8m2!3d30.478146!4d79.086382!16s%2Fg%2F11lkh_wzg9!19sChIJ42kXXPE1CDkRMLyKnHhu_fI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Panwali Kantha ( Bugyal )",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.569074,
+            "lng": 78.8665956
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Panwali+Kantha+%28+Bugyal+%29/data=!4m7!3m6!1s0x39084fbbd55c2a05:0xa51a35934d26901f!8m2!3d30.569074!4d78.8665956!16s%2Fg%2F1tjz1rcc!19sChIJBSpc1btPCDkRH5AmTZM1GqU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shiv sarovar",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.6546875,
+            "lng": 79.2980625
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Shiv+sarovar/data=!4m7!3m6!1s0x390827cfcd84e0bf:0x880694c5d3be365a!8m2!3d30.6546875!4d79.2980625!16s%2Fg%2F11td3rzg48!19sChIJv-CEzc8nCDkRWja-08WUBog?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "View Point Of Triyuginarayan",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.641733,
+            "lng": 78.9779985
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/View+Point+Of+Triyuginarayan/data=!4m7!3m6!1s0x3908471eacf0fb3d:0x1136d7ba11a38d40!8m2!3d30.641733!4d78.9779985!16s%2Fg%2F11hz3jjxl2!19sChIJPfvwrB5HCDkRQI2jEbrXNhE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Anusuya Devi Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4801698,
+            "lng": 79.282442
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Anusuya+Devi+Mandir/data=!4m7!3m6!1s0x39082c992536d7e9:0x944c2a6bf951386c!8m2!3d30.4801698!4d79.282442!16s%2Fg%2F11h1d55gq!19sChIJ6dc2JZksCDkRbDhR-WsqTJQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chandrashila",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4862775,
+            "lng": 79.221249
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chandrashila/data=!4m7!3m6!1s0x39082d7d8b326a17:0x5af0460cb8c8306!8m2!3d30.4862775!4d79.221249!16s%2Fg%2F11c5_2ngqc!19sChIJF2oyi30tCDkRBoOMy2AErwU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chopta View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4827214,
+            "lng": 79.1990229
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Chopta+View+Point/data=!4m7!3m6!1s0x390833cdfd2a34b3:0x559faed256cc8c87!8m2!3d30.4827214!4d79.1990229!16s%2Fg%2F11vldjwpf3!19sChIJszQq_c0zCDkRh4zMVtKun1U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tungnath chopta",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4843248,
+            "lng": 79.2007001
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tungnath+chopta/data=!4m7!3m6!1s0x39082dddfbee1519:0xd0f88afed5f474ed!8m2!3d30.4843248!4d79.2007001!16s%2Fg%2F11ssd8q5wc!19sChIJGRXu-90tCDkR7XT01f6K-NA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Duggal Bitha",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4836274,
+            "lng": 79.1753107
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Duggal+Bitha/data=!4m7!3m6!1s0x390832f37aaaaaab:0xbaf031b7a2ecdd17!8m2!3d30.4836274!4d79.1753107!16s%2Fg%2F11txv213g5!19sChIJq6qqevMyCDkRF93sorcx8Lo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kalyani swimming pool",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5285875,
+            "lng": 79.0770156
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kalyani+swimming+pool/data=!4m7!3m6!1s0x390835ebf294ae3d:0x1dc42512f9802533!8m2!3d30.5285875!4d79.0770156!16s%2Fg%2F11k2npq5h5!19sChIJPa6U8us1CDkRMyWA-RIlxB0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mandani temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7012527,
+            "lng": 79.1489246
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mandani+temple/data=!4m7!3m6!1s0x39083b9b7ebeb0dd:0x6932d1a9fa9a0735!8m2!3d30.7012527!4d79.1489246!16s%2Fg%2F11ggrrnhlr!19sChIJ3bC-fps7CDkRNQea-qnRMmk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Heaven's Getaway",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4781489,
+            "lng": 79.2101821
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Heaven%27s+Getaway/data=!4m7!3m6!1s0x39082d67c80e83e5:0x282a56ae5d143fdc!8m2!3d30.4781489!4d79.2101821!16s%2Fg%2F11q2qzcgnm!19sChIJ5YMOyGctCDkR3D8UXa5WKig?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Saraswati Kund",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5216331,
+            "lng": 79.3184929
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Saraswati+Kund/data=!4m7!3m6!1s0x39082bbc0061bd63:0xa5a78e05e21e2e2b!8m2!3d30.5216331!4d79.3184929!16s%2Fg%2F11c52bwvkp!19sChIJY71hALwrCDkRKy4e4gWOp6U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kelstron Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.5937658,
+            "lng": 79.0228619
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kelstron+Point/data=!4m7!3m6!1s0x390837000717e679:0xf1081d0d687102c6!8m2!3d30.5937658!4d79.0228619!16s%2Fg%2F11xf5ckmb1!19sChIJeeYXBwA3CDkRxgJxaA0dCPE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "My favourite place",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.7346936,
+            "lng": 79.0668486
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/My+favourite+place/data=!4m7!3m6!1s0x39083fcbcdb61d25:0xf1e1556e7cd6539a!8m2!3d30.7346936!4d79.0668486!16s%2Fg%2F11n0tq45wb!19sChIJJR22zcs_CDkRmlPWfG5V4fE?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]
