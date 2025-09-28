@@ -4,15 +4,12 @@ from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 from app.utils.n8n import call_webhook_and_save_places , call_webhook_and_save_places_on_update
-from app.task.trip_tasks import process_trip_webhook , process_itinerary
+from app.task.trip_tasks import process_trip_webhook , process_itinerary , get_travelling_options , generate_train_booking_suggestions
 from app.utils.language_translation import translate_with_cache
 import datetime
 router = APIRouter(prefix="/trips", tags=["Trips"])
 from datetime import timedelta
-from fastapi import status
-import datetime
-from datetime import timedelta
-from fastapi import status
+
 
 @router.post("/create")
 async def create_trip(
@@ -20,56 +17,58 @@ async def create_trip(
     db: db_dependency,
     user: user_dependency
 ):
-    existing_trip = db.query(Trip).filter(
-        Trip.user_id == user.id,
-        Trip.trip_name == request.trip_name
-    ).first()
-    if existing_trip:
-        return {
-            "status": False,
-            "message": "Trip with this name already exists.",
-            "status_code": status.HTTP_400_BAD_REQUEST
-        }
+    # existing_trip = db.query(Trip).filter(
+    #     Trip.user_id == user.id,
+    #     Trip.trip_name == request.trip_name
+    # ).first()
+    # if existing_trip:
+    #     return {
+    #         "status": False,
+    #         "message": "Trip with this name already exists.",
+    #         "status_code": status.HTTP_400_BAD_REQUEST
+    #     }
 
-    # request.start_date and request.end_date are already datetime objects
-    start_date = request.start_date
-    end_date = request.end_date
+    # # request.start_date and request.end_date are already datetime objects
+    # start_date = request.start_date
+    # end_date = request.end_date
 
-    # Calculate journey_start_date & return_journey_date
-    journey_start_date = (start_date - timedelta(days=1)).date()
-    return_journey_date = (end_date + timedelta(days=1)).date()
+    # # Calculate journey_start_date & return_journey_date
+    # journey_start_date = (start_date - timedelta(days=1)).date()
+    # return_journey_date = (end_date + timedelta(days=1)).date()
 
-    # Create trip
-    new_trip = Trip(
-        user_id=user.id,
-        trip_name=request.trip_name,
-        budget=request.budget,
-        start_date=start_date,
-        end_date=end_date,
-        journey_start_date=journey_start_date,
-        return_journey_date=return_journey_date,
-        destination=request.destination,
-        base_location=request.base_location,
-        travel_mode=request.travel_mode,
-        num_people=request.num_people,
-        activities=request.activities or [],
-        travelling_with=request.travelling_with
-    )
+    # # Create trip
+    # new_trip = Trip(
+    #     user_id=user.id,
+    #     trip_name=request.trip_name,
+    #     budget=request.budget,
+    #     start_date=start_date,
+    #     end_date=end_date,
+    #     journey_start_date=journey_start_date,
+    #     return_journey_date=return_journey_date,
+    #     destination=request.destination,
+    #     base_location=request.base_location,
+    #     travel_mode=request.travel_mode,
+    #     num_people=request.num_people,
+    #     activities=request.activities or [],
+    #     travelling_with=request.travelling_with
+    # )
 
-    db.add(new_trip)
-    db.commit()
-    db.refresh(new_trip)
+    # db.add(new_trip)
+    # db.commit()
+    # db.refresh(new_trip)
 
-    # Run webhook processing in background
-    process_trip_webhook.delay(new_trip.id, user.id)
-
+    # Run ai processing in background
+    #get_travelling_options.delay(new_trip.id, user.id, new_trip.base_location, new_trip.destination,  new_trip.travel_mode.value if new_trip.travel_mode else None)
+    new_trip =12
+    user = 1
+    generate_train_booking_suggestions.delay(new_trip, user)
     return {
         "status": True,
         "data": {
-            "trip_id": new_trip.id,
-            "trip_name": new_trip.trip_name,
-            "journey_start_date": str(journey_start_date),
-            "return_journey_date": str(return_journey_date)
+            # "trip_id": new_trip.id,
+            # "trip_name": new_trip.trip_name,
+            # "journey_start_date": str(journey_start_date),
+            # "return_journey_date": str(return_journey_date)
         },
         "message": "Trip created successfully. Processing places in background.",
         "status_code": status.HTTP_201_CREATED
