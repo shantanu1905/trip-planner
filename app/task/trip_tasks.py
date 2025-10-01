@@ -2,6 +2,8 @@ from app.celery_worker import celery_app
 from app.database.database import SessionLocal
 from app.database.models import Trip, TouristPlace , ItineraryPlace, Itinerary , TravelOptions
 from app.aiworkflow.get_travelling_options import get_travel_options_gemini
+from app.aiworkflow.get_travel_bookings import search_travel_tickets
+
 import datetime
 import requests
 from dotenv import load_dotenv
@@ -280,153 +282,51 @@ def get_travelling_options(trip_id, user_id, base_location, destination, travel_
         db.close()
 
 
-def get_time_period(hour):
-    """Return time period based on 24-hour time."""
-    if 5 <= hour < 12:
-        return "Morning"
-    elif 12 <= hour < 17:
-        return "Afternoon"
-    elif 17 <= hour < 21:
-        return "Evening"
-    else:
-        return "Night"
-def extract_station_name(raw_name: str) -> str:
-    """
-    Extract the first word of the station/city name.
-    Works for:
-      - "Mumbai (CSTM)" → "Mumbai"
-      - "Pune" → "Pune"
-      - "Haridwar, Uttarakhand, India" → "Haridwar"
-    """
-    # Remove parentheses content first
-    cleaned_name = raw_name.split("(")[0].strip()
-    # Take first word before any comma or space
-    first_word = cleaned_name.split(",")[0].split()[0].strip()
-    return first_word
 
-
-from app.database.database import SessionLocal
-from app.database.models import Trip, TravelOptions, UserPreferences
-from app.utils.easemytrip import search_trains, get_station_code
-from datetime import datetime, timedelta
 @celery_app.task
-def generate_travel_booking_suggestions(trip_id, user_id):
-    """Generate detailed travel booking suggestions for all modes: Train, Bus, Flight, Taxi."""
+def get_detailed_travelling_options(trip_id, user_id, start_date):
     db = SessionLocal()
     try:
+        # Fetch Trip
         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user_id).first()
         if not trip:
-            print(f"[Trip {trip_id}] Trip not found")
+            print(f"[Trip {trip_id}] Trip not found. Skipping travel modes processing.")
             return
 
-        # Fetch user preferences
-        user_pref = db.query(UserPreferences).filter(UserPreferences.user_id == user_id).first()
-        preferred_departure_time = (
-            user_pref.preferred_departure_time.value if user_pref and user_pref.preferred_departure_time else None
-        )
+        # Fetch existing TravelOptions
+        travel_opt = db.query(TravelOptions).filter(TravelOptions.trip_id == trip_id).first()
+        if not travel_opt:
+            print(f"[Trip {trip_id}] TravelOptions not found. Generate base travel modes.")
+            return
 
-        # Fetch saved TravelOptions
-        saved_travel_options = db.query(TravelOptions).filter(TravelOptions.trip_id == trip_id).first()
-        travel_options_data = saved_travel_options.travel_data if saved_travel_options else []
 
-        suggestions = []
+        base_legs = travel_opt.travel_data
+        if not isinstance(base_legs, list):
+            print(f"[Trip {trip_id}] Invalid travel_data format, expected list of legs.")
+            return
 
-        for leg in travel_options_data:
-            mode = leg.get("mode")
-            from_loc = leg.get("from")
-            to_loc = leg.get("to")
-
-            leg_suggestions = []
-
-            # ---------------- Train ----------------
-            if mode == "Train":
-                from_station = extract_station_name(from_loc)
-                to_station = extract_station_name(to_loc)
-                from_code, from_name = get_station_code(from_station)
-                to_code, to_name = get_station_code(to_station)
-
-                if not from_code or not to_code:
-                    print(f"[Trip {trip_id}] Invalid station codes for leg {from_loc} -> {to_loc}")
-                    continue
-
-                current_date = trip.journey_start_date
-                while current_date <= trip.return_journey_date:
-                    trains = search_trains(from_code, to_code, current_date.strftime("%d/%m/%Y"))
-                    if not trains:
-                        current_date += timedelta(days=1)
-                        continue
-
-                    # Filter by preferred departure time
-                    if preferred_departure_time:
-                        trains = [
-                            t for t in trains
-                            if t.get("departureTime") and
-                            get_time_period(int(t["departureTime"].split(":")[0])) == preferred_departure_time
-                        ]
-
-                    for train in trains:
-                        leg_suggestions.append({
-                            "train_name": train.get("trainName"),
-                            "train_number": train.get("trainNumber"),
-                            "departure_time": train.get("departureTime"),
-                            "arrival_time": train.get("arrivalTime"),
-                            "duration": train.get("duration"),
-                            "source": from_loc,
-                            "destination": to_loc,
-                            "classes": train.get("classes", []),
-                            "booking_url": f"https://railways.easemytrip.com/TrainListInfo/{from_name.replace(' ','')}({from_code})-to-{to_name.replace(' ','')}({to_code})/2/{current_date.strftime('%d-%m-%Y')}"
-                        })
-                    current_date += timedelta(days=1)
-
-            # ---------------- Bus ----------------
-            elif mode == "Bus":
-                leg_suggestions.append({
-                    "bus_name": leg.get("Note") or "Bus service",
-                    "from_city": from_loc,
-                    "to_city": to_loc,
-                    "approx_time": leg.get("approx_time"),
-                    "approx_cost": leg.get("approx_cost"),
-                    "booking_url": None
-                })
-
-            # ---------------- Flight ----------------
-            elif mode == "Flight":
-                leg_suggestions.append({
-                    "airline": leg.get("airline") or "Flight",
-                    "flight_number": leg.get("flight_number"),
-                    "from_city": from_loc,
-                    "to_city": to_loc,
-                    "departure_time": leg.get("departure_time"),
-                    "arrival_time": leg.get("arrival_time"),
-                    "duration": leg.get("approx_time"),
-                    "fare": leg.get("approx_cost"),
-                    "booking_url": leg.get("booking_url")
-                })
-
-            # ---------------- Taxi / Cab / Other ----------------
-            elif mode in ["Taxi", "Cab", "Trek"]:
-                leg_suggestions.append({
-                    "service": mode,
-                    "from_city": from_loc,
-                    "to_city": to_loc,
-                    "approx_time": leg.get("approx_time"),
-                    "approx_cost": leg.get("approx_cost"),
-                    "note": leg.get("Note")
-                })
-
-            suggestions.append({
-                "from": from_loc,
-                "to": to_loc,
-                "mode": mode,
-                "options": leg_suggestions
-            })
-
-        return {
-            "trip_id": trip_id,
-            "travel_booking_suggestions": suggestions
+        # Wrap into required forma
+        input_json= {
+            "legs":base_legs,
+            "start_date":str(start_date).split(" ")[0]
         }
 
+        # Call LLM function
+        try:
+            detailed_travel_options_data = search_travel_tickets(input_json)
+            print(f"[Trip {trip_id}] Raw Response: {detailed_travel_options_data}")
+        except Exception as e:
+            print(f"[Trip {trip_id}] Travel Options request failed: {str(e)}")
+            return
+
+        # ✅ Save full new JSON output instead of partial extraction
+        travel_opt.travel_data = detailed_travel_options_data
+        db.commit()
+        db.refresh(travel_opt)
+        print(f"[Trip {trip_id}] Travel options updated successfully : {detailed_travel_options_data}")
+
     except Exception as e:
-        print(f"[Trip {trip_id}] Error generating travel suggestions: {e}")
+        db.rollback()
+        print(f"[Trip {trip_id}] Error processing travel modes: {str(e)}")
     finally:
         db.close()

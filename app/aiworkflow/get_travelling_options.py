@@ -89,13 +89,20 @@ def get_travel_options_gemini(trip_id: str, base_location: str, destination: str
     1. EVERY travel mode object MUST contain ALL 6 fields: from, to, mode, approx_time, approx_cost, Note
     2. The main structure has "Travelling _Modes" (note the space after underscore) as the array field name
     3. Each mode's "from" should be the starting point, "to" should be the destination point
-    4. No duplicate modes allowed
-    5. Modes should connect logically (each mode's "to" becomes next mode's "from")
-    6. Include location codes in parentheses (e.g., "Mumbai (BOM)")
+    4. **USE ONLY CITY NAMES - NO station codes, airport codes, or abbreviations (e.g., "New Delhi" not "New Delhi (NDLS)", "Mumbai" not "Mumbai (BOM)")**
+    5. No duplicate modes allowed
+    6. Modes should connect logically (each mode's "to" becomes next mode's "from")
     7. Use ₹ symbol for all costs
     8. All time durations should include "hours" or "minutes"
     9. Calculate total_time and total_cost accurately
     10. Return valid JSON only, no markdown code blocks.
+
+    LOCATION NAMING RULES:
+    - Use simple city/town names only: "New Delhi", "Mumbai", "Bangalore", "Goa"
+    - Do NOT include station codes: ❌ "New Delhi (NDLS)" → ✅ "New Delhi"
+    - Do NOT include airport codes: ❌ "Mumbai (BOM)" → ✅ "Mumbai"  
+    - Do NOT include terminal names: ❌ "Delhi Airport Terminal 3" → ✅ "New Delhi"
+    - For areas within cities, use: "City - Area" format (e.g., "Mumbai - Andheri")
 
     INTELLIGENT ROUTING LOGIC - MINIMIZE TRAVEL TIME:
     🎯 PRIMARY GOAL: ALWAYS MINIMIZE TOTAL TRAVEL TIME
