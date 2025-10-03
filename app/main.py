@@ -10,16 +10,45 @@ from app.routers.trips import router as trips
 from app.routers.authentication_react import router as react
 from app.routers.user_preferences import router as user_preferences
 from app.routers.travel_mode import router as travel_mode
-
-
-
-
-
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.database import events
 from dotenv import load_dotenv
 import logging
 import os
+from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel, SecurityScheme as SecuritySchemeModel
+from fastapi.openapi.utils import get_openapi
+
+# This is automatically generated if you use OAuth2PasswordBearer in Depends,
+# but to add it globally in Swagger UI:
+
+def custom_openapi(app):
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="My API",
+        version="1.0.0",
+        description="API with JWT authentication",
+        routes=app.routes,
+    )
+    
+    # Define OAuth2 Password flow (for Bearer JWT token)
+    openapi_schema["components"]["securitySchemes"] = {
+        "BearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+    }
+    
+    # Apply to all endpoints globally
+    for path in openapi_schema["paths"].values():
+        for method in path.values():
+            method["security"] = [{"BearerAuth": []}]
+    
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+
 
 load_dotenv()
 
@@ -30,6 +59,8 @@ origins = ["*"]
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
 app = FastAPI()
+# Replace the default OpenAPI function
+app.openapi = lambda: custom_openapi(app)
 
 app.add_middleware(
     CORSMiddleware,
