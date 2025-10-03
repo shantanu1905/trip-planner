@@ -83,7 +83,6 @@ class PreferencesRequest(BaseModel):
     travel_mode: Optional[TravelModeEnum] = None
     travelling_with: Optional[TravellingWithEnum] = None
     preferred_train_class: Optional[TrainClassEnum] = None
-    preferred_departure_time: Optional[DepartureTimeEnum] = None
     preferred_from_station: Optional[str] = None
     flexible_station_option:Optional[bool] = None
 
@@ -95,4 +94,3 @@ class TrainSearchRequest(BaseModel):
     to_station: str
     travel_date: str  # Accepts DD/MM/YYYY or YYYY-MM-DD
     coupon_code: Optional[str] = ""
-    time_filter:Optional[str] = ""
