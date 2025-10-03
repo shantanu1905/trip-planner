@@ -3,77 +3,129 @@ from app.database.models import Trip , Settings, TouristPlace , Itinerary , Itin
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.utils.n8n import call_webhook_and_save_places , call_webhook_and_save_places_on_update
 from app.task.trip_tasks import process_trip_webhook , process_itinerary , get_travelling_options , get_detailed_travelling_options
 from app.utils.language_translation import translate_with_cache
 import datetime
+
+
 router = APIRouter(prefix="/trips", tags=["Trips"])
 from datetime import timedelta
+
+from fastapi import APIRouter, Depends, status, HTTPException, Query
+from app.database.models import Trip, UserPreferences
+from app.database.database import db_dependency
+from app.utils.auth_helpers import user_dependency
+from app.database.schemas import CreateTripRequest
+from typing import Optional
+
+router = APIRouter(prefix="/trips", tags=["Trips"])
 
 
 @router.post("/create")
 async def create_trip(
     request: CreateTripRequest,
     db: db_dependency,
-    user: user_dependency
+    user: user_dependency,
+   
 ):
-    existing_trip = db.query(Trip).filter(
-        Trip.user_id == user.id,
-        Trip.trip_name == request.trip_name
-    ).first()
-    if existing_trip:
+    try:
+        # 0. Prevent duplicate trip names for same user
+        existing_trip = db.query(Trip).filter(
+            Trip.user_id == user.id,
+            Trip.trip_name == request.trip_name
+        ).first()
+        if existing_trip:
+            return {
+                "status": False,
+                "message": "Trip with this name already exists.",
+                "status_code": status.HTTP_400_BAD_REQUEST
+            }
+
+        # request.start_date and request.end_date are expected as datetime objects
+        start_date = request.start_date
+        end_date = request.end_date
+
+        # 1. Load preferences if requested
+        preferences = None
+        if request.use_preferences:
+            preferences = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
+            if not preferences:
+                return {
+                    "status": False,
+                    "message": "No user preferences found. Please set your preferences first or call this endpoint with use_preferences=false.",
+                    "status_code": status.HTTP_400_BAD_REQUEST
+                }
+
+            # --- Required fields that must be present either in request or preferences ---
+            missing_fields = []
+            if not (request.base_location or (getattr(preferences, "base_location", None))):
+                missing_fields.append("base_location")
+            if not (request.travel_mode or (getattr(preferences, "travel_mode", None))):
+                missing_fields.append("travel_mode")
+
+            if missing_fields:
+                return {
+                    "status": False,
+                    "message": (
+                        "Missing required data. The following fields are not provided in the request "
+                        "and are not set in user preferences: " + ", ".join(missing_fields) +
+                        ". Please update your user preferences or provide these fields in the request."
+                    ),
+                    "status_code": status.HTTP_400_BAD_REQUEST
+                }
+
+        # 2. Apply values: prefer request value, otherwise preference (if allowed), otherwise None
+        budget = request.budget if request.budget is not None else (preferences.default_budget if preferences else None)
+        base_location = request.base_location if request.base_location else (preferences.base_location if preferences else None)
+        travel_mode = request.travel_mode if request.travel_mode is not None else (preferences.travel_mode if preferences else None)
+        num_people = request.num_people if request.num_people is not None else (preferences.num_people if preferences and hasattr(preferences, "num_people") else None)
+        activities = request.activities if request.activities is not None else (preferences.activities if preferences else [])
+        travelling_with = request.travelling_with if request.travelling_with is not None else (preferences.travelling_with if preferences else None)
+
+        # 3. Create trip record
+        new_trip = Trip(
+            user_id=user.id,
+            trip_name=request.trip_name,
+            budget=budget,
+            start_date=start_date,
+            end_date=end_date,
+            destination=request.destination,
+            base_location=base_location,
+            travel_mode=travel_mode,
+            num_people=num_people,
+            activities=activities or [],
+            travelling_with=travelling_with
+        )
+
+        db.add(new_trip)
+        db.commit()
+        db.refresh(new_trip)
+
+        # 4. Kick off background jobs (serialize enum values safely when passing)
+        travel_mode_value = new_trip.travel_mode.value if hasattr(new_trip.travel_mode, "value") else (new_trip.travel_mode if new_trip.travel_mode else None)
+
+        # Example Celery tasks - adapt args/names to your project
+        get_travelling_options.delay(new_trip.id, user.id, new_trip.base_location, new_trip.destination, travel_mode_value)
+        get_detailed_travelling_options.delay(new_trip.id, user.id, start_date.isoformat() if start_date else None)
+
         return {
-            "status": False,
-            "message": "Trip with this name already exists.",
-            "status_code": status.HTTP_400_BAD_REQUEST
+            "status": True,
+            "data": {
+                "trip_id": new_trip.id,
+                "trip_name": new_trip.trip_name,
+            },
+            "message": "Trip created successfully. Processing in background.",
+            "status_code": status.HTTP_201_CREATED
         }
 
-    # request.start_date and request.end_date are already datetime objects
-    start_date = request.start_date
-    end_date = request.end_date
+    except Exception as e:
+        # Keep useful error message, but avoid leaking internals in production
+        return {
+            "status": False,
+            "message": f"Error creating trip: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
 
-    # Calculate journey_start_date & return_journey_date
-    journey_start_date = (start_date - timedelta(days=1)).date()
-    return_journey_date = (end_date + timedelta(days=1)).date()
-
-    # Create trip
-    new_trip = Trip(
-        user_id=user.id,
-        trip_name=request.trip_name,
-        budget=request.budget,
-        start_date=start_date,
-        end_date=end_date,
-        journey_start_date=journey_start_date,
-        return_journey_date=return_journey_date,
-        destination=request.destination,
-        base_location=request.base_location,
-        travel_mode=request.travel_mode,
-        num_people=request.num_people,
-        activities=request.activities or [],
-        travelling_with=request.travelling_with
-    )
-
-    db.add(new_trip)
-    db.commit()
-    db.refresh(new_trip)
-
-    #Run ai processing in background
-    get_travelling_options.delay(new_trip.id, user.id, new_trip.base_location, new_trip.destination,  new_trip.travel_mode.value if new_trip.travel_mode else None)
-
-    get_detailed_travelling_options.delay(new_trip.id, user.id, start_date)
-
- 
-    return {
-        "status": True,
-        "data": {
-            "trip_id": new_trip.id,
-            "trip_name": new_trip.trip_name,
-            "journey_start_date": str(journey_start_date),
-            "return_journey_date": str(return_journey_date)
-        },
-        "message": "Trip created successfully. Processing places in background.",
-        "status_code": status.HTTP_201_CREATED
-    }
 
 
 @router.put("/update/{trip_id}")
@@ -96,16 +148,10 @@ async def update_trip(
         start_date = request.start_date
         end_date = request.end_date
 
-        # Calculate journey_start_date & return_journey_date
-        journey_start_date = (start_date - timedelta(days=1)).date()
-        return_journey_date = (end_date + timedelta(days=1)).date()
-
         # Update trip fields
         trip.budget = request.budget
         trip.start_date = start_date
         trip.end_date = end_date
-        trip.journey_start_date = journey_start_date
-        trip.return_journey_date = return_journey_date
         trip.travel_mode = request.travel_mode
         trip.num_people = request.num_people
         trip.activities = request.activities if request.activities else []
@@ -121,8 +167,6 @@ async def update_trip(
             "data": {
                 "trip_id": trip.id,
                 "trip_name": trip.trip_name,
-                "journey_start_date": str(journey_start_date),
-                "return_journey_date": str(return_journey_date),
                 "activities": trip.activities
             },
             "message": "Trip updated successfully. Processing places in background.",
@@ -160,8 +204,6 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
                 "base_location": t.base_location,
                 "start_date": t.start_date,
                 "end_date": t.end_date,
-                "journey_start_date" : t.journey_start_date,
-                "return_journey_date" : t.return_journey_date,
                 "budget": t.budget,
                 "travel_mode": t.travel_mode.value if t.travel_mode else None,
                 "num_people": t.num_people,
@@ -175,10 +217,6 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
                 trip["start_date"] = trip["start_date"].isoformat()
             if isinstance(trip.get("end_date"), datetime.datetime):
                 trip["end_date"] = trip["end_date"].isoformat()
-            if isinstance(trip.get("journey_start_date"), datetime.datetime):
-                trip["journey_start_date"] = trip["journey_start_date"].isoformat()
-            if isinstance(trip.get("return_journey_date"), datetime.datetime):
-                trip["return_journey_date"] = trip["return_journey_date"].isoformat()
 
         # ✅ Translate entire trips list once if needed
         if target_lang != "English":
@@ -282,8 +320,6 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "base_location": trip.base_location,
             "start_date": trip.start_date.isoformat() if trip.start_date else None,
             "end_date": trip.end_date.isoformat() if trip.end_date else None,
-            "journey_start_date" : trip.journey_start_date.isoformat() if trip.journey_start_date else None,
-            "return_journey_date" : trip.return_journey_date.isoformat() if trip.return_journey_date else None,
             "budget": trip.budget,
             "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
             "num_people": trip.num_people,

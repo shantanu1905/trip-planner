@@ -11,56 +11,9 @@ router = APIRouter(prefix="/settings", tags=["Settings"])
 
 
 
-# ---------- Add Settings ----------
-@router.post("/add", response_model=SettingsResponse)
-async def add_settings(
-    request: SettingsRequest,
-    db: db_dependency,
-    user: user_dependency
-):
-    try:
-        existing_settings = db.query(Settings).filter(Settings.user_id == user.id).first()
-        if existing_settings:
-            return {
-                "status": False,
-                "data": None,
-                "message": "Settings already exist. Use update instead.",
-                "status_code": status.HTTP_400_BAD_REQUEST
-            }
-
-        new_settings = Settings(
-            user_id=user.id,
-            native_language=request.native_language,
-            real_time_updates=request.real_time_updates,
-            auto_booking_enabled=request.auto_booking_enabled
-        )
-        db.add(new_settings)
-        db.commit()
-        db.refresh(new_settings)
-
-        return {
-            "status": True,
-            "data": {
-                "user_id": new_settings.user_id,
-                "native_language": new_settings.native_language,
-                "real_time_updates": new_settings.real_time_updates,
-                "auto_booking_enabled": new_settings.auto_booking_enabled,
-            },
-            "message": "Settings added successfully",
-            "status_code": status.HTTP_201_CREATED
-        }
-
-    except Exception as e:
-        return {
-            "status": False,
-            "data": None,
-            "message": f"Error adding settings: {str(e)}",
-            "status_code": status.HTTP_400_BAD_REQUEST
-        }
-
 
 # ---------- Update Settings ----------
-@router.put("/update", response_model=SettingsResponse)
+@router.put("/", response_model=SettingsResponse)
 async def update_settings(
     request: SettingsRequest,
     db: db_dependency,
@@ -107,7 +60,7 @@ async def update_settings(
 
 
 # ---------- Get Settings ----------
-@router.get("/get", response_model=SettingsResponse,
+@router.get("/", response_model=SettingsResponse,
             description="Fetch the user settings. Returns native language, real-time updates, and auto-booking preferences.")
 async def get_settings(
     db: db_dependency,
@@ -170,7 +123,6 @@ def get_all_enums(
                 "property_types": get_enum_values_list(PropertyTypeEnum),
                 "food_preferences": get_enum_values_list(FoodPreferenceEnum),
                 "train_classes": get_enum_values_list(TrainClassEnum),
-                "departure_times": get_enum_values_list(DepartureTimeEnum)
             },
             "message": "Settings fetched successfully",
             "status_code": status.HTTP_200_OK
