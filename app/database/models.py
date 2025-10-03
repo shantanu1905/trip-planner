@@ -110,12 +110,7 @@ class Trip(Base):
     budget = Column(Integer, nullable=True)
     start_date = Column(DateTime, nullable=False)
     end_date = Column(DateTime, nullable=False)
-  
-    journey_start_date = Column(DateTime, nullable=True)  # New field for journey start
-    return_journey_date = Column(DateTime, nullable=True)  # New field for return journey
-    
     destination = Column(String, nullable=False)
-
     base_location = Column(String, nullable=True)
     travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
     num_people = Column(Integer, nullable=True)

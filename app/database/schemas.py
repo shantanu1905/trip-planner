@@ -28,13 +28,11 @@ class RefreshTokenRequest(BaseModel):
     refresh_token: str
 
 
-# ---------- Schemas ----------
+# ---------- Settings ----------
 class SettingsRequest(BaseModel):
     native_language: Optional[NativeLanguageEnum] = None
     real_time_updates: Optional[bool] = True
     auto_booking_enabled: Optional[bool] = False
-
-
 
 class SettingsResponse(BaseModel):
     status: bool
@@ -43,27 +41,25 @@ class SettingsResponse(BaseModel):
     status_code: int
 
 
+# ---------- Trips ----------
 class CreateTripRequest(BaseModel):
     trip_name: str
     budget: Optional[int] = None
     start_date: datetime
     end_date: datetime
-    journey_start_date:Optional[datetime]  = None
-    return_journey_date: Optional[datetime]  = None
     destination: str
-    base_location: str
+    base_location: Optional[str] = None
     travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = 1
     activities: Optional[List] = None  # ✅ Updated field name
     travelling_with: Optional[TravellingWithEnum] = None
+    use_preferences: bool = False
 
 
 class UpdateTripRequest(BaseModel):
     budget: Optional[int] = None
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
-    journey_start_date : Optional[datetime] = None
-    return_journey_date : Optional[datetime] = None
     travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = None
     activities: Optional[List] = None  # ✅ Updated field name
@@ -73,19 +69,26 @@ class UpdateTripRequest(BaseModel):
 
 # ---- Request Schema ----
 class PreferencesRequest(BaseModel):
+    # Budget & food
     default_budget: Optional[int] = None
-    property_type: Optional[PropertyTypeEnum] = None
-    hotel_room_price_per_night: Optional[float] = None
-    num_people: Optional[int] = None
     food_preference: Optional[FoodPreferenceEnum] = None
     base_location: Optional[str] = None
     activities: Optional[List[str]] = []
     travel_mode: Optional[TravelModeEnum] = None
     travelling_with: Optional[TravellingWithEnum] = None
+
+    # Train preferences
     preferred_train_class: Optional[TrainClassEnum] = None
     preferred_from_station: Optional[str] = None
-    flexible_station_option:Optional[bool] = None
+    flexible_station_option: Optional[bool] = None
 
+    # Hotel preferences
+    no_of_rooms: Optional[int] = 1
+    no_of_adult: Optional[int] = 1
+    no_of_child: Optional[int] = 0
+    accomodation_min_price: Optional[float] = 1
+    accomodation_max_price: Optional[float] = 1000000
+    selected_property_types: Optional[List[PropertyTypeEnum]] = []
     
 
 # --- Request Body Schema ---
