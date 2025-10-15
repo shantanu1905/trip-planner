@@ -207,40 +207,25 @@ class UserPreferences(Base):
 
     #Train
     preferred_train_class = Column(PGEnum(TrainClassEnum, name="train_class_enum", create_type=True),nullable=False,default=TrainClassEnum.AC_3_Tier)
-    # Station Preferences
     preferred_from_station = Column(String, nullable=True)  # e.g., "Nagpur"
     flexible_station_option = Column(Boolean, default=True)  # Allow nearby stations if main one not available
+
+    #Bus
+
+
+
 
     #Hotels
     # Room details - individual fields
     no_of_rooms = Column(Integer, default=1)
     no_of_adult = Column(Integer, default=1)
     no_of_child = Column(Integer, default=0)
-
     accomodation_min_price = Column(Float,  default=1 , nullable=True)
     accomodation_max_price = Column(Float, default=1000000 ,nullable=True)
-
     selected_property_types = Column(JSONB(PGEnum(PropertyTypeEnum, name="property_type_enum", create_type=True)),nullable=False,default=lambda: [PropertyTypeEnum.HOTEL.value])
 
-    
     # Relationship
     user = _orm.relationship("User", back_populates="preferences", passive_deletes=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class TravelOptions(Base):
