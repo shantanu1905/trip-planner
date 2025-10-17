@@ -3,30 +3,22 @@ from app.database.models import Trip , Settings, TouristPlace , Itinerary , Itin
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.task.trip_tasks import process_trip_webhook , process_itinerary , get_travelling_options , get_detailed_travelling_options
+from app.task.trip_tasks import process_trip_webhook , process_itinerary , get_travelling_options , get_detailed_travelling_options , process_tourist_places , process_trip_itinerary
 from app.utils.language_translation import translate_with_cache
+from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
+from app.aiworkflow.destination_info_agent import get_destination_data
 import datetime
-
-
-router = APIRouter(prefix="/trips", tags=["Trips"])
-from datetime import timedelta
-
+import json
 from fastapi import APIRouter, Depends, status, HTTPException, Query
 from app.database.models import Trip, UserPreferences
-from app.database.database import db_dependency
-from app.utils.auth_helpers import user_dependency
-from app.database.schemas import CreateTripRequest
-from typing import Optional
 
 router = APIRouter(prefix="/trips", tags=["Trips"])
-
 
 @router.post("/create")
 async def create_trip(
     request: CreateTripRequest,
     db: db_dependency,
     user: user_dependency,
-   
 ):
     try:
         # 0. Prevent duplicate trip names for same user
@@ -41,7 +33,6 @@ async def create_trip(
                 "status_code": status.HTTP_400_BAD_REQUEST
             }
 
-        # request.start_date and request.end_date are expected as datetime objects
         start_date = request.start_date
         end_date = request.end_date
 
@@ -56,33 +47,35 @@ async def create_trip(
                     "status_code": status.HTTP_400_BAD_REQUEST
                 }
 
-            # --- Required fields that must be present either in request or preferences ---
             missing_fields = []
-            if not (request.base_location or (getattr(preferences, "base_location", None))):
+            if not (request.base_location or getattr(preferences, "base_location", None)):
                 missing_fields.append("base_location")
-            if not (request.travel_mode or (getattr(preferences, "travel_mode", None))):
-                missing_fields.append("travel_mode")
 
             if missing_fields:
                 return {
                     "status": False,
                     "message": (
                         "Missing required data. The following fields are not provided in the request "
-                        "and are not set in user preferences: " + ", ".join(missing_fields) +
-                        ". Please update your user preferences or provide these fields in the request."
+                        "and are not set in user preferences: " + ", ".join(missing_fields)
                     ),
                     "status_code": status.HTTP_400_BAD_REQUEST
                 }
 
-        # 2. Apply values: prefer request value, otherwise preference (if allowed), otherwise None
+        # 2. Apply values (fallback logic)
         budget = request.budget if request.budget is not None else (preferences.default_budget if preferences else None)
         base_location = request.base_location if request.base_location else (preferences.base_location if preferences else None)
-        travel_mode = request.travel_mode if request.travel_mode is not None else (preferences.travel_mode if preferences else None)
         num_people = request.num_people if request.num_people is not None else (preferences.num_people if preferences and hasattr(preferences, "num_people") else None)
         activities = request.activities if request.activities is not None else (preferences.activities if preferences else [])
         travelling_with = request.travelling_with if request.travelling_with is not None else (preferences.travelling_with if preferences else None)
 
-        # 3. Create trip record
+        # 🆕 3. Fetch destination info (from your custom function)
+        destination_data = get_destination_data(request.destination)
+
+        destination_full_name = destination_data.get("destination")
+        destination_details = destination_data.get("destination_details")
+        destination_image_url = destination_data.get("image_url", [])
+
+        # 4. Create trip record
         new_trip = Trip(
             user_id=user.id,
             trip_name=request.trip_name,
@@ -91,22 +84,22 @@ async def create_trip(
             end_date=end_date,
             destination=request.destination,
             base_location=base_location,
-            travel_mode=travel_mode,
             num_people=num_people,
             activities=activities or [],
-            travelling_with=travelling_with
+            travelling_with=travelling_with,
+            # 🆕 Add fetched info
+            destination_full_name=destination_full_name,
+            destination_details=destination_details,
+            destination_image_url=destination_image_url
         )
 
         db.add(new_trip)
         db.commit()
         db.refresh(new_trip)
 
-        # 4. Kick off background jobs (serialize enum values safely when passing)
-        travel_mode_value = new_trip.travel_mode.value if hasattr(new_trip.travel_mode, "value") else (new_trip.travel_mode if new_trip.travel_mode else None)
-
-        # Example Celery tasks - adapt args/names to your project
-        get_travelling_options.delay(new_trip.id, user.id, new_trip.base_location, new_trip.destination, travel_mode_value)
-        get_detailed_travelling_options.delay(new_trip.id, user.id, start_date.isoformat() if start_date else None)
+        # 5. Kick off background jobs
+        # process_tourist_places.delay(new_trip.id, new_trip.destination, new_trip.activities if new_trip.activities else [])
+        # process_trip_itinerary.delay(new_trip.id,)
 
         return {
             "status": True,
@@ -114,19 +107,16 @@ async def create_trip(
                 "trip_id": new_trip.id,
                 "trip_name": new_trip.trip_name,
             },
-            "message": "Trip created successfully. Processing in background.",
+            "message": "Trip created successfully. Destination details fetched and processing started.",
             "status_code": status.HTTP_201_CREATED
         }
 
     except Exception as e:
-        # Keep useful error message, but avoid leaking internals in production
         return {
             "status": False,
             "message": f"Error creating trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
-
-
 
 @router.put("/update/{trip_id}")
 async def update_trip(
@@ -179,6 +169,9 @@ async def update_trip(
             "message": f"Error updating trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+    
+
+
 
 @router.get("/")
 async def get_all_trips(db: db_dependency, user: user_dependency):
@@ -201,22 +194,19 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
                 "trip_id": t.id,
                 "trip_name": t.trip_name,
                 "destination": t.destination,
+                "destination_full_name": t.destination_full_name,
+                "destination_details": t.destination_details,
+                "destination_image_url": t.destination_image_url or [],
                 "base_location": t.base_location,
-                "start_date": t.start_date,
-                "end_date": t.end_date,
+                "start_date": t.start_date.isoformat() if t.start_date else None,
+                "end_date": t.end_date.isoformat() if t.end_date else None,
                 "budget": t.budget,
-                "travel_mode": t.travel_mode.value if t.travel_mode else None,
                 "num_people": t.num_people,
                 "activities": t.activities or [],
                 "travelling_with": t.travelling_with.value if t.travelling_with else None
             }
             for t in trips
         ]
-        for trip in trips_data:
-            if isinstance(trip.get("start_date"), datetime.datetime):
-                trip["start_date"] = trip["start_date"].isoformat()
-            if isinstance(trip.get("end_date"), datetime.datetime):
-                trip["end_date"] = trip["end_date"].isoformat()
 
         # ✅ Translate entire trips list once if needed
         if target_lang != "English":
@@ -300,28 +290,18 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             itineraries_status = False
             itineraries_status_message = "No itineraries found. Please generate one first."
 
-        # 4. Fetch travel options
-        travel_options_data = None
-        travel_options_status = True
-        travel_options_status_message = "Recommended travel options fetched successfully! "
-
-        travel_options = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
-        if travel_options:
-            travel_options_data = travel_options.travel_data
-        else:
-            travel_options_status = False
-            travel_options_status_message = "No travel options found. Please generate travel Options for your trip first."
-
-        # 5. Prepare trip data
+        # 4. Prepare trip data with new fields
         trip_data = {
             "trip_id": trip.id,
             "trip_name": trip.trip_name,
             "destination": trip.destination,
+            "destination_full_name": trip.destination_full_name,
+            "destination_details": trip.destination_details,
+            "destination_image_url": trip.destination_image_url or [],
             "base_location": trip.base_location,
             "start_date": trip.start_date.isoformat() if trip.start_date else None,
             "end_date": trip.end_date.isoformat() if trip.end_date else None,
             "budget": trip.budget,
-            "travel_mode": trip.travel_mode.value if trip.travel_mode else None,
             "num_people": trip.num_people,
             "activities": trip.activities or [],
             "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
@@ -330,13 +310,10 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "tourist_places_list": tourist_places,
             "itineraries_status": itineraries_status,
             "itineraries_status_message": itineraries_status_message,
-            "itineraries": itineraries,
-            "travel_options_status": travel_options_status,
-            "travel_options_status_message": travel_options_status_message,
-            "travel_options": travel_options_data
+            "itineraries": itineraries
         }
 
-        # 6. Translate if needed
+        # 5. Translate if needed
         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
@@ -357,8 +334,6 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "message": f"Error fetching trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
-
-
 
 
 
@@ -429,7 +404,7 @@ async def delete_tourist_place(place_id: int, db: db_dependency, user: user_depe
         }
 
 
-
+ 
 
 @router.get("/generate-itinerary/{trip_id}")
 async def generate_itinerary(trip_id: int, db: db_dependency, user: user_dependency):
@@ -489,3 +464,69 @@ async def generate_itinerary(trip_id: int, db: db_dependency, user: user_depende
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
 
+
+@router.get("/weather_conditions/{trip_id}")
+async def get_trip_weather(trip_id: int, db: db_dependency, user: user_dependency):
+    try:
+        # 1. Fetch trip
+        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        if not trip:
+            return {
+                "status": False,
+                "data": None,
+                "message": "Trip not found or doesn't belong to you.",
+                "status_code": status.HTTP_404_NOT_FOUND
+            }
+
+        # 2. Fetch destination from Trip model
+        destination = trip.destination
+        if not destination:
+            return {
+                "status": False,
+                "data": None,
+                "message": "Trip destination not found.",
+                "status_code": status.HTTP_400_BAD_REQUEST
+            }
+
+        # 3. Call fetch_travel_update() with destination
+        params = json.dumps({"destination": destination})
+        travel_update = fetch_travel_update(params)
+
+        # 4. If error occurred in fetch_travel_update
+        if "error" in travel_update:
+            return {
+                "status": False,
+                "data": None,
+                "message": f"Error fetching travel update: {travel_update['error']}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+            }
+
+        # 5. Include travel update in final response
+        response_data = {
+            "trip_id": trip.id,
+            "trip_name": trip.trip_name,
+            "destination": destination,
+            "travel_update": travel_update
+        }
+
+        # 6. Optional translation (if user language != English)
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+
+        if target_lang != "English":
+            response_data = await translate_with_cache(db, response_data, target_lang)
+
+        return {
+            "status": True,
+            "data": response_data,
+            "message": "Weather and travel conditions fetched successfully",
+            "status_code": status.HTTP_200_OK
+        }
+
+    except Exception as e:
+        return {
+            "status": False,
+            "data": None,
+            "message": f"Error fetching weather conditions: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }

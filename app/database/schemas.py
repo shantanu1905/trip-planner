@@ -49,7 +49,6 @@ class CreateTripRequest(BaseModel):
     end_date: datetime
     destination: str
     base_location: Optional[str] = None
-    travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = 1
     activities: Optional[List] = None  # ✅ Updated field name
     travelling_with: Optional[TravellingWithEnum] = None
@@ -60,7 +59,6 @@ class UpdateTripRequest(BaseModel):
     budget: Optional[int] = None
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
-    travel_mode: Optional[TravelModeEnum] = None
     num_people: Optional[int] = None
     activities: Optional[List] = None  # ✅ Updated field name
     travelling_with: Optional[TravellingWithEnum] = None
@@ -74,7 +72,6 @@ class PreferencesRequest(BaseModel):
     food_preference: Optional[FoodPreferenceEnum] = None
     base_location: Optional[str] = None
     activities: Optional[List[str]] = []
-    travel_mode: Optional[TravelModeEnum] = None
     travelling_with: Optional[TravellingWithEnum] = None
 
     # Train preferences

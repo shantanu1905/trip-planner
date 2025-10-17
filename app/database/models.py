@@ -112,10 +112,15 @@ class Trip(Base):
     end_date = Column(DateTime, nullable=False)
     destination = Column(String, nullable=False)
     base_location = Column(String, nullable=True)
-    travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
+    # travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
     num_people = Column(Integer, nullable=True)
     activities = Column(JSONB, nullable=True, default=[])  # Will store ["Adventure", "Nightlife"]
     travelling_with = Column(PGEnum(TravellingWithEnum, name="travelling_with_enum", create_type=True), nullable=True)
+
+    destination_full_name = Column(String, nullable=True)
+    destination_details = Column(String, nullable=True)
+    destination_image_url = Column(JSONB, nullable=True, default=[])
+    
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
 
     
