@@ -3,10 +3,9 @@ from app.database.models import Trip , Settings, TouristPlace
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.task.trip_tasks import process_tourist_places , process_trip_itinerary
+from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data
 from app.utils.language_translation import translate_with_cache
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
-from app.aiworkflow.destination_info_agent import get_destination_data
 import json
 from app.database.models import Trip, UserPreferences
 
@@ -66,14 +65,7 @@ async def create_trip(
         activities = request.activities if request.activities is not None else (preferences.activities if preferences else [])
         travelling_with = request.travelling_with if request.travelling_with is not None else (preferences.travelling_with if preferences else None)
 
-        # 🆕 3. Fetch destination info (from your custom function)
-        destination_data = get_destination_data(request.destination)
-
-        destination_full_name = destination_data.get("destination")
-        destination_details = destination_data.get("destination_details")
-        destination_image_url = destination_data.get("image_url", [])
-
-        # 4. Create trip record
+        # 3. Create trip record WITHOUT destination info (will be fetched in background)
         new_trip = Trip(
             user_id=user.id,
             trip_name=request.trip_name,
@@ -84,20 +76,17 @@ async def create_trip(
             base_location=base_location,
             num_people=num_people,
             activities=activities or [],
-            travelling_with=travelling_with,
-            # 🆕 Add fetched info
-            destination_full_name=destination_full_name,
-            destination_details=destination_details,
-            destination_image_url=destination_image_url
+            travelling_with=travelling_with
         )
 
         db.add(new_trip)
         db.commit()
         db.refresh(new_trip)
 
-        # 5. Kick off background jobs
+        # 4. Trigger Celery tasks
+        fetch_and_save_destination_data.delay(new_trip.id)
         process_tourist_places.delay(new_trip.id, new_trip.destination, new_trip.activities if new_trip.activities else [])
-        process_trip_itinerary.delay(new_trip.id,)
+        process_trip_itinerary.delay(new_trip.id)
 
         return {
             "status": True,
@@ -105,7 +94,7 @@ async def create_trip(
                 "trip_id": new_trip.id,
                 "trip_name": new_trip.trip_name,
             },
-            "message": "Trip created successfully. Destination details fetched and processing started.",
+            "message": "Trip created successfully. Destination data and itinerary processing started in background.",
             "status_code": status.HTTP_201_CREATED
         }
 
@@ -115,6 +104,8 @@ async def create_trip(
             "message": f"Error creating trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+    
+
 
 
 

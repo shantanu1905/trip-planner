@@ -110,6 +110,8 @@ class Trip(Base):
     budget = Column(Integer, nullable=True)
     start_date = Column(DateTime, nullable=False)
     end_date = Column(DateTime, nullable=False)
+    journey_start_date = Column(DateTime, nullable=True)
+    return_journey_date = Column(DateTime, nullable=True)
     destination = Column(String, nullable=False)
     base_location = Column(String, nullable=True)
     # travel_mode = Column(PGEnum(TravelModeEnum, name="travel_mode_enum", create_type=True),nullable=True)
@@ -238,7 +240,9 @@ class TravelOptions(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
-    travel_data = Column(JSONB, nullable=False)  # Full JSON response from webhook
+    original_travel_options = Column(JSONB, nullable=False) 
+    selected_travel_options = Column(JSONB, nullable=False) 
+
     created_at = Column(DateTime, default=_dt.datetime.utcnow, nullable=False)
 
     # Relationship with Trip

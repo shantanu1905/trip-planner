@@ -10,7 +10,8 @@ import os
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-WEATHER_API_KEY = "d6d5773825c349b19e5181819251710"
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+
 
 # Initialize Gemini model
 llm = ChatGoogleGenerativeAI(

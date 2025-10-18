@@ -94,3 +94,11 @@ class TrainSearchRequest(BaseModel):
     to_station: str
     travel_date: str  # Accepts DD/MM/YYYY or YYYY-MM-DD
     coupon_code: Optional[str] = ""
+
+
+
+class TravellingOptionsRequest(BaseModel):
+    trip_id: int
+    journey_start_date: datetime
+    return_journey_date: datetime
+

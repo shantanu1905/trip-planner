@@ -2,9 +2,10 @@ from app.celery_worker import celery_app
 from app.database.database import SessionLocal
 from app.database.models import Trip, TouristPlace , ItineraryPlace, Itinerary , TravelOptions
 from app.aiworkflow.get_travelling_options_old import get_travel_options_gemini
-from app.aiworkflow.get_travel_bookings import search_travel_tickets
+from app.aiworkflow.get_travelling_options import search_travel_tickets
 from app.aiworkflow.get_travel_locations import get_tourist_places_for_destination
 from app.aiworkflow.get_travel_itinerary import generate_trip_itinerary
+from app.aiworkflow.destination_info_agent import get_destination_data
 from typing import List, Dict
 from datetime import datetime, timedelta
 import re
@@ -15,125 +16,106 @@ load_dotenv()
 
 # New Dependency 
 
+
 @celery_app.task
-def get_travelling_options(trip_id, user_id, base_location, destination, travel_mode):
+def fetch_and_save_destination_data(trip_id: int):
+    """
+    Celery task to fetch destination description & images,
+    and save them to the Trip record.
+    """
     db = SessionLocal()
     try:
-        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user_id).first()
+        # 1️⃣ Fetch trip
+        trip = db.query(Trip).filter(Trip.id == trip_id).first()
+        if not trip:
+            print(f"[Trip {trip_id}] Trip not found. Skipping destination data fetch.")
+            return
+
+        # 2️⃣ Fetch destination data
+        destination_info = get_destination_data(trip.destination)
+
+        # 3️⃣ Save fetched info to Trip
+        trip.destination_full_name = destination_info.get("destination")
+        trip.destination_details = destination_info.get("destination_details")
+        trip.destination_image_url = destination_info.get("image_url", [])
+        db.commit()
+        db.refresh(trip)
+
+        print(f"[Trip {trip_id}] Destination data saved successfully.")
+
+    except Exception as e:
+        db.rollback()
+        print(f"[Trip {trip_id}] Error fetching/saving destination data: {e}")
+    finally:
+        db.close()
+
+
+
+@celery_app.task
+def get_travelling_options(trip_id, user_id):
+    db = SessionLocal()
+    try:
+        # 🟢 1️⃣ Fetch Trip
+        trip = (
+            db.query(Trip)
+            .filter(Trip.id == trip_id, Trip.user_id == user_id)
+            .first()
+        )
         if not trip:
             print(f"[Trip {trip_id}] Trip not found. Skipping travel modes processing.")
             return
 
-        # Call webhook
+        # 🟢 2️⃣ Prepare Input JSON for search
+        input_json = {
+            "journey_start_date": trip.journey_start_date.strftime("%Y-%m-%d"),
+            "journey_end_date": trip.return_journey_date.strftime("%Y-%m-%d"),
+            "base_location": trip.base_location,
+            "destination": trip.destination,
+        }
+
+        # 🟢 3️⃣ Call your search function
         try:
-            full_data = get_travel_options_gemini(trip_id, base_location, destination, travel_mode)
-            # full_data is already a dict, no .json() needed
+            full_data = search_travel_tickets(input_json)
             print(f"[Trip {trip_id}] Raw Response: {full_data}")
         except Exception as e:
             print(f"[Trip {trip_id}] Travel Options request failed: {str(e)}")
             return
 
-        # Extract travel_options safely
-        travel_options = full_data.get("Travelling _Modes") or full_data.get("travel_options")
+        # 🟢 4️⃣ Extract travel_options safely
+        travel_options = full_data.get("travelling_options")
         if not travel_options:
-            print(f"[Trip {trip_id}] Invalid or empty travel options in webhook response")
+            print(f"[Trip {trip_id}] Invalid or empty travel options in response")
             return
 
-        # Save travel options to DB
-        new_travel = TravelOptions(trip_id=trip.id, travel_data=travel_options)
-        db.add(new_travel)
+        # 🟢 5️⃣ Check if TravelOptions already exists for this trip
+        existing_record = (
+            db.query(TravelOptions)
+            .filter(TravelOptions.trip_id == trip.id)
+            .first()
+        )
+
+        if existing_record:
+            # Update existing record
+            existing_record.original_travel_options = travel_options
+            db.add(existing_record)
+            print(f"[Trip {trip_id}] Updated existing travel options record.")
+        else:
+            # Create new record
+            new_travel = TravelOptions(
+                trip_id=trip.id,
+                original_travel_options=travel_options,
+                selected_travel_options=None,  # Or {} if you prefer JSON empty
+            )
+            db.add(new_travel)
+            print(f"[Trip {trip_id}] New travel options saved successfully.")
+
         db.commit()
-        print(f"[Trip {trip_id}] Travel options saved successfully.")
 
     except Exception as e:
         db.rollback()
         print(f"[Trip {trip_id}] Error processing travel modes: {str(e)}")
     finally:
         db.close()
-
-
-
-@celery_app.task
-def get_detailed_travelling_options(trip_id, user_id, start_date):
-    db = SessionLocal()
-    try:
-        # Fetch Trip
-        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user_id).first()
-        if not trip:
-            print(f"[Trip {trip_id}] Trip not found. Skipping travel modes processing.")
-            return
-
-        # Fetch existing TravelOptions
-        travel_opt = db.query(TravelOptions).filter(TravelOptions.trip_id == trip_id).first()
-        if not travel_opt:
-            print(f"[Trip {trip_id}] TravelOptions not found. Generate base travel modes.")
-            return
-
-
-        base_legs = travel_opt.travel_data
-        if not isinstance(base_legs, list):
-            print(f"[Trip {trip_id}] Invalid travel_data format, expected list of legs.")
-            return
-
-        # Wrap into required forma
-        input_json= {
-            "legs":base_legs,
-            "start_date":str(start_date).split(" ")[0]
-        }
-
-        # Call LLM function
-        try:
-            detailed_travel_options_data = search_travel_tickets(input_json)
-            print(f"[Trip {trip_id}] Raw Response: {detailed_travel_options_data}")
-        except Exception as e:
-            print(f"[Trip {trip_id}] Travel Options request failed: {str(e)}")
-            return
-
-        # ✅ Save full new JSON output instead of partial extraction
-        travel_opt.travel_data = detailed_travel_options_data
-        db.commit()
-        db.refresh(travel_opt)
-        print(f"[Trip {trip_id}] Travel options updated successfully : {detailed_travel_options_data}")
-
-
-        # ✅ Compute final destination date
-        final_date = None
-        for leg in detailed_travel_options_data.get("travelling_options", []):
-            journey_date_str = leg.get("journey_date")
-            approx_time_str = leg.get("approx_time", "0 hours")
-
-            # Parse journey_date
-            if journey_date_str:
-                leg_date = datetime.strptime(journey_date_str, "%Y-%m-%d")
-            else:
-                leg_date = datetime.strptime(str(start_date).split(" ")[0], "%Y-%m-%d")
-
-            # Parse approx_time like "22 hours" or "1 day 5 hours"
-            hours = 0
-            days = 0
-            match_hours = re.search(r"(\d+)\s*hours?", approx_time_str)
-            match_days = re.search(r"(\d+)\s*days?", approx_time_str)
-            if match_hours:
-                hours = int(match_hours.group(1))
-            if match_days:
-                days = int(match_days.group(1))
-
-            leg_end_datetime = leg_date + timedelta(days=days, hours=hours)
-            final_date = leg_end_datetime  # Update final date for each leg
-
-        if final_date:
-            trip.itinerary_start_date = final_date.date()
-            db.commit()
-            print(f"[Trip {trip_id}] Itinerary start date updated to {trip.itinerary_start_date}")
-
-    except Exception as e:
-        db.rollback()
-        print(f"[Trip {trip_id}] Error processing travel modes: {str(e)}")
-    finally:
-        db.close()
-
-
-
 
 
 @celery_app.task

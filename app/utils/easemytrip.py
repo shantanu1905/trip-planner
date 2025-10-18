@@ -98,3 +98,66 @@ def get_station_code(station_name: str):
         return None
 
 
+
+
+
+
+
+
+# encKey = "EDMEMT1234"
+# decKey = "TMTOO1vDhT9aWsV1"
+
+# def EncryptionV1(plaintext):
+#     key = decKey.encode('utf-8')
+#     iv = decKey.encode('utf-8')
+#     cipher = AES.new(key, AES.MODE_CBC, iv)
+#     padded = pad(plaintext.encode('utf-8'), AES.block_size)
+#     encrypted = cipher.encrypt(padded)
+#     return base64.b64encode(encrypted).decode('utf-8')
+
+# def decryptV1(ciphertext):
+#     key = decKey.encode('utf-8')
+#     iv = decKey.encode('utf-8')
+#     cipher = AES.new(key, AES.MODE_CBC, iv)
+#     decrypted = cipher.decrypt(base64.b64decode(ciphertext))
+#     return unpad(decrypted, AES.block_size).decode('utf-8')
+
+
+
+# # Example: Source AutoSuggest (GET)
+# def source_auto_suggest(place_name):
+#     url = "https://autosuggest.easemytrip.com/api/auto/bus?useby=popularu&key=jNUYK0Yj5ibO6ZVIkfTiFA=="
+#     jsonString = {
+#         "userName": "",
+#         "password": "",
+#         "Prefix": place_name,
+#         # Search buses using GetSearchResult API (POST)
+#         "country_code": "IN"
+#     }
+#     import json
+#     RQ = {"request": EncryptionV1(json.dumps(jsonString))}
+#     jsonrequest = {
+#         "request": RQ["request"],
+#         "isIOS": False,
+#         "ip": "49.249.40.58",
+#         "encryptedHeader": "7ZTtohPgMEKTZQZk4/Cn1mpXnyNZDJIRcrdCFo5ahIk="
+#     }
+#     response = requests.post(url, json=jsonrequest)
+#     # Decrypt and parse the response
+#     decrypted = decryptV1(response.text)
+#     try:
+#         return json.loads(decrypted)
+#     except Exception:
+#         return {"error": "Failed to decrypt or parse response", "raw": decrypted}
+
+# # Example: Destination AutoSuggest (GET)
+# def destination_auto_suggest(source_id):
+#     url = f"{SERVICE_URL}/search/destinationAutoSuggest?sourceId={source_id}"
+#     response = requests.get(url)
+#     return response.json()
+
+# # Example: Get Source City (GET)
+# def get_source_city(city_name):
+#     url = f"{SERVICE_URL}/search/getsourcecity?id={city_name}"
+#     response = requests.get(url)
+#     return response.json()

@@ -1,304 +1,421 @@
-# ticket_search_agent.py
+# ticket_search_agent_optimized.py
 import json
-import re
+import requests
 from datetime import datetime, timedelta
-from typing import Dict
-from langchain_core.tools import tool
+from typing import Dict, Optional, Tuple
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.agents import create_react_agent, AgentExecutor
-from langchain.prompts import PromptTemplate
-from app.utils.easemytrip import search_trains, get_station_code
+from langchain_core.prompts import ChatPromptTemplate
+import base64
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
+encKey = "EDMEMT1234"
+decKey = "TMTOO1vDhT9aWsV1"
 
-# ------------------ TOOLS ------------------
 
-@tool
-def search_train_tickets(params: str):
-    """Search train tickets. Required: {"from_station": "City", "to_station": "City", "date": "YYYY-MM-DD"}"""
+def EncryptionV1(plaintext: str) -> str:
+    """Encrypt payload for EaseMyTrip APIs (AES-CBC)."""
+    key = decKey.encode("utf-8")
+    iv = decKey.encode("utf-8")
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    padded = pad(plaintext.encode("utf-8"), AES.block_size)
+    encrypted = cipher.encrypt(padded)
+    return base64.b64encode(encrypted).decode("utf-8")
+
+
+def decryptV1(ciphertext: str) -> str:
+    """Decrypt EaseMyTrip API responses."""
+    key = decKey.encode("utf-8")
+    iv = decKey.encode("utf-8")
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    decrypted = cipher.decrypt(base64.b64decode(ciphertext))
+    return unpad(decrypted, AES.block_size).decode("utf-8")
+
+
+# ==================== VALIDATION HELPERS ====================
+
+def get_bus_city_details(city_name: str) -> Tuple[Optional[str], Optional[str], Optional[str]]:
+    """
+    Get bus city details from EaseMyTrip autosuggest API.
+    Returns (city_id, city_name, state) or (None, None, None)
+    """
     try:
-        data = json.loads(params)
-        from_station = data["from_station"]
-        to_station = data["to_station"]
-        date = data["date"]
-
-        datetime.strptime(date, "%Y-%m-%d")
-
-        from_code, _ = get_station_code(from_station)
-        to_code, _ = get_station_code(to_station)
-
-        if not from_code or not to_code:
-            return json.dumps({
-                "available_trains_count": 0,
-                "error": f"Invalid stations: {from_station}/{to_station}"
-            })
-
-        trains = search_trains(from_code, to_code, datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y"))
-
-        return json.dumps({
-            "available_trains_count": len(trains),
-            "from_station": from_station,
-            "to_station": to_station,
-            "from_station_code": from_code,
-            "to_station_code": to_code,
-            "date": date
-        })
+        url = "https://autosuggest.easemytrip.com/api/auto/bus?useby=popularu&key=jNUYK0Yj5ibO6ZVIkfTiFA=="
+        
+        jsonString = {
+            "userName": "",
+            "password": "",
+            "Prefix": city_name,
+            "country_code": "IN"
+        }
+        RQ = {"request": EncryptionV1(json.dumps(jsonString))}
+        jsonrequest = {
+            "request": RQ["request"],
+            "isIOS": False,
+            "ip": "49.249.40.58",
+            "encryptedHeader": "7ZTtohPgMEKTZQZk4/Cn1mpXnyNZDJIRcrdCFo5ahIk="
+        }
+        
+        response = requests.post(url, json=jsonrequest, timeout=8)
+        decrypted = decryptV1(response.text)
+        data = json.loads(decrypted)
+        
+        bus_list = data.get("list")
+        if bus_list and len(bus_list) > 0:
+            city_data = bus_list[0]
+            city_id = city_data.get("id")
+            name = city_data.get("name")
+            state = city_data.get("state", "")
+            return city_id, name, state
+        
+        return None, None, None
+        
     except Exception as e:
-        return json.dumps({"error": str(e), "available_trains_count": 0})
+        print(f"⚠️ Error getting bus details for {city_name}: {e}")
+        return None, None, None
 
 
-@tool
-def search_flight_tickets(params: str):
-    """Search flights. Required: {"from_city": "City", "to_city": "City", "date": "YYYY-MM-DD"}"""
+def validate_bus_availability(from_city: str, to_city: str) -> dict:
+    """Validate if bus route exists by checking if both cities are in bus network."""
+    
+    src_id, src_name, src_state = get_bus_city_details(from_city)
+    dest_id, dest_name, dest_state = get_bus_city_details(to_city)
+    
+    print(f"🔍 Bus validation: {from_city} -> {to_city}")
+    print(f"   Source: id={src_id}, name={src_name}, state={src_state}")
+    print(f"   Dest: id={dest_id}, name={dest_name}, state={dest_state}")
+    
+    if src_id is None or dest_id is None:
+        return {
+            "available": False,
+            "from_city": from_city,
+            "to_city": to_city,
+            "reason": f"City not in bus network (src={src_id is not None}, dest={dest_id is not None})"
+        }
+    
+    return {
+        "available": True,
+        "from_city": from_city,
+        "to_city": to_city,
+        "src_id": src_id,
+        "dest_id": dest_id,
+        "src_name": src_name,
+        "dest_name": dest_name,
+        "dest_state": dest_state
+    }
+
+
+def get_train_station_code(city_name: str) -> Tuple[Optional[str], Optional[str]]:
+    """Fetch train station code. Returns (station_code, station_name) or (None, None)"""
     try:
-        data = json.loads(params)
-        return json.dumps({
-            "available_flights_count": 0,
-            "from_city": data["from_city"],
-            "to_city": data["to_city"],
-            "date": data["date"]
-        })
+        url = f"https://solr.easemytrip.com/v1/api/auto/GetTrainAutoSuggest/{city_name.lower()}"
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            data = response.json()
+            if data and len(data) > 0:
+                station = data[0]
+                return station.get("Code"), station.get("Name")
+        return None, None
     except Exception as e:
-        return json.dumps({"error": str(e), "available_flights_count": 0})
+        print(f"⚠️ Error fetching train code for {city_name}: {e}")
+        return None, None
 
 
-@tool
-def search_bus_tickets(params: str):
-    """Search buses. Required: {"from_city": "City", "to_city": "City", "date": "YYYY-MM-DD"}"""
+def get_airport_code(city_name: str) -> Tuple[Optional[str], Optional[str]]:
+    """Fetch airport code. Returns (airport_code, city_name) or (None, None)"""
     try:
-        data = json.loads(params)
-        return json.dumps({
-            "available_buses_count": 3,
-            "from_city": data["from_city"],
-            "to_city": data["to_city"],
-            "date": data["date"]
-        })
+        url = "https://www.easemytrip.com/api/Flight/GetAutoSuggestNew"
+        payload = {"Prefix": city_name.lower()}
+        headers = {"Content-Type": "application/json"}
+        response = requests.post(url, json=payload, headers=headers, timeout=5)
+        if response.status_code == 200:
+            data = response.json()
+            if data and len(data) > 0:
+                india_airports = [a for a in data if a.get("Country") == "India"]
+                airport = india_airports[0] if india_airports else data[0]
+                city_field = airport.get("City", "")
+                if "(" in city_field and ")" in city_field:
+                    code = city_field.split("(")[1].split(")")[0]
+                    return code, airport.get("CityName")
+        return None, None
     except Exception as e:
-        return json.dumps({"error": str(e), "available_buses_count": 0})
+        print(f"⚠️ Error fetching airport code for {city_name}: {e}")
+        return None, None
 
 
-# ------------------ MAIN FUNCTION ------------------
+# ==================== BOOKING URL GENERATORS ====================
+
+def build_easemytrip_flight_url(
+    from_code: str, from_city: str, to_code: str, to_city: str, journey_date: str
+) -> str:
+    """Build EaseMyTrip flight booking URL"""
+    from urllib.parse import urlencode
+    
+    date_obj = datetime.strptime(journey_date, "%Y-%m-%d")
+    formatted_date = date_obj.strftime("%d/%m/%Y")
+    
+    srch = f"{from_code}-{from_city}-India|{to_code}-{to_city}-India|{formatted_date}"
+    
+    params = {
+        "srch": srch,
+        "px": "1-0-0",
+        "cbn": "0",
+        "ar": "undefined",
+        "isow": "true",
+        "isdm": "false",
+        "lang": "en-us",
+        "IsDoubleSeat": "false",
+        "CCODE": "IN",
+        "curr": "INR",
+        "apptype": "B2C"
+    }
+    
+    return f"https://flight.easemytrip.com/FlightList/Index?{urlencode(params, safe='-|/')}"
+
+
+def build_easemytrip_train_url(
+    from_code: str, from_name: str, to_code: str, to_name: str, journey_date: str
+) -> str:
+    """Build EaseMyTrip train booking URL"""
+    date_obj = datetime.strptime(journey_date, "%Y-%m-%d")
+    formatted_date = date_obj.strftime("%d-%m-%Y")
+    
+    from_name_clean = from_name.replace(" ", "")
+    to_name_clean = to_name.replace(" ", "")
+    
+    return f"https://railways.easemytrip.com/TrainListInfo/{from_name_clean}({from_code})-to-{to_name_clean}({to_code})/2/{formatted_date}"
+
+
+def build_easemytrip_bus_url(
+    from_city: str, to_city: str, journey_date: str
+) -> str:
+    """Build EaseMyTrip bus booking URL with proper city IDs and state"""
+    from urllib.parse import urlencode
+    
+    date_obj = datetime.strptime(journey_date, "%Y-%m-%d")
+    formatted_date = date_obj.strftime("%d-%m-%Y")
+    
+    # Get city details
+    src_id, src_name, src_state = get_bus_city_details(from_city)
+    dest_id, dest_name, dest_state = get_bus_city_details(to_city)
+    
+    # Build destination with state
+    if dest_state:
+        destination = f"{dest_name},{dest_state}"
+    else:
+        destination = dest_name if dest_name else to_city
+    
+    # Build searchid
+    if src_id and dest_id:
+        search_id = f"{src_id}_{dest_id}"
+    else:
+        import random
+        search_id = f"{random.randint(10000, 99999)}_{random.randint(10000, 99999)}"
+    
+    params = {
+        "org": src_name if src_name else from_city,
+        "des": destination,
+        "date": formatted_date,
+        "searchid": search_id,
+        "CCode": "IN",
+        "AppCode": "Emt"
+    }
+    
+    return f"https://bus.easemytrip.com/home/list?{urlencode(params)}"
+
+
+# ==================== MAIN SEARCH FUNCTION (NO AGENT) ====================
 
 def search_travel_tickets(input_json: Dict) -> Dict:
     """
-    Generate multiple travel options between base_location and destination.
-
-    Args:
-        {
-            "journey_start_date": "YYYY-MM-DD",
-            "journey_end_date": "YYYY-MM-DD",
-            "base_location": "City",
-            "destination": "City"
-        }
-
-    Returns:
-        {
-            "travelling_options": [...]
-        }
+    Generate travel options using direct Gemini API (no agent framework).
+    Validates all routes after generation.
     """
-
+    
+    # Initialize Gemini
     llm = ChatGoogleGenerativeAI(
-        model="models/gemini-2.0-flash",
+        model="gemini-2.0-flash-exp",
         temperature=0.3,
         google_api_key=GEMINI_API_KEY
     )
+    
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", """You are a travel planning assistant. Create EXACTLY 2 travel route options.
 
-    tools = [search_train_tickets, search_flight_tickets, search_bus_tickets]
+CRITICAL RULES:
+- Return ONLY valid JSON, no markdown, no explanations
+- For buses: from_code and to_code must be empty strings ""
+- For trains: use station codes (NGP, NDLS, etc.)
+- For flights: use airport codes (NAG, DEL, etc.)
 
-    prompt_template = PromptTemplate(
-        input_variables=["input", "agent_scratchpad", "tools", "tool_names"],
-        template="""You are a travel planning assistant that creates comprehensive multi-route travel plans.
-
-    AVAILABLE TOOLS:
-    {tools}
-
-    TOOL NAMES: {tool_names}
-
-    USE THIS EXACT FORMAT:
-    Thought: [what you need to do]
-    Action: tool name (one of: search_train_tickets, search_flight_tickets, search_bus_tickets)
-    Action Input: {{"from_station": "X", "to_station": "Y", "date": "YYYY-MM-DD"}}
-    Observation: [tool result appears here]
-    ... (repeat Thought/Action/Observation as needed)
-    Thought: I now have all the information needed
-    Final Answer: [JSON only - no other text]
-
-    TASK:
-    {input}
-
-    MANDATORY: Create EXACTLY 2 routes minimum:
-    1. "Fastest Route" - prioritize speed (flights preferred)
-    2. "Cost Effective Route" - prioritize budget (trains/buses preferred)
-
-    STEP-BY-STEP PROCESS:
-    Step 1: Check direct routes for both modes
-    - Search flights from base_location to destination
-    - Search trains from base_location to destination
-    - Search buses if needed
-
-    Step 2: If NO direct trains/buses (available_count = 0):
-    - Route via Delhi as hub city
-    - Search base_location -> Delhi
-    - Search Delhi -> destination
-    - Add both as separate legs with dates (2nd leg = 1 day later)
-
-    Step 3: Create Final Answer with 2 complete routes
-
-    CRITICAL RULES:
-    ✓ For trains: use "from_station" and "to_station" in Action Input
-    ✓ For flights/buses: use "from_city" and "to_city" in Action Input
-    ✓ Use "date" parameter (YYYY-MM-DD format)
-    ✓ Keep dates between journey_start_date and journey_end_date
-    ✓ Multi-leg journeys: 2nd leg date = 1st leg date + 1 day
-    ✓ NO RUPEE SYMBOL - use "INR 3000 - INR 6000" format
-    ✓ ALWAYS include these fields in EVERY leg:
-    - approx_time
-    - approx_cost
-    - journey_date
-    - available_trains_count
-    - available_flights_count
-    - available_buses_count
-
-    EXAMPLES OF LEGS:
-
-    Single leg (direct):
+OUTPUT FORMAT:
+{{
+  "travelling_options": [
     {{
-    "from": "Nagpur",
-    "to": "Delhi",
-    "mode": "Flight",
-    "approx_time": "2 hours",
-    "approx_cost": "INR 3000 - INR 6000",
-    "journey_date": "2025-05-10",
-    "available_trains_count": 0,
-    "available_flights_count": 5,
-    "available_buses_count": 0
-    }}
-
-    Multi-leg (via hub):
-    [
-    {{
-        "from": "Nagpur",
-        "to": "Delhi",
-        "mode": "Train",
-        "approx_time": "16 hours",
-        "approx_cost": "INR 1000 - INR 2500",
-        "journey_date": "2025-05-10",
-        "available_trains_count": 8,
-        "available_flights_count": 0,
-        "available_buses_count": 0
+      "option_name": "Fastest Route",
+      "legs": [
+        {{
+          "from": "City A",
+          "to": "City B",
+          "mode": "Flight/Train/Bus",
+          "from_code": "CODE or empty string",
+          "to_code": "CODE or empty string",
+          "approx_time": "X hours",
+          "approx_cost": "INR X - INR Y",
+          "journey_date": "YYYY-MM-DD"
+        }}
+      ]
     }},
     {{
-        "from": "Delhi",
-        "to": "Dehradun",
-        "mode": "Train",
-        "approx_time": "6 hours",
-        "approx_cost": "INR 500 - INR 1500",
-        "journey_date": "2025-05-11",
-        "available_trains_count": 12,
-        "available_flights_count": 0,
-        "available_buses_count": 0
+      "option_name": "Cost Effective Route",
+      "legs": [...]
     }}
-    ]
+  ]
+}}"""),
+        ("human", """Plan travel from {base_location} to {destination}, starting {journey_start_date}.
 
-    FINAL OUTPUT (must have 2 routes):
-    {{
-    "travelling_options": [
-        {{
-        "option_name": "Fastest Route",
-        "legs": [...]
-        }},
-        {{
-        "option_name": "Cost Effective Route",
-        "legs": [...]
-        }}
-    ]
-    }}
+Create:
+1. Fastest Route (flights/express trains preferred)
+2. Cost Effective Route (trains/buses preferred)
 
-    Now start planning! Search for availability and create 2 complete routes.
-
-{agent_scratchpad}"""
-    )
-
-    agent = create_react_agent(
-        llm=llm,
-        tools=tools,
-        prompt=prompt_template
-    )
-
-    executor = AgentExecutor(
-        agent=agent,
-        tools=tools,
-        verbose=True,
-        handle_parsing_errors=True,
-        max_iterations=10,
-        early_stopping_method="force"
+Return ONLY the JSON object.""")
+    ])
     
-    )
-
     try:
-        response = executor.invoke({"input": json.dumps(input_json, indent=2)})
-        output_text = response.get("output", "")
-
-        # Try direct JSON parse first
-        try:
-            parsed = json.loads(output_text)
-            if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
-                return parsed
-        except json.JSONDecodeError:
-            pass
-
-        # Clean up markdown code fences
-        output_text = re.sub(r'```(?:json)?\s*', '', output_text)
-        output_text = output_text.strip()
-
-        # Try parsing again after cleanup
-        try:
-            parsed = json.loads(output_text)
-            if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
-                return parsed
-        except json.JSONDecodeError:
-            pass
-
-        # Extract JSON from text - look for travelling_options specifically
-        # More robust pattern that handles nested structures
-        pattern = r'\{\s*"travelling_options"\s*:\s*\[.*?\]\s*\}'
-        matches = re.findall(pattern, output_text, re.DOTALL)
+        print("🤖 Generating initial travel routes...")
         
-        if matches:
-            for match in matches:
-                try:
-                    parsed = json.loads(match)
-                    if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
-                        return parsed
-                except json.JSONDecodeError:
-                    continue
-
-        # Fallback: create a basic structure
+        chain = prompt | llm
+        response = chain.invoke({
+            "journey_start_date": input_json["journey_start_date"],
+            "base_location": input_json["base_location"],
+            "destination": input_json["destination"]
+        })
+        
+        output_text = response.content.strip()
+        
+        # Clean response
+        if output_text.startswith("```"):
+            lines = output_text.split("\n")
+            output_text = "\n".join(lines[1:-1]) if len(lines) > 2 else output_text
+            if output_text.startswith("json"):
+                output_text = output_text[4:].strip()
+        
+        result = json.loads(output_text)
+        
+        # Validate and fix each leg
+        print("\n✅ Validating and fixing routes...")
+        
+        for option in result.get("travelling_options", []):
+            for leg in option.get("legs", []):
+                mode = leg.get("mode", "").lower()
+                from_city = leg.get("from", "")
+                to_city = leg.get("to", "")
+                
+                if mode == "bus":
+                    # Validate bus route
+                    bus_check = validate_bus_availability(from_city, to_city)
+                    
+                    if not bus_check["available"]:
+                        # Try nearby city alternatives
+                        alternatives = {
+                            "Mussoorie": ["Dehradun"],
+                            "Rishikesh": ["Haridwar"]
+                        }
+                        
+                        tried_alternative = False
+                        if to_city in alternatives:
+                            for alt_city in alternatives[to_city]:
+                                alt_check = validate_bus_availability(from_city, alt_city)
+                                if alt_check["available"]:
+                                    print(f"   ✅ Using alternate city: {alt_city} instead of {to_city}")
+                                    leg["to"] = alt_city
+                                    tried_alternative = True
+                                    break
+                        
+                        if not tried_alternative:
+                            # Switch to Cab
+                            print(f"   🚕 Switching to Cab: {from_city} -> {to_city}")
+                            leg["mode"] = "Cab"
+                            leg["from_code"] = ""
+                            leg["to_code"] = ""
+                            leg["approx_cost"] = "INR 1500 - INR 3500"
+                            leg["approx_time"] = leg.get("approx_time", "Depends on distance")
+                            leg["booking_url"] = ""
+                            continue
+                    
+                    # Bus available - set empty codes
+                    leg["from_code"] = ""
+                    leg["to_code"] = ""
+                    
+                elif mode == "train":
+                    # Get train codes
+                    from_code, from_name = get_train_station_code(from_city)
+                    to_code, to_name = get_train_station_code(to_city)
+                    
+                    if from_code:
+                        leg["from_code"] = from_code
+                    if to_code:
+                        leg["to_code"] = to_code
+                    
+                elif mode == "flight":
+                    # Get airport codes
+                    from_code, _ = get_airport_code(from_city)
+                    to_code, _ = get_airport_code(to_city)
+                    
+                    if from_code:
+                        leg["from_code"] = from_code
+                    if to_code:
+                        leg["to_code"] = to_code
+                
+                # Generate booking URL
+                booking_url = None
+                if mode == "flight" and leg.get("from_code") and leg.get("to_code"):
+                    booking_url = build_easemytrip_flight_url(
+                        leg["from_code"], from_city, leg["to_code"], to_city, leg["journey_date"]
+                    )
+                elif mode == "train" and leg.get("from_code") and leg.get("to_code"):
+                    booking_url = build_easemytrip_train_url(
+                        leg["from_code"], from_city, leg["to_code"], to_city, leg["journey_date"]
+                    )
+                elif mode == "bus":
+                    booking_url = build_easemytrip_bus_url(from_city, to_city, leg["journey_date"])
+                
+                leg["booking_url"] = booking_url if booking_url else ""
+        
+        print("✅ All routes validated and URLs generated!\n")
+        return result
+        
+    except json.JSONDecodeError as e:
         return {
             "travelling_options": [],
-            "error": "Could not parse agent output - agent may not have completed both routes",
-            "raw_output": output_text[:500]
+            "error": f"JSON parsing failed: {str(e)}",
+            "raw_output": output_text[:500] if 'output_text' in locals() else ""
         }
-
     except Exception as e:
         return {
             "travelling_options": [],
-            "error": f"Agent execution failed: {str(e)}"
+            "error": f"Request failed: {str(e)}"
         }
 
 
-# if __name__ == "__main__":
-#     input_json = {
-#         "journey_start_date": "2025-11-10",
-#         "journey_end_date": "2025-11-15",
-#         "base_location": "Nagpur",
-#         "destination": "Alibaug, Maharastra"
-#     }
+if __name__ == "__main__":
+    import warnings
+    warnings.filterwarnings('ignore', category=UserWarning)
+    
+    input_json = {
+        "journey_start_date": "2025-11-10",
+        "journey_end_date": "2025-11-15",
+        "base_location": "Nagpur",
+        "destination": "Rishikesh"
+    }
 
-#     result = search_travel_tickets(input_json)
-#     print("\n=== TRAVEL OPTIONS RESULT ===")
-#     print(json.dumps(result, indent=2))
+    result = search_travel_tickets(input_json)
+    print("="*70)
+    print("=== FINAL TRAVEL OPTIONS ===")
+    print("="*70)
+    print(json.dumps(result, indent=2))

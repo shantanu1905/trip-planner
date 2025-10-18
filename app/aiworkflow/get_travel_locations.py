@@ -27,7 +27,7 @@ def fetch_places_from_api(destination: str, refresh: bool = False) -> Dict:
     """
     try:
         url = f"http://127.0.0.1:8002/places?destination={destination}&refresh={str(refresh).lower()}"
-        response = requests.get(url, timeout=1900)
+        response = requests.get(url, timeout=5000)
 
         if response.status_code != 200:
             return {"error": f"Failed to fetch places ({response.status_code})"}
