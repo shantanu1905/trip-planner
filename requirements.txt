@@ -20,3 +20,4 @@ langchain
 redis 
 celery[redis]
 langchain-google-genai
+pycryptodome
