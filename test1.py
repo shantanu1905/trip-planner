@@ -1,7 +1,7 @@
 from langchain_core.tools import tool
 from datetime import timedelta
 from app.utils.easemytrip import * 
-from app.routers.travel_mode import get_time_period
+from app.routers.bookings import get_time_period
 from langchain_google_genai import ChatGoogleGenerativeAI 
 from langchain_core.tools import tool 
 import requests

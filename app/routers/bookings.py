@@ -2,55 +2,81 @@ from fastapi import APIRouter, HTTPException, status, Query
 from app.database.models import Trip , TravelOptions , UserPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.task.trip_tasks import process_travel_modes
 from app.database.schemas import TrainSearchRequest
 from datetime import datetime 
 from typing import List, Optional
-from app.utils.easemytrip import search_trains , get_station_code
-import httpx
-import json
+from app.utils.easemytrip import search_trains 
 
 
-router = APIRouter(prefix="/get-tickets", tags=["Trains/Bus/Flight"])
+
+router = APIRouter(prefix="/bookings", tags=["Trains/Bus/Flight"])
 
 
-@router.get("/get/{trip_id}")
-async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependency):
-    try:
-        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
-        if not trip:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Trip not found or doesn't belong to you."
-            )
+# @router.get("/get/{trip_id}")
+# async def get_travel_modes(trip_id: int, db: db_dependency, user: user_dependency):
+#     try:
+#         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+#         if not trip:
+#             raise HTTPException(
+#                 status_code=status.HTTP_404_NOT_FOUND,
+#                 detail="Trip not found or doesn't belong to you."
+#             )
 
-        # Check if travel options already exist
-        existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
-        if existing_travel:
-            return {
-                "status": True,
-                "data": existing_travel.travel_data,
-                "message": "Travel options fetched from cache",
-                "status_code": status.HTTP_200_OK
-            }
+#         # Check if travel options already exist
+#         existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
+#         if existing_travel:
+#             return {
+#                 "status": True,
+#                 "data": existing_travel.travel_data,
+#                 "message": "Travel options fetched from cache",
+#                 "status_code": status.HTTP_200_OK
+#             }
 
-        # Trigger background task for travel modes
-        process_travel_modes.delay(trip.id, user.id)
+#         # Trigger background task for travel modes
+#         process_travel_modes.delay(trip.id, user.id)
 
-        return {
-            "status": True,
-            "data": None,
-            "message": "Travel modes processing started in background",
-            "status_code": status.HTTP_202_ACCEPTED
-        }
+#         return {
+#             "status": True,
+#             "data": None,
+#             "message": "Travel modes processing started in background",
+#             "status_code": status.HTTP_202_ACCEPTED
+#         }
 
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error triggering travel modes processing: {str(e)}"
-        )
+#     except HTTPException:
+#         raise
+#     except Exception as e:
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail=f"Error triggering travel modes processing: {str(e)}"
+#         )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @router.post("/searchtrain", description="Search for trains between stations on a specific date")

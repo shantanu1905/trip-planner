@@ -1,321 +1,304 @@
-# Get Travel Modes 
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.schema import SystemMessage, HumanMessage
-from langchain.output_parsers import PydanticOutputParser
-from pydantic import BaseModel, Field
-from dotenv import load_dotenv
-from typing import List
+# ticket_search_agent.py
 import json
 import re
-import os 
+from datetime import datetime, timedelta
+from typing import Dict
+from langchain_core.tools import tool
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.agents import create_react_agent, AgentExecutor
+from langchain.prompts import PromptTemplate
+from app.utils.easemytrip import search_trains, get_station_code
+from dotenv import load_dotenv
+import os
 
 load_dotenv()
-
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
-# --- Updated Pydantic Models for New JSON Format ---
-class TravelMode(BaseModel):
-    """Model for individual travel mode/leg"""
-    from_location: str = Field(alias="from", description="Starting point with code")
-    to_location: str = Field(alias="to", description="Destination point with code")
-    mode: str = Field(description="Transport mode")
-    approx_time: str = Field(description="Approximate travel time")
-    approx_cost: str = Field(description="Approximate cost")
-    Note: str = Field(description="Important travel details")
+# ------------------ TOOLS ------------------
 
-class TravelPlanNew(BaseModel):
-    """Updated travel plan model with new structure"""
-    trip_id: str = Field(description="Trip identifier")
-    Travelling_Modes: List[TravelMode] = Field(alias="Travelling _Modes", description="List of travel modes/legs")
-    total_time: str = Field(description="Total travel time")
-    total_cost: str = Field(description="Total travel cost")
-
-
-
-
-
-# --- Alternative: Simple JSON Parser Function ---
-def parse_json_from_response(response_content: str) -> dict:
-    """
-    Extract JSON from response content that might be wrapped in markdown code blocks
-    """
-    # Remove markdown code blocks if present
-    content = response_content.strip()
-    
-    # Check if content is wrapped in ```json ... ``` or ``` ... ```
-    if content.startswith('```'):
-        # Find the actual JSON content between code blocks
-        lines = content.split('\n')
-        json_lines = []
-        in_json = False
-        
-        for line in lines:
-            if line.strip().startswith('```'):
-                if not in_json:
-                    in_json = True
-                    continue
-                else:
-                    break
-            elif in_json:
-                json_lines.append(line)
-        
-        content = '\n'.join(json_lines).strip()
-    
+@tool
+def search_train_tickets(params: str):
+    """Search train tickets. Required: {"from_station": "City", "to_station": "City", "date": "YYYY-MM-DD"}"""
     try:
-        return json.loads(content)
-    except json.JSONDecodeError as e:
-        print(f"JSON Parse Error: {e}")
-        print(f"Content to parse: {content[:200]}...")
-        raise ValueError(f"Could not parse JSON: {e}")
+        data = json.loads(params)
+        from_station = data["from_station"]
+        to_station = data["to_station"]
+        date = data["date"]
+
+        datetime.strptime(date, "%Y-%m-%d")
+
+        from_code, _ = get_station_code(from_station)
+        to_code, _ = get_station_code(to_station)
+
+        if not from_code or not to_code:
+            return json.dumps({
+                "available_trains_count": 0,
+                "error": f"Invalid stations: {from_station}/{to_station}"
+            })
+
+        trains = search_trains(from_code, to_code, datetime.strptime(date, "%Y-%m-%d").strftime("%d/%m/%Y"))
+
+        return json.dumps({
+            "available_trains_count": len(trains),
+            "from_station": from_station,
+            "to_station": to_station,
+            "from_station_code": from_code,
+            "to_station_code": to_code,
+            "date": date
+        })
+    except Exception as e:
+        return json.dumps({"error": str(e), "available_trains_count": 0})
 
 
-# --- Function with Updated Pydantic Output Parser ---
-def get_travel_options_gemini(trip_id: str, base_location: str, destination: str, travel_mode: str):
+@tool
+def search_flight_tickets(params: str):
+    """Search flights. Required: {"from_city": "City", "to_city": "City", "date": "YYYY-MM-DD"}"""
+    try:
+        data = json.loads(params)
+        return json.dumps({
+            "available_flights_count": 0,
+            "from_city": data["from_city"],
+            "to_city": data["to_city"],
+            "date": data["date"]
+        })
+    except Exception as e:
+        return json.dumps({"error": str(e), "available_flights_count": 0})
+
+
+@tool
+def search_bus_tickets(params: str):
+    """Search buses. Required: {"from_city": "City", "to_city": "City", "date": "YYYY-MM-DD"}"""
+    try:
+        data = json.loads(params)
+        return json.dumps({
+            "available_buses_count": 3,
+            "from_city": data["from_city"],
+            "to_city": data["to_city"],
+            "date": data["date"]
+        })
+    except Exception as e:
+        return json.dumps({"error": str(e), "available_buses_count": 0})
+
+
+# ------------------ MAIN FUNCTION ------------------
+
+def search_travel_tickets(input_json: Dict) -> Dict:
     """
-    Generates travel route JSON using LangChain + Gemini 2.5 Flash with Updated Pydantic Parser
-    """
-    
-    # Create Pydantic output parser for new format
-    parser = PydanticOutputParser(pydantic_object=TravelPlanNew)
-    
-    # System instructions for AI with updated format instructions
-    system_message = f"""
-    You are an intelligent travel route planner AI that finds optimal routes and handles unavailable connections.
+    Generate multiple travel options between base_location and destination.
 
-    {parser.get_format_instructions()}
+    Args:
+        {
+            "journey_start_date": "YYYY-MM-DD",
+            "journey_end_date": "YYYY-MM-DD",
+            "base_location": "City",
+            "destination": "City"
+        }
 
-    CRITICAL RULES:
-    1. EVERY travel mode object MUST contain ALL 6 fields: from, to, mode, approx_time, approx_cost, Note
-    2. The main structure has "Travelling _Modes" (note the space after underscore) as the array field name
-    3. Each mode's "from" should be the starting point, "to" should be the destination point
-    4. **USE ONLY CITY NAMES - NO station codes, airport codes, or abbreviations (e.g., "New Delhi" not "New Delhi (NDLS)", "Mumbai" not "Mumbai (BOM)")**
-    5. No duplicate modes allowed
-    6. Modes should connect logically (each mode's "to" becomes next mode's "from")
-    7. Use ₹ symbol for all costs
-    8. All time durations should include "hours" or "minutes"
-    9. Calculate total_time and total_cost accurately
-    10. Return valid JSON only, no markdown code blocks.
-
-    LOCATION NAMING RULES:
-    - Use simple city/town names only: "New Delhi", "Mumbai", "Bangalore", "Goa"
-    - Do NOT include station codes: ❌ "New Delhi (NDLS)" → ✅ "New Delhi"
-    - Do NOT include airport codes: ❌ "Mumbai (BOM)" → ✅ "Mumbai"  
-    - Do NOT include terminal names: ❌ "Delhi Airport Terminal 3" → ✅ "New Delhi"
-    - For areas within cities, use: "City - Area" format (e.g., "Mumbai - Andheri")
-
-    INTELLIGENT ROUTING LOGIC - MINIMIZE TRAVEL TIME:
-    🎯 PRIMARY GOAL: ALWAYS MINIMIZE TOTAL TRAVEL TIME
-    - Analyze ALL available transport modes and select the FASTEST combination
-    - If requested mode is not the fastest, suggest the optimal mode in Note field
-    - Consider door-to-door time including transfers, waiting, and local transport
-    - Prioritize time over cost unless specifically requested otherwise
-
-    ROUTING PRIORITY (Fastest First):
-    1. DIRECT FLIGHT (if available) - Usually fastest for 500+ km
-    2. DIRECT TRAIN (High-speed/Express) - Good for 200-800 km routes  
-    3. COMBINATION routes (Flight + local transport) - For destinations without airports
-    4. DIRECT BUS (Only if significantly faster than alternatives)
-    5. TAXI/CAR (Only for short distances <200 km or remote areas)
-
-    OPTIMIZATION RULES:
-    - If requested transport mode is available directly, use it BUT mention faster alternatives in Notes
-    - If NO DIRECT connection available for requested mode:
-    a) First try to find alternate stations/airports for the same mode
-    b) If still not possible, suggest the FASTEST alternative transport mode
-    c) Always provide the quickest practical routing solution
-
-    SPECIFIC SCENARIOS TO HANDLE - TIME OPTIMIZATION FOCUS:
-    🚂 TRAIN Scenarios:
-    - If direct train available: Use it BUT compare with flight time and mention if flight is significantly faster
-    - If NO DIRECT train: Find route via major railway junction (Delhi Jn, Mumbai Central, Chennai Central)
-    - If destination has no railway: Go to nearest railway station + local transport
-    - If train takes >12 hours: Always suggest flight alternative with time comparison
-    - If NO train service at all: Suggest fastest alternative - "No train service available. FASTEST option: Flight (X hours, ₹Y) vs Bus (Z hours, ₹W)"
-
-    ✈️ FLIGHT Scenarios:  
-    - PRIORITY MODE for long distances (500+ km) - always check flight options first
-    - If direct flight available: Use it (usually fastest option)
-    - If NO DIRECT flight: Check connecting flights via major hubs (Delhi, Mumbai, Bangalore) and compare total time
-    - If no airport at destination: Fly to nearest airport + ground transport (often still faster than train/bus)
-    - If no flight service: Compare train vs bus and recommend faster option
-
-    🚌 BUS Scenarios:
-    - Only recommend bus if it's genuinely faster or if no flight/train available  
-    - If direct bus available: Use it BUT mention faster alternatives if available
-    - If NO DIRECT bus: Find routes via major terminals but compare with flight/train times
-    - For long distances (>8 hours): Always mention flight alternative
-    - If no bus service: Suggest fastest available mode
-
-    🚕 TAXI/CAR Scenarios:
-    - Best for short distances (<200 km) or reaching remote locations
-    - Always possible but mention practical limitations for very long distances
-    - For 200-500 km: Compare with train/bus and mention if slower
-    - For 500+ km: Always suggest flight/train with time comparison: "Long distance - Flight (X hours, ₹Y) or Train (Z hours, ₹W) would be much faster"
-
-    TIME COMPARISON EXAMPLES IN NOTES:
-    - "Train available but Flight is 15 hours faster (2h vs 17h). Flight: ₹6000"
-    - "Direct bus takes 12 hours. Faster option: Flight via Delhi (5h total, ₹8000)" 
-    - "This train route takes 20 hours. Consider flight: Mumbai-Goa direct (1.5h, ₹4500)"
-
-    EXAMPLE HANDLING:
-    If user wants train from "Shimla to Goa":
-    - Note: Shimla has no railway station
-    - Solution: Train from nearby Kalka to Goa + local transport to/from Shimla
-    - OR: Suggest alternatives if not practical
-
-    FORMAT YOUR RESPONSES WITH PRACTICAL SOLUTIONS!
+    Returns:
+        {
+            "travelling_options": [...]
+        }
     """
 
-    # Human input with dynamic values
-    human_message = f"""
-    Trip ID: {trip_id}
-    From: {base_location}
-    To: {destination}
-    Mode: {travel_mode}
-    """
-
-    # Initialize Gemini 2.5 Flash LLM
-    chat_model = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
-        temperature=0,
-        convert_system_message_to_human=True,
-        google_api_key= GEMINI_API_KEY  # Replace with your key
+    llm = ChatGoogleGenerativeAI(
+        model="models/gemini-2.0-flash",
+        temperature=0.3,
+        google_api_key=GEMINI_API_KEY
     )
 
-    # Call Gemini model
-    response = chat_model.invoke([SystemMessage(content=system_message), HumanMessage(content=human_message)])
-    print("Raw Response:")
-    print(response.content)
-    print("-" * 50)
+    tools = [search_train_tickets, search_flight_tickets, search_bus_tickets]
+
+    prompt_template = PromptTemplate(
+        input_variables=["input", "agent_scratchpad", "tools", "tool_names"],
+        template="""You are a travel planning assistant that creates comprehensive multi-route travel plans.
+
+    AVAILABLE TOOLS:
+    {tools}
+
+    TOOL NAMES: {tool_names}
+
+    USE THIS EXACT FORMAT:
+    Thought: [what you need to do]
+    Action: tool name (one of: search_train_tickets, search_flight_tickets, search_bus_tickets)
+    Action Input: {{"from_station": "X", "to_station": "Y", "date": "YYYY-MM-DD"}}
+    Observation: [tool result appears here]
+    ... (repeat Thought/Action/Observation as needed)
+    Thought: I now have all the information needed
+    Final Answer: [JSON only - no other text]
+
+    TASK:
+    {input}
+
+    MANDATORY: Create EXACTLY 2 routes minimum:
+    1. "Fastest Route" - prioritize speed (flights preferred)
+    2. "Cost Effective Route" - prioritize budget (trains/buses preferred)
+
+    STEP-BY-STEP PROCESS:
+    Step 1: Check direct routes for both modes
+    - Search flights from base_location to destination
+    - Search trains from base_location to destination
+    - Search buses if needed
+
+    Step 2: If NO direct trains/buses (available_count = 0):
+    - Route via Delhi as hub city
+    - Search base_location -> Delhi
+    - Search Delhi -> destination
+    - Add both as separate legs with dates (2nd leg = 1 day later)
+
+    Step 3: Create Final Answer with 2 complete routes
+
+    CRITICAL RULES:
+    ✓ For trains: use "from_station" and "to_station" in Action Input
+    ✓ For flights/buses: use "from_city" and "to_city" in Action Input
+    ✓ Use "date" parameter (YYYY-MM-DD format)
+    ✓ Keep dates between journey_start_date and journey_end_date
+    ✓ Multi-leg journeys: 2nd leg date = 1st leg date + 1 day
+    ✓ NO RUPEE SYMBOL - use "INR 3000 - INR 6000" format
+    ✓ ALWAYS include these fields in EVERY leg:
+    - approx_time
+    - approx_cost
+    - journey_date
+    - available_trains_count
+    - available_flights_count
+    - available_buses_count
+
+    EXAMPLES OF LEGS:
+
+    Single leg (direct):
+    {{
+    "from": "Nagpur",
+    "to": "Delhi",
+    "mode": "Flight",
+    "approx_time": "2 hours",
+    "approx_cost": "INR 3000 - INR 6000",
+    "journey_date": "2025-05-10",
+    "available_trains_count": 0,
+    "available_flights_count": 5,
+    "available_buses_count": 0
+    }}
+
+    Multi-leg (via hub):
+    [
+    {{
+        "from": "Nagpur",
+        "to": "Delhi",
+        "mode": "Train",
+        "approx_time": "16 hours",
+        "approx_cost": "INR 1000 - INR 2500",
+        "journey_date": "2025-05-10",
+        "available_trains_count": 8,
+        "available_flights_count": 0,
+        "available_buses_count": 0
+    }},
+    {{
+        "from": "Delhi",
+        "to": "Dehradun",
+        "mode": "Train",
+        "approx_time": "6 hours",
+        "approx_cost": "INR 500 - INR 1500",
+        "journey_date": "2025-05-11",
+        "available_trains_count": 12,
+        "available_flights_count": 0,
+        "available_buses_count": 0
+    }}
+    ]
+
+    FINAL OUTPUT (must have 2 routes):
+    {{
+    "travelling_options": [
+        {{
+        "option_name": "Fastest Route",
+        "legs": [...]
+        }},
+        {{
+        "option_name": "Cost Effective Route",
+        "legs": [...]
+        }}
+    ]
+    }}
+
+    Now start planning! Search for availability and create 2 complete routes.
+
+{agent_scratchpad}"""
+    )
+
+    agent = create_react_agent(
+        llm=llm,
+        tools=tools,
+        prompt=prompt_template
+    )
+
+    executor = AgentExecutor(
+        agent=agent,
+        tools=tools,
+        verbose=True,
+        handle_parsing_errors=True,
+        max_iterations=10,
+        early_stopping_method="force"
     
+    )
+
     try:
-        # Parse with Pydantic
-        parsed_output = parser.parse(response.content)
-        return parsed_output.dict(by_alias=True)
+        response = executor.invoke({"input": json.dumps(input_json, indent=2)})
+        output_text = response.get("output", "")
+
+        # Try direct JSON parse first
+        try:
+            parsed = json.loads(output_text)
+            if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
+                return parsed
+        except json.JSONDecodeError:
+            pass
+
+        # Clean up markdown code fences
+        output_text = re.sub(r'```(?:json)?\s*', '', output_text)
+        output_text = output_text.strip()
+
+        # Try parsing again after cleanup
+        try:
+            parsed = json.loads(output_text)
+            if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
+                return parsed
+        except json.JSONDecodeError:
+            pass
+
+        # Extract JSON from text - look for travelling_options specifically
+        # More robust pattern that handles nested structures
+        pattern = r'\{\s*"travelling_options"\s*:\s*\[.*?\]\s*\}'
+        matches = re.findall(pattern, output_text, re.DOTALL)
+        
+        if matches:
+            for match in matches:
+                try:
+                    parsed = json.loads(match)
+                    if "travelling_options" in parsed and len(parsed["travelling_options"]) >= 1:
+                        return parsed
+                except json.JSONDecodeError:
+                    continue
+
+        # Fallback: create a basic structure
+        return {
+            "travelling_options": [],
+            "error": "Could not parse agent output - agent may not have completed both routes",
+            "raw_output": output_text[:500]
+        }
+
     except Exception as e:
-        print(f"Pydantic parsing failed: {e}")
-        # Fallback to manual JSON parsing
-        return parse_json_from_response(response.content)
+        return {
+            "travelling_options": [],
+            "error": f"Agent execution failed: {str(e)}"
+        }
 
 
-# --- Utility Functions for New Format ---
-def validate_travel_plan_new(plan: dict) -> bool:
-    """
-    Validate the new travel plan format
-    """
-    required_fields = ["trip_id", "Travelling _Modes", "total_time", "total_cost"]
-    
-    # Check main structure
-    for field in required_fields:
-        if field not in plan:
-            print(f"Missing required field: {field}")
-            return False
-    
-    # Check travelling modes
-    if not isinstance(plan["Travelling _Modes"], list):
-        print("Travelling _Modes must be a list")
-        return False
-    
-    if len(plan["Travelling _Modes"]) == 0:
-        print("At least one travelling mode is required")
-        return False
-    
-    # Check each mode
-    required_mode_fields = ["from", "to", "mode", "approx_time", "approx_cost", "Note"]
-    for i, mode in enumerate(plan["Travelling _Modes"]):
-        for field in required_mode_fields:
-            if field not in mode:
-                print(f"Mode {i+1} missing required field: {field}")
-                return False
-    
-    print("Travel plan validation passed!")
-    return True
-
-
-def calculate_totals_new(plan: dict) -> dict:
-    """
-    Calculate and verify totals for the new format
-    """
-    total_time_minutes = 0
-    total_cost_amount = 0
-    
-    for mode in plan["Travelling _Modes"]:
-        # Parse time
-        time_str = mode["approx_time"].lower()
-        hours = 0
-        minutes = 0
-        
-        hour_match = re.search(r'(\d+)\s*hour[s]?', time_str)
-        if hour_match:
-            hours = int(hour_match.group(1))
-        
-        minute_match = re.search(r'(\d+)\s*minute[s]?', time_str)
-        if minute_match:
-            minutes = int(minute_match.group(1))
-        
-        total_time_minutes += (hours * 60) + minutes
-        
-        # Parse cost
-        cost_str = mode["approx_cost"].replace('₹', '').replace(',', '')
-        cost_match = re.search(r'(\d+)', cost_str)
-        if cost_match:
-            total_cost_amount += int(cost_match.group(1))
-    
-    # Format total time
-    total_hours = total_time_minutes // 60
-    remaining_minutes = total_time_minutes % 60
-    
-    if total_hours > 0 and remaining_minutes > 0:
-        formatted_time = f"{total_hours} hours {remaining_minutes} minutes"
-    elif total_hours > 0:
-        formatted_time = f"{total_hours} hours"
-    else:
-        formatted_time = f"{remaining_minutes} minutes"
-    
-    return {
-        "calculated_total_time": formatted_time,
-        "calculated_total_cost": f"₹{total_cost_amount}",
-        "total_time_minutes": total_time_minutes,
-        "total_cost_amount": total_cost_amount
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # --- Enhanced Example Usage with Challenging Routes ---
 # if __name__ == "__main__":
-#     print("=== Testing New Format with Pydantic Output Parser ===")
+#     input_json = {
+#         "journey_start_date": "2025-11-10",
+#         "journey_end_date": "2025-11-15",
+#         "base_location": "Nagpur",
+#         "destination": "Alibaug, Maharastra"
+#     }
 
-#     plan1 = get_travel_options_gemini(
-#         trip_id="TRIP_001",
-#         base_location="Shimla",  # No direct railway
-#         destination="Goa", 
-#         travel_mode="train"  # Challenging scenario
-#     )
-#     print("Pydantic Result (New Format - Challenging Route):")
-#     print(json.dumps(plan1, indent=2, ensure_ascii=False))
-    
-        
-      
+#     result = search_travel_tickets(input_json)
+#     print("\n=== TRAVEL OPTIONS RESULT ===")
+#     print(json.dumps(result, indent=2))

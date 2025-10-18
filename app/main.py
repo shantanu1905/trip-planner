@@ -9,7 +9,7 @@ from app.routers.recommendation import router as recommendation
 from app.routers.trips import router as trips
 from app.routers.authentication_react import router as react
 from app.routers.user_preferences import router as user_preferences
-from app.routers.travel_mode import router as travel_mode
+from app.routers.bookings import router as travel_mode
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import events
 from dotenv import load_dotenv

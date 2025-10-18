@@ -1,15 +1,13 @@
 from fastapi import APIRouter, HTTPException, status
-from app.database.models import Trip , Settings, TouristPlace , Itinerary , ItineraryPlace, TravelOptions
+from app.database.models import Trip , Settings, TouristPlace
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.task.trip_tasks import process_trip_webhook , process_itinerary , get_travelling_options , get_detailed_travelling_options , process_tourist_places , process_trip_itinerary
+from app.task.trip_tasks import process_tourist_places , process_trip_itinerary
 from app.utils.language_translation import translate_with_cache
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
 from app.aiworkflow.destination_info_agent import get_destination_data
-import datetime
 import json
-from fastapi import APIRouter, Depends, status, HTTPException, Query
 from app.database.models import Trip, UserPreferences
 
 router = APIRouter(prefix="/trips", tags=["Trips"])
@@ -98,8 +96,8 @@ async def create_trip(
         db.refresh(new_trip)
 
         # 5. Kick off background jobs
-        # process_tourist_places.delay(new_trip.id, new_trip.destination, new_trip.activities if new_trip.activities else [])
-        # process_trip_itinerary.delay(new_trip.id,)
+        process_tourist_places.delay(new_trip.id, new_trip.destination, new_trip.activities if new_trip.activities else [])
+        process_trip_itinerary.delay(new_trip.id,)
 
         return {
             "status": True,
@@ -117,6 +115,8 @@ async def create_trip(
             "message": f"Error creating trip: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+
+
 
 @router.put("/update/{trip_id}")
 async def update_trip(
@@ -142,7 +142,6 @@ async def update_trip(
         trip.budget = request.budget
         trip.start_date = start_date
         trip.end_date = end_date
-        trip.travel_mode = request.travel_mode
         trip.num_people = request.num_people
         trip.activities = request.activities if request.activities else []
         trip.travelling_with = request.travelling_with
@@ -150,7 +149,7 @@ async def update_trip(
         db.commit()
         db.refresh(trip)
 
-        process_trip_webhook.delay(trip.id, user.id)
+        process_trip_itinerary.delay(trip.id,)
 
         return {
             "status": True,
@@ -159,7 +158,7 @@ async def update_trip(
                 "trip_name": trip.trip_name,
                 "activities": trip.activities
             },
-            "message": "Trip updated successfully. Processing places in background.",
+            "message": "Trip updated successfully. Processing Trip Itinerary in background.",
             "status_code": status.HTTP_200_OK
         }
 
@@ -404,65 +403,6 @@ async def delete_tourist_place(place_id: int, db: db_dependency, user: user_depe
         }
 
 
- 
-
-@router.get("/generate-itinerary/{trip_id}")
-async def generate_itinerary(trip_id: int, db: db_dependency, user: user_dependency):
-    try:
-        # 1. Check trip exists
-        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
-        if not trip:
-            raise HTTPException(status_code=404, detail="Trip not found or doesn't belong to you.")
-
-        # 2. Check if already exists
-        existing_itinerary = db.query(Itinerary).filter(Itinerary.trip_id == trip_id).all()
-        if existing_itinerary:
-            result = []
-            for item in existing_itinerary:
-                places = [
-                    {
-                        "name": p.name,
-                        "description": p.description,
-                        "latitude": p.latitude,
-                        "longitude": p.longitude,
-                        "best_time_to_visit": p.best_time_to_visit
-                    }
-                    for p in item.places
-                ]
-                result.append({
-                    "day": item.day,
-                    "date": item.date.isoformat(),
-                    "places": places,
-                    "travel_tips": item.travel_tips,
-                    "food": item.food,
-                    "culture": item.culture
-                })
-            return {
-                "status": True,
-                "data": {
-                    "trip_id": trip_id,
-                    "itinerary": result
-                },
-                "message": "Itinerary loaded from database",
-                "status_code": status.HTTP_200_OK
-            }
-
-        # 3. Run background task if not cached
-        process_itinerary.delay(trip_id, user.id)
-
-        return {
-            "status": True,
-            "data": None,
-            "message": "Itinerary generation started. Please check back later.",
-            "status_code": status.HTTP_202_ACCEPTED
-        }
-
-    except Exception as e:
-        return {
-            "status": False,
-            "message": f"Error starting itinerary generation: {str(e)}",
-            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
-        }
 
 
 @router.get("/weather_conditions/{trip_id}")

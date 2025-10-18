@@ -1,0 +1,107 @@
+{
+  "Destination": "Rishikesh",
+  "ActivityType": "religious",
+  "TotalPlaces": 10,
+  "TouristPlaces": [
+    {
+      "Name": "Triveni Ghat",
+      "Description": "Elaborate statues & other structures line this spiritual site on the banks of the Ganges River.",
+      "GeoCoordinates": {
+        "lat": 30.1037136,
+        "lng": 78.2993118
+      },
+      "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrYegb9tgUs1GfMCJ8SiaZPSa_X5xs1cv-RBwE7SqXeE_lbAs9H01MyRUZk4JmHbkF5DApsE3SWvge3rfk5yB9J4yCNICWHKiqSjAmKmiDsI-01VfZyH55mm4bPHvYoIoj64VD5=w408-h306-k-no",
+      "Google_web_url": "https://www.google.com/maps/place/Triveni+Ghat/data=!4m7!3m6!1s0x39093dc68378a127:0x5bb66364573c04cb!8m2!3d30.1037136!4d78.2993118!16s%2Fm%2F011l2lpm!19sChIJJ6F4g8Y9CTkRywQ8V2Rjtls?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Parmarth Niketan Ashram",
+      "Description": "Spacious Himalayan ashram with lush gardens, offering courses in yoga, meditation & Ayurveda.",
+      "GeoCoordinates": {
+        "lat": 30.1195969,
+        "lng": 78.31267
+      },
+      "ImageURL": "",
+      "Google_web_url": "https://www.google.com/maps/place/Parmarth+Niketan+Ashram/data=!4m7!3m6!1s0x39091615b6b94e37:0xc4ce4b75dd8890ae!8m2!3d30.1195969!4d78.31267!16s%2Fm%2F09gl0tm!19sChIJN065thUWCTkRrpCI3XVLzsQ?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Ram Jhula",
+      "Description": "Ram Jhula is an iconic suspension bridge offering stunning views of the Ganges and the surrounding temples. It's a sacred passage for pilgrims and a must-visit for experiencing the spiritual essence of Rishikesh.",
+      "GeoCoordinates": {
+        "lat": 30.1239532,
+        "lng": 78.3141266
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Ram+Jhula/data=!4m7!3m6!1s0x390917a558cfae0f:0x369c529a2b199db4!8m2!3d30.1239532!4d78.3141266!16s%2Fm%2F0j439np!19sChIJD67PWKUXCTkRtJ0ZK5pSnDY?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Rishikesh Trip.",
+      "Description": "Embark on a spiritual journey in Rishikesh, the Yoga Capital of the World. Discover ancient temples, serene ghats, and the holy Ganges River, immersing yourself in the divine atmosphere of this sacred town.",
+      "GeoCoordinates": {
+        "lat": 30.1315815,
+        "lng": 78.3272592
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Rishikesh+Trip./data=!4m7!3m6!1s0x3909164fbfb87ecb:0xe9f9a1bf3de61139!8m2!3d30.1315815!4d78.3272592!16s%2Fg%2F11csrgysyr!19sChIJy364v08WCTkRORHmPb-h-ek?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "HimShail WaterFall",
+      "Description": "Escape the spiritual hustle and find tranquility at HimShail Waterfall. While not directly religious, the serene natural beauty offers a peaceful space for reflection and connecting with nature's divine presence.",
+      "GeoCoordinates": {
+        "lat": 30.116059,
+        "lng": 78.3212677
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/HimShail+WaterFall/data=!4m7!3m6!1s0x3909166bdc202943:0x54fe425dbd8a0f17!8m2!3d30.116059!4d78.3212677!16s%2Fg%2F11b6gqv9ft!19sChIJQykg3GsWCTkRFw-KvV1C_lQ?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Goa Beach Rishikesh",
+      "Description": "Experience the unique blend of spirituality and relaxation at Goa Beach Rishikesh. Though named after the coastal paradise, this riverside spot offers a tranquil place to meditate by the Ganges, absorbing the holy vibrations of Rishikesh.",
+      "GeoCoordinates": {
+        "lat": 30.1329473,
+        "lng": 78.3343505
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Goa+Beach+Rishikesh/data=!4m7!3m6!1s0x3909172bac8ecf87:0x49ba678ac8445d9e!8m2!3d30.1329473!4d78.3343505!16s%2Fg%2F11lh2ttj6m!19sChIJh8-OrCsXCTkRnl1EyIpnukk?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Patna Waterfall",
+      "Description": "Find serenity amidst nature's beauty at Patna Waterfall, a short trek from Lakshman Jhula. While not a religious site, the peaceful ambiance and the sound of cascading water create a meditative atmosphere, perfect for spiritual contemplation.",
+      "GeoCoordinates": {
+        "lat": 30.1244001,
+        "lng": 78.3543983
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Patna+Waterfall/data=!4m7!3m6!1s0x390916ec4f24ee3f:0xbbb29801ab00572e!8m2!3d30.1244001!4d78.3543983!16s%2Fg%2F11hbc12zzx!19sChIJP-4kT-wWCTkRLlcAqwGYsrs?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Tapovan Public Ghat",
+      "Description": "Tapovan Public Ghat is a serene spot along the Ganges, ideal for peaceful reflection and spiritual cleansing. Take a dip in the holy waters or simply sit by the riverbank and absorb the divine energy of Rishikesh.",
+      "GeoCoordinates": {
+        "lat": 30.1280493,
+        "lng": 78.3299339
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Tapovan+Public+Ghat/data=!4m7!3m6!1s0x39091733d0964307:0x6de5dbfc35621668!8m2!3d30.1280493!4d78.3299339!16s%2Fg%2F11rr2rn6jl!19sChIJB0OW0DMXCTkRaBZiNfzb5W0?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Aastha Path Rishikesh",
+      "Description": "Aastha Path is a dedicated walking path along the Ganges, perfect for a contemplative stroll. Enjoy the scenic views and the soothing sounds of the river as you connect with your inner self and the spiritual atmosphere of Rishikesh.",
+      "GeoCoordinates": {
+        "lat": 30.0765686,
+        "lng": 78.2874094
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Aastha+Path+Rishikesh/data=!4m7!3m6!1s0x39093e195244ff79:0x9ba8bbec13295f04!8m2!3d30.0765686!4d78.2874094!16s%2Fg%2F124yjc5fg!19sChIJef9EUhk-CTkRBF8pE-y7qJs?authuser=0&hl=en&rclk=1"
+    },
+    {
+      "Name": "Triveni Ghat Walking Area",
+      "Description": "Experience the vibrant atmosphere of Triveni Ghat with a leisurely walk along the river. Witness the evening Ganga Aarti ceremony and immerse yourself in the devotional energy that permeates this sacred space.",
+      "GeoCoordinates": {
+        "lat": 30.1028538,
+        "lng": 78.3031171
+      },
+      "ImageURL": null,
+      "Google_web_url": "https://www.google.com/maps/place/Triveni+Ghat+Walking+Area/data=!4m7!3m6!1s0x39091605bf4cf5a3:0x4176446f099705c9!8m2!3d30.1028538!4d78.3031171!16s%2Fg%2F11c0rtzk_p!19sChIJo_VMvwUWCTkRyQWXCW9EdkE?authuser=0&hl=en&rclk=1"
+    }
+  ]
+}
