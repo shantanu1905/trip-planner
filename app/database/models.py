@@ -65,6 +65,21 @@ class TrainClassEnum(enum.Enum):
     First_AC="1A"
 
 
+class BusTypeEnum(enum.Enum):
+    AC = "AC"
+    NON_AC = "Non-AC"
+    SLEEPER = "Sleeper"
+    SEATER = "Seater"
+    AC_SLEEPER = "AC Sleeper"
+    NON_AC_SLEEPER = "Non-AC Sleeper"
+
+
+class FlightClassEnum(enum.Enum):
+    ECONOMY = "Economy"
+    PREMIUM_ECONOMY = "Premium Economy"
+    BUSINESS = "Business"
+    FIRST_CLASS = "First Class"
+
 
 
 #---------------- USER MODEL ------------------
@@ -217,19 +232,14 @@ class UserPreferences(Base):
     preferred_from_station = Column(String, nullable=True)  # e.g., "Nagpur"
     flexible_station_option = Column(Boolean, default=True)  # Allow nearby stations if main one not available
 
-    #Bus
+     # --- Bus Preferences ---
+    bus_sleeper = Column(Boolean, default=True)        
+    bus_ac = Column(Boolean, default=True)   
+    bus_seater = Column(Boolean, default=True)    
+    bus_ststatus = Column(Boolean, default=False)            
 
-
-
-
-    #Hotels
-    # Room details - individual fields
-    no_of_rooms = Column(Integer, default=1)
-    no_of_adult = Column(Integer, default=1)
-    no_of_child = Column(Integer, default=0)
-    accomodation_min_price = Column(Float,  default=1 , nullable=True)
-    accomodation_max_price = Column(Float, default=1000000 ,nullable=True)
-    selected_property_types = Column(JSONB(PGEnum(PropertyTypeEnum, name="property_type_enum", create_type=True)),nullable=False,default=lambda: [PropertyTypeEnum.HOTEL.value])
+    # --- Flight Preferences ---
+    preferred_flight_class = Column(PGEnum(FlightClassEnum, name="flight_class_enum", create_type=True),nullable=True, default=FlightClassEnum.ECONOMY)
 
     # Relationship
     user = _orm.relationship("User", back_populates="preferences", passive_deletes=True)
@@ -274,7 +284,8 @@ class HotelPreferences(Base):
     select_chain = Column(JSON, nullable=True, default=[])      # Selected chains
     selected_areas = Column(JSON, nullable=True, default=[])
     selected_amenities = Column(JSON, nullable=True, default=[])
-    selected_property_types = Column(JSON, nullable=True, default=[])
+    #selected_property_types = Column(JSON, nullable=True, default=[])
+    selected_property_types = Column(JSONB(PGEnum(PropertyTypeEnum, name="property_type_enum", create_type=True)),nullable=False,default=lambda: [PropertyTypeEnum.HOTEL.value])
     selected_ratings = Column(JSON, nullable=True, default=[])
     # Dates
     check_in_date = Column(DateTime, nullable=False)

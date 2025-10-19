@@ -6,8 +6,6 @@ from app.database.schemas import PreferencesRequest
 from enum import Enum
 
 router = APIRouter(prefix="/preferences", tags=["User Preferences"])
-
-
 @router.put("/")
 async def set_user_preferences(
     request: PreferencesRequest,
@@ -17,13 +15,8 @@ async def set_user_preferences(
     try:
         preferences = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
 
-        # Convert enums list → list of values (strings) for JSONB
-        selected_property_types = (
-            [ptype.value if hasattr(ptype, "value") else ptype for ptype in (request.selected_property_types or [])]
-        )
-
         if preferences:
-            # ---- Update existing ----
+            # ---- Update existing preferences ----
             preferences.default_budget = request.default_budget
             preferences.food_preference = request.food_preference
             preferences.base_location = request.base_location
@@ -31,22 +24,24 @@ async def set_user_preferences(
             preferences.travel_mode = request.travel_mode
             preferences.travelling_with = request.travelling_with
 
-            # Train
+            # ---- Train Preferences ----
             preferences.preferred_train_class = request.preferred_train_class
             preferences.preferred_from_station = request.preferred_from_station
             preferences.flexible_station_option = request.flexible_station_option
 
-            # Hotel
-            preferences.no_of_rooms = request.no_of_rooms
-            preferences.no_of_adult = request.no_of_adult
-            preferences.no_of_child = request.no_of_child
-            preferences.accomodation_min_price = request.accomodation_min_price
-            preferences.accomodation_max_price = request.accomodation_max_price
-            preferences.selected_property_types = selected_property_types
+            # ---- Bus Preferences ----
+            preferences.bus_sleeper = request.bus_sleeper
+            preferences.bus_ac = request.bus_ac
+            preferences.bus_seater = request.bus_seater
+            preferences.bus_ststatus = request.bus_ststatus
 
-            message = "Preferences updated successfully"
+            # ---- Flight Preferences ----
+            preferences.preferred_flight_class = request.preferred_flight_class
+
+            message = "Preferences updated successfully."
+
         else:
-            # ---- Create new ----
+            # ---- Create new preferences ----
             preferences = UserPreferences(
                 user_id=user.id,
                 default_budget=request.default_budget,
@@ -61,16 +56,17 @@ async def set_user_preferences(
                 preferred_from_station=request.preferred_from_station,
                 flexible_station_option=request.flexible_station_option,
 
-                # Hotel
-                no_of_rooms=request.no_of_rooms,
-                no_of_adult=request.no_of_adult,
-                no_of_child=request.no_of_child,
-                accomodation_min_price=request.accomodation_min_price,
-                accomodation_max_price=request.accomodation_max_price,
-                selected_property_types=selected_property_types
+                # Bus
+                bus_sleeper=request.bus_sleeper,
+                bus_ac=request.bus_ac,
+                bus_seater=request.bus_seater,
+                bus_ststatus=request.bus_ststatus,
+
+                # Flight
+                preferred_flight_class=request.preferred_flight_class
             )
             db.add(preferences)
-            message = "Preferences created successfully"
+            message = "Preferences created successfully."
 
         db.commit()
         db.refresh(preferences)
@@ -93,12 +89,6 @@ async def set_user_preferences(
         }
 
 
-
-
-
-
-
-# ---- Get Preferences ----
 @router.get("/")
 async def get_user_preferences(db: db_dependency, user: user_dependency):
     try:
@@ -113,31 +103,33 @@ async def get_user_preferences(db: db_dependency, user: user_dependency):
             }
 
         preferences_data = {
+            # General
             "default_budget": preferences.default_budget,
-            "food_preference": preferences.food_preference,
+            "food_preference": preferences.food_preference.value if preferences.food_preference else None,
             "base_location": preferences.base_location,
             "activities": preferences.activities,
-            "travel_mode": preferences.travel_mode,
-            "travelling_with": preferences.travelling_with,
+            "travel_mode": preferences.travel_mode.value if preferences.travel_mode else None,
+            "travelling_with": preferences.travelling_with.value if preferences.travelling_with else None,
 
-            # Train
-            "preferred_train_class": preferences.preferred_train_class,
+            # Train Preferences
+            "preferred_train_class": preferences.preferred_train_class.value if preferences.preferred_train_class else None,
             "preferred_from_station": preferences.preferred_from_station,
             "flexible_station_option": preferences.flexible_station_option,
 
-            # Hotel
-            "no_of_rooms": preferences.no_of_rooms,
-            "no_of_adult": preferences.no_of_adult,
-            "no_of_child": preferences.no_of_child,
-            "accomodation_min_price": preferences.accomodation_min_price,
-            "accomodation_max_price": preferences.accomodation_max_price,
-            "selected_property_types": preferences.selected_property_types,
+            # Bus Preferences
+            "bus_sleeper": preferences.bus_sleeper,
+            "bus_ac": preferences.bus_ac,
+            "bus_seater": preferences.bus_seater,
+            "bus_ststatus": preferences.bus_ststatus,
+
+            # Flight Preferences
+            "preferred_flight_class": preferences.preferred_flight_class.value if preferences.preferred_flight_class else None,
         }
 
         return {
             "status": True,
             "data": preferences_data,
-            "message": "Preferences fetched successfully",
+            "message": "Preferences fetched successfully.",
             "status_code": status.HTTP_200_OK
         }
 

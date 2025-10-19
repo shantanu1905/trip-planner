@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from app.database.models import *
 from typing import List, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel , Field
 from datetime import datetime
 
 
@@ -64,29 +64,29 @@ class UpdateTripRequest(BaseModel):
     travelling_with: Optional[TravellingWithEnum] = None
 
 
-
-# ---- Request Schema ----
 class PreferencesRequest(BaseModel):
-    # Budget & food
+    # --- Budget & General Preferences ---
     default_budget: Optional[int] = None
     food_preference: Optional[FoodPreferenceEnum] = None
     base_location: Optional[str] = None
     activities: Optional[List[str]] = []
+    travel_mode: Optional[TravelModeEnum] = None
     travelling_with: Optional[TravellingWithEnum] = None
 
-    # Train preferences
+    # --- Train Preferences ---
     preferred_train_class: Optional[TrainClassEnum] = None
     preferred_from_station: Optional[str] = None
-    flexible_station_option: Optional[bool] = None
+    flexible_station_option: Optional[bool] = True
 
-    # Hotel preferences
-    no_of_rooms: Optional[int] = 1
-    no_of_adult: Optional[int] = 1
-    no_of_child: Optional[int] = 0
-    accomodation_min_price: Optional[float] = 1
-    accomodation_max_price: Optional[float] = 1000000
-    selected_property_types: Optional[List[PropertyTypeEnum]] = []
-    
+    # --- Bus Preferences ---
+    bus_sleeper: Optional[bool] = True
+    bus_ac: Optional[bool] = True
+    bus_seater: Optional[bool] = True
+    bus_ststatus: Optional[bool] = False
+
+    # --- Flight Preferences ---
+    preferred_flight_class: Optional[FlightClassEnum] = FlightClassEnum.ECONOMY
+
 
 # --- Request Body Schema ---
 class TrainSearchRequest(BaseModel):
@@ -102,3 +102,22 @@ class TravellingOptionsRequest(BaseModel):
     journey_start_date: datetime
     return_journey_date: datetime
 
+
+
+# --- Request Schema ---
+class TravelLeg(BaseModel):
+    to: str
+    from_: str = Field(..., alias="from")
+    mode: str
+    to_code: str | None = None
+    from_code: str | None = None
+    approx_cost: str | None = None
+    approx_time: str | None = None
+    booking_url: str | None = None
+    journey_date: str | None = None
+
+
+class SaveTravelOptionsRequest(BaseModel):
+    trip_id: int
+    option_name: str
+    legs: List[TravelLeg]

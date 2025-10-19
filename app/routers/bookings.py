@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status, Query
 from app.database.models import Trip , TravelOptions , UserPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest
+from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest , SaveTravelOptionsRequest
 from datetime import datetime 
 from typing import List, Optional
 from app.utils.easemytrip import search_trains 
@@ -85,28 +85,101 @@ async def get_travel_options(
         )
 
 
-@router.get("/travellingoptions/{trip_id}")
-async def fetch_travel_options(
-    trip_id: int,
+# @router.get("/travellingoptions/{trip_id}")
+# async def fetch_travel_options(
+#     trip_id: int,
+#     db: db_dependency,
+#     user: user_dependency
+# ):
+#     """
+#     Fetch stored travel options (selected or original) for a given trip.
+#     Does NOT trigger Celery or modify data.
+#     """
+#     try:
+#         # ✅ 1. Ensure user is authenticated
+#         if not user:
+#             raise HTTPException(
+#                 status_code=status.HTTP_401_UNAUTHORIZED,
+#                 detail="User not authenticated."
+#             )
+
+#         # ✅ 2. Fetch trip and verify ownership
+#         trip = (
+#             db.query(Trip)
+#             .filter(Trip.id == trip_id, Trip.user_id == user.id)
+#             .first()
+#         )
+#         if not trip:
+#             raise HTTPException(
+#                 status_code=status.HTTP_404_NOT_FOUND,
+#                 detail="Trip not found or doesn't belong to you."
+#             )
+
+#         # ✅ 3. Fetch travel options
+#         travel_options = (
+#             db.query(TravelOptions)
+#             .filter(TravelOptions.trip_id == trip.id)
+#             .first()
+#         )
+
+#         if not travel_options:
+#             return {
+#                 "status": False,
+#                 "data": None,
+#                 "message": "No travel options found for this trip yet.",
+#                 "status_code": status.HTTP_404_NOT_FOUND,
+#             }
+
+#         # ✅ 4. Prefer user-selected if available
+#         data = (
+#             travel_options.selected_travel_options
+#             if travel_options.selected_travel_options
+#             else travel_options.original_travel_options
+#         )
+
+#         source = (
+#             "user-selected options"
+#             if travel_options.selected_travel_options
+#             else "original options"
+#         )
+
+#         return {
+#             "status": True,
+#             "data": data,
+#             "message": f"Successfully fetched {source}.",
+#             "status_code": status.HTTP_200_OK,
+#         }
+
+#     except HTTPException:
+#         raise
+#     except Exception as e:
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail=f"Error fetching travel options: {str(e)}",
+#         )
+
+
+
+
+
+
+
+
+# --- Endpoint ---
+@router.post("/save-travelling-options")
+async def save_travelling_options(
+    request: SaveTravelOptionsRequest,
     db: db_dependency,
     user: user_dependency
 ):
     """
-    Fetch stored travel options (selected or original) for a given trip.
-    Does NOT trigger Celery or modify data.
+    Save user's selected travelling option to the database.
     """
     try:
-        # ✅ 1. Ensure user is authenticated
-        if not user:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="User not authenticated."
-            )
-
-        # ✅ 2. Fetch trip and verify ownership
+        # 1️⃣ Verify trip ownership
         trip = (
             db.query(Trip)
-            .filter(Trip.id == trip_id, Trip.user_id == user.id)
+            .filter(Trip.id == request.trip_id, Trip.user_id == user.id)
             .first()
         )
         if not trip:
@@ -115,56 +188,49 @@ async def fetch_travel_options(
                 detail="Trip not found or doesn't belong to you."
             )
 
-        # ✅ 3. Fetch travel options
-        travel_options = (
+        # 2️⃣ Fetch travel options record
+        travel_record = (
             db.query(TravelOptions)
             .filter(TravelOptions.trip_id == trip.id)
             .first()
         )
 
-        if not travel_options:
-            return {
-                "status": False,
-                "data": None,
-                "message": "No travel options found for this trip yet.",
-                "status_code": status.HTTP_404_NOT_FOUND,
-            }
+        if not travel_record:
+            # If no record exists, create one
+            travel_record = TravelOptions(
+                trip_id=trip.id,
+                original_travel_options=[],
+                selected_travel_options={}
+            )
+            db.add(travel_record)
+            db.commit()
+            db.refresh(travel_record)
 
-        # ✅ 4. Prefer user-selected if available
-        data = (
-            travel_options.selected_travel_options
-            if travel_options.selected_travel_options
-            else travel_options.original_travel_options
-        )
+        # 3️⃣ Save user's selected option
+        selected_option = {
+            "option_name": request.option_name,
+            "legs": [leg.dict(by_alias=True) for leg in request.legs]
+        }
 
-        source = (
-            "user-selected options"
-            if travel_options.selected_travel_options
-            else "original options"
-        )
+        travel_record.selected_travel_options = selected_option
+        db.commit()
+        db.refresh(travel_record)
 
         return {
             "status": True,
-            "data": data,
-            "message": f"Successfully fetched {source}.",
-            "status_code": status.HTTP_200_OK,
+            "message": "Selected travelling option saved successfully.",
+            "data": selected_option,
+            "status_code": status.HTTP_200_OK
         }
 
     except HTTPException:
         raise
     except Exception as e:
+        db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error fetching travel options: {str(e)}",
+            detail=f"Error saving travelling options: {str(e)}"
         )
-
-
-
-
-
-
-
-
 
 
 
