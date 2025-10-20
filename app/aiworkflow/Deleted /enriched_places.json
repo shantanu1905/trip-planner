@@ -1,0 +1,67 @@
+{
+  "status": true,
+  "data": {
+    "trains": [
+      {
+        "trainName": "Bdts Hw Exp",
+        "trainNumber": "19019",
+        "arrivalTime": "07:45",
+        "departureTime": "02:50",
+        "duration": "04:55",
+        "distance": "251",
+        "fromStnName": "Hazrat Nizamuddin Delhi",
+        "fromStnCode": "NZM",
+        "toStnName": "Haridwar Jn",
+        "toStnCode": "HW",
+        "ArrivalDate": "02Nov2025",
+        "departuredate": "02Nov2025",
+        "classes": [
+          {
+            "className": "AC 3 Tier",
+            "enqClass": "3A",
+            "quotaName": "General",
+            "totalFare": "515",
+            "availablityDate": "2-11-2025",
+            "availablityStatus": "AVAILABLE-10"
+          },
+          {
+            "className": "AC 2 tier",
+            "enqClass": "2A",
+            "quotaName": "General",
+            "totalFare": "720",
+            "availablityDate": "2-11-2025",
+            "availablityStatus": "AVAILABLE-3"
+          },
+          {
+            "className": "First AC",
+            "enqClass": "1A",
+            "quotaName": "General",
+            "totalFare": "1185",
+            "availablityDate": "2-11-2025",
+            "availablityStatus": "AVAILABLE-1"
+          },
+          {
+            "className": "Sleeper Class",
+            "enqClass": "SL",
+            "quotaName": "General",
+            "totalFare": "185",
+            "availablityDate": "2-11-2025",
+            "availablityStatus": "RLWL5/WL5"
+          },
+          {
+            "className": "AC 3 Tier Economy",
+            "enqClass": "3E",
+            "quotaName": "General",
+            "totalFare": "515",
+            "availablityDate": "2-11-2025",
+            "availablityStatus": "Tap To Refresh"
+          }
+        ]
+    }
+
+    ],
+    "booking_url": "https://railways.easemytrip.com/TrainListInfo/NDLS(NDLS)-to-HW(HW)/2/02-11-2025"
+  },
+  "message": "Found 11 trains for NDLS to HW on 02/11/2025",
+  "status_code": 200
+}
