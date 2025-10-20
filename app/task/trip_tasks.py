@@ -1,7 +1,6 @@
 from app.celery_worker import celery_app
 from app.database.database import SessionLocal
 from app.database.models import Trip, TouristPlace , ItineraryPlace, Itinerary , TravelOptions
-from app.aiworkflow.get_travelling_options_old import get_travel_options_gemini
 from app.aiworkflow.get_travelling_options import search_travel_tickets
 from app.aiworkflow.get_travel_locations import get_tourist_places_for_destination
 from app.aiworkflow.get_travel_itinerary import generate_trip_itinerary
