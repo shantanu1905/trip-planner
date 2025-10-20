@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, status
-from app.database.models import Trip , Settings, TouristPlace
+from app.database.models import Trip , Settings, TouristPlace , Itinerary
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
@@ -86,7 +86,7 @@ async def create_trip(
         # 4. Trigger Celery tasks
         fetch_and_save_destination_data.delay(new_trip.id)
         process_tourist_places.delay(new_trip.id, new_trip.destination, new_trip.activities if new_trip.activities else [])
-        process_trip_itinerary.delay(new_trip.id)
+        
 
         return {
             "status": True,
@@ -140,7 +140,8 @@ async def update_trip(
         db.commit()
         db.refresh(trip)
 
-        process_trip_itinerary.delay(trip.id,)
+        process_tourist_places.delay(trip.id, trip.destination, trip.activities if trip.activities else [])
+        process_trip_itinerary.delay(trip.id)
 
         return {
             "status": True,
@@ -392,6 +393,66 @@ async def delete_tourist_place(place_id: int, db: db_dependency, user: user_depe
             "message": f"Error deleting tourist place: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+
+
+
+@router.get("/generate-itinerary/{trip_id}")
+async def generate_itinerary(trip_id: int, db: db_dependency, user: user_dependency):
+    try:
+        # 1. Check trip exists
+        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        if not trip:
+            raise HTTPException(status_code=404, detail="Trip not found or doesn't belong to you.")
+
+        # 2. Check if already exists
+        existing_itinerary = db.query(Itinerary).filter(Itinerary.trip_id == trip_id).all()
+        if existing_itinerary:
+            result = []
+            for item in existing_itinerary:
+                places = [
+                    {
+                        "name": p.name,
+                        "description": p.description,
+                        "latitude": p.latitude,
+                        "longitude": p.longitude,
+                        "best_time_to_visit": p.best_time_to_visit
+                    }
+                    for p in item.places
+                ]
+                result.append({
+                    "day": item.day,
+                    "date": item.date.isoformat(),
+                    "places": places,
+                    "travel_tips": item.travel_tips,
+                    "food": item.food,
+                    "culture": item.culture
+                })
+            return {
+                "status": True,
+                "data": {
+                    "trip_id": trip_id,
+                    "itinerary": result
+                },
+                "message": "Itinerary loaded from database",
+                "status_code": status.HTTP_200_OK
+            }
+
+        # 3. Run background task if not cached
+        process_trip_itinerary.delay(trip_id)
+        return {
+            "status": True,
+            "data": None,
+            "message": "Itinerary generation started. Please check back later.",
+            "status_code": status.HTTP_202_ACCEPTED
+        }
+
+    except Exception as e:
+        return {
+            "status": False,
+            "message": f"Error starting itinerary generation: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+
 
 
 

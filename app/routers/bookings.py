@@ -5,8 +5,9 @@ from app.database.database import db_dependency
 from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest , SaveTravelOptionsRequest
 from datetime import datetime 
 from typing import List, Optional
-from app.utils.easemytrip import search_trains 
+from app.utils.trains_utils import search_trains 
 from app.task.trip_tasks import get_travelling_options
+from app.utils.travel_options_analysis import analyze_trip_options
 
 router = APIRouter(prefix="/bookings", tags=["Trains/Bus/Flight"])
 
@@ -85,86 +86,6 @@ async def get_travel_options(
         )
 
 
-# @router.get("/travellingoptions/{trip_id}")
-# async def fetch_travel_options(
-#     trip_id: int,
-#     db: db_dependency,
-#     user: user_dependency
-# ):
-#     """
-#     Fetch stored travel options (selected or original) for a given trip.
-#     Does NOT trigger Celery or modify data.
-#     """
-#     try:
-#         # ✅ 1. Ensure user is authenticated
-#         if not user:
-#             raise HTTPException(
-#                 status_code=status.HTTP_401_UNAUTHORIZED,
-#                 detail="User not authenticated."
-#             )
-
-#         # ✅ 2. Fetch trip and verify ownership
-#         trip = (
-#             db.query(Trip)
-#             .filter(Trip.id == trip_id, Trip.user_id == user.id)
-#             .first()
-#         )
-#         if not trip:
-#             raise HTTPException(
-#                 status_code=status.HTTP_404_NOT_FOUND,
-#                 detail="Trip not found or doesn't belong to you."
-#             )
-
-#         # ✅ 3. Fetch travel options
-#         travel_options = (
-#             db.query(TravelOptions)
-#             .filter(TravelOptions.trip_id == trip.id)
-#             .first()
-#         )
-
-#         if not travel_options:
-#             return {
-#                 "status": False,
-#                 "data": None,
-#                 "message": "No travel options found for this trip yet.",
-#                 "status_code": status.HTTP_404_NOT_FOUND,
-#             }
-
-#         # ✅ 4. Prefer user-selected if available
-#         data = (
-#             travel_options.selected_travel_options
-#             if travel_options.selected_travel_options
-#             else travel_options.original_travel_options
-#         )
-
-#         source = (
-#             "user-selected options"
-#             if travel_options.selected_travel_options
-#             else "original options"
-#         )
-
-#         return {
-#             "status": True,
-#             "data": data,
-#             "message": f"Successfully fetched {source}.",
-#             "status_code": status.HTTP_200_OK,
-#         }
-
-#     except HTTPException:
-#         raise
-#     except Exception as e:
-#         raise HTTPException(
-#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-#             detail=f"Error fetching travel options: {str(e)}",
-#         )
-
-
-
-
-
-
-
-
 # --- Endpoint ---
 @router.post("/save-travelling-options")
 async def save_travelling_options(
@@ -232,19 +153,77 @@ async def save_travelling_options(
             detail=f"Error saving travelling options: {str(e)}"
         )
 
+@router.get("/analyze-travel-options/{trip_id}")
+async def analyze_train_options(
+    trip_id: int ,
+    db: db_dependency,
+    user: user_dependency
+):
+    try:
+        # ✅ 1. Ensure user is authenticated
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="User not authenticated."
+            )
 
+        # ✅ 2. Fetch trip & verify ownership
+        trip = (
+            db.query(Trip)
+            .filter(Trip.id == trip_id, Trip.user_id == user.id)
+            .first()
+        )
+        if not trip:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Trip not found or doesn't belong to you."
+            )
 
+        # ✅ 3. Check if travel options exist
+        existing_travel = (
+            db.query(TravelOptions)
+            .filter(TravelOptions.trip_id == trip.id)
+            .first()
+        )
 
+        if existing_travel and existing_travel.selected_travel_options:
+            # --- Extract stored selected options ---
+            selected_options = existing_travel.selected_travel_options
 
+           
+            train_analysis = analyze_trip_options(selected_options)
 
+            return {
+                "status": True,
+                "data": {
+                    "selected_travel_options": selected_options,
+                    "travel_options_analysis": train_analysis
+                },
+                "message": "User-preferred travelling options analyzed successfully!",
+                "status_code": status.HTTP_200_OK,
+            }
 
+        return {
+            "status": True,
+            "data": None,
+            "message": "User has not selected  travelling options. Please select options first.",
+            "status_code": status.HTTP_202_ACCEPTED,
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error processing travel options: {str(e)}",
+        )
 
 
 
 
 
 @router.post("/searchtrain", description="Search for trains between stations on a specific date")
-async def search_train(request: TrainSearchRequest):
+async def search_train_api(request: TrainSearchRequest):
     try:
         from_station = request.from_station
         to_station = request.to_station
@@ -317,5 +296,12 @@ async def search_train(request: TrainSearchRequest):
             "message": f"Error searching trains: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+
+
+
+
+
+
+
 
 
