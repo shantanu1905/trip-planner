@@ -121,3 +121,15 @@ class SaveTravelOptionsRequest(BaseModel):
     trip_id: int
     option_name: str
     legs: List[TravelLeg]
+
+
+
+class HotelPreferencesCreate(BaseModel):
+    trip_id: int
+    no_of_rooms: Optional[int] = Field(default=1)
+    no_of_child: Optional[int] = Field(default=0)
+    min_price: Optional[float] = Field(default=1)
+    max_price: Optional[float] = Field(default=1000000)
+    selected_property_types: Optional[List[str]] = Field(default=["HOTEL"])
+
+ 
