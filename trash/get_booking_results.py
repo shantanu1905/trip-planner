@@ -3,8 +3,7 @@ import re
 from datetime import datetime, timedelta
 from langchain_core.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.agents import create_react_agent, AgentExecutor
-from app.utils.easemytrip import search_trains, get_station_code
+from langchain.agents import create_react_agent, AgentExecuto
 from langchain.prompts import PromptTemplate
 
 
