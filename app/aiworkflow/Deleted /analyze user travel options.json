@@ -1,0 +1,151 @@
+{
+    "status": true,
+    "data": {
+        "status": true,
+        "message": "Hotel analysis completed",
+        "recommendations": {
+            "top_rated_hotels": [
+                {
+                    "name": "Hotel The Moksham",
+                    "price": 1979,
+                    "rating": "3",
+                    "trip_rating": 3.5,
+                    "category": "Hotel",
+                    "address": "Tehri Garhwal>Rishikesh>Tapovan",
+                    "check_in": "12:00 PM",
+                    "check_out": "11:00 AM",
+                    "latitude": "30.132528",
+                    "longitude": "78.32059",
+                    "booking_url": "https://www.easemytrip.com/hotels/hotel-the-moksham-2457679/?e=21102025104919&city=HOTEL THE MOKSHAM, IN&cin=01/11/2025&cOut=04/11/2025&Hotel=NA&Rooms=1&pax=2&key=15~INR~Rishikesh~11-01-2025~11-04-2025~1~2_~~~EMTSpecial~NA~NA~NA~IN&user=EMTSpecial&ecid=EMTHOTEL-2457679&hid=SHL-2105628811635",
+                    "policy": "<ul><li>Free cancellation (Rs.0) before 30-Oct-2025 </li><li> 100% Deduction From: 30-Oct-2025 till check-in </li>",
+                    "images": [
+                        "https://q-xx.bstatic.com/xdata/images/hotel/max500/305575116.jpg?k=13219b3926f6649e4d7a2815a37b5526faf517bed7d0b70e0e2873bef73ecb11&o=",
+                        "https://q-xx.bstatic.com/xdata/images/hotel/max500/321939604.jpg?k=0e5d0aa2079a917b45f94554ccfd5df8f3f8d2f9c5190555c330a2169a3692ab&o=",
+                        "https://q-xx.bstatic.com/xdata/images/hotel/max500/321939597.jpg?k=47c2f4997c64de821e51f278128b20a3a84f37ac4863583e4727549e16468e46&o=",
+                        "https://q-xx.bstatic.com/xdata/images/hotel/max500/476233251.jpg?k=01a6c86ec1a97d176bfad814bf897d65f96e290c4041c18dfc69a219d3159578&o=",
+                        "https://q-xx.bstatic.com/xdata/images/hotel/max500/476233321.jpg?k=1f29e5d03851baf562221ca5c7a41baa758d27de11989fdf87c9b572f4e4020d&o="
+                    ],
+                    "amenities": [],
+                    "brand": "",
+                    "distance_km": 7.13,
+                    "is_couple_friendly": true
+                }
+            ],
+            "best_value_for_money": [
+                {
+                    "name": "Treebo Ak Residency, Tapovan",
+                    "price": 1400,
+                    "rating": "3",
+                    "trip_rating": 0.0,
+                    "category": "Hotel",
+                    "address": "Tehri Garhwal>Rishikesh>Tapovan",
+                    "check_in": "01:00 PM",
+                    "check_out": "11:00 AM",
+                    "latitude": "30.13125711",
+                    "longitude": "78.324880361",
+                    "booking_url": "https://www.easemytrip.com/hotels/treebo-ak-residency-tapovan-1845824/?e=21102025104918&city=TREEBO AK RESIDENCY, TAPOVAN, IN&cin=01/11/2025&cOut=04/11/2025&Hotel=NA&Rooms=1&pax=2&key=15~INR~Rishikesh~11-01-2025~11-04-2025~1~2_~~~EMTSpecial~NA~NA~NA~IN&user=EMTSpecial&ecid=EMTHOTEL-1845824&hid=SHL-22032448772802",
+                    "policy": "<ul><li>Free cancellation (Rs.0) before 31-Oct-2025 </li><li> 100% Deduction From: 31-Oct-2025 till check-in </li>",
+                    "images": [
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelTPOMxI.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/Hotel9JeIHd.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelacC4sQ.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelRRaXBE.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelDpM9IZ.png"
+                    ],
+                    "amenities": [],
+                    "brand": "",
+                    "distance_km": 7.33,
+                    "is_couple_friendly": true
+                },
+                {
+                    "name": "Itsy Hotels Nv, Tapovan",
+                    "price": 1415,
+                    "rating": "3",
+                    "trip_rating": 0.0,
+                    "category": "Hotel",
+                    "address": "Tehri Garhwal>Rishikesh>Tapovan",
+                    "check_in": "01:00 PM",
+                    "check_out": "11:00 AM",
+                    "latitude": "30.1291982",
+                    "longitude": "78.3240458",
+                    "booking_url": "https://www.easemytrip.com/hotels/itsy-hotels-nv-tapovan-1886432/?e=21102025104918&city=ITSY HOTELS NV, TAPOVAN, IN&cin=01/11/2025&cOut=04/11/2025&Hotel=NA&Rooms=1&pax=2&key=15~INR~Rishikesh~11-01-2025~11-04-2025~1~2_~~~EMTSpecial~NA~NA~NA~IN&user=EMTSpecial&ecid=EMTHOTEL-1886432&hid=30045556",
+                    "policy": "<ul><li>Free cancellation (Rs.0) before 31-Oct-2025 </li><li> 100% Deduction From: 31-Oct-2025 till check-in </li>",
+                    "images": [
+                        "https://media.easemytrip.com/media/Hotel/SHL-22012971562575/Common/Common9PEsLd.jpg",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22012971562575/Common/CommonE9Bnvb.jpg",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22012971562575/Common/CommonsmvwPN.jpg",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22012971562575/Common/CommonC0BD8N.jpg",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22012971562575/Common/Common5B48OG.jpg"
+                    ],
+                    "amenities": [],
+                    "brand": "TREEBO HOTELS",
+                    "distance_km": 7.12,
+                    "is_couple_friendly": true
+                }
+            ],
+            "luxury_stays": [],
+            "budget_friendly": [
+                {
+                    "name": "Treebo Ak Residency, Tapovan",
+                    "price": 1400,
+                    "rating": "3",
+                    "trip_rating": 0.0,
+                    "category": "Hotel",
+                    "address": "Tehri Garhwal>Rishikesh>Tapovan",
+                    "check_in": "01:00 PM",
+                    "check_out": "11:00 AM",
+                    "latitude": "30.13125711",
+                    "longitude": "78.324880361",
+                    "booking_url": "https://www.easemytrip.com/hotels/treebo-ak-residency-tapovan-1845824/?e=21102025104918&city=TREEBO AK RESIDENCY, TAPOVAN, IN&cin=01/11/2025&cOut=04/11/2025&Hotel=NA&Rooms=1&pax=2&key=15~INR~Rishikesh~11-01-2025~11-04-2025~1~2_~~~EMTSpecial~NA~NA~NA~IN&user=EMTSpecial&ecid=EMTHOTEL-1845824&hid=SHL-22032448772802",
+                    "policy": "<ul><li>Free cancellation (Rs.0) before 31-Oct-2025 </li><li> 100% Deduction From: 31-Oct-2025 till check-in </li>",
+                    "images": [
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelTPOMxI.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/Hotel9JeIHd.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelacC4sQ.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelRRaXBE.png",
+                        "https://media.easemytrip.com/media/Hotel/SHL-22032448772802/Hotel/HotelDpM9IZ.png"
+                    ],
+                    "amenities": [],
+                    "brand": "",
+                    "distance_km": 7.33,
+                    "is_couple_friendly": true
+                }
+               
+            ]
+        },
+        "hotels": [
+            {
+                "name": "Hotel W Inn",
+                "price": 2200,
+                "rating": "3",
+                "trip_rating": 0.0,
+                "category": "Hotel",
+                "address": ">>Tapovan, Rishikesh ",
+                "check_in": "01:00 PM",
+                "check_out": "11:00 AM",
+                "latitude": "30.129713",
+                "longitude": "78.324974",
+                "booking_url": "https://www.easemytrip.com/hotels/hotel-w-inn-7793202/?e=21102025104918&city=HOTEL W INN, IN&cin=01/11/2025&cOut=04/11/2025&Hotel=NA&Rooms=1&pax=2&key=15~INR~Rishikesh~11-01-2025~11-04-2025~1~2_~~~EMTSpecial~NA~NA~NA~IN&user=EMTSpecial&ecid=EMTHOTEL-7793202&hid=114236830",
+                "policy": "<ul><li>Free cancellation (Rs.0) before 31-Oct-2025 </li><li> 100% Deduction From: 31-Oct-2025 till check-in </li>",
+                "images": [
+                    "https://media.easemytrip.com/media/Hotel/SHL-25051033567993/Hotel/HotelwSQBgS.png",
+                    "https://media.easemytrip.com/media/Hotel/SHL-25051033567993/Hotel/HotelQG2gxq.png",
+                    "https://media.easemytrip.com/media/Hotel/SHL-25051033567993/Hotel/HotelXidFKo.png",
+                    "https://media.easemytrip.com/media/Hotel/SHL-25051033567993/Hotel/HotelTyuQCU.png",
+                    "https://media.easemytrip.com/media/Hotel/SHL-25051033567993/Hotel/HotelQAylZa.png"
+                ],
+                "amenities": [],
+                "brand": "",
+                "distance_km": 7.22,
+                "is_couple_friendly": true
+            }
+        ]
+    },
+    "trip_info": {
+        "trip_id": 1,
+        "destination": "Rishikesh",
+        "check_in": "2025-11-01",
+        "check_out": "2025-11-04"
+    },
+    "status_code": 200
+}
