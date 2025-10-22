@@ -142,10 +142,82 @@ def analyze_hotels(hotel_list: list) -> dict:
 
 
 
+# -------------------------------------------------------------------------
+# 3️⃣ HOTEL AVERAGE PRICE FUNCTION – Calculate average hotel price   (COST BREAKDOWN AI AGENT)
+# -------------------------------------------------------------------------
+def calculate_average_hotel_price(
+    destination: str,
+    check_in: datetime,
+    check_out: datetime,
+    no_of_rooms: int,
+    no_of_adult: int,
+    no_of_child: int,
+    min_price: float = 1,
+    max_price: float = 1000000,
+    sort_type: str = "Popular|DESC",
+) -> dict:
+    """
+    Fetch hotels and calculate average, min, and max prices for the search range.
+    """
 
+    # Step 1️⃣: Fetch hotel list from EaseMyTrip
+    hotels = search_hotels_easemytrip(
+        destination=destination,
+        check_in=check_in,
+        check_out=check_out,
+        no_of_rooms=no_of_rooms,
+        no_of_adult=no_of_adult,
+        no_of_child=no_of_child,
+        min_price=min_price,
+        max_price=max_price,
+        sort_type=sort_type
+    )
 
+    if not hotels:
+        return {
+            "status": False,
+            "message": "No hotels found for given filters.",
+            "average_price": 0,
+            "total_hotels": 0
+        }
 
-#======================================================================================
-# HOTEL AUTOSUGGESTION FUNCTION 
-#======================================================================================
+    # Step 2️⃣: Extract valid prices
+    prices = []
+    for h in hotels:
+        try:
+            price = float(h.get("prc") or 0)
+            if price > 0:
+                prices.append(price)
+        except (ValueError, TypeError):
+            continue
 
+    if not prices:
+        return {
+            "status": False,
+            "message": "No valid prices found for hotels.",
+            "average_price": 0,
+            "total_hotels": len(hotels)
+        }
+
+    # Step 3️⃣: Compute basic statistics
+    avg_price = round(sum(prices) / len(prices), 2)
+    min_p = min(prices)
+    max_p = max(prices)
+
+    # Step 4️⃣: Estimate total stay cost
+    nights = (check_out - check_in).days or 1
+    total_estimated_cost = avg_price * nights * no_of_rooms
+
+    return {
+        "status": True,
+        "message": "Hotel pricing analysis completed successfully.",
+        "destination": destination,
+        "check_in": check_in.strftime("%Y-%m-%d"),
+        "check_out": check_out.strftime("%Y-%m-%d"),
+        "nights": nights,
+        "total_hotels": len(hotels),
+        "average_price_per_night": avg_price,
+        "min_price": min_p,
+        "max_price": max_p,
+        "estimated_total_stay_cost": round(total_estimated_cost, 2)
+    }

@@ -475,6 +475,86 @@ def process_train_search_results(trains_response: Dict) -> Dict:
     }
 
 
+
+#------------------------------------------------------------------------
+# Train Travel Average Cost Function – Calculate average train travel cost
+#------------------------------------------------------------------------
+
+from typing import List, Dict
+from statistics import mean, median
+
+def get_average_class_fares(trains_data: List[Dict]) -> Dict:
+    """
+    Calculate average, min, max, and median fare for each train class 
+    (e.g., 3A, 2A, 1A, SL, 3E, CC, 2S) from all available trains.
+
+    Args:
+        trains_data (List[Dict]): List of train dictionaries containing 'classes' and 'totalFare'.
+
+    Returns:
+        Dict: A dictionary with average fare statistics for each class.
+    """
+    
+    # --- Step 1️⃣: Define supported train classes ---
+    class_fares = {
+        "3A": [],  # AC 3 Tier
+        "2A": [],  # AC 2 Tier
+        "1A": [],  # First AC
+        "SL": [],  # Sleeper
+        "3E": [],  # AC 3 Economy
+        "CC": [],  # Chair Car
+        "2S": [],  # Second Sitting
+    }
+    
+    # --- Step 2️⃣: Aggregate fares from all trains ---
+    for train in trains_data:
+        for cls in train.get("classes", []):
+            enq_class = cls.get("enqClass", "").upper()
+            fare = cls.get("totalFare")
+            if enq_class in class_fares and fare:
+                try:
+                    class_fares[enq_class].append(float(fare))
+                except (ValueError, TypeError):
+                    continue
+    
+    # --- Step 3️⃣: Compute statistical summary for each class ---
+    class_display_names = {
+        "3A": "AC 3 Tier",
+        "2A": "AC 2 Tier",
+        "1A": "First AC",
+        "SL": "Sleeper",
+        "3E": "AC 3 Economy",
+        "CC": "Chair Car",
+        "2S": "Second Sitting"
+    }
+    
+    fare_summary = {}
+    for code, fares in class_fares.items():
+        if fares:
+            fare_summary[class_display_names[code]] = {
+                "average_fare": round(mean(fares), 2),
+                "min_fare": round(min(fares), 2),
+                "max_fare": round(max(fares), 2),
+                "median_fare": round(median(fares), 2),
+                "sample_size": len(fares)
+            }
+    
+    return fare_summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # # Example usage
 # if __name__ == "__main__":
 #     # Import your actual search_trains function

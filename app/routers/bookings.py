@@ -9,8 +9,12 @@ from app.utils.trains_utils import search_trains
 from app.task.trip_tasks import get_travelling_options
 from app.utils.travel_options_analysis import analyze_trip_options
 from app.utils.hotel_utils import search_hotels_easemytrip, analyze_hotels
+from app.aiworkflow.get_trip_cost_breakdown import get_cost_breakdown
 from fastapi.responses import JSONResponse
 
+from app.utils.redis_utils import compute_trip_for_cost_breakdown_hash as compute_trip_hash
+from app.database.redis_client import r, REDIS_TTL  
+import json
 router = APIRouter(prefix="/bookings", tags=["Trains/Bus/Flight"])
 
 @router.post("/travellingoptions/create")
@@ -502,6 +506,73 @@ def get_hotel_recommendations(trip_id: int,  db: db_dependency, user: user_depen
             "message": f"Error processing hotel recommendations: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
         }
+
+
+
+
+@router.get("/trip-cost-breakdown/{trip_id}")
+def get_trip_cost_breakdown(trip_id: int, db: db_dependency, user : user_dependency , force_refresh: bool = False):
+    """
+    Endpoint to fetch detailed AI-driven trip cost breakdown including
+    travel, hotel, and itinerary day-wise expenses, with caching.
+    """
+    try:
+        # Validate trip exists
+        trip = db.query(Trip).filter(Trip.id == trip_id).first()
+        if not trip:
+            raise HTTPException(status_code=404, detail=f"No trip found with id {trip_id}")
+
+        user_id = user.id
+        cache_key = f"expense_analysis:{trip_id}:{user_id}"
+        source_hash = compute_trip_hash(db, trip_id)
+
+        # Check Redis cache
+        cached_data = r.get(cache_key)
+        if cached_data:
+            cached_json = json.loads(cached_data)
+            if cached_json.get("source_hash") == source_hash and not force_refresh:
+                return {
+                    "status": True,
+                    "cached": True,
+                    "message": "Trip cost breakdown retrieved from cache",
+                    "data": cached_json["data"],
+                    "status_code": status.HTTP_200_OK
+                }
+
+        # Cache miss or data changed → run AI analysis
+        fresh_data = get_cost_breakdown(user_id=user_id, trip_id=trip_id)
+
+        if not fresh_data:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="AI expense analysis returned empty result."
+            )
+
+        # Store in Redis
+        r.set(cache_key, json.dumps({
+            "source_hash": source_hash,
+            "data": fresh_data
+        }), ex=REDIS_TTL)
+
+        return {
+            "status": True,
+            "cached": False,
+            "message": "Trip cost breakdown generated successfully",
+            "data": fresh_data,
+            "status_code": status.HTTP_200_OK
+        }
+
+    except HTTPException as e:
+        raise e
+
+    except Exception as e:
+        return {
+            "status": False,
+            "message": f"Error while generating trip cost breakdown: {str(e)}",
+            "data": None,
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+
 
 
 

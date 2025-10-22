@@ -412,3 +412,51 @@ def get_bus_insights(search_result):
     }
     
     return insights
+
+
+
+
+
+
+# # -------------------------------------------------------------------------
+# BUS AVERAGE PRICE FUNCTION – Calculate average bus price   (COST BREAKDOWN AI AGENT)
+# # -------------------------------------------------------------------------
+
+def get_fare_analysis(search_result):
+    """
+    Returns fare analysis (average, min, max) from bus search results.
+
+    Args:
+        search_result: JSON response from get_bus_search_results()
+
+    Returns:
+        dict: {"average_fare": float, "min_fare": float, "max_fare": float, "price_range": str}
+    """
+    if not search_result or 'Response' not in search_result:
+        return {"average_fare": 0, "min_fare": 0, "max_fare": 0, "price_range": "₹0 - ₹0"}
+
+    trips = search_result['Response'].get('AvailableTrips', [])
+    if not trips:
+        return {"average_fare": 0, "min_fare": 0, "max_fare": 0, "price_range": "₹0 - ₹0"}
+
+    fares = []
+    for trip in trips:
+        try:
+            fare = float(trip.get('amount', 0))
+            fares.append(fare)
+        except:
+            continue
+
+    if not fares:
+        return {"average_fare": 0, "min_fare": 0, "max_fare": 0, "price_range": "₹0 - ₹0"}
+
+    avg_fare = round(sum(fares) / len(fares), 2)
+    min_fare = min(fares)
+    max_fare = max(fares)
+
+    return {
+        "average_fare": avg_fare,
+        "min_fare": min_fare,
+        "max_fare": max_fare,
+        "price_range": f"₹{min_fare} - ₹{max_fare}"
+    }
