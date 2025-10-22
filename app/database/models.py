@@ -275,7 +275,7 @@ class HotelPreferences(Base):
 
     # Filters / limits
     hotel_count = Column(Integer, nullable=True)  # Number of hotels to fetch
-    no_of_rooms = Column(Integer, nullable=True)  # Total rooms
+    # no_of_rooms = Column(Integer, nullable=True)  # Total rooms
     sort_type = Column(String, default="Popular|DESC", nullable=True)     # Example: "Popular|DESC"
     min_price = Column(Float,  default=1 , nullable=True)
     max_price = Column(Float, default=1000000 ,nullable=True)
