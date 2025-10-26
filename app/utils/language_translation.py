@@ -62,46 +62,46 @@ async def call_gemini_translation_api(json_data: dict, source_lang: str, target_
             return json_data
 
 
-async def translate_with_cache(db: Session, json_data: dict, target_lang, source_lang="English"):
-    """
-    Checks translation cache. If not found, calls Gemini API and saves the result in DB.
-    Works with JSONB and stores lang enums as plain strings.
-    """
+# async def translate_with_cache(db: Session, json_data: dict, target_lang, source_lang="English"):
+#     """
+#     Checks translation cache. If not found, calls Gemini API and saves the result in DB.
+#     Works with JSONB and stores lang enums as plain strings.
+#     """
 
-    # Convert Enums to plain strings
-    source_lang_str = source_lang.value if hasattr(source_lang, "value") else str(source_lang)
-    target_lang_str = target_lang.value if hasattr(target_lang, "value") else str(target_lang)
+#     # Convert Enums to plain strings
+#     source_lang_str = source_lang.value if hasattr(source_lang, "value") else str(source_lang)
+#     target_lang_str = target_lang.value if hasattr(target_lang, "value") else str(target_lang)
 
-    if source_lang_str == target_lang_str:
-        return json_data  # No translation needed
+#     if source_lang_str == target_lang_str:
+#         return json_data  # No translation needed
 
-    # Hash must use string version for consistency
-    text_hash = hashlib.md5(
-        f"{json.dumps(json_data, ensure_ascii=False)}_{source_lang_str}_{target_lang_str}".encode()
-    ).hexdigest()
+#     # Hash must use string version for consistency
+#     text_hash = hashlib.md5(
+#         f"{json.dumps(json_data, ensure_ascii=False)}_{source_lang_str}_{target_lang_str}".encode()
+#     ).hexdigest()
 
-    # Check cache
-    cached = db.query(TranslationCache).filter(
-        TranslationCache.source_text_hash == text_hash
-    ).first()
+#     # Check cache
+#     cached = db.query(TranslationCache).filter(
+#         TranslationCache.source_text_hash == text_hash
+#     ).first()
 
-    if cached:
-        return cached.translated_text  # already dict because JSONB stores dicts
+#     if cached:
+#         return cached.translated_text  # already dict because JSONB stores dicts
 
-    # Call Gemini API → returns dict
-    translated_dict = await call_gemini_translation_api(json_data, source_lang_str, target_lang_str)
+#     # Call Gemini API → returns dict
+#     translated_dict = await call_gemini_translation_api(json_data, source_lang_str, target_lang_str)
 
-    # Save dict directly as JSONB
-    new_cache = TranslationCache(
-        source_text_hash=text_hash,
-        source_text=json.dumps(json_data, ensure_ascii=False),  # original request as string
-        source_lang=source_lang_str,
-        target_lang=target_lang_str,
-        translated_text=translated_dict,  # dict goes here, JSONB accepts it
-        created_at=datetime.datetime.utcnow()
-    )
+#     # Save dict directly as JSONB
+#     new_cache = TranslationCache(
+#         source_text_hash=text_hash,
+#         source_text=json.dumps(json_data, ensure_ascii=False),  # original request as string
+#         source_lang=source_lang_str,
+#         target_lang=target_lang_str,
+#         translated_text=translated_dict,  # dict goes here, JSONB accepts it
+#         created_at=datetime.datetime.utcnow()
+#     )
 
-    db.add(new_cache)
-    db.commit()
+#     db.add(new_cache)
+#     db.commit()
 
-    return translated_dict
+#     return translated_dict

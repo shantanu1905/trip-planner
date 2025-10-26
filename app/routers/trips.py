@@ -4,8 +4,9 @@ from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data
-from app.utils.language_translation import translate_with_cache
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
+from app.utils.redis_utils import translate_with_cache
+from app.database.redis_client import r
 import json
 from app.database.models import Trip, UserPreferences
 
@@ -201,7 +202,7 @@ async def get_all_trips(db: db_dependency, user: user_dependency):
 
         # ✅ Translate entire trips list once if needed
         if target_lang != "English":
-            trips_data = await translate_with_cache(db, trips_data, target_lang)
+            trips_data = await translate_with_cache(trips_data, target_lang)
 
         return {
             "status": True,
@@ -309,7 +310,7 @@ async def get_trip(trip_id: int, db: db_dependency, user: user_dependency):
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
         if target_lang != "English":
-            trip_data = await translate_with_cache(db, trip_data, target_lang)
+             trip_data = await translate_with_cache(trip_data, target_lang)
 
         return {
             "status": True,
@@ -456,44 +457,41 @@ async def generate_itinerary(trip_id: int, db: db_dependency, user: user_depende
 
 
 
-
+REDIS_WEATHER_TTL = 3600  # 1 hour
 @router.get("/weather_conditions/{trip_id}")
 async def get_trip_weather(trip_id: int, db: db_dependency, user: user_dependency):
     try:
-        # 1. Fetch trip
+        # 1️⃣ Try cache first
+        cache_key = f"weather_conditions:{trip_id}:{user.id}"
+        cached_data = r.get(cache_key)
+        if cached_data:
+            cached_json = json.loads(cached_data)
+            return {
+                "status": True,
+                "data": cached_json,
+                "cached": True,
+                "message": "Weather and travel conditions retrieved from cache",
+                "status_code": status.HTTP_200_OK
+            }
+
+        # 2️⃣ Fetch trip
         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
         if not trip:
-            return {
-                "status": False,
-                "data": None,
-                "message": "Trip not found or doesn't belong to you.",
-                "status_code": status.HTTP_404_NOT_FOUND
-            }
+            raise HTTPException(status_code=404, detail="Trip not found or doesn't belong to you.")
 
-        # 2. Fetch destination from Trip model
+        # 3️⃣ Extract destination
         destination = trip.destination
         if not destination:
-            return {
-                "status": False,
-                "data": None,
-                "message": "Trip destination not found.",
-                "status_code": status.HTTP_400_BAD_REQUEST
-            }
+            raise HTTPException(status_code=400, detail="Trip destination not found.")
 
-        # 3. Call fetch_travel_update() with destination
+        # 4️⃣ Call travel update API
         params = json.dumps({"destination": destination})
         travel_update = fetch_travel_update(params)
 
-        # 4. If error occurred in fetch_travel_update
         if "error" in travel_update:
-            return {
-                "status": False,
-                "data": None,
-                "message": f"Error fetching travel update: {travel_update['error']}",
-                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
-            }
+            raise HTTPException(status_code=500, detail=f"Error fetching travel update: {travel_update['error']}")
 
-        # 5. Include travel update in final response
+        # 5️⃣ Build response
         response_data = {
             "trip_id": trip.id,
             "trip_name": trip.trip_name,
@@ -501,19 +499,26 @@ async def get_trip_weather(trip_id: int, db: db_dependency, user: user_dependenc
             "travel_update": travel_update
         }
 
-        # 6. Optional translation (if user language != English)
+        # 6️⃣ Optional translation
         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
         if target_lang != "English":
-            response_data = await translate_with_cache(db, response_data, target_lang)
+            response_data = await translate_with_cache(response_data, target_lang)
+
+        # 7️⃣ Cache the final result for 1 hour
+        r.set(cache_key, json.dumps(response_data), ex=REDIS_WEATHER_TTL)
 
         return {
             "status": True,
             "data": response_data,
+            "cached": False,
             "message": "Weather and travel conditions fetched successfully",
             "status_code": status.HTTP_200_OK
         }
+
+    except HTTPException as e:
+        raise e
 
     except Exception as e:
         return {
