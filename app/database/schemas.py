@@ -133,3 +133,23 @@ class HotelPreferencesCreate(BaseModel):
     selected_property_types: Optional[List[str]] = Field(default=["HOTEL"])
 
  
+class BusSearchRequest(BaseModel):
+    from_city: str = Field(example="Delhi", description="Source city name, e.g. Pune")
+    to_city: str = Field(example="Dehtadun", description="Destination city name, e.g. Nagpur")
+    journey_date: str = Field(example="11-11-2025", description="Journey date in DD-MM-YYYY or YYYY-MM-DD format (default: tomorrow)")
+    from_city_id: int = Field(example=733, description="Source city ID from EaseMyTrip")
+    to_city_id: int = Field(example=777, description="Destination city ID from EaseMyTrip")
+
+
+
+class HotelSearchRequest(BaseModel):
+    destination: str = Field(..., example="Nagpur")
+    check_in: str = Field(..., example="10-11-2025")
+    check_out: str = Field(..., example="12-11-2025")
+    no_of_rooms: int = Field(..., ge=1, example=1)
+    no_of_adult: int = Field(..., ge=1, example=2)
+    no_of_child: int = Field(..., ge=0, example=0)
+    min_price: Optional[float] = Field(1, example=1)
+    max_price: Optional[float] = Field(1000000, example=1000000)
+    sort_type: Optional[str] = Field("Popular|DESC", example="Popular|DESC")
+    no_of_results: Optional[int] = Field(30, example=30)
