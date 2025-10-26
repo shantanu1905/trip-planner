@@ -110,7 +110,7 @@ async def create_travelling_options(
         )
 
 @router.get("/travellingoptions/{trip_id}")
-async def get_travelling_options(
+async def get_all_travelling_options(
     trip_id: int,
     db: db_dependency,
     user: user_dependency
