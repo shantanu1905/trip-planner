@@ -51,6 +51,13 @@ async def search_train_api(request: TrainSearchRequest):
         # --- Create cache key ---
         cache_key = f"train_search:{from_station}:{to_station}:{travel_date}:{coupon_code or 'none'}"
 
+        user_data = {
+            "from_station": from_station,
+            "to_station": to_station,
+            "travel_date": travel_date,
+            "booking_type": "Train"
+        }
+
         # --- Check Redis cache ---
         cached_data = r.get(cache_key)
         if cached_data:
@@ -58,6 +65,7 @@ async def search_train_api(request: TrainSearchRequest):
             return {
                 "status": True,
                 "cached": True,
+                "user_data" : user_data,
                 "data": cached_json,
                 "message": f"Cached results for {from_station} to {to_station} on {travel_date}",
                 "status_code": status.HTTP_200_OK
@@ -99,6 +107,7 @@ async def search_train_api(request: TrainSearchRequest):
         return {
             "status": True,
             "cached": False,
+            "user_data" : user_data,
             "data": response_data,
             "message": f"Found {len(trains_data)} trains for {from_station} to {to_station} on {travel_date}",
             "status_code": status.HTTP_200_OK
@@ -310,6 +319,15 @@ async def search_bus_api(request: BusSearchRequest):
         # --- Generate cache key ---
         cache_key = f"bus_search:{from_city_id}:{to_city_id}:{journey_date or 'default'}"
 
+        user_data = {
+            "from_city": from_city,
+            "to_city": to_city,
+            "journey_date": journey_date,
+            "from_city_id": from_city_id,
+            "to_city_id": to_city_id,
+            "booking_type": "Bus"
+        }
+
         # --- Check cache ---
         cached = r.get(cache_key)
         if cached:
@@ -317,6 +335,7 @@ async def search_bus_api(request: BusSearchRequest):
                 status_code=status.HTTP_200_OK,
                 content={
                     "status": True,
+                    "user_data" : user_data,
                     "data": json.loads(cached),
                     "cached": True,
                     "message": f"Bus search results (cached) for IDs {from_city_id} → {to_city_id}",
@@ -336,6 +355,7 @@ async def search_bus_api(request: BusSearchRequest):
             status_code=status.HTTP_200_OK if result["status"] else status.HTTP_400_BAD_REQUEST,
             content={
                 "status": result["status"],
+                "user_data" : user_data,
                 "data": result.get("data"),  # full EaseMyTrip API response
                 "cached": False,
                 "message": result["message"],
@@ -398,6 +418,17 @@ async def search_hotels_api(request: HotelSearchRequest):
         # --- Create cache key ---
         cache_key = f"hotel_search:{destination}:{check_in}:{check_out}:{no_of_rooms}:{no_of_adult}:{no_of_child}:{destination}:{no_of_results}"
 
+        user_data = {
+            "destination": destination,
+            "check_in": check_in,
+            "check_out": check_out,
+            "no_of_rooms": no_of_rooms,
+            "no_of_adult": no_of_adult,
+            "no_of_child": no_of_child,
+            "no_of_results": no_of_results ,
+            "booking_type": "Hotel" 
+        }
+
         # --- Check Redis cache ---
         cached_data = r.get(cache_key)
         if cached_data:
@@ -405,6 +436,7 @@ async def search_hotels_api(request: HotelSearchRequest):
             return {
                 "status": True,
                 "cached": True,
+                "user_data" : user_data,
                 "data": cached_json,
                 "message": f"Cached results for hotels in {destination} from {check_in} to {check_out}",
                 "status_code": status.HTTP_200_OK
@@ -443,6 +475,7 @@ async def search_hotels_api(request: HotelSearchRequest):
         return {
             "status": True,
             "cached": False,
+            "user_data" : user_data,
             "data": hotels_data,
             "message": f"Found {len(hotels_data)} hotels in {destination} from {check_in} to {check_out}",
             "status_code": status.HTTP_200_OK
