@@ -146,6 +146,9 @@ class Trip(Base):
     tourist_places = _orm.relationship("TouristPlace", back_populates="trip", cascade="all, delete-orphan")
     travel_options = _orm.relationship("TravelOptions", back_populates="trip", cascade="all, delete-orphan")
     hotel_preferences_metadata = _orm.relationship("HotelPreferences",back_populates="trip",cascade="all, delete-orphan")
+    train_booking_info = _orm.relationship("TrainBookingInfo", back_populates="trip", cascade="all, delete-orphan")
+    bus_booking_info = _orm.relationship("BusBookingInfo", back_populates="trip", cascade="all, delete-orphan")
+    hotel_booking_info = _orm.relationship( "HotelBookingInfo", back_populates="trip", cascade="all, delete-orphan")
 
 
 # ---------------- ITINERARY MODEL ----------------
@@ -296,3 +299,150 @@ class HotelPreferences(Base):
 
     # Relationship
     trip = _orm.relationship("Trip",back_populates="hotel_preferences_metadata")
+
+
+class BookingType(enum.Enum):
+    BUS = "Bus"
+    TRAIN = "Train"
+    FLIGHT = "Flight"
+    HOTEL = "Hotel"
+
+
+class TrainBookingInfo(Base):
+    __tablename__ = "train_booking_info"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+
+    # Relationship to Trip
+    trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
+
+    # Booking details
+    booking_type = Column(String, default="Train", nullable=False)
+
+    from_station = Column(String, nullable=False)
+    to_station = Column(String, nullable=False)
+    travel_date = Column(Date, nullable=False)
+
+    train_name = Column(String, nullable=False)
+    train_number = Column(String, nullable=False)
+
+    arrival_time = Column(String, nullable=True)
+    departure_time = Column(String, nullable=True)
+    duration = Column(String, nullable=True)
+    distance = Column(String, nullable=True)
+
+    from_stn_name = Column(String, nullable=True)
+    from_stn_code = Column(String, nullable=True)
+    to_stn_name = Column(String, nullable=True)
+    to_stn_code = Column(String, nullable=True)
+
+    arrival_date = Column(String, nullable=True)
+    departure_date = Column(String, nullable=True)
+
+    enq_class = Column(String, nullable=True)
+    quota_name = Column(String, nullable=True)
+    total_fare = Column(Float, nullable=True)
+
+    # Optional: store raw API response or metadata
+    created_at = Column(DateTime, default=_dt.datetime.utcnow)
+
+    # Relationship
+    trip = _orm.relationship("Trip", back_populates="train_booking_info")
+
+
+
+
+
+class BusBookingInfo(Base):
+    __tablename__ = "bus_booking_info"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+
+    # Relationship to Trip
+    trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
+
+    # Booking type
+    booking_type = Column(String, default="Bus", nullable=False)
+
+    # Basic route details
+    from_city = Column(String, nullable=False)
+    to_city = Column(String, nullable=False)
+    journey_date = Column(Date, nullable=False)
+    from_city_id = Column(Integer, nullable=False)
+    to_city_id = Column(Integer, nullable=False)
+
+    # Boarding & Dropping details
+    boarding_point_name = Column(String, nullable=True)
+    boarding_point_id = Column(String, nullable=True)
+    boarding_point_location = Column(String, nullable=True)
+    boarding_point_long_name = Column(String, nullable=True)
+
+    dropping_point_id = Column(String, nullable=True)
+    dropping_point_name = Column(String, nullable=True)
+    dropping_point_location = Column(String, nullable=True)
+
+    # Bus & Operator Info
+    travels_name = Column(String, nullable=True)
+    bus_type = Column(String, nullable=True)
+    ac = Column(Boolean, nullable=True, default=False)
+
+    # Timing & Route Info
+    departure_time = Column(String, nullable=True)
+    arrival_time = Column(String, nullable=True)
+    duration = Column(String, nullable=True)
+    doj = Column(String, nullable=True)  # keep raw datetime string from API if needed
+    route_id = Column(String, nullable=True)
+    bus_id = Column(String, nullable=True)
+    bus_key = Column(String, nullable=True)
+
+    # Fare Info
+    total_fare = Column(Float, nullable=True)
+    created_at = Column(DateTime, default=_dt.datetime.utcnow)
+
+    # Relationship
+    trip = _orm.relationship("Trip", back_populates="bus_booking_info")
+
+
+
+
+
+class HotelBookingInfo(Base):
+    __tablename__ = "hotel_booking_info"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+
+    trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
+
+    # Booking type
+    booking_type = Column(String, default="Hotel", nullable=False)
+
+    # Core input fields
+    destination = Column(String, nullable=False)
+    check_in = Column(Date, nullable=False)
+    check_out = Column(Date, nullable=False)
+    no_of_rooms = Column(Integer, default=1)
+    no_of_adult = Column(Integer, default=2)
+    no_of_child = Column(Integer, default=0)
+
+    # Hotel info (keeping exact key names)
+    adrs = Column(String, nullable=True)
+    nm = Column(String, nullable=True)
+    lat = Column(Float, nullable=True)
+    lon = Column(Float, nullable=True)
+    prc = Column(Float, nullable=True)
+    rat = Column(String, nullable=True)
+    tax = Column(Float, nullable=True)
+    disc = Column(Float, nullable=True)
+    hid = Column(String, nullable=True)
+    catgry = Column(String, nullable=True)
+    cName = Column(String, nullable=True)
+    ecid = Column(String, nullable=True)
+    durl = Column(String, nullable=True)
+    cinTime = Column(String, nullable=True)
+    coutTime = Column(String, nullable=True)
+    lnFare = Column(Float, nullable=True)
+    appfare = Column(Float, nullable=True)
+
+    created_at = Column(DateTime, default=_dt.datetime.utcnow)
+
+    trip = _orm.relationship("Trip", back_populates="hotel_booking_info")
