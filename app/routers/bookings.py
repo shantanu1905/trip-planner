@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status, Query
 from app.database.models import Trip , TravelOptions , HotelPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest , SaveTravelOptionsRequest , HotelPreferencesCreate
+from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest , SaveTravelOptionsRequest , HotelPreferencesCreate , Settings
 from datetime import datetime 
 from typing import List, Optional
 from app.utils.trains_utils import search_trains 
@@ -11,11 +11,11 @@ from app.utils.travel_options_analysis import analyze_trip_options
 from app.utils.hotel_utils import search_hotels_easemytrip, analyze_hotels
 from app.aiworkflow.get_trip_cost_breakdown import get_cost_breakdown
 from fastapi.responses import JSONResponse
-
+from app.utils.redis_utils import translate_with_cache
 from app.utils.redis_utils import compute_trip_for_cost_breakdown_hash as compute_trip_hash
 from app.database.redis_client import r, REDIS_TTL  
 import json
-router = APIRouter(prefix="/bookings", tags=["Trains/Bus/Flight"])
+router = APIRouter(prefix="/bookings", tags=["Get Booking Options & Recommendations"])
 
 @router.post("/travellingoptions/create")
 async def create_travelling_options(
@@ -120,6 +120,7 @@ async def get_travelling_options(
 
     Returns both user-selected and system-generated (original) travel options.
     If none are available, it provides a structured error message.
+    Auto-translates response if user language != English.
     """
     try:
         # ✅ Verify Trip Ownership
@@ -153,20 +154,31 @@ async def get_travelling_options(
                 content={
                     "status": False,
                     "data": None,
-                    "message": "No travel options found for this trip. please create travelling options first.",
+                    "message": "No travel options found for this trip. Please create travelling options first.",
                     "status_code": status.HTTP_404_NOT_FOUND,
                 },
             )
 
-        # ✅ Success response
+        # ✅ Build response data
+        response_data = {
+            "selected_travel_options": existing_travel.selected_travel_options,
+            "all_travel_options": existing_travel.original_travel_options,
+        }
+
+        # ✅ Fetch user's preferred language
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+
+        # ✅ Translate if needed
+        if target_lang != "English":
+            response_data = await translate_with_cache(response_data, target_lang)
+
+        # ✅ Success
         return JSONResponse(
             status_code=status.HTTP_200_OK,
             content={
                 "status": True,
-                "data": {
-                    "selected_travel_options": existing_travel.selected_travel_options,
-                    "all_travel_options": existing_travel.original_travel_options,
-                },
+                "data": response_data,
                 "message": "Travel options fetched successfully.",
                 "status_code": status.HTTP_200_OK,
             },
@@ -182,9 +194,6 @@ async def get_travelling_options(
                 "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
             },
         )
-
-
-from fastapi.responses import JSONResponse
 
 @router.post("/save-travelling-options")
 async def save_travelling_options(
@@ -552,7 +561,7 @@ def get_trip_cost_breakdown(trip_id: int, db: db_dependency, user : user_depende
         r.set(cache_key, json.dumps({
             "source_hash": source_hash,
             "data": fresh_data
-        }), ex=REDIS_TTL)
+        }))
 
         return {
             "status": True,
@@ -652,9 +661,6 @@ async def search_train_api(request: TrainSearchRequest):
             "message": f"Error searching trains: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
-
-
-
 
 
 
