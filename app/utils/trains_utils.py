@@ -5,6 +5,8 @@ from statistics import mean, median
 import requests
 import json
 
+
+#main search function   
 def search_trains(from_station, to_station, travel_date, coupon_code=""):
     """
     Search for trains between stations and return simplified data structure
@@ -76,6 +78,37 @@ def search_trains(from_station, to_station, travel_date, coupon_code=""):
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
         return None
+
+
+def get_all_station_code_name(station_name: str):
+    """
+    Fetch all matching station names and codes using EaseMyTrip Train AutoSuggest API.
+    Returns a list of stations, each with 'Code' and 'Name'.
+    """
+    url = f"https://solr.easemytrip.com/v1/api/auto/GetTrainAutoSuggest/{station_name}"
+
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        stations = response.json()
+
+        # Ensure valid list
+        if stations and isinstance(stations, list):
+            station_list = [
+                {"code": s.get("Code"), "name": s.get("Name")}
+                for s in stations if s.get("Code") and s.get("Name")
+            ]
+            return station_list
+        
+        return []  # If no stations found
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching station list: {e}")
+        return []
+
+
+
+
 
 
 

@@ -32,6 +32,7 @@ def search_hotels_easemytrip(
     min_price: float = 1,
     max_price: float = 1000000,
     sort_type: str = "Popular|DESC",
+    no_of_results: int = 30,
 ) -> list:
     """
     Search hotels from EaseMyTrip API and return combined list of hotels.
@@ -49,7 +50,7 @@ def search_hotels_easemytrip(
             }
         ],
         "SearchKey": f"15~INR~{clean_place}~{check_in.strftime('%Y-%m-%d')}~{check_out.strftime('%Y-%m-%d')}~{no_of_rooms}~{no_of_adult}_~~~EASEMYTRIP~NA~NA~NA~IN",
-        "HotelCount": 30,
+        "HotelCount": no_of_results,
         "CheckInDate": check_in.strftime("%Y-%m-%d"),
         "CheckOut": check_out.strftime("%Y-%m-%d"),
         "CityCode": destination,

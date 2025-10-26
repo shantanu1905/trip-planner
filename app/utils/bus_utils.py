@@ -1,11 +1,10 @@
 
-
 import requests
 import json
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 import base64
-from datetime import datetime
+from datetime import datetime , timedelta
 
 BASE_URL = "https://bus.easemytrip.com/"
 SERVICE_URL = "https://busservice.easemytrip.com/v1/api"
@@ -78,6 +77,132 @@ def source_auto_suggest(place_name):
     except Exception as e:
         print(f"Error in source_auto_suggest: {e}")
         return None
+
+# function used by the router
+def get_all_city_autosuggest(place_name):
+    """
+    Get city suggestions based on place name.
+    Returns a list of full city objects (not just the first match).
+    """
+    url = "https://autosuggest.easemytrip.com/api/auto/bus?useby=popularu&key=jNUYK0Yj5ibO6ZVIkfTiFA=="
+    jsonString = {
+        "userName": "",
+        "password": "",
+        "Prefix": place_name,
+        "country_code": "IN"
+    }
+
+    RQ = {"request": EncryptionV1(json.dumps(jsonString))}
+    jsonrequest = {
+        "request": RQ["request"],
+        "isIOS": False,
+        "ip": "49.249.40.58",
+        "encryptedHeader": "7ZTtohPgMEKTZQZk4/Cn1mpXnyNZDJIRcrdCFo5ahIk="
+    }
+
+    try:
+        response = requests.post(url, json=jsonrequest, timeout=10)
+        response.raise_for_status()
+
+        decrypted = decryptV1(response.text)
+        result = json.loads(decrypted)
+
+        # ✅ Return all "city"-type entries with full details
+        if result.get('list') and len(result['list']) > 0:
+            city_list = [
+                item for item in result['list']
+                if item.get('type') == 'city'
+            ]
+
+            # If no explicit 'city' type found, return all items
+            if not city_list:
+                city_list = result['list']
+
+            return city_list  # return full objects
+
+        return []
+
+    except Exception as e:
+        print(f"Error in source_auto_suggest: {e}")
+        return []
+
+def get_all_bus_search_result(
+    from_city: str,
+    to_city: str,
+    journey_date: str = None,
+    from_city_id: int = None,
+    to_city_id: int = None
+):
+    """
+    Unified function to search buses using provided city IDs.
+
+    Args:
+        from_city (str): Source city name.
+        to_city (str): Destination city name.
+        journey_date (str): Journey date in DD-MM-YYYY format. Defaults to tomorrow.
+        from_city_id (str): Source city ID.
+        to_city_id (str): Destination city ID.
+
+    Returns:
+        dict: Bus search API response with status and message.
+    """
+
+    if not from_city_id or not to_city_id:
+        return {
+            "status": False,
+            "message": "Both from_city_id and to_city_id must be provided",
+            "data": None
+        }
+
+    # Set default journey date (tomorrow) if not provided
+    if not journey_date:
+        tomorrow = datetime.now() + timedelta(days=1)
+        journey_date = tomorrow.strftime("%d-%m-%Y")
+
+    # Prepare EaseMyTrip Bus Search API request
+    search_url = "https://busservice.easemytrip.com/v1/api/Home/GetSearchResult/"
+    headers = {
+        "Content-Type": "application/json",
+        "Origin": "https://bus.easemytrip.com",
+        "Referer": "https://bus.easemytrip.com/",
+        "User-Agent": "Mozilla/5.0"
+    }
+
+    payload = {
+        "SourceCityId": from_city_id,
+        "DestinationCityId": to_city_id,
+        "SourceCityName": from_city,
+        "DestinatinCityName": to_city,
+        "JournyDate": journey_date,
+        "Vid": "da20a2d09e9611f09fd55d45d3936493",
+        "agentCode": "NAN",
+        "agentType": "NAN",
+        "CurrencyDomain": "IN",
+        "Sid": "da2096a09e9611f0a091e1af1f28887f",
+        "snapApp": "Emt",
+        "TravelPolicy": [],
+        "isInventory": 0
+    }
+
+    try:
+        response = requests.post(search_url, headers=headers, json=payload, timeout=20)
+        response.raise_for_status()
+        result = response.json()
+
+        return {
+            "status": True,
+            "message": f"Found buses from {from_city} to {to_city}",
+            "data": result
+        }
+
+    except requests.RequestException as e:
+        print(f"Bus search request failed: {e}")
+        return {
+            "status": False,
+            "message": str(e),
+            "data": None
+        }
+
 
 def get_bus_search_results(
     source_city_id,
