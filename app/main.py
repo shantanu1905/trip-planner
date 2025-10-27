@@ -11,6 +11,8 @@ from app.routers.authentication_react import router as react
 from app.routers.user_preferences import router as user_preferences
 from app.routers.bookings import router as travel_mode
 from app.routers.search_tickets import router as search_tickets
+from app.routers.payments import router as payments
+
 
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import events
@@ -82,6 +84,8 @@ app.include_router(react)
 app.include_router(user_preferences)
 app.include_router(travel_mode)
 app.include_router(search_tickets)
+app.include_router(payments)
+
 
 
 auth_models.Base.metadata.create_all(bind=engine)
