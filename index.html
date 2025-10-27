@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stripe Payment Test</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h2>Stripe Payment Test</h2>
+    <button id="payBtn">Pay ₹5131</button>
+
+    <script>
+        document.getElementById("payBtn").onclick = async function() {
+            const res = await fetch("http://localhost:8000/payments/create-session", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    trip_id: 1,
+                    booking_id: 1,
+                    booking_type: "Hotel",
+                    amount: 5131.0
+                })
+            });
+            const data = await res.json();
+            if (data.status) {
+                window.location.href = data.checkout_url;
+            } else {
+                alert("Payment creation failed!");
+            }
+        };
+    </script>
+</body>
+</html>

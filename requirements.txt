@@ -22,3 +22,5 @@ celery[redis]
 langchain-google-genai
 pycryptodome
 google-generativeai
+stripe
+python-decouple 
