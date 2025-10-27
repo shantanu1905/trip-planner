@@ -1,11 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Query
-from app.database.models import Trip , TravelOptions , HotelPreferences
+from app.database.models import Trip , TravelOptions , HotelPreferences , TrainBookingInfo , BusBookingInfo, HotelBookingInfo
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.database.schemas import TrainSearchRequest , TravellingOptionsRequest , SaveTravelOptionsRequest , HotelPreferencesCreate , Settings
-from datetime import datetime 
-from typing import List, Optional
-from app.utils.trains_utils import search_trains 
+from app.database.schemas import TrainBookingCreate , TravellingOptionsRequest , SaveTravelOptionsRequest , HotelPreferencesCreate , Settings , BusBookingCreate , HotelBookingCreate
 from app.task.trip_tasks import get_travelling_options
 from app.utils.travel_options_analysis import analyze_trip_options
 from app.utils.hotel_utils import search_hotels_easemytrip, analyze_hotels
@@ -15,6 +12,7 @@ from app.utils.redis_utils import translate_with_cache
 from app.utils.redis_utils import compute_trip_for_cost_breakdown_hash as compute_trip_hash
 from app.database.redis_client import r, REDIS_TTL  
 import json
+from sqlalchemy.orm import joinedload
 router = APIRouter(prefix="/bookings", tags=["Get Booking Options & Recommendations"])
 
 @router.post("/travellingoptions/create")
@@ -587,83 +585,601 @@ def get_trip_cost_breakdown(trip_id: int, db: db_dependency, user : user_depende
 
 
 
-@router.post("/searchtrain", description="Search for trains between stations on a specific date")
-async def search_train_api(request: TrainSearchRequest):
+@router.post("/train", description="📘 Create a train booking entry for a trip.")
+async def book_train(
+    request: TrainBookingCreate,
+    db: db_dependency,
+    user: user_dependency
+):
+    """
+    🚆 Book a train for a user's trip.
+    
+    This endpoint stores selected train booking details for the trip, ensuring:
+    - ✅ User authentication
+    - ✅ Ownership validation
+    - ✅ Duplicate prevention
+
+    **Example Request:**
+    ```json
+    {
+        "trip_id": 1,
+        "booking_type": "Train",
+        "from_station": "MMCT",
+        "to_station": "NGP",
+        "travel_date": "2025-11-22",
+        "train_name": "Ltt Bbs Express",
+        "train_number": "12879",
+        "arrival_time": "13:35",
+        "departure_time": "00:15",
+        "duration": "13:20",
+        "distance": "821",
+        "from_stn_name": "Lokmanyatilak Terminus Kurla",
+        "from_stn_code": "LTT",
+        "to_stn_name": "Nagpur",
+        "to_stn_code": "NGP",
+        "arrival_date": "22Nov2025",
+        "departure_date": "22Nov2025",
+        "enq_class": "2A",
+        "quota_name": "General",
+        "total_fare": 1715.0
+    }
+    ```
+    """
     try:
-        from_station = request.from_station
-        to_station = request.to_station
-        travel_date = request.travel_date
-        coupon_code = request.coupon_code
+        # ✅ Ensure user is authenticated
+        if not user:
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "User not authenticated.",
+                    "status_code": status.HTTP_401_UNAUTHORIZED,
+                },
+            )
 
-        # --- Convert date if in YYYY-MM-DD format ---
-        try:
-            if "-" in travel_date:
-                travel_date = datetime.strptime(travel_date, "%Y-%m-%d").strftime("%d/%m/%Y")
-        except ValueError:
-            return {
-                "status": False,
-                "data": [],
-                "message": "Invalid date format. Please use DD/MM/YYYY or YYYY-MM-DD",
-                "status_code": status.HTTP_400_BAD_REQUEST
-            }
+        # ✅ Verify Trip Ownership
+        trip = db.query(Trip).filter(
+            Trip.id == request.trip_id,
+            Trip.user_id == user.id
+        ).first()
 
-        # --- Validate inputs ---
-        if not from_station or not to_station or not travel_date:
-            return {
-                "status": False,
-                "data": [],
-                "message": "From station, to station, and travel date are required",
-                "status_code": status.HTTP_400_BAD_REQUEST
-            }
+        if not trip:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "Trip not found or doesn't belong to you.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                },
+            )
 
-        # --- Call search function ---
-        trains_data = search_trains(from_station, to_station, travel_date, coupon_code)
+        # ✅ Prevent duplicate booking for same train on same date
+        existing_booking = db.query(TrainBookingInfo).filter(
+            TrainBookingInfo.trip_id == request.trip_id,
+            TrainBookingInfo.train_number == request.train_number,
+            TrainBookingInfo.from_station == request.from_station,
+            TrainBookingInfo.to_station == request.to_station,
+            TrainBookingInfo.travel_date == request.travel_date
+        ).first()
 
-        # --- Handle API errors ---
-        if trains_data is None:
-            return {
-                "status": False,
-                "data": [],
-                "message": "Error occurred while searching trains. Please try again.",
-                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
-            }
+        if existing_booking:
+            return JSONResponse(
+                status_code=status.HTTP_409_CONFLICT,
+                content={
+                    "status": False,
+                    "data": {
+                        "existing_booking_id": existing_booking.id,
+                        "train_number": existing_booking.train_number,
+                        "train_name": existing_booking.train_name
+                    },
+                    "message": "Train booking already exists for this trip.",
+                    "status_code": status.HTTP_409_CONFLICT,
+                },
+            )
 
-        # --- No trains found ---
-        if not trains_data:
-            return {
+        # ✅ Create train booking entry
+        booking = TrainBookingInfo(
+            trip_id=request.trip_id,
+            booking_type=request.booking_type,
+            from_station=request.from_station,
+            to_station=request.to_station,
+            travel_date=request.travel_date,
+            train_name=request.train_name,
+            train_number=request.train_number,
+            arrival_time=request.arrival_time,
+            departure_time=request.departure_time,
+            duration=request.duration,
+            distance=request.distance,
+            from_stn_name=request.from_stn_name,
+            from_stn_code=request.from_stn_code,
+            to_stn_name=request.to_stn_name,
+            to_stn_code=request.to_stn_code,
+            arrival_date=request.arrival_date,
+            departure_date=request.departure_date,
+            enq_class=request.enq_class,
+            quota_name=request.quota_name,
+            total_fare=request.total_fare,
+        )
+
+        db.add(booking)
+        db.commit()
+        db.refresh(booking)
+
+        return JSONResponse(
+            status_code=status.HTTP_201_CREATED,
+            content={
                 "status": True,
-                "data": [],
-                "message": "No trains found for the given route and date",
-                "status_code": status.HTTP_200_OK
-            }
-
-        # --- Generate booking URL ---
-        from_name_clean = from_station.replace(" ", "")
-        to_name_clean = to_station.replace(" ", "")
-        travel_date_formatted = datetime.strptime(travel_date, "%d/%m/%Y").strftime("%d-%m-%Y")
-        booking_url = f"https://railways.easemytrip.com/TrainListInfo/{from_name_clean}({from_station})-to-{to_name_clean}({to_station})/2/{travel_date_formatted}"
-
-        # --- Success Response ---
-        return {
-            "status": True,
-            "data": {
-                "trains": trains_data,
-                "booking_url": booking_url
+                "data": {
+                    "booking_id": booking.id,
+                    "train_number": booking.train_number,
+                    "train_name": booking.train_name,
+                    "travel_date": str(booking.travel_date)
+                },
+                "message": "Train booking created successfully.",
+                "status_code": status.HTTP_201_CREATED,
             },
-            "message": f"Found {len(trains_data)} trains for {from_station} to {to_station} on {travel_date}",
-            "status_code": status.HTTP_200_OK
-        }
+        )
 
     except Exception as e:
-        return {
-            "status": False,
-            "data": [],
-            "message": f"Error searching trains: {str(e)}",
-            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
-        }
+        db.rollback()
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "status": False,
+                "data": None,
+                "message": f"Error creating train booking: {str(e)}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+            },
+        )
+    
+
+
+
+@router.post("/bus", description="🚌 Create a bus booking entry for a trip.")
+async def book_bus(
+    request: BusBookingCreate,
+    db: db_dependency,
+    user: user_dependency
+):
+    """
+    🚌 Book a bus for a user's trip.
+    
+    This endpoint stores selected bus booking details for the trip.
+
+    - ✅ Ensures user authentication  
+    - ✅ Verifies trip ownership  
+    - ✅ Prevents duplicate bookings  
+
+    **Example Request:**
+    ```json
+    {
+        "trip_id": 1,
+        "booking_type": "Bus",
+        "from_city": "Delhi",
+        "to_city": "Dehradun",
+        "journey_date": "01-11-2025",
+        "from_city_id": 733,
+        "to_city_id": 777,
+        "boarding_point_name": "Kashmere Gate",
+        "boarding_point_id": "303",
+        "boarding_point_location": "Kashmere Gate,Platform no.59,60 Kashmiri Gate",
+        "dropping_point_id": "26",
+        "dropping_point_name": "Near ISBT Dehradun",
+        "dropping_point_location": "Rao Travels,Near ISBT Dehradun, near rao Travels",
+        "travels_name": "YOLO BUS",
+        "bus_type": "Bharat Benz A/C Semi Sleeper (2+2)",
+        "ac": true,
+        "departure_time": "23:40",
+        "arrival_time": "05:17",
+        "duration": "05h 37m",
+        "doj": "2025-11-01T11:40:00",
+        "route_id": "2716",
+        "bus_id": "5862188",
+        "bus_key": "b5913",
+        "total_fare": 299.0
+    }
+    ```
+    """
+    try:
+        # ✅ Ensure user is authenticated
+        if not user:
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={
+                    "status": False,
+                    "message": "User not authenticated.",
+                    "status_code": status.HTTP_401_UNAUTHORIZED,
+                    "data": None,
+                },
+            )
+
+        # ✅ Verify Trip Ownership
+        trip = db.query(Trip).filter(
+            Trip.id == request.trip_id,
+            Trip.user_id == user.id
+        ).first()
+
+        if not trip:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "message": "Trip not found or doesn't belong to you.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                    "data": None,
+                },
+            )
+
+        # ✅ Prevent duplicate booking
+        existing_booking = db.query(BusBookingInfo).filter(
+            BusBookingInfo.trip_id == request.trip_id,
+            BusBookingInfo.bus_id == request.bus_id,
+            BusBookingInfo.journey_date == request.journey_date
+        ).first()
+
+        if existing_booking:
+            return JSONResponse(
+                status_code=status.HTTP_409_CONFLICT,
+                content={
+                    "status": False,
+                    "message": "Bus booking already exists for this trip.",
+                    "status_code": status.HTTP_409_CONFLICT,
+                    "data": {
+                        "booking_id": existing_booking.id,
+                        "bus_id": existing_booking.bus_id,
+                        "travels_name": existing_booking.travels_name,
+                        "journey_date": str(existing_booking.journey_date)
+                    },
+                },
+            )
+
+        # ✅ Create bus booking entry
+        booking = BusBookingInfo(
+            trip_id=request.trip_id,
+            booking_type=request.booking_type,
+            from_city=request.from_city,
+            to_city=request.to_city,
+            journey_date=request.journey_date,
+            from_city_id=request.from_city_id,
+            to_city_id=request.to_city_id,
+            boarding_point_name=request.boarding_point_name,
+            boarding_point_id=request.boarding_point_id,
+            boarding_point_location=request.boarding_point_location,
+            boarding_point_long_name=request.boarding_point_long_name,
+            dropping_point_id=request.dropping_point_id,
+            dropping_point_name=request.dropping_point_name,
+            dropping_point_location=request.dropping_point_location,
+            travels_name=request.travels_name,
+            bus_type=request.bus_type,
+            ac=request.ac,
+            departure_time=request.departure_time,
+            arrival_time=request.arrival_time,
+            duration=request.duration,
+            doj=request.doj,
+            route_id=request.route_id,
+            bus_id=request.bus_id,
+            bus_key=request.bus_key,
+            total_fare=request.total_fare,
+        )
+
+        db.add(booking)
+        db.commit()
+        db.refresh(booking)
+
+        return JSONResponse(
+            status_code=status.HTTP_201_CREATED,
+            content={
+                "status": True,
+                "message": "Bus booking created successfully.",
+                "status_code": status.HTTP_201_CREATED,
+                "data": {
+                    "booking_id": booking.id,
+                    "bus_id": booking.bus_id,
+                    "travels_name": booking.travels_name,
+                    "journey_date": str(booking.journey_date)
+                },
+            },
+        )
+
+    except Exception as e:
+        db.rollback()
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "status": False,
+                "message": f"Error creating bus booking: {str(e)}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+                "data": None,
+            },
+        )
+    
+
+
+
+@router.post("/hotel", description="🏨 Create a hotel booking entry for a trip.")
+async def book_hotel(
+    request: HotelBookingCreate,  # Pydantic schema (defined below)
+    db: db_dependency,
+    user: user_dependency
+):
+    """
+    🏨 Create a hotel booking for a user's trip.
+
+    This endpoint saves selected hotel details for a specific trip.
+    It ensures:
+    - The user is authenticated.
+    - The trip belongs to the user.
+    - The same hotel booking isn't duplicated.
+
+    **Example Request:**
+    ```json
+    {
+        "trip_id": 1,
+        "booking_type": "Hotel",
+        "destination": "Goa",
+        "check_in": "2025-12-10",
+        "check_out": "2025-12-13",
+        "no_of_rooms": 2,
+        "no_of_adult": 3,
+        "no_of_child": 1,
+        "adrs": "Calangute Beach Road, Goa",
+        "nm": "The Beach Resort",
+        "lat": 15.5523,
+        "lon": 73.7551,
+        "prc": 5899.0,
+        "rat": "4.5",
+        "tax": 500.0,
+        "disc": 300.0,
+        "hid": "H12345",
+        "catgry": "Resort",
+        "cName": "Deluxe Room",
+        "ecid": "E56789",
+        "durl": "https://example.com/hotel/the-beach-resort",
+        "cinTime": "12:00 PM",
+        "coutTime": "11:00 AM",
+        "lnFare": 6199.0,
+        "appfare": 5899.0
+    }
+    ```
+    """
+    try:
+        # ✅ Ensure user is authenticated
+        if not user:
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "User not authenticated.",
+                    "status_code": status.HTTP_401_UNAUTHORIZED,
+                },
+            )
+
+        # ✅ Verify Trip Ownership
+        trip = db.query(Trip).filter(
+            Trip.id == request.trip_id,
+            Trip.user_id == user.id
+        ).first()
+
+        if not trip:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "Trip not found or doesn't belong to you.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                },
+            )
+
+        # ✅ Prevent duplicate hotel bookings for same trip + hotel + dates
+        existing_booking = db.query(HotelBookingInfo).filter(
+            HotelBookingInfo.trip_id == request.trip_id,
+            HotelBookingInfo.hid == request.hid,
+            HotelBookingInfo.check_in == request.check_in,
+            HotelBookingInfo.check_out == request.check_out
+        ).first()
+
+        if existing_booking:
+            return JSONResponse(
+                status_code=status.HTTP_200_OK,
+                content={
+                    "status": True,
+                    "data": {
+                        "booking_id": existing_booking.id,
+                        "hotel_name": existing_booking.nm,
+                        "check_in": str(existing_booking.check_in),
+                        "check_out": str(existing_booking.check_out),
+                    },
+                    "message": "Hotel booking already exists for this trip.",
+                    "status_code": status.HTTP_200_OK,
+                },
+            )
+
+        # ✅ Create new hotel booking entry
+        booking = HotelBookingInfo(
+            trip_id=request.trip_id,
+            booking_type=request.booking_type,
+            destination=request.destination,
+            check_in=request.check_in,
+            check_out=request.check_out,
+            no_of_rooms=request.no_of_rooms,
+            no_of_adult=request.no_of_adult,
+            no_of_child=request.no_of_child,
+            adrs=request.adrs,
+            nm=request.nm,
+            lat=request.lat,
+            lon=request.lon,
+            prc=request.prc,
+            rat=request.rat,
+            tax=request.tax,
+            disc=request.disc,
+            hid=request.hid,
+            catgry=request.catgry,
+            cName=request.cName,
+            ecid=request.ecid,
+            durl=request.durl,
+            cinTime=request.cinTime,
+            coutTime=request.coutTime,
+            lnFare=request.lnFare,
+            appfare=request.appfare,
+        )
+
+        db.add(booking)
+        db.commit()
+        db.refresh(booking)
+
+        return JSONResponse(
+            status_code=status.HTTP_201_CREATED,
+            content={
+                "status": True,
+                "data": {
+                    "booking_id": booking.id,
+                    "hotel_name": booking.nm,
+                    "check_in": str(booking.check_in),
+                    "check_out": str(booking.check_out)
+                },
+                "message": "Hotel booking created successfully.",
+                "status_code": status.HTTP_201_CREATED,
+            },
+        )
+
+    except Exception as e:
+        db.rollback()
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "status": False,
+                "data": None,
+                "message": f"Error creating hotel booking: {str(e)}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+            },
+        )
+    
 
 
 
 
 
+@router.get("/bookings/show-trip-bookings", description="📘 Get all bookings (Train, Bus, Hotel) for the authenticated user.")
+async def get_all_bookings_grouped(
+    db: db_dependency,
+    user: user_dependency
+):
+    """
+    🧾 Fetch all bookings (Train, Bus, Hotel) grouped by each trip_id.
+    Shows separate count and list for each trip.
+    """
+    try:
+        # ✅ Ensure user authenticated
+        if not user:
+            return JSONResponse(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "User not authenticated.",
+                    "status_code": status.HTTP_401_UNAUTHORIZED
+                },
+            )
 
+        # ✅ Fetch user trips with related bookings
+        trips = (
+            db.query(Trip)
+            .options(
+                joinedload(Trip.train_booking_info),
+                joinedload(Trip.bus_booking_info),
+                joinedload(Trip.hotel_booking_info)
+            )
+            .filter(Trip.user_id == user.id)
+            .all()
+        )
+
+        if not trips:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": True,
+                    "data": [],
+                    "message": "No trips or bookings found for this user.",
+                    "status_code": status.HTTP_404_NOT_FOUND
+                },
+            )
+
+        # ✅ Group bookings by trip
+        grouped_data = []
+
+        for trip in trips:
+            trip_bookings = []
+
+            # 🟩 Train Bookings
+            if trip.train_booking_info:
+                for t in trip.train_booking_info:
+                    trip_bookings.append({
+                        "type": "Train",
+                        "train_name": t.train_name,
+                        "train_number": t.train_number,
+                        "from_station": t.from_stn_name,
+                        "to_station": t.to_stn_name,
+                        "travel_date": str(t.travel_date),
+                        "fare": t.total_fare,
+                        "is_booked": t.is_booked
+                    })
+
+            # 🟦 Bus Bookings
+            if trip.bus_booking_info:
+                for b in trip.bus_booking_info:
+                    trip_bookings.append({
+                        "type": "Bus",
+                        "travels_name": b.travels_name,
+                        "bus_type": b.bus_type,
+                        "from_city": b.from_city,
+                        "to_city": b.to_city,
+                        "journey_date": str(b.journey_date),
+                        "fare": b.total_fare,
+                        "is_booked": b.is_booked
+                    })
+
+            # 🟨 Hotel Bookings
+            if trip.hotel_booking_info:
+                for h in trip.hotel_booking_info:
+                    trip_bookings.append({
+                        "type": "Hotel",
+                        "hotel_name": h.nm,
+                        "destination": h.destination,
+                        "check_in": str(h.check_in),
+                        "check_out": str(h.check_out),
+                        "price": h.prc,
+                        "rating": h.rat,
+                        "is_booked": h.is_booked
+                    })
+
+            grouped_data.append({
+                "trip_id": trip.id,
+                "trip_name": trip.trip_name if hasattr(trip, "trip_name") else None,
+                "total_bookings": len(trip_bookings),
+                "bookings": trip_bookings
+            })
+
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={
+                "status": True,
+                "data": grouped_data,
+                "message": "All user bookings grouped by trip_id retrieved successfully.",
+                "status_code": status.HTTP_200_OK
+            },
+        )
+
+    except Exception as e:
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "status": False,
+                "data": None,
+                "message": f"Error fetching bookings: {str(e)}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+            },
+        )

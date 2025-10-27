@@ -128,17 +128,17 @@ def analyze_hotels(hotel_list: list) -> dict:
     sorted_by_price = sorted(clean_hotels, key=lambda x: x["price"] or 999999)
 
     recommendations = {
-        "top_rated_hotels": sorted_by_trip_rating[:3],
-        "best_value_for_money": sorted(sorted_by_trip_rating[:10], key=lambda x: x["price"])[:3],
+        "top_rated_hotels": sorted_by_trip_rating[:5],
+        "best_value_for_money": sorted(sorted_by_trip_rating[:10], key=lambda x: x["price"])[:5],
         "luxury_stays": [h for h in sorted_by_price[-5:] if (float(h.get("rating") or 0) >= 4)],
-        "budget_friendly": sorted_by_price[:3],
+        "budget_friendly": sorted_by_price[:5],
     }
 
     return {
         "status": True,
         "message": "Hotel analysis completed",
         "recommendations": recommendations,
-        "hotels": clean_hotels[:15]  # limit results
+        "hotels": clean_hotels[:30]  # limit results
     }
 
 

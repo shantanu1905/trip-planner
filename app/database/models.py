@@ -81,6 +81,11 @@ class FlightClassEnum(enum.Enum):
     FIRST_CLASS = "First Class"
 
 
+class BookingType(enum.Enum):
+    BUS = "Bus"
+    TRAIN = "Train"
+    FLIGHT = "Flight"
+    HOTEL = "Hotel"
 
 #---------------- USER MODEL ------------------
 class User(Base):
@@ -301,11 +306,6 @@ class HotelPreferences(Base):
     trip = _orm.relationship("Trip",back_populates="hotel_preferences_metadata")
 
 
-class BookingType(enum.Enum):
-    BUS = "Bus"
-    TRAIN = "Train"
-    FLIGHT = "Flight"
-    HOTEL = "Hotel"
 
 
 class TrainBookingInfo(Base):
@@ -342,6 +342,7 @@ class TrainBookingInfo(Base):
     enq_class = Column(String, nullable=True)
     quota_name = Column(String, nullable=True)
     total_fare = Column(Float, nullable=True)
+    is_booked = Column(Boolean, default=False)
 
     # Optional: store raw API response or metadata
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
@@ -397,6 +398,7 @@ class BusBookingInfo(Base):
 
     # Fare Info
     total_fare = Column(Float, nullable=True)
+    is_booked = Column(Boolean, default=False)
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
 
     # Relationship
@@ -442,7 +444,31 @@ class HotelBookingInfo(Base):
     coutTime = Column(String, nullable=True)
     lnFare = Column(Float, nullable=True)
     appfare = Column(Float, nullable=True)
+    is_booked = Column(Boolean, default=False)
 
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
 
     trip = _orm.relationship("Trip", back_populates="hotel_booking_info")
+
+
+
+
+
+
+
+class Payment(Base):
+    __tablename__ = "payments"
+
+    id = Column(Integer, primary_key=True, index=True)
+    trip_id = Column(Integer, ForeignKey("trips.id", ondelete="CASCADE"), nullable=False)
+    booking_type = Column(String, nullable=False)  # 'Train', 'Bus', 'Hotel'
+    booking_id = Column(Integer, nullable=False)   # reference to booking record
+    amount = Column(Float, nullable=False)
+    currency = Column(String, default="inr")
+
+    # Stripe fields
+    stripe_payment_intent_id = Column(String, nullable=True)
+    stripe_client_secret = Column(String, nullable=True)
+
+    status = Column(String, default="CREATED")  # CREATED | SUCCESS | FAILED
+    created_at = Column(DateTime, default=_dt.datetime.utcnow)
