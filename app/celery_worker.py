@@ -1,12 +1,24 @@
 from celery import Celery
+import os 
+from dotenv import load_dotenv
 
-# Create Celery app with Redis broker & backend
+load_dotenv()
+
+
+# Load Redis connection details from environment variables
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = os.getenv("REDIS_PORT", "6379")
+REDIS_DB = os.getenv("REDIS_DB", "0")
+
+# Construct Redis URL
+REDIS_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}"
+
+# Create Celery app
 celery_app = Celery(
     "worker",
-    broker="redis://localhost:6379/0",   # Redis broker
-    backend="redis://localhost:6379/0"  # Optional: For task results
+    broker=REDIS_URL,
+    backend=REDIS_URL,  # Optional: store task results
 )
-
 
 # Celery configuration
 celery_app.conf.update(
