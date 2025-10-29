@@ -52,9 +52,9 @@ AI Trip Planner is a full-stack travel planning application that helps users cre
 6. (Optional) Build and run the Google Maps scraper microservice:
 
    ```bash
-   cd app/google_maps_scraper
-   docker build -t google_maps_scraper .
-   docker run -d google_maps_scraper
+   cd google_maps_scraper
+   docker build --no-cache -t google_maps_scraper:latest .
+   docker run -d --name google_maps_scraper -p 8002:8002 google_maps_scraper:latest
    ```
 
 7. (Optional) Build and Run the Main Application with Docker:

@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+BASE_URL_FOR_GMAP_SCRAPPER = os.getenv("BASE_URL_FOR_GMAP_SCRAPPER")
+
 
 # Initialize Gemini model
 llm = ChatGoogleGenerativeAI(
@@ -26,7 +28,7 @@ def fetch_places_from_api(destination: str, refresh: bool = False) -> Dict:
     Fetch raw tourist places data from the /places API.
     """
     try:
-        url = f"http://127.0.0.1:8002/places?destination={destination}&refresh={str(refresh).lower()}"
+        url = f"{BASE_URL_FOR_GMAP_SCRAPPER}/places?destination={destination}&refresh={str(refresh).lower()}"
         response = requests.get(url, timeout=(10, 300))
         if response.status_code != 200:
             return {"error": f"Failed to fetch places ({response.status_code})"}
