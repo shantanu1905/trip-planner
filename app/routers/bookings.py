@@ -432,13 +432,13 @@ def create_or_update_hotel_preferences(
         new_pref = HotelPreferences(
             trip_id=payload.trip_id,
             no_of_rooms=payload.no_of_rooms,
-            no_of_adult=payload.no_of_adult,
+            no_of_adult=trip.num_people,
             no_of_child=payload.no_of_child,
             min_price=payload.min_price,
             max_price=payload.max_price,
             selected_property_types=payload.selected_property_types,
-            check_in_date=payload.check_in_date,
-            check_out_date=payload.check_out_date
+            check_in_date=trip.start_date,
+            check_out_date=trip.end_date
         )
 
         db.add(new_pref)
