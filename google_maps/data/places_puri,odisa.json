@@ -1,0 +1,159 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "puri,odisa",
+      "TouristPlaces": [
+        {
+          "Name": "Shree Jagannatha Temple Puri",
+          "Description": "1161 complex & revered pilgrimage destination, with a main temple & 30 smaller surrounding ones.",
+          "GeoCoordinates": {
+            "lat": 19.8049379,
+            "lng": 85.8179386
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyLp3B5mtmcdQ5lqAZFpGZA-h-Udni7OvXRMiioUAGr8UwHKBS3uErnc3BOzJsoQofNHmAWciYKBrZq1AqCs-UuVKY4sMRIJGaeWYSqUhZnuYYoJwMrQtvrP5tW5p80M6hkyPjXbQ=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shree+Jagannatha+Temple+Puri/data=!4m7!3m6!1s0x3a19c6b8bfe386af:0x8f052c84639c7d48!8m2!3d19.8049379!4d85.8179386!16zL20vMGN2eDd4!19sChIJr4bjv7jGGToRSH2cY4QsBY8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Blue Flag Beach",
+          "Description": "Wide, sandy beach home to a kids' playground, decorative statues & cafes, plus a fitness center.",
+          "GeoCoordinates": {
+            "lat": 19.7965033,
+            "lng": 85.8313094
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz88Wg0hlrZmG2-gevwOS99jV0MRZEh7M7JATYmJUEBN-xNU98NdTwBgFQgt9mmPQITlJQQSOhKs9ADgl2ETKC1o8teTB-DbrQIJO69b38np0XA6kNqgVnvuqJOeK-oK6PXdcLz3A=w408-h257-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Blue+Flag+Beach/data=!4m7!3m6!1s0x3a19c52655258809:0x526a68bae3011bc7!8m2!3d19.7965033!4d85.8313094!16s%2Fg%2F11lh_wl1wt!19sChIJCYglVSbFGToRxxsB47poalI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Puri Light House",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7897608,
+            "lng": 85.8063732
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwxXM_JRBiwn1Qc4De85zXGo8vYscXrKBuJA1m0oHCBUZsyGQ5cbS0TrqLSaYn_Y6zPBzJvO_X2Mcb6BI_8uDEQPMRnmFSXbhcy6ZlZzZuDZM1tBBiYtGne46VKUzmOxubzprXS=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Puri+Light+House/data=!4m7!3m6!1s0x3a19c5676ce27781:0xa2c920b0e080d2c3!8m2!3d19.7897608!4d85.8063732!16s%2Fg%2F11j1cx18lt!19sChIJgXfibGfFGToRw9KA4LAgyaI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sonar Gouranga Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.8036621,
+            "lng": 85.8449584
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyUF9ZoXdNb8O_o2niyY3YV7SMTYLCC49qIqzUkK_IRvYtofsgSOJqbptV7VzLzU64DFz28kT4sGkeqt4WYGwl9S_9Wqf7yPdjznc3YGOPMDiItHZNMa7vNWiIHULTTF8Z0FzRA=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sonar+Gouranga+Temple/data=!4m7!3m6!1s0x3a19c401a1852d51:0x53733e9aa3b358e3!8m2!3d19.8036621!4d85.8449584!16s%2Fg%2F12hrkrqhn!19sChIJUS2FoQHEGToR41izo5o-c1M?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Muhana Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7843332,
+            "lng": 85.7889524
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxyklqrceCETlGTAq0FlDoXOV2USQzVKkvUvFi04OjQYkTsejZDUDsdpdYbqCR5DURKEpuc_NE6Dnf73bAd1_rYNmDyMU4nH6aiYUKD5WRlxm8ow6LwRvnDbDlvnE1La6fpaI0txA=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Muhana+Beach,+Puri/data=!4m7!3m6!1s0x3a19c5bd4fb35d59:0xdc09dbd8f33908ee!8m2!3d19.7843332!4d85.7889524!16s%2Fg%2F11smcrzy5f!19sChIJWV2zT73FGToR7gg589jbCdw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chakratirtha Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.8008645,
+            "lng": 85.8462433
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzKHiLCw6V3cCFzoJrge7xBJKadPZ2orsjmmmMXjzsIRoS4EtafT9NZqoJReV9RSysSnFurR0YJaeAXIHHNIF0lHsvsXPOpevzfTkrRHEEpK3M6Y_wSFNqkPG88kgymNOUGI3NN=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Chakratirtha+Beach/data=!4m7!3m6!1s0x3a19c400d3f9b2f5:0x295a0526d4919dc1!8m2!3d19.8008645!4d85.8462433!16s%2Fg%2F11hbq0w493!19sChIJ9bL50wDEGToRwZ2R1CYFWik?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Puri Beach Market",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7929332,
+            "lng": 85.8186467
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxEc0THDkwy7cTHnz-7gbfyIKPnJt3GjJlBJ0oigHGV9is8IW3jmkf1QHOmJAvsFB48shS7-PSBebJRdO3ipAMN__XQx-5KcnGk9cGRfHuq1qlsIo6GgjLLYXfeRj0QLgmiqxA=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Puri+Beach+Market/data=!4m7!3m6!1s0x3a19c430125bb831:0x13a41ff029643553!8m2!3d19.7929332!4d85.8186467!16s%2Fg%2F11ddzhkzhc!19sChIJMbhbEjDEGToRUzVkKfAfpBM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Urban Haat",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.8032528,
+            "lng": 85.8361501
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwhyr6GHk-a45OZn8Kt0WpB7z4K6cPQ4s0IwZpNnoN539NA6A1mfTsGnn7WGTN4qLiYVBzTadX0Ffce-bfBkftwSs43Dhk99VMs-kp95LRi_FicFWe1ya4uVjiP9_JyXBrcOxw=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Urban+Haat/data=!4m7!3m6!1s0x3a19c41ce567bc6d:0x5746a7303d6e8cc7!8m2!3d19.8032528!4d85.8361501!16s%2Fg%2F11f3xq4kl1!19sChIJbbxn5RzEGToRx4xuPTCnRlc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Niladri Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7984844,
+            "lng": 85.8356787
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw0kjoSXYT1HtCHb_bjl9xIoxrV2wHw66Qdv5WXaVod3T0HgwXspMXB41Hpfdn2-3T2gezCJmLUKZQBRdoMEyAbaIZWafk58rHo3ZNQ7Ot5K3EknvWwXp7pVUEP_AXqgWR6R8bn=w408-h408-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Niladri+Beach/data=!4m7!3m6!1s0x3a19c58b0111e04d:0x2f0d1430bcf80cbf!8m2!3d19.7984844!4d85.8356787!16s%2Fg%2F11k50w17dv!19sChIJTeARAYvFGToRvwz4vDAUDS8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Puri Sea Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7890375,
+            "lng": 85.8058906
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzZsWxGHMGopP-as8MkL-DfiIk1tLxqSJrxd9TaU-h6Pn8g4cIVNYBJIAERmyS-NJl-ZOpV63xDUHx1ZVubCQ5qtILVcyNLTddbMse1TpOAfIciGXMhsDR8GQnixFyagKu_AX4=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Puri+Sea+Beach/data=!4m7!3m6!1s0x3a19c5628fa0b6ed:0x4249fa22528aa771!8m2!3d19.7890375!4d85.8058906!16s%2Fg%2F11gl3758m8!19sChIJ7bagj2LFGToRcaeKUiL6SUI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "GOUDBAD SAHI BEACH",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.791035,
+            "lng": 85.8132115
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxyr_0yYgPgApoQFnJ7cknBbWtsE2yk1a05JGGZu16yrcp8QnOeNJkVGmahxVonUjFO6nt5Hg0uOWOiF8uO9_SRMdzTndhf84DS70_SpiysGe1y9xFAB-96YqO6C9jFpyQBKyCh5A=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/GOUDBAD+SAHI+BEACH/data=!4m7!3m6!1s0x3a19c558099caadb:0x82b9a68dfc4ac792!8m2!3d19.791035!4d85.8132115!16s%2Fg%2F11rb63rq0j!19sChIJ26qcCVjFGToRksdK_I2muYI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Golden Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7969375,
+            "lng": 85.8310625
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzG-mYGeurS3cO3kT516nbASz_zvremTgbFbLifFqXRU0kT0FcmsLjF8VyNNczFL9XLNT-UGB5DjdMDXu-fOJBhDjZl4WFgmVjYi1uVtuH4qnnlqZrujKWKmJTfeOejjZvTTD4=w408-h306-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Golden+Beach,+Puri,+Odisha/data=!4m7!3m6!1s0x3a19c5cac5afa9d7:0x880a15dc82619942!8m2!3d19.7969375!4d85.8310625!16s%2Fg%2F11lfbgx8bp!19sChIJ16mvxcrFGToRQplhgtwVCog?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Baisi Pahacha",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.8046792,
+            "lng": 85.8188723
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwJfAM2eGuB2CYkT7dQcPSdLGfXCKUeG7OQa5bjZeeFu_57rKJ64_75sSwQbidjFhHrRqckBkmA8RAgxybUOFvKfkHF7_95V65y777Yb5dWSiHEV3gjcFgs1AbvWFVslTA-_QV7=w408-h544-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Baisi+Pahacha/data=!4m7!3m6!1s0x3a19c427ee9aed0b:0x764d98acd3289fec!8m2!3d19.8046792!4d85.8188723!16s%2Fg%2F11bz0gmft0!19sChIJC-2a7ifEGToR7J8o06yYTXY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Neeladri Beach & Park Puri",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 19.7949067,
+            "lng": 85.8261267
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxSBWDg1MHru9IKhjzK9j2-cywNUy40FdXMi21ehiUsT6myvHyQwEiKgSFk6jDx75L8pXduTQYpgRSVcs3Obng7etf85ZpbTHsWdomExDTUOiDC92EF-DdTP0lTQFsw1jqMxXYjJA=w408-h408-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Neeladri+Beach+%26+Park+Puri/data=!4m7!3m6!1s0x3a19c53d0fbd3559:0x399c06e29584ccdc!8m2!3d19.7949067!4d85.8261267!16s%2Fg%2F11t5lv7xvz!19sChIJWTW9Dz3FGToR3MyEleIGnDk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mahatma Gandhi Park",
+          "Description": "Family-friendly park featuring a toy train ride, musical fountain, ornamental plants & a lotus pond.",
+          "GeoCoordinates": {
+            "lat": 19.7962437,
+            "lng": 85.8271071
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx2DvETMD2To7HqJ0frBmQ49Qv_RQl3st3oJyYjmuMPxmwL12XofWXZ26qfbf4kvh-OK20-l5dCwSXDYp7s_qf5Rq3RMcZaGeW1DzZEZjKoueFARzlWUofobMoGzJHcgFXi5Wf0mg=w426-h240-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Mahatma+Gandhi+Park/data=!4m7!3m6!1s0x3a19c422902c0d0d:0x2d4501bd7397e375!8m2!3d19.7962437!4d85.8271071!16s%2Fg%2F1v75q9xg!19sChIJDQ0skCLEGToRdeOXc70BRS0?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

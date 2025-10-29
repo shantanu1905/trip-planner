@@ -1,0 +1,159 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Kolkata, West Bengal, India",
+      "TouristPlaces": [
+        {
+          "Name": "Birla Mandir",
+          "Description": "Monumental marble Hindu temple built between 1970 & 1996, with Krishna, Radha, Shiva & Durga idols.",
+          "GeoCoordinates": {
+            "lat": 22.5304872,
+            "lng": 88.3650212
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzzJgCLl6lgo8mOJz0pcWZCfvQV7E-2lyubY5OFGXIszoGIERR0RJWamFYheAsA69SN_oADozvvmJwuDlzsGjIyvi7Ncv6NOYHA21NRI8ftJjvXSTeNn6pLqk3Yo9FEngMbYi6cnA=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Birla+Mandir/data=!4m7!3m6!1s0x3a0276d84e393b85:0xfb1305bfeaf24335!8m2!3d22.5304872!4d88.3650212!16s%2Fm%2F04cxs5s!19sChIJhTs5Tth2AjoRNUPy6r8FE_s?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Victoria Memorial",
+          "Description": "Elegant, domed, white marble museum, opened in 1921, housing displays on the history of Kolkata.",
+          "GeoCoordinates": {
+            "lat": 22.5448082,
+            "lng": 88.3425578
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwZb9OkN7XHKcdd6uxlzE8cr3YrT4NAzG1LChnFk3iSMJesf6vQbn5gmlWpcisVFwznfwW4xPqJV8u2vaenEjmAsTNfdbbSt3ehetekGaru6Ka-Alj5dHz1so-klNZv3la7crw=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Victoria+Memorial/data=!4m7!3m6!1s0x3a02771346ae015d:0xb540e4bce39763!8m2!3d22.5448082!4d88.3425578!16zL20vMDM3NTJy!19sChIJXQGuRhN3AjoRY5fjvORAtQA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "James Prinsep Monument",
+          "Description": "1841 ghat featuring a monument with Greek & Gothic details in a parklike setting with bridge views.",
+          "GeoCoordinates": {
+            "lat": 22.5552828,
+            "lng": 88.3311699
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy7TgboHtiFOXTx_Y6sxu0XWMaFJUnYYuBEZhJbaeLg1Je8PLb06Xhtvh08_huqY22fNXFqTONwdbTU94H1QKxtmkZE1wVHtuTU3uM9LM-x6VF5pT4HSbBKJB4gI-aMwqM3NXg=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/James+Prinsep+Monument/data=!4m7!3m6!1s0x3a0277e8759cc711:0xd07fc37f36f0e58f!8m2!3d22.5552828!4d88.3311699!16s%2Fm%2F0hr7t8c!19sChIJEcecdeh3AjoRj-XwNn_Df9A?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Howrah Bridge",
+          "Description": "Bustling cantilever road bridge opened since 1943 and spanning the Hooghly River.",
+          "GeoCoordinates": {
+            "lat": 22.585127,
+            "lng": 88.3467759
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwu9SNIKvxbLs5VxrX460y8QsLU7i3IdX7li-9aqdX3koDpy3O-vyZwLUfAEXPlFG0kwMWTvKZNEQ4fx_5uB2G-sfFh8fqmjF9x45ePzlgM7VMg0NzqZzG19zbv3VgmeEKHeSY=w532-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Howrah+Bridge/data=!4m7!3m6!1s0x3a0277bfbb1eeb1b:0xc9840aaa8c411199!8m2!3d22.585127!4d88.3467759!16zL20vMDV0czV5!19sChIJG-seu793AjoRmRFBjKoKhMk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Indian Museum",
+          "Description": "Indian heritage museum with sections on archaeology, art, anthropology and geology, founded in 1814.",
+          "GeoCoordinates": {
+            "lat": 22.5578858,
+            "lng": 88.3511268
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyifTYJqPaK0-tVO5wUYRQlHWAXKAsMwAYrnkiOQNPTMCfhiOymODLPQzzbkokVlV8kB_8NPtnhwwXm1XRSgFUO7V_QfWzNyLXIsZM66r4EN-mmyBCBDrrKmjJN70eLQn-K5ysOjw=w402-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Indian+Museum/data=!4m7!3m6!1s0x3a02771160347adf:0x9fd70619f94d0bac!8m2!3d22.5578858!4d88.3511268!16zL20vMDM3NGtu!19sChIJ33o0YBF3AjoRrAtN-RkG158?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Eco Park",
+          "Description": "A large recreation area for activities such as boating & cycling, plus a playground, lake & gardens.",
+          "GeoCoordinates": {
+            "lat": 22.6004077,
+            "lng": 88.4706037
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz1WyS3gEIJ2Yx4_cIQYfN-xzk01P99e_sLFgTMLfuZGc_CASyg2VUz_YnJSOaWIdNO2hdmo1D8bQU-LoakdoPSpLBcL0dLWmU6pQkfR6EcSq9HIJ8yN9t-QC4WN2w0kE7Gteix=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Eco+Park/data=!4m7!3m6!1s0x3a027544e22a5b6f:0xf22acb90ceebe765!8m2!3d22.6004077!4d88.4706037!16s%2Fm%2F0p3pdg5!19sChIJb1sq4kR1AjoRZefrzpDLKvI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "M.P. Birla Planetarium",
+          "Description": "Traditional, domed planetarium & observatory featuring astronomy shows in multiple languages.",
+          "GeoCoordinates": {
+            "lat": 22.5455871,
+            "lng": 88.3473841
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxIwJLYhHBdV4yDvxOOV_yyTlB4V7arXHBhURAHRdTF_GO7pBylcawnyRYigppu4FBT8xSVf4Kbsr7mPSGnWDCFm7TuhNE28nlJbP7aFMPNtVLNvp6E8B7zBqO4i_91yWe_tiCRhg=w379-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/M.P.+Birla+Planetarium/data=!4m7!3m6!1s0x3a02771466bc8ae3:0xdfa2377553ae8f0c!8m2!3d22.5455871!4d88.3473841!16zL20vMDdzM25r!19sChIJ44q8ZhR3AjoRDI-uU3U3ot8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "St. Paul's Cathedral",
+          "Description": "Landmark Anglican church completed in 1847, with restored steeple and notable stained glass windows.",
+          "GeoCoordinates": {
+            "lat": 22.5442706,
+            "lng": 88.3466532
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwbAmTm3yzSDJjI3ZFDGjpHnvs1IBS0t0X_njdMJ8utBfaqSLIcJ5fStjMYZIAkJbqbI-mxCV_Kxwh_8Oaczz-onriwKEyX7INrK2EJbNCICyyknsy3NW2KIKpN0eFH4NVrnjiniX4IhQM=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/St.+Paul%27s+Cathedral/data=!4m7!3m6!1s0x3a02771442588f31:0x646622ccc71971e5!8m2!3d22.5442706!4d88.3466532!16zL20vMGM0M184!19sChIJMY9YQhR3AjoR5XEZx8wiZmQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nicco park",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 22.5710541,
+            "lng": 88.4205078
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzlfwIpiYl7eIxAK8qbX96sfSnNVlPg2ef8Ri1635-TpKoDbnEfBh3CRCGXzV8nBWD8FaLnJUPewuPhVylhXF-tw3yudG69ouMQoR2QefA0_KHF524BMiv-DxzY883iy-IWBTKIrE5_bnLp=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Nicco+park/data=!4m7!3m6!1s0x3a0275b5f38c67df:0x842d73d378313791!8m2!3d22.5710541!4d88.4205078!16zL20vMGJiOTN6!19sChIJ32eM87V1AjoRkTcxeNNzLYQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Netaji Bhawan",
+          "Description": "Ancestral home, now a research center & museum, of renowned Indian freedom fighter Netaji Bose.",
+          "GeoCoordinates": {
+            "lat": 22.5375812,
+            "lng": 88.3510389
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxoA4kCUYcmbssc8Q1jl8nQLzMvfw2q4q5nVQ4xaSjsbxKxVYMywBEKPZ1IbVWEa5cIQ4nn1fqTFG0vIndNUuJ-NBAeBzypaksKw0fKZDPAOKbF8fDOP5Rdhb6R-kDipRdSD6WW4g=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Netaji+Bhawan/data=!4m7!3m6!1s0x3a02773d04114e0f:0x7d0d81a424eb79d6!8m2!3d22.5375812!4d88.3510389!16s%2Fm%2F0bmhld0!19sChIJD04RBD13AjoR1nnrJKSBDX0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Victoria Square",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 22.5436996,
+            "lng": 88.3528414
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzyqUudtWbF6Pliz9FI9RBV5NQ1SCIVaMouWsesRjLiO13IIGV4_BBW1E3QxCW4UpFAoGQDdq0bxZ4kRck5O4y5tOgbNnegbnEHQFAsxV3rm3hhaY6coF1KyBoA6Z44tUkEA-XnNw=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Victoria+Square/data=!4m7!3m6!1s0x3a027719d681bfbb:0x3928cad0d03166aa!8m2!3d22.5436996!4d88.3528414!16s%2Fg%2F11dfx49hz0!19sChIJu7-B1hl3AjoRqmYx0NDKKDk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Fort William",
+          "Description": "Named after British King, this riverside fortress is most famous for its 'black hole' prison cell.",
+          "GeoCoordinates": {
+            "lat": 22.5587655,
+            "lng": 88.3377644
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxZTfcx_9FEq8n7HLT0Jt2pRutPb17bwtnVrnK02ZDbIejO3RWKipT3RakgiXExpfQNg2j537S376NHr-_CZ7xwkQLlhkudLt3VLVg1VGSHf12wOyud0_7ZSXJGwuZIUOEYa4Am=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Fort+William,+Calcutta+%28Vijay+Durg%29/data=!4m7!3m6!1s0x3a0277719d7cdd7b:0x24deb10c464eae56!8m2!3d22.5587655!4d88.3377644!16zL20vMDNud3M1!19sChIJe918nXF3AjoRVq5ORgyx3iQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rabindra Sarobar Lake",
+          "Description": "Peaceful lake sheltering nesting birds, with sculptures, water lilies & a shaded perimeter footpath.",
+          "GeoCoordinates": {
+            "lat": 22.5122401,
+            "lng": 88.3604481
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwDuFJx2l2x01woukzFPC_FsaqwRhiDGgpOf_yrCara-aPlCG4aNwOVn5JZZxqmYBEl9nNPQUQ8qwPWlqWCTdNerjm06tyOmkHajHm6DYvELJrMiDi4KquVUXkpThFbjIRUJx8=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rabindra+Sarobar+Lake/data=!4m7!3m6!1s0x3a0270d4071605a7:0x16b94316887d1a8!8m2!3d22.5122401!4d88.3604481!16s%2Fg%2F1wf37027!19sChIJpwUWB9RwAjoRqNGHaDGUawE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nehru Children's Museum",
+          "Description": "Opened in 1972, this children's museum includes 4 floors of galleries & dolls from around the world.",
+          "GeoCoordinates": {
+            "lat": 22.5423249,
+            "lng": 88.3472145
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx4CU2oVSTuDZT3ffV3WrWrlknQGb3ugTxKEd2CMAvvnYNIgUJ-FqCsXsPb5_TO0Znfw0qy7RD0oyFsYVdieLq7tqvUCjh5Hb-eTR8aKUvRJhrG9hEbT-Pqnn1MNvUh_CQM0oUauQ=w334-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Nehru+Children%27s+Museum/data=!4m7!3m6!1s0x3a02771160347adf:0x946d17c4c9f64b95!8m2!3d22.5423249!4d88.3472145!16s%2Fg%2F1trpp66t!19sChIJ33o0YBF3AjoRlUv2ycQXbZQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Science City Ropeway",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 22.5390967,
+            "lng": 88.3971249
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwxXNDi1lX-q9wg4XgdZjJYG1gzkKHstPjNtBJBt3npXsq7Ah3unoYbGvWkiZ7_6lqrHe8Lw-5PfNRuEw2GyNHYEE5Q0R-_0tE8U83Bqx9CiCzKOt8RMMccEDysn-wd1FT8fJa2=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Science+City+Ropeway/data=!4m7!3m6!1s0x3a0277c9985ed76f:0xf8e047f7dc6b107f!8m2!3d22.5390967!4d88.3971249!16s%2Fg%2F11h0sps3s7!19sChIJb9demMl3AjoRfxBr3PdH4Pg?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

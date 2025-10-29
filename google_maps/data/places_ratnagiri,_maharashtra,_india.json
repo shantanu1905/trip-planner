@@ -1,0 +1,159 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Ratnagiri, Maharashtra, India",
+      "TouristPlaces": [
+        {
+          "Name": "Thiba Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9850194,
+            "lng": 73.305559
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzTVQ6_bQ1eF7A7fdv6IbYGM3XhLJVInru8WQM7VpeaKIBlM65KY1fBphmZBEuze5cOLW11vWickRqDQdCPgRkICKBvp9spAdMycTYWOEMr4Cm8D-58OWCrImN_HIMpliPMIetZAw=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Thiba+Point/data=!4m7!3m6!1s0x3bea0d3eaca7372b:0xcc4672ae87849bea!8m2!3d16.9850194!4d73.305559!16s%2Fg%2F1tcx5h1h!19sChIJKzenrD4N6jsR6puEh65yRsw?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "White Sea",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.0053051,
+            "lng": 73.2840191
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxJM9VxHXmjCW5f9vgqIrh5E84vcL4zBFq_tvMLyqfQSF7UFGm2Bj2yRtPFpsIHBSuR4ZpJp7FoHVL_Uu3s912GOjmOme87kZmkBtOrZd2E5Cp7BfmDlvbC5E1LtDJqK7onX1wDJw=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/White+Sea/data=!4m7!3m6!1s0x3bea0d7bdd374785:0xe5022f956cc6c3e2!8m2!3d17.0053051!4d73.2840191!16s%2Fg%2F11bxc0nvqn!19sChIJhUc33XsN6jsR4sPGbJUvAuU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mandavi Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9892421,
+            "lng": 73.284352
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz2RDr1J_yRDCYsrZWrzzM2aD7-Bx5egxWD7CJZq8419-VkuQmA2XwJqkJi0XA5jiEnqIpZDd1zc44DIvdMzb8nnwROScQct4hLvzKluBa6iiblLuPqvKPo1yfRGmPpORMG_Ks=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Mandavi+Beach/data=!4m7!3m6!1s0x3bea0d60d8fca7c5:0xe73dc1b0329165a3!8m2!3d16.9892421!4d73.284352!16s%2Fg%2F11hb2yyqty!19sChIJxaf82GAN6jsRo2WRMrDBPec?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ratna Durga",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9960571,
+            "lng": 73.2706005
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyzZ6xRTvX85Yhh7DFtnmiQA6RACvCFHnUXgdXiVWMVobA9C-H2nkNNeqm93McEFQAP9xj5wEkV9bgKvorhUWZ6krGJSDQVt65V0sLtLZtR--OAUFQ_tiWIBfPurDLq_HISfnSB=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ratna+Durga/data=!4m7!3m6!1s0x3bea129b82de8597:0xd38137ef65faeec5!8m2!3d16.9960571!4d73.2706005!16s%2Fg%2F11g9l_th38!19sChIJl4XegpsS6jsRxe76Ze83gdM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ratnagiri Light House",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9878043,
+            "lng": 73.2725198
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzT5lpCLazxgZqxV2fXceXztGlnjx3IetFGi-k-htEWHokJqtbOo-1WQ7qcemW4N97n21JiP2s7IlRrHiBmQL4_CaTKCTMoc2TImFih0glv-H_u5dujjzYBJLywIRdw3oDkpWM=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ratnagiri+Light+House/data=!4m7!3m6!1s0x3bea12a1d8b73229:0x73de13fe689c438c!8m2!3d16.9878043!4d73.2725198!16s%2Fg%2F11g6vkff85!19sChIJKTK32KES6jsRjEOcaP4T3nM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Titanic Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9679381,
+            "lng": 73.2984812
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxJ4bjeWqL21YvO_FV_i0zKpyhsePns1-UT-rpveCYeqoG-sMDCkScj5VltquDBnYWYThYKcZTnf7wvmhm7Sv3Fo_Eb7mmNH7nEKsb4vXH1woEN2KevnmIWrJWL8lRhxpCDvYi1=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Titanic+Point/data=!4m7!3m6!1s0x3bea0d4ac7d20809:0x98f355750f6a58b0!8m2!3d16.9679381!4d73.2984812!16s%2Fg%2F1tf8rkvc!19sChIJCQjSx0oN6jsRsFhqD3VV85g?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shree Devi Bhagavati Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9965081,
+            "lng": 73.2706795
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxvOn091PzSmilxarIuAoD6v0SuR-dGCYFj2bqsgHsGmVgvtN7H44vnkddWLQQyvanlLsoR_SvDGESZTS_YY7Wznj3fBtz6wfk0_2Usd21nUEuBObv-5iyMmLKexZOOmMjEvEJj8Q=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shree+Devi+Bhagavati+Temple/data=!4m7!3m6!1s0x3bea129b7fcad9cf:0xa071a12827b9f1f!8m2!3d16.9965081!4d73.2706795!16s%2Fg%2F1tdghr0d!19sChIJz9nKf5sS6jsRH597ghIaBwo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kadelot Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9909987,
+            "lng": 73.2693489
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw4gueCE14dTMF9nfVvz14U-9cIMv6zFrTaMA9aI1xQxaVk4capmjTieVmpBTVu003F4Yc17gl1RsoeQ-zQxRFuVNO-B4PrLUv61MNhbS_0jGxnhglwzgGjxsKPPJNJCiieP3ssxA=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kadelot+Point/data=!4m7!3m6!1s0x3bea129922a1da6b:0x4d71ecbafc363086!8m2!3d16.9909987!4d73.2693489!16s%2Fg%2F1td572gw!19sChIJa9qhIpkS6jsRhjA2_LrscU0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Thiba Palace",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9834811,
+            "lng": 73.3115114
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwUPpAZlAoRpiYNGJARBRc_F-MPA-RYA4G4uA-0xwOrpzuGWMQE-g_2Klb1lgcWnIGtAlL1r2iqwK5O-3HIFLwIf4SLk1ikn4Vlc0pPGKcA809BNZzXQmw08e5MatCsED3f7e73=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Thiba+Palace/data=!4m7!3m6!1s0x3bea0d3b3095a6bd:0xbbc43b105b654060!8m2!3d16.9834811!4d73.3115114!16s%2Fg%2F11c58sw04l!19sChIJvaaVMDsN6jsRYEBlWxA7xLs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nachane Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9827162,
+            "lng": 73.3314553
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxjR79XCqroH_fIm49kkE32arXGwpyc3cJODZHbd_UbqUP9Dan8sxvydOgPPs6KUIgjIiN-oXmB9eykzWmC2KKIdbhLvtDU3H82NiBWpNI7_IYYV09370Ti7k464WVrTOqOnZc=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Nachane+Waterfall/data=!4m7!3m6!1s0x3bea0cda6a87d759:0x3af532c127f1ad9b!8m2!3d16.9827162!4d73.3314553!16s%2Fg%2F11dfpj100t!19sChIJWdeHatoM6jsRm63xJ8Ey9To?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhatye Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9784916,
+            "lng": 73.2940422
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwQsG4KmM6Ym58AtSRygXVRyoX8491TjNqd8EyfZHADKDu6j2Zfh3qdnj9hI6GBCqaVylk3pZZUCqGhubxa6kqP6609mcNBLyVBFBats1w7QejOX7NE2_XB9kUxzdSuuZQ__fE=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bhatye+Beach/data=!4m7!3m6!1s0x3bea0d44468bd379:0xce8c07c0967a793a!8m2!3d16.9784916!4d73.2940422!16s%2Fg%2F11n0k37x4h!19sChIJedOLRkQN6jsROnl6lsAHjM4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhagvati Fort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.995364,
+            "lng": 73.269346
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyEABjGg8nvZf8rhZ99ELn3Le0neojOT4jV7hknv-EQa56tp7u-WVLdisqxgk-OIq8dRYDLOlq3f74dUqNPm4f1XuWwo0jRYUS17KTS4vjft3nuL8dd77UZRsxKgySWq87GN6Fm=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Bhagvati+Fort/data=!4m7!3m6!1s0x3bea129b97a0652b:0x62d6dedac09e1ee9!8m2!3d16.995364!4d73.269346!16s%2Fg%2F11d_ww7f2q!19sChIJK2Wgl5sS6jsR6R6ewNre1mI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "रत्नागिरी समुद्र किनारा",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.01834,
+            "lng": 73.2799945
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx4Dzaos41cTWz7M_T_R5cyLYsJ9V0C7zyf3JToHLm2gl7qv6T11JDz08Q8udBCLTfsvK1EBbrRZa9hkZn4LXwXLz6a1KQjzvZKTnBMigGP3kLn8VWfVStAgS6DQQ-jx6Ib2okW=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%97%E0%A4%BF%E0%A4%B0%E0%A5%80+%E0%A4%B8%E0%A4%AE%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%B0+%E0%A4%95%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B0%E0%A4%BE/data=!4m7!3m6!1s0x3bea0dfc4f325547:0xb589ccf90d8e62a!8m2!3d17.01834!4d73.2799945!16s%2Fg%2F11px3yxyzl!19sChIJR1UyT_wN6jsRKubYkM-cWAs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ganpati Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.9971835,
+            "lng": 73.2907255
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxh4NIk1vNh4Dn4yWxt06CHYZgYHhbUNfBVgizkq_s0EtUT9iH9cOkrM5aQNQdH7SJpj_HNpPUrkveS-CQIWKB9uEY9hrFspRrjm1p8_t01n8Vg92VEn_NZecceY-fs3khQQiL7=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ganpati+Temple/data=!4m7!3m6!1s0x3bea0d6f1b350271:0x8d0792bc67450e55!8m2!3d16.9971835!4d73.2907255!16s%2Fg%2F1tfjp54w!19sChIJcQI1G28N6jsRVQ5FZ7ySB40?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ratnagiri Marine Fish Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 17.0014233,
+            "lng": 73.286471
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzIwEb60ldReBIuuOROUHhmAfExn_PDV6b2jdHitpVz0qrWH9NLvwtkaGI5PgLlJSsDEnv3vI-e_SY4OpzP3TnjhEhjjsGOSkuMJ7wZXhvvRbxo9kWzCU-ZpGc-KANVsEGBbC8=w900-h900-p-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ratnagiri+Marine+Fish+Museum/data=!4m7!3m6!1s0x3bea0d618e17cd71:0x3daf535d4b69c394!8m2!3d17.0014233!4d73.286471!16s%2Fg%2F124sw8dh5!19sChIJcc0XjmEN6jsRlMNpS11Trz0?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

@@ -3,3 +3,4 @@ uvicorn[standard]==0.30.3
 selenium==4.23.1
 webdriver-manager==4.0.2
 pydantic==2.8.2
+aiohttp

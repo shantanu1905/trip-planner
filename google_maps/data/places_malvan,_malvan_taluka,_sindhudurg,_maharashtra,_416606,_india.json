@@ -1,0 +1,159 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Malvan, Malvan Taluka, Sindhudurg, Maharashtra, 416606, India",
+      "TouristPlaces": [
+        {
+          "Name": "Malvan Scuba Diving",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0470354,
+            "lng": 73.4685639
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy5GW_9Ffpc2y91dsJT9B7ijxH91Bjbm_nY59aJM69GYi5Fs11o6NnM-DgnBBjKTbpzHkIzBI052dr3QekwlY9yWoVEm-e_U7sQyVSB4m9mHJydw16uKTxDn7NLaGIp4X9aTc3o=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Malvan+Scuba+Diving/data=!4m7!3m6!1s0x3bc0038c207c632b:0xe41f1338925dc55c!8m2!3d16.0470354!4d73.4685639!16s%2Fg%2F11vq3bbsws!19sChIJK2N8IIwDwDsRXMVdkjgTH-Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rock Garden",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0621989,
+            "lng": 73.4563186
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyG4PQqYSFqDN0jHsj5bRh-O4VlFEZCTq5ySmAWhGZsPGyHZ_mHGbpNp-gIQ0liNP4AifEidkf6_KJ-P8sMb78THN9Hzasc7Xr0weuge9_cAhgusUKatU3MOucjFKtu_278LCYY=w398-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rock+Garden/data=!4m7!3m6!1s0x3beaa91f0f9890ed:0x4385d79cea35a112!8m2!3d16.0621989!4d73.4563186!16s%2Fg%2F11gmtf2_04!19sChIJ7ZCYDx-p6jsREqE16pzXhUM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sindhudurg Fort",
+          "Description": "Preserved 17th-century fortress accessible by ferry, with timed self-guided tours & sea views.",
+          "GeoCoordinates": {
+            "lat": 16.0433863,
+            "lng": 73.4609954
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz9GwzYIgfk2wx0tDetX8bhWnHtnoGVBkHfS43ued9RyfI1ML-yuiRAciYUO0siUvqdSQBA5xusPAKu9EMrnVKD58q1QjrqSZ7lK4jKU5Ea8cIIeWZ_iaiYsoCpRUc9gbHzKHa16w=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sindhudurg+Fort/data=!4m7!3m6!1s0x3beaa82170000001:0xd9f190e26c66ce46!8m2!3d16.0433863!4d73.4609954!16zL20vMDk3YzQz!19sChIJAQAAcCGo6jsRRs5mbOKQ8dk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Wairy Ubhatwadi Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0288717,
+            "lng": 73.4844918
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwSu4x9FpDj_kU3ZInpLyGOTy0GST1Yv9XYAvFGZLHQuoqPeSW677662mH3EuQQ4hNtTdvKddGMkhpU4MG6k_fgv7QQNpnQ3Yw5D7up_tLsbSGeHXrrmbpp_lmVWMxgaHtrttmgXA=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Wairy+Ubhatwadi+Beach/data=!4m7!3m6!1s0x3bc0028b9487fcbf:0x76ff876ab6f39963!8m2!3d16.0288717!4d73.4844918!16s%2Fg%2F11ckqscqjm!19sChIJv_yHlIsCwDsRY5nztmqH_3Y?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jay Ganesh Mandir",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.057521,
+            "lng": 73.45923
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx4ATTwftqfCXzPlJz2LHvaelarfNcuEQ9b7QZxK8z1zTtGq9pK_qRR-nIjFELtLMMW2D-Ll7tMHLtc90mXZSlNEWeYw2OsoP_u3nx-31cviaZojVx9xp6gQVB7J9jTxz2VM3Dh=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Jay+Ganesh+Mandir/data=!4m7!3m6!1s0x3beaa804a74a3103:0x97a1eec1175a7417!8m2!3d16.057521!4d73.45923!16s%2Fg%2F11c2j81xw8!19sChIJAzFKpwSo6jsRF3RaF8HuoZc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunset Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0630802,
+            "lng": 73.4561013
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzOu90JExpHezz-BIH5LR8_3Qh7oPCxO6ES230pbJOG_dR5M3aMHdWX7qKJOiAEmViyEoYJJyx27HWqMkFE9E_F3-vnb-BV22H9tlplEOksdbEiRgUTR9wCMT05q0s-Drg05mN5L3eeNEo=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sunset+Point,+Rock+Garden/data=!4m7!3m6!1s0x3beaa9f41947e0f7:0xba99c67d7f420efc!8m2!3d16.0630802!4d73.4561013!16s%2Fg%2F11v9kvg1gg!19sChIJ9-BHGfSp6jsR_A5Cf33Gmbo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Chhatrapati Shivaji Maharaj Statue",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0541528,
+            "lng": 73.4584441
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwTsvnx9OIA3XaawClVBmvzeetnRkXDIYE6CmkIdR6HTqYUIGJc3Vfr2uKuFVEpjyqui4EJs-VgKFCS-xhZBom0VpzZKxs1U2vOman8Y-WpZoTBFcZkxJXTouvHzKV0yMkERtuHWXEPGAKs=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Chhatrapati+Shivaji+Maharaj+Statue/data=!4m7!3m6!1s0x3beaa900545066e5:0xd022f7dd8d8ea5a9!8m2!3d16.0541528!4d73.4584441!16s%2Fg%2F11vlwyt774!19sChIJ5WZQVACp6jsRqaWOjd33ItA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tarkarli Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0465772,
+            "lng": 73.4834776
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz75TbaLeU0OOFaTKe0cAdGkhE2Pea_hdvD1dLe81WrBucjrNm8lnZFJ0GIvWW63T4nYIn0lZA77qbpTt1THW8f_D0ZWhMTKuxfOpuDj_tYPReTHD5x_hH41_amfjBF7gjbdi5j=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Tarkarli+Beach/data=!4m7!3m6!1s0x3bc00300133c85c7:0x94eb2909054253d4!8m2!3d16.0465772!4d73.4834776!16s%2Fg%2F11vxts_gqm!19sChIJx4U8EwADwDsR1FNCBQkp65Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dandi beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0518703,
+            "lng": 73.4679918
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzjcifv3LpkuNwgJ1F5Gz-D52IVs5q7qJvlYVtDZhqP4gA9iinDxJoT46ezz6WCm21NUU2Jy_63oC46XMUvAxkcz_kGyLDkh2vTZBAbs5LOcyVDlaOdpav5H4WZk4nkQexPwWiltA=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Dandi+beach/data=!4m7!3m6!1s0x3bc0039b3f351401:0xd297fa7c2e37fc8e!8m2!3d16.0518703!4d73.4679918!16s%2Fg%2F11sps38g5h!19sChIJARQ1P5sDwDsRjvw3Lnz6l9I?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Padmagad Fort",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0473933,
+            "lng": 73.4646914
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzxSzBiVnsUACyvnvKFkfJYXw5aqNpG_lejX3F4tey3PLdtKMTU_MvPkYN4MgYWvK6E-AM22ZSp0E0xc-sKAdGmsisnKHWiAkz-kvnvaPcBBZSx3U3LhrJaHvLYmjis6QwcuLCJ=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Padmagad+Fort/data=!4m7!3m6!1s0x3beaa81fdbb8fc23:0x8bfeb16ba198e5f!8m2!3d16.0473933!4d73.4646914!16s%2Fg%2F11g9jn9qd7!19sChIJI_y42x-o6jsRX44Zuhbrvwg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Shimpala Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0877655,
+            "lng": 73.4577196
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwO6vbGo9xTOD_bcAJzlUJFHw0ATk-E2rG3u7UsSnnv8_K4rWM-R7AV7ET4MdPIR3MfqZe_lia-BBWCzgAwH575njttPg6JmD3zlPxBaicS5InIrERkmrrdlVZ4pLP1XyjUmxatHQ=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Shimpala+Point/data=!4m7!3m6!1s0x3beaa785a95d8743:0x6558b9fc8aca14f9!8m2!3d16.0877655!4d73.4577196!16s%2Fg%2F11lfcfm5h5!19sChIJQ4ddqYWn6jsR-RTKivy5WGU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dharan Point ( Coral Garden )",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0391703,
+            "lng": 73.4696545
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwZoGdsBTq29J6ierFK9DiLGD1W7lcSHgSR2Ij3P-kWk-VB4ot-e0PSvSmJMJeF31hRZ1tGvR75Hi-NKyYEVzjzh3wkuYxEbKH98ATh66v2TSGQ3a7ixIutr1C_T24fa8NXSOA=w224-h497-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Dharan+Point+%28+Coral+Garden+%29/data=!4m7!3m6!1s0x3bc003ba0d3e629f:0x3123cfcc1ae206d5!8m2!3d16.0391703!4d73.4696545!16s%2Fg%2F11r3f1m14g!19sChIJn2I-DboDwDsR1QbiGszPIzE?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rock Beach",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.061206,
+            "lng": 73.4557496
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw7RhKOOiKikUWcED8EMi0CFw4k8Vj9tixBQuoo6PYQtWJp7GjFtV556-AjvJfxlStRI8kLfulAbL3b5Rn27_aOJQG7zctK_iU6x-Y1tChLGUYBVGSWIVhrCENbSdPZy3Q7OQc=w224-h398-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rock+Beach,+Malvan/data=!4m7!3m6!1s0x3beaa96519bacab1:0x92640a5d662c12e0!8m2!3d16.061206!4d73.4557496!16s%2Fg%2F11v9knj9sr!19sChIJscq6GWWp6jsR4BIsZl0KZJI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Suvarn kada",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0804346,
+            "lng": 73.4621315
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx8IBA_n4twYYcdcGkLsTUMfhuNkYqQrLvANu9pbJtVmjiHRurxhqIkBeZYzO3DN4HcHt-JLp2iIiwesA1temF0iF7m9JxYKVzJFKFEoQxgLLQ6xzknGJo--pa9ZzherxTQ-WMi=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Suvarn+kada,+miryabanda/data=!4m7!3m6!1s0x3beaa7a27310d8bf:0x532666d00d6992bb!8m2!3d16.0804346!4d73.4621315!16s%2Fg%2F11lf_krjb1!19sChIJv9gQc6Kn6jsRu5JpDdBmJlM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sindhudurg Fort Ferry",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 16.0547011,
+            "lng": 73.464376
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyNhLREoFsxgUbXb8RHu6GiM68zjr-hBW8QnFBUq_CGjaSKgQNWfViciOjFDMmA-AvO9bPrIq8CG72FP2F_8CGgQ2vCZJXvdwwV-zAZCaoG0GE2NH-0zfb64kRqjhKLo1d0_Qwq=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sindhudurg+Fort+Ferry/data=!4m7!3m6!1s0x3beaa81d68a23fd7:0x639ec156540acea0!8m2!3d16.0547011!4d73.464376!16s%2Fg%2F1td_3nfr!19sChIJ1z-iaB2o6jsRoM4KVFbBnmM?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

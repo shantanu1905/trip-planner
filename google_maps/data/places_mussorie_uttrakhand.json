@@ -1,0 +1,289 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Mussorie, Uttrakhand",
+      "TouristPlaces": [
+        {
+          "Name": "Lal Tibba Scenic Cafe",
+          "Description": "Observation deck with a telescope on the roof of a modest cafe known for its views of the Himalayas.",
+          "GeoCoordinates": {
+            "lat": 30.4667102,
+            "lng": 78.0949734
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Lal+Tibba+Scenic+Cafe/data=!4m7!3m6!1s0x3908d09692917195:0x45a2c05f40e37bd0!8m2!3d30.4667102!4d78.0949734!16s%2Fg%2F11fy4g5qyr!19sChIJlXGRkpbQCDkR0HvjQF_AokU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Gun Hill",
+          "Description": "A cablecar ride leads to this well-known hilltop locale offering sweeping views.",
+          "GeoCoordinates": {
+            "lat": 30.4593197,
+            "lng": 78.0742701
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Gun+Hill,+Mussoorie/data=!4m7!3m6!1s0x3908d0dd0f769685:0x249c5890971467b0!8m2!3d30.4593197!4d78.0742701!16s%2Fg%2F11c1ljtkg8!19sChIJhZZ2D93QCDkRsGcUl5BYnCQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mussoorie Lake",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4463322,
+            "lng": 78.0779789
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mussoorie+Lake/data=!4m7!3m6!1s0x3908d1003fcf697d:0x85918439058a1342!8m2!3d30.4463322!4d78.0779789!16s%2Fg%2F11ltlt0n16!19sChIJfWnPPwDRCDkRQhOKBTmEkYU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kempty Falls",
+          "Description": "Tourist destination featuring cascading waterfalls, pools & boating with vantage points & cafes.",
+          "GeoCoordinates": {
+            "lat": 30.4879484,
+            "lng": 78.0366642
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kempty+Falls/data=!4m7!3m6!1s0x3908d19963f63b51:0xaf4d748e3bc60a88!8m2!3d30.4879484!4d78.0366642!16s%2Fg%2F1pxxrv21z!19sChIJUTv2Y5nRCDkRiArGO450Ta8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mossy Falls",
+          "Description": "Tranquil natural attraction known as \"Mossy Fall,\" surrounded by jungle greenery & singing birds.",
+          "GeoCoordinates": {
+            "lat": 30.4386074,
+            "lng": 78.0945768
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mossy+Falls/data=!4m7!3m6!1s0x3908d74b45973aab:0x3b6cf6655f0c025d!8m2!3d30.4386074!4d78.0945768!16s%2Fg%2F1yl45v7r5!19sChIJqzqXRUvXCDkRXQIMX2X2bDs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Bhatta falls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.437358,
+            "lng": 78.073825
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Bhatta+falls/data=!4m7!3m6!1s0x3908d7dc48aecbbb:0x2b196a82eafeb4d4!8m2!3d30.437358!4d78.073825!16s%2Fm%2F0k6hmjr!19sChIJu8uuSNzXCDkR1LT-6oJqGSs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Atal Udhyan Mussoorie",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4611243,
+            "lng": 78.0540703
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Atal+Udhyan+Mussoorie/data=!4m7!3m6!1s0x3908d7601bcb706b:0xbbec92bfc15c7a25!8m2!3d30.4611243!4d78.0540703!16s%2Fg%2F11g0jdbk55!19sChIJa3DLG2DXCDkRJXpcwb-S7Ls?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mussoorie Mall Road",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4571204,
+            "lng": 78.0754952
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mussoorie+Mall+Road/data=!4m7!3m6!1s0x3908d1d8a1d39ba5:0x2bee63f1b9e7dc0!8m2!3d30.4571204!4d78.0754952!16s%2Fg%2F11s4667hty!19sChIJpZvTodjRCDkRwH2eGz_mvgI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Cloud end",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4597892,
+            "lng": 78.0643723
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Cloud+end/data=!4m7!3m6!1s0x3908d1778bf3a179:0x2367514d8354a7c7!8m2!3d30.4597892!4d78.0643723!16s%2Fg%2F11t2pyw45y!19sChIJeaHzi3fRCDkRx6dUg01RZyM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mussoorie Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4876961,
+            "lng": 78.0366675
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mussoorie+Waterfall/data=!4m7!3m6!1s0x3908d0e199822213:0x30aaa768b4127e02!8m2!3d30.4876961!4d78.0366675!16s%2Fg%2F11dynyw18m!19sChIJEyKCmeHQCDkRAn4StGinqjA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ropeway To Bhattafalls",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4360595,
+            "lng": 78.0763426
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Ropeway+To+Bhattafalls/data=!4m7!3m6!1s0x3908d77c1c0c153f:0xaa10d2223f4cdc0e!8m2!3d30.4360595!4d78.0763426!16s%2Fg%2F11h55y2jfb!19sChIJPxUMHHzXCDkRDtxMPyLSEKo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Camel Rock View",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4587313,
+            "lng": 78.0769298
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Camel+Rock+View/data=!4m7!3m6!1s0x3908d0dd3549f22f:0xf250fd64aa8987f8!8m2!3d30.4587313!4d78.0769298!16s%2Fg%2F11cr_5958g!19sChIJL_JJNd3QCDkR-IeJqmT9UPI?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Benog Wildlife Sanctuary",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4687791,
+            "lng": 78.0323624
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Benog+Wildlife+Sanctuary/data=!4m7!3m6!1s0x3908d3da395a14c1:0x665cba79e8719fd6!8m2!3d30.4687791!4d78.0323624!16s%2Fg%2F11f4z6rl0g!19sChIJwRRaOdrTCDkR1p9x6Hm6XGY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "George Everest House",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4586875,
+            "lng": 78.0230625
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/George+Everest+House/data=!4m7!3m6!1s0x3908d160f043fae3:0x94ab2cd2819ae6f5!8m2!3d30.4586875!4d78.0230625!16s%2Fg%2F1tghmzyd!19sChIJ4_pD8GDRCDkR9eaagdIsq5Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Mussoorie Heritage Centre",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4552932,
+            "lng": 78.0865891
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Mussoorie+Heritage+Centre/data=!4m7!3m6!1s0x3908d0b8cc31e24f:0x83bca9d90dcf7462!8m2!3d30.4552932!4d78.0865891!16s%2Fg%2F11c453wnzy!19sChIJT-IxzLjQCDkRYnTPDdmpvIM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jawahar Aquarium",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.458187,
+            "lng": 78.0734348
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jawahar+Aquarium/data=!4m7!3m6!1s0x3908d0dcf03a9611:0xd7c402f83f4566eb!8m2!3d30.458187!4d78.0734348!16s%2Fg%2F1ptwtzknz!19sChIJEZY68NzQCDkR62ZFP_gCxNc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Adventure Park Mussoorie with Paragliding",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4596614,
+            "lng": 78.0645509
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Adventure+Park+Mussoorie+with+Paragliding,+Zip+Line,+Camping,+Nature+Walk,+Wildlife+safari+,+Bungee+Jump,+Forest+Bath/data=!4m7!3m6!1s0x3908d1201a7b8493:0x4463824dcbc12b18!8m2!3d30.4596614!4d78.0645509!16s%2Fg%2F11btrr6s24!19sChIJk4R7GiDRCDkRGCvBy02CY0Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "K Dev Bhoomi Wax Museum",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4615271,
+            "lng": 78.0513607
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/K+Dev+Bhoomi+Wax+Museum/data=!4m7!3m6!1s0x3908d117ae688fa3:0xdac393a3e21c8f!8m2!3d30.4615271!4d78.0513607!16s%2Fg%2F11c3sw0yrc!19sChIJo49orhfRCDkRjxzio5PD2gA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jharipani Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4273668,
+            "lng": 78.0936993
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jharipani+Waterfall/data=!4m7!3m6!1s0x3908d0cbeeea1ccf:0x4b00fc0dd435639e!8m2!3d30.4273668!4d78.0936993!16s%2Fg%2F11cp7fndbp!19sChIJzxzq7svQCDkRnmM11A38AEs?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Library chowk",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4597928,
+            "lng": 78.0644247
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Library+chowk/data=!4m7!3m6!1s0x3908d10002780b97:0x8952b22aad83d255!8m2!3d30.4597928!4d78.0644247!16s%2Fg%2F11vm1p91v4!19sChIJlwt4AgDRCDkRVdKDrSqyUok?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Jabarkhet Nature Reserve",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4542004,
+            "lng": 78.1160948
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Jabarkhet+Nature+Reserve,+Mussorie/data=!4m7!3m6!1s0x3908da0f5c529595:0x84d75de7077b8ba5!8m2!3d30.4542004!4d78.1160948!16s%2Fg%2F11bwl3fxcl!19sChIJlZVSXA_aCDkRpYt7B-dd14Q?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4584819,
+            "lng": 78.0915552
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+View+Point/data=!4m7!3m6!1s0x3908d0bedccea7d5:0xa5ad9ccb0176bcd5!8m2!3d30.4584819!4d78.0915552!16s%2Fg%2F11f01v00mt!19sChIJ1afO3L7QCDkR1bx2AcucraU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Library chowk",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4597928,
+            "lng": 78.0644247
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Library+chowk/data=!4m7!3m6!1s0x3908d10002780b97:0x8952b22aad83d255!8m2!3d30.4597928!4d78.0644247!16s%2Fg%2F11vm1p91v4!19sChIJlwt4AgDRCDkRVdKDrSqyUok?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Nag Devta Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4469909,
+            "lng": 78.0649464
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Nag+Devta+Temple/data=!4m7!3m6!1s0x3908d128466915d9:0x3de7a4c716be8e42!8m2!3d30.4469909!4d78.0649464!16s%2Fg%2F11g6rjjl1c!19sChIJ2RVpRijRCDkRQo6-Fsek5z0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Landour Clock Tower",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4554593,
+            "lng": 78.0867591
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Landour+Clock+Tower/data=!4m7!3m6!1s0x3908d0c741d6d131:0xa5ac95b1b2c4b8df!8m2!3d30.4554593!4d78.0867591!16s%2Fg%2F1vd6_q41!19sChIJMdHWQcfQCDkR37jEsrGVrKU?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Secret Waterfall Mussoorie",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4764003,
+            "lng": 78.035341
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/The+Secret+Waterfall+Mussoorie/data=!4m7!3m6!1s0x3908d173a9b8c1b5:0x30bde33c5b5a6b9f!8m2!3d30.4764003!4d78.035341!16s%2Fg%2F11kj_8wqv1!19sChIJtcG4qXPRCDkRn2taWzzjvTA?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Tibetan Buddhist Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4717343,
+            "lng": 78.0497906
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Tibetan+Buddhist+Temple/data=!4m7!3m6!1s0x3908d17335bbb59f:0x48be84e1ff109128!8m2!3d30.4717343!4d78.0497906!16s%2Fg%2F11gv12d_yp!19sChIJn7W7NXPRCDkRKJEQ_-GEvkg?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kimadi Waterfall",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 30.4477112,
+            "lng": 78.0421432
+          },
+          "ImageURL": null,
+          "Google_web_url": "https://www.google.com/maps/place/Kimadi+Waterfall/data=!4m7!3m6!1s0x3908d1c2c155c079:0xf0182f6425f98b30!8m2!3d30.4477112!4d78.0421432!16s%2Fg%2F11mvb0wf95!19sChIJecBVwcLRCDkRMIv5JWQvGPA?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]

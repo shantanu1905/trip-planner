@@ -1,0 +1,159 @@
+[
+  {
+    "output": {
+      "CorrectedDestination": "Rameswaram, Ramanathapuram, Tamil Nadu, 623526, India",
+      "TouristPlaces": [
+        {
+          "Name": "House of Kalam (APJ Abdul Kalam House / Museum",
+          "Description": "Small museum in the childhood home of India’s one-time president, with photos & memorabilia.",
+          "GeoCoordinates": {
+            "lat": 9.2846729,
+            "lng": 79.3123178
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/p/AF1QipOJSrpc4n7ieYorB6MgsTDZWJb182uG25L2Y2HS=w373-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/House+of+Kalam+%28APJ+Abdul+Kalam+House+%2F+Museum/data=!4m7!3m6!1s0x3b01e3dd885886cb:0xfb2ab1225f7ced2!8m2!3d9.2846729!4d79.3123178!16s%2Fg%2F11cjhrtr2g!19sChIJy4ZYiN3jATsR0s73JRKrsg8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sunrise View Point",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.2906402,
+            "lng": 79.3221923
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwvbDj65-GMM9fVcU86PZkCF5RRVt9NrXdTCwZZlhNqlqFvTigx7equyOO-pf_rb0iKh6JwqYqW9iGrnc5gSlZfiqGoM8Cnxc7alwHRw6S52LvOjAURg4kYVjaoTnWiqKzOVIAt=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sunrise+View+Point/data=!4m7!3m6!1s0x3b01e39ee9061549:0xad10f27539261b9!8m2!3d9.2906402!4d79.3221923!16s%2Fg%2F11q8x6hm7x!19sChIJSRUG6Z7jATsRuWGSUycP0Qo?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Villoondi Theertham",
+          "Description": "This tranquil beachfront features a wide sandy expanse, clear waters & a revered freshwater spring.",
+          "GeoCoordinates": {
+            "lat": 9.2923139,
+            "lng": 79.2623221
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxI23Ct2VyjKHjp8dt3-KJ9ZRJWIbZRxJ46vDvmO_NLW_3YeYt0uTveyojP5kKHDJ6b065uL9s2_vGv9sFkYaf-VOuT0x17VUbh-6vSyJIknN00ottb0B0dX4wQXqudLG8z-NvfZw=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Villoondi+Theertham/data=!4m7!3m6!1s0x3b01e420b1c839ef:0xc6e24ba0b3421921!8m2!3d9.2923139!4d79.2623221!16s%2Fm%2F0kbyjq2!19sChIJ7znIsSDkATsRIRlCs6BL4sY?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sri Arulmigu Ramanathaswamy Temple",
+          "Description": "This temple and site of pilgrimage is one of the holiest in the Hindu religion with several shrines.",
+          "GeoCoordinates": {
+            "lat": 9.2881136,
+            "lng": 79.3173919 
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyLP0lDM-3NgnbuwUDicZVflinA8J-WgrHAi_75wBNmfpumBklXlHbPNidxKIRP66BkG-mMKrw9g2rbKBWt5J1OnMdP2YtbDlukEmurZnNFFpwZJ632j3vcpsxk_Wv3fyawEjaR=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sri+Arulmigu+Ramanathaswamy+Temple/data=!4m7!3m6!1s0x3b01e3dc4949ac6d:0x9ffdab70cc4aa4ba!8m2!3d9.2881136!4d79.3173919!16s%2Fm%2F026lcs2!19sChIJbaxJSdzjATsRuqRKzHCr_Z8?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rameshwaram Sea Shore",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.2901216,
+            "lng": 79.3212076
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxaqdI9-9i3515WNU2sVr_fEAaWB6vD5tSAv569xjM7syiWdLYjPueOIzP6fdRQIxvn_oG3oxd3kJCF6bOPw7saXNT0taMDjt392UWw8H4kPd6cXsiwumvjv1Jwh3XW8Ip9yC9x=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rameshwaram+Sea+Shore/data=!4m7!3m6!1s0x3b01e3d981fdf33f:0x4de55b203184ec62!8m2!3d9.2901216!4d79.3212076!16s%2Fg%2F11gbzbgz8z!19sChIJP_P9gdnjATsRYuyEMSBb5U0?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Dr. A.P.J. Abdul Kalam Memorial",
+          "Description": "Burial site of former President of India Dr A.P.J. Abdul Kalam, marked by a life-sized statue.",
+          "GeoCoordinates": {
+            "lat": 9.2881317,
+            "lng": 79.2709097
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyAKxRk0eE4OM6oYk7KNuv6b5Z4IbtDEooza4YX5yQYjuD9vv1jxhvEbmPX4mKtCSr3l_N2Cyf1TsvOFH-548HKv-8nlJ_tmNNa81pck1MCvs4O3zPQsregCcfa5GWzmEvGGfopgQ=w402-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Dr.+A.P.J.+Abdul+Kalam+Memorial/data=!4m7!3m6!1s0x3b01e3e9dfa34507:0x84cebad14014857a!8m2!3d9.2881317!4d79.2709097!16s%2Fg%2F11bv3r0ws2!19sChIJB0Wj3-njATsReoUUQNG6zoQ?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Lakshmana Tirtham",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.2857323,
+            "lng": 79.3061677
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyYwCts1MaoREGTuDAnJyJK-yVQXN6xcMcjoKZG9vjjsecUa-Oyzxv0pzsnnBubYkSQhMnSYzCwWndmS6ABARxVHxuNk3NDJhMtOdKaLbEawPvj0LbyhYCjrqCQDk5GrIeF3M6VH3I2hYtH=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Lakshmana+Tirtham/data=!4m7!3m6!1s0x3b01e31eb0b3435f:0xee7d6aa291a4de70!8m2!3d9.2857323!4d79.3061677!16s%2Fg%2F11ghnfgb6h!19sChIJX0OzsB7jATsRcN6kkaJqfe4?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Rameswaram Lighthouse",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.3175826,
+            "lng": 79.3306887
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwE7t8wl_PBOeBlR6z9nngEsHXNyWoe5wzgzMR3u4XAXKB3Pzmin4wQfUt84pGO8JBrAVpvQ2lohENKBV9T8JKwgOOyM8ZQkVB8AwhEV5jxR6Jch0kdpjW2t4CicH1kWlrMvS4S=w224-h474-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Rameswaram+Lighthouse/data=!4m7!3m6!1s0x3b01e10b4c79f2d9:0x13271558a2001f64!8m2!3d9.3175826!4d79.3306887!16s%2Fm%2F011v7jmn!19sChIJ2fJ5TAvhATsRZB8AolgVJxM?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "The Sangumal Beach - Rameshwaram Town",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.2876254,
+            "lng": 79.3129291
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyZH_WbM3h0aB6Y8Bc_8MBZxq-NcYLExkzysgaD34oWzc9r6P06UCtv_SWSzggCVs8KcfiANzegDF4W5KW8SWltgjMogqgerlLPGk5Icad0AeKOF9Om17Y0SSgTbsIOw9yoNOM96g=w660-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/The+Sangumal+Beach+-+Rameshwaram+Town,+Ramanathapuram+District,+Tamil+Nadu,+India/data=!4m7!3m6!1s0x3b01e3ce9e6e7219:0xc9d4cc10500f39fd!8m2!3d9.2876254!4d79.3129291!16s%2Fg%2F11v56m4b5j!19sChIJGXJuns7jATsR_TkPUBDM1Mk?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Ramar Padam temple",
+          "Description": "2-story hilltop Hindu temple with holy wells, a shrine to Lord Rama's footprints & good views.",
+          "GeoCoordinates": {
+            "lat": 9.3027826,
+            "lng": 79.3052362
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw0V558f68jTrQVP6WmmMwSUzJwF61ilP_0YH17vw0JRcT0RaZYNswZgkFnrgqrRYirU6FQfoGvQxCSBN4dw2TsFu6A8S1Kq0Ha0udCdAjctJEY3Tpt3H0TwJCp90eIYwXZsjfA=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Ramar+Padam+temple/data=!4m7!3m6!1s0x3b01e15ba7bb1195:0xf173aad023ffee98!8m2!3d9.3027826!4d79.3052362!16s%2Fg%2F11g_643c4!19sChIJlRG7p1vhATsRmO7_I9Cqc_E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "22 Kodi (well’s) snanam Theertham.",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.288487,
+            "lng": 79.317708
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyrgKs8adDF1a4XjTwMvoMQVNr0UgmHZb0J1qOI7tU-xZZ-3QzBka-eq-cboHQXO_KrIJY7dRMCEQpU5RV-_BE6SJ794fTeLVW59qh0-HI-JQJneJ0909fRPSQEiyWW90NGA2JI2CXJwNwl=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/22+Kodi+%28well%E2%80%99s%29+snanam+Theertham./data=!4m7!3m6!1s0x3b01e3ea28892c7d:0x41576d1a8563caac!8m2!3d9.288487!4d79.317708!16s%2Fg%2F11j1bm62c_!19sChIJfSyJKOrjATsRrMpjhRptV0E?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Agni Teertham",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.2887488,
+            "lng": 79.3208824
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzIwKp10WhGJaSh5gcMsGBKgjjklNIneiXvFWfkeM-JC3sdDIEjI4ldtXAvoLVAaaODhv1L2t-Sf9ZKFby1Pfpt7yo1hmKTdWDvRelPdRWWBUwBDJLHBLG74buUYbM-3cPMVwcB--QhCoMT=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Agni+Teertham/data=!4m7!3m6!1s0x3b01e3dbc85352d1:0x773e5b30169277a1!8m2!3d9.2887488!4d79.3208824!16s%2Fg%2F1vqtf6vm!19sChIJ0VJTyNvjATsRoXeSFjBbPnc?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sri Panchmukhi Hanuman temple and Floating Stones",
+          "Description": "Brightly painted temple to a 5-faced deity, with carved \"floating stones\" linked to a mythic bridge.",
+          "GeoCoordinates": {
+            "lat": 9.2864144,
+            "lng": 79.3067542
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx10DyBWe-jZch8LrW776O3P77hAMiNnX6YyKO12JOgIywDEAuegUIS4TK9OrHd2q_kWzDLA3CAYw-oyQjgizSRQ0aST2AFHDynAPsl1LJK9AOZ1ZqVD8ap9GGvDaHlqcgi9e8B1A=w224-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Sri+Panchmukhi+Hanuman+temple+and+Floating+Stones/data=!4m7!3m6!1s0x3b01e3e5d3890485:0xc517579fe20ebf01!8m2!3d9.2864144!4d79.3067542!16s%2Fg%2F11bwh96q1n!19sChIJhQSJ0-XjATsRAb8O4p9XF8U?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Sākshī Hanumān Temple",
+          "Description": null,
+          "GeoCoordinates": {
+            "lat": 9.3001959,
+            "lng": 79.3061314
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzWhmJOPYyyUC4KE7mjIZB-MnZQBPATaWGrLSPmMy65j-HptXlQK5kwCrUQUA4e_PfKRMcoK01p8d8CTrnpmYTak-JvmvsvDD4IRdLcj1ac2knK9UDQEyPcU6d4v35WF38NgRpHyQ=w396-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/S%C4%81ksh%C4%AB+Hanum%C4%81n+Temple/data=!4m7!3m6!1s0x3b01e15f297dfdcd:0xadaf8315b6ceeb2!8m2!3d9.3001959!4d79.3061314!16s%2Fg%2F11c59p__gd!19sChIJzf19KV_hATsRsu5sWzH42go?authuser=0&hl=en&rclk=1"
+        },
+        {
+          "Name": "Kodanda Ramar Temple",
+          "Description": "Humble Hindu temple on a small island on the Palk Strait, dedicated to Rama & featuring a veranda.",
+          "GeoCoordinates": {
+            "lat": 9.2331695,
+            "lng": 79.3480647
+          },
+          "ImageURL": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw4_yuttObWB0YJcu_evporjzMpYkyxeJ2G8nB5JLJcDTyXlGSJHeJ4g29zjUltB6bUdxs9zIvyA9Sf6JO1G7isXekM60OZku7ntyrXzA-PNQZBM561hHqFS9Qj5osG55CftMN6=w397-h298-k-no",
+          "Google_web_url": "https://www.google.com/maps/place/Kodanda+Ramar+Temple/data=!4m7!3m6!1s0x3b01e2e85e321795:0x53f1312b83757d0a!8m2!3d9.2331695!4d79.3480647!16s%2Fm%2F0vxdg0s!19sChIJlRcyXujiATsRCn11gysx8VM?authuser=0&hl=en&rclk=1"
+        }
+      ]
+    }
+  }
+]
