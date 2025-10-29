@@ -54,11 +54,7 @@ def get_tourist_places_for_destination(destination: str, activity: List, limit: 
         print(f"🔍 Fetching tourist places for: {destination}")
         api_response = fetch_places_from_api(destination, refresh=False)
 
-        if "error" in api_response:
-            return api_response
-
-        # Extract the actual tourist places data
-        # Handle both direct list and nested structure
+        # Extract and check data
         if isinstance(api_response, list) and len(api_response) > 0:
             api_data = api_response[0].get("output", {})
         else:
@@ -67,8 +63,24 @@ def get_tourist_places_for_destination(destination: str, activity: List, limit: 
         tourist_places = api_data.get("TouristPlaces", [])
         corrected_destination = api_data.get("CorrectedDestination", destination)
 
+        # Retry once if no data found
         if not tourist_places:
-            return {"error": "No tourist places found in API response"}
+            print("⚠️ No tourist places found, retrying once after 1s...")
+            import time
+            time.sleep(1)
+            api_response = fetch_places_from_api(destination, refresh=False)
+
+            if isinstance(api_response, list) and len(api_response) > 0:
+                api_data = api_response[0].get("output", {})
+            else:
+                api_data = api_response
+
+            tourist_places = api_data.get("TouristPlaces", [])
+            corrected_destination = api_data.get("CorrectedDestination", destination)
+
+            if not tourist_places:
+                print("❌ Still no tourist places after retry.")
+                return {"error": "No tourist places found in API response"}
 
         print(f"📊 Found {len(tourist_places)} places, selecting top {limit}")
 
