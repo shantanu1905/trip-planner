@@ -1,10 +1,12 @@
 from fastapi import APIRouter, HTTPException, status
-from app.database.models import Trip , Settings, TouristPlace , Itinerary
+from fastapi.responses import JSONResponse 
+from app.database.models import Trip , Settings, TouristPlace , Itinerary, TravelOptions
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
+from app.aiworkflow.get_trip_cost_breakdown import get_cost_breakdown
 from app.utils.redis_utils import translate_with_cache
 from app.database.redis_client import r
 import json
@@ -526,4 +528,251 @@ async def get_trip_weather(trip_id: int, db: db_dependency, user: user_dependenc
             "data": None,
             "message": f"Error fetching weather conditions: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+
+
+
+# REDIS_TRIP_SHARE_TTL = 3600  # cache for 1 hour
+
+# @router.get("/share/{trip_id}")
+# async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
+#     try:
+#         # 1️⃣ Try to get data from cache first
+#         cache_key = f"trip_share:{trip_id}:{user.id}"
+#         cached_data = r.get(cache_key)
+#         if cached_data:
+#             cached_json = json.loads(cached_data)
+#             return {
+#                 "status": True,
+#                 "data": cached_json,
+#                 "cached": True,
+#                 "message": "Trip details fetched from cache successfully",
+#                 "status_code": status.HTTP_200_OK,
+#             }
+
+#         # 2️⃣ Fetch trip from DB
+#         trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+#         if not trip:
+#             return {
+#                 "status": False,
+#                 "data": None,
+#                 "message": "Trip not found or doesn't belong to you.",
+#                 "status_code": status.HTTP_404_NOT_FOUND
+#             }
+
+#         # 3️⃣ Fetch itineraries
+#         itineraries = [
+#             {
+#                 "day": i.day,
+#                 "date": i.date.isoformat() if i.date else None,
+#                 "travel_tips": i.travel_tips,
+#                 "food": i.food or [],
+#                 "culture": i.culture or [],
+#                 "places": [
+#                     {
+#                         "id": p.id,
+#                         "name": p.name,
+#                         "description": p.description,
+#                         "latitude": p.latitude,
+#                         "longitude": p.longitude,
+#                         "best_time_to_visit": p.best_time_to_visit,
+#                     }
+#                     for p in i.places
+#                 ],
+#             }
+#             for i in trip.itinerary
+#         ]
+
+#         itineraries_status = bool(itineraries)
+#         itineraries_status_message = (
+#             "Itineraries fetched successfully!" if itineraries else "No itineraries found. Please generate one first."
+#         )
+
+#         # 4️⃣ Fetch travel options
+#         existing_travel = db.query(TravelOptions).filter(TravelOptions.trip_id == trip.id).first()
+#         if not existing_travel:
+#             raise HTTPException(
+#                 status_code=status.HTTP_404_NOT_FOUND,
+#                 detail="No travel options found for this trip. Please create travelling options first.",
+#             )
+
+#         # 5️⃣ Get cost breakdown
+#         fresh_data = get_cost_breakdown(user_id=user.id, trip_id=trip_id)
+
+#         # 6️⃣ Fetch travel updates
+#         destination = trip.destination
+#         params = json.dumps({"destination": destination})
+#         travel_update = fetch_travel_update(params)
+
+#         # 7️⃣ Prepare trip data
+#         trip_data = {
+#             "trip_id": trip.id,
+#             "trip_name": trip.trip_name,
+#             "destination_full_name": trip.destination_full_name,
+#             "destination_details": trip.destination_details,
+#             "destination_image_url": trip.destination_image_url or [],
+#             "base_location": trip.base_location,
+#             "start_date": trip.start_date.isoformat() if trip.start_date else None,
+#             "end_date": trip.end_date.isoformat() if trip.end_date else None,
+#             "budget": trip.budget,
+#             "num_people": trip.num_people,
+#             "activities": trip.activities or [],
+#             "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
+#             "your_travel_options": existing_travel.selected_travel_options,
+#             "itineraries_status": itineraries_status,
+#             "itineraries_status_message": itineraries_status_message,
+#             "itineraries": itineraries,
+#             "cost_breakdown": fresh_data,
+#             "travel_update": travel_update,
+#         }
+
+#         # 8️⃣ Handle translation
+#         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+#         target_lang = settings.native_language if settings and settings.native_language else "English"
+
+#         if target_lang != "English":
+#             trip_data = await translate_with_cache(trip_data, target_lang)
+
+#         # 9️⃣ Cache final data
+#         r.set(cache_key, json.dumps(trip_data, default=str), ex=REDIS_TRIP_SHARE_TTL)
+
+#         return {
+#             "status": True,
+#             "data": trip_data,
+#             "cached": False,
+#             "message": "Trip fetched and cached successfully",
+#             "status_code": status.HTTP_200_OK,
+#         }
+
+#     except HTTPException as e:
+#         raise e
+#     except Exception as e:
+#         return {
+#             "status": False,
+#             "data": None,
+#             "message": f"Error fetching trip: {str(e)}",
+#             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+#         }
+
+
+@router.get("/share/{trip_id}")
+async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
+    try:
+        # 1️⃣ Fetch trip
+        trip = db.query(Trip).filter(Trip.id == trip_id, Trip.user_id == user.id).first()
+        if not trip:
+            return {
+                "status": False,
+                "data": None,
+                "message": "Trip not found or doesn't belong to you.",
+                "status_code": status.HTTP_404_NOT_FOUND,
+            }
+
+        # 2️⃣ If already saved itinerary exists, return it directly
+        if trip.final_itinerary:
+            return {
+                "status": True,
+                "data": trip.final_itinerary,
+                "message": "Trip itinerary fetched from saved record",
+                "status_code": status.HTTP_200_OK,
+            }
+
+        # 3️⃣ Fetch itineraries
+        itineraries = [
+            {
+                "day": i.day,
+                "date": i.date.isoformat() if i.date else None,
+                "travel_tips": i.travel_tips,
+                "food": i.food or [],
+                "culture": i.culture or [],
+                "places": [
+                    {
+                        "id": p.id,
+                        "name": p.name,
+                        "description": p.description,
+                        "latitude": p.latitude,
+                        "longitude": p.longitude,
+                        "best_time_to_visit": p.best_time_to_visit,
+                    }
+                    for p in i.places
+                ],
+            }
+            for i in trip.itinerary
+        ]
+
+        itineraries_status = bool(itineraries)
+        itineraries_status_message = (
+            "Itineraries fetched successfully!"
+            if itineraries
+            else "No itineraries found. Please generate one first."
+        )
+
+        # 4️⃣ Fetch travel options
+        existing_travel = (
+            db.query(TravelOptions)
+            .filter(TravelOptions.trip_id == trip.id)
+            .first()
+        )
+        if not existing_travel:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="No travel options found for this trip. Please create travelling options first.",
+            )
+
+        # 5️⃣ Get cost breakdown
+        fresh_data = get_cost_breakdown(user_id=user.id, trip_id=trip_id)
+
+        # 6️⃣ Fetch travel update
+        destination = trip.destination
+        params = json.dumps({"destination": destination})
+        travel_update = fetch_travel_update(params)
+
+        # 7️⃣ Prepare final trip data
+        trip_data = {
+            "trip_id": trip.id,
+            "trip_name": trip.trip_name,
+            "destination_full_name": trip.destination_full_name,
+            "destination_details": trip.destination_details,
+            "destination_image_url": trip.destination_image_url or [],
+            "base_location": trip.base_location,
+            "start_date": trip.start_date.isoformat() if trip.start_date else None,
+            "end_date": trip.end_date.isoformat() if trip.end_date else None,
+            "budget": trip.budget,
+            "num_people": trip.num_people,
+            "activities": trip.activities or [],
+            "travelling_with": trip.travelling_with.value if trip.travelling_with else None,
+            "your_travel_options": existing_travel.selected_travel_options,
+            "itineraries_status": itineraries_status,
+            "itineraries_status_message": itineraries_status_message,
+            "itineraries": itineraries,
+            "cost_breakdown": fresh_data,
+            "travel_update": travel_update,
+        }
+
+        # 8️⃣ Handle translation (optional)
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+        if target_lang != "English":
+            trip_data = await translate_with_cache(trip_data, target_lang)
+
+        # 9️⃣ Save final itinerary to DB
+        trip.final_itinerary = trip_data
+        db.add(trip)
+        db.commit()
+
+        return {
+            "status": True,
+            "data": trip_data,
+            "message": "Trip itinerary generated and saved successfully",
+            "status_code": status.HTTP_200_OK,
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        return {
+            "status": False,
+            "data": None,
+            "message": f"Error fetching trip: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
         }
