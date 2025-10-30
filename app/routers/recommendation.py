@@ -1,6 +1,6 @@
 
 from fastapi import APIRouter, Depends, status
-from app.database.models import Settings
+from app.database.models import UserPreferences
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 import random
@@ -34,19 +34,23 @@ async def get_user_recommendations(
     user: user_dependency
 ):
     try:
-        # 1. Fetch user settings
-        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
-        if not settings or not settings.activities:
+        # 1️⃣ Fetch user preferences instead of settings
+        preferences = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
+        if not preferences or not preferences.activities:
             return {
                 "status": False,
                 "data": [],
-                "message": "No activities found in user preferences. Please update your preferences in USER Settings",
+                "message": "No activities found in user preferences. Please update your preferences in USER Settings.",
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        user_activities = [a.value if hasattr(a, "value") else a for a in settings.activities]
+        # 2️⃣ Extract user activities as strings
+        user_activities = [
+            a.value if hasattr(a, "value") else a
+            for a in preferences.activities
+        ]
 
-        # 2. Group recommendations by activity
+        # 3️⃣ Group recommendations by activity
         recommendations = {}
 
         for activity in user_activities:
@@ -55,19 +59,21 @@ async def get_user_recommendations(
             if activity_data.empty:
                 recommendations[activity] = []
             else:
-                # Randomly pick 5 records max
+                # Randomly select up to 5 records
                 random_records = activity_data.sample(
                     n=min(5, len(activity_data)),
                     random_state=random.randint(1, len(activity_data))
                 )
 
-                # Keep only required columns & handle JSON safe values
-                filtered_records = random_records[required_columns].replace([np.inf, -np.inf], None).where(
-                    pd.notnull(random_records[required_columns]), None
+                # Clean and serialize
+                filtered_records = (
+                    random_records[required_columns]
+                    .replace([np.inf, -np.inf], None)
+                    .where(pd.notnull(random_records[required_columns]), None)
                 )
                 recommendations[activity] = filtered_records.to_dict(orient="records")
 
-        # 3. Check if no data at all
+        # 4️⃣ Handle case when all lists are empty
         if all(len(v) == 0 for v in recommendations.values()):
             return {
                 "status": False,
@@ -76,11 +82,11 @@ async def get_user_recommendations(
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        # 4. Success response
+        # ✅ Success
         return {
             "status": True,
             "data": recommendations,
-            "message": "Recommendations fetched successfully",
+            "message": "Recommendations fetched successfully.",
             "status_code": status.HTTP_200_OK
         }
 
