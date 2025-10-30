@@ -142,6 +142,8 @@ class Trip(Base):
     destination_full_name = Column(String, nullable=True)
     destination_details = Column(String, nullable=True)
     destination_image_url = Column(JSONB, nullable=True, default=[])
+
+    final_itinerary = Column(JSONB, nullable=True, default=None)
     
     created_at = Column(DateTime, default=_dt.datetime.utcnow)
 
