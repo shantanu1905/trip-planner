@@ -111,10 +111,14 @@ def get_user_preferences(user_id: str) -> Dict[str, Any]:
 @tool
 def get_leg_fares(trip_id: str) -> List[Dict[str, Any]]:
     """
-    Safely fetch itinerary legs (train, bus, flight) and compute average fares.
-    Includes full error handling so the agent never crashes.
-    """
+    For a trip, fetch all itinerary legs (train, bus, flight) and calculate average fares per class.
 
+    Args:
+        trip_id: Trip ID as string
+
+    Returns:
+        List of dicts, one per leg, with average fares and leg info.
+    """
     from app.database.database import SessionLocal
     from app.database.models import TravelOptions
     import json
@@ -122,168 +126,109 @@ def get_leg_fares(trip_id: str) -> List[Dict[str, Any]]:
 
     db = SessionLocal()
     try:
-        # ---------------------------------------------------------
-        # 1. Parse trip_id safely
-        # ---------------------------------------------------------
+        # Convert trip_id to int
         try:
             trip_id_int = int(trip_id)
-        except Exception:
-            try:
-                parsed = json.loads(trip_id)
-                trip_id_int = int(parsed.get("trip_id"))
-            except Exception:
-                return [{"error": "Invalid trip_id format.", "legs": []}]
+        except (ValueError, TypeError):
+            parsed = json.loads(trip_id)
+            trip_id_int = int(parsed.get("trip_id", trip_id))
 
-        # ---------------------------------------------------------
-        # 2. Query TravelOptions safely
-        # ---------------------------------------------------------
         travel_opts = db.query(TravelOptions).filter(
             TravelOptions.trip_id == trip_id_int
         ).first()
 
         if not travel_opts:
-            return [{"error": f"No travel options found for trip_id {trip_id}"}]
+            return [{"error": f"No travel options found for trip_id: {trip_id}"}]
 
-        # ---------------------------------------------------------
-        # 3. Validate selected_travel_options
-        # ---------------------------------------------------------
-        sto = travel_opts.selected_travel_options
-
-        if sto is None:
-            return [{"error": "selected_travel_options is None"}]
-
-        if not isinstance(sto, dict):
-            return [{"error": "selected_travel_options must be a dict"}]
-
-        legs = sto.get("legs")
-
-        if not legs or not isinstance(legs, list):
-            return [{"error": "No valid legs found"}]
+        legs = travel_opts.selected_travel_options.get("legs", [])
+        if not legs:
+            return [{"error": "No itinerary legs found"}]
 
         result_list = []
 
-        # ---------------------------------------------------------
-        # 4. Process each leg individually with full safety
-        # ---------------------------------------------------------
         for leg in legs:
-            try:
-                if not isinstance(leg, dict):
-                    result_list.append({"error": "Leg is not a dict", "raw": leg})
-                    continue
+            mode = leg.get("mode", "").lower()
+            from_city = leg.get("from")
+            to_city = leg.get("to") 
+            journey_date = leg.get("journey_date")
+            from_station = leg.get("from_code") or leg.get("from")
+            to_station = leg.get("to_code") or leg.get("to")
+            journey_date = leg.get("journey_date")
 
-                mode = leg.get("mode", "").lower()
-                from_city = leg.get("from")
-                to_city = leg.get("to")
-                journey_date = leg.get("journey_date")
-                from_station = leg.get("from_code") or from_city
-                to_station = leg.get("to_code") or to_city
-
-                # Validate required fields
-                if not mode or not from_city or not to_city or not journey_date:
-                    result_list.append({"error": "Invalid leg structure", "raw": leg})
-                    continue
-
-                # Format dates safely
-                formatted_date_bus = None
+            # Convert YYYY-MM-DD to DD/MM/YYYY if needed
+            formatted_date_bus = datetime.strptime(journey_date, "%Y-%m-%d").strftime("%d-%m-%Y")
+            if "-" in journey_date:
                 try:
-                    formatted_date_bus = datetime.strptime(journey_date, "%Y-%m-%d").strftime("%d-%m-%Y")
-                except:
-                    formatted_date_bus = journey_date  # fallback
+                    journey_date = datetime.strptime(journey_date, "%Y-%m-%d").strftime("%d/%m/%Y")
+                    
+                except Exception:
+                    pass  # Keep original if parsing fails
 
+ 
+            if mode == "train":
                 try:
-                    journey_date_formatted = datetime.strptime(journey_date, "%Y-%m-%d").strftime("%d/%m/%Y")
-                except:
-                    journey_date_formatted = journey_date  # fallback
+                    trains_data = search_trains(from_station, to_station, journey_date)
 
-                # ---------------------------------------------------------
-                # TRAIN LEG
-                # ---------------------------------------------------------
-                if mode == "train":
-                    try:
-                        trains_data = search_trains(from_station, to_station, journey_date_formatted)
-
-                        if not trains_data:
-                            result_list.append({
-                                "from": from_station,
-                                "to": to_station,
-                                "journey_date": journey_date,
-                                "error": "No trains found"
-                            })
-                            continue
-
-                        avg_fares = get_average_class_fares(trains_data)
-
-                        for class_name, fare_info in avg_fares.items():
-                            fare_info.update({
-                                "from": from_station,
-                                "to": to_station,
-                                "journey_date": journey_date,
-                                "class_name": class_name
-                            })
-                            result_list.append(fare_info)
-
-                    except Exception as e:
+                    if not trains_data:
                         result_list.append({
                             "from": from_station,
                             "to": to_station,
                             "journey_date": journey_date,
-                            "error": f"Train leg failed: {str(e)}"
+                            "error": "No trains found"
                         })
+                        continue
 
-                # ---------------------------------------------------------
-                # BUS LEG
-                # ---------------------------------------------------------
-                elif mode == "bus":
-                    try:
-                        bus_results = search_buses(from_city, to_city, formatted_date_bus)
+                    # Calculate average class fares
+                    avg_fares = get_average_class_fares(trains_data)
 
-                        if not bus_results:
-                            result_list.append({
-                                "from": from_city,
-                                "to": to_city,
-                                "journey_date": journey_date,
-                                "error": "No buses found"
-                            })
-                            continue
-
-                        avg_metrics = get_fare_analysis(bus_results)
-                        avg_metrics.update({
-                            "from": from_city,
-                            "to": to_city,
+                    # Append leg info to avg fares
+                    for class_name, fare_info in avg_fares.items():
+                        fare_info.update({
+                            "from": from_station,
+                            "to": to_station,
                             "journey_date": journey_date,
-                            "class_name": "Bus"
+                            "class_name": class_name
                         })
-                        result_list.append(avg_metrics)
+                        result_list.append(fare_info)
 
-                    except Exception as e:
+                except Exception as e:
+                    result_list.append({
+                        "from": from_station,
+                        "to": to_station,
+                        "journey_date": journey_date,
+                        "error": str(e)
+                    })
+
+            elif mode == "bus":
+                try:
+                    bus_results = search_buses(from_city, to_city, formatted_date_bus)
+                    if not bus_results:
                         result_list.append({
                             "from": from_city,
                             "to": to_city,
                             "journey_date": journey_date,
-                            "error": f"Bus leg failed: {str(e)}"
+                            "error": "No buses found"
                         })
+                        continue
 
-                # ---------------------------------------------------------
-                # UNKNOWN MODE
-                # ---------------------------------------------------------
-                else:
+                    avg_metrics = get_fare_analysis(bus_results)
+                    avg_metrics.update({
+                        "from": from_city,
+                        "to": to_city,
+                        "journey_date": journey_date,
+                        "class_name": "Bus"
+                    })
+                    result_list.append(avg_metrics)
+
+                except Exception as e:
                     result_list.append({
-                        "raw": leg,
-                        "error": f"Unknown transport mode: {mode}"
+                        "from": from_city,
+                        "to": to_city,
+                        "journey_date": journey_date,
+                        "error": str(e)
                     })
 
-            except Exception as inner_error:
-                # Catch unexpected leg-level crashes
-                result_list.append({
-                    "raw": leg,
-                    "error": f"Leg processing crashed: {str(inner_error)}"
-                })
-
         return result_list
-
-    except Exception as e:
-        # Catch unexpected top-level crashes
-        return [{"error": f"Tool crashed: {str(e)}"}]
 
     finally:
         db.close()
@@ -603,18 +548,10 @@ def get_cost_breakdown(user_id: int, trip_id: int):
        Input: {trip_id}
        - Fetch all itinerary legs (train, bus, flight) and calculate per-person cost based on preferred class.
 
-    2.5 ERROR HANDLING RULES:
-        - If get_leg_fares returns an error for the entire trip, skip all travel-leg expenses.
-        - If a single leg returns {{"error": "..."}} skip that specific leg and do not include it in any calculations.
-        - Continue with remaining legs even if others fail.
-        - Do not include failed legs in the final expense JSON.
-
-    3. For each valid travel leg returned by get_leg_fares:
-        - Only process legs that contain fare details and no error.
-        - If mode = "train": Use research_travel_price to fetch accurate class fares.
-        - If mode = "bus": Use search_buses and get_fare_analysis.
-        - If mode = "flight": Use research_travel_price for the preferred flight class.
-        - If research or fare estimation fails for that leg, skip the leg and do not add it to expenses.
+    3. For each travel leg:
+       - If mode = "train": Use research_travel_price to fetch accurate 3A/SL fares.
+       - If mode = "bus": Use search_buses and get_fare_analysis.
+       - If mode = "flight": Use research_travel_price for flight class.
 
     4. Call get_hotel_pricing
        Input: {trip_id}
@@ -698,6 +635,5 @@ def get_cost_breakdown(user_id: int, trip_id: int):
 
 
 # if __name__ == "__main__":
-#     result = get_cost_breakdown(user_id=1, trip_id=1)
-    
+#     result = run_expense_analysis(user_id=1, trip_id=1)
 #     print(result)
