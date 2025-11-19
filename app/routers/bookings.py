@@ -167,9 +167,27 @@ async def get_all_travelling_options(
         settings = db.query(Settings).filter(Settings.user_id == user.id).first()
         target_lang = settings.native_language if settings and settings.native_language else "English"
 
+        prompt_template = """
+                You are a translation engine.
+                Translate only the VALUES of this JSON object from {source_lang} to {target_lang}.
+                DO NOT translate keys.
+
+                Do NOT translate the values for these keys:
+                - mode
+                - booking_url
+
+                Rest traslate all values.
+                Return valid JSON only with the same structure.
+
+                Input JSON:
+                {json_string}
+
+                Return JSON only. No explanations.
+                """
+
         # ✅ Translate if needed
         if target_lang != "English":
-            response_data = await translate_with_cache(response_data, target_lang)
+            response_data = await translate_with_cache(json_data=response_data,target_lang=target_lang,prompt_template=prompt_template)
 
         # ✅ Success
         return JSONResponse(
