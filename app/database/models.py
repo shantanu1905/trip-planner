@@ -290,6 +290,8 @@ class HotelPreferences(Base):
     min_price = Column(Float,  default=1 , nullable=True)
     max_price = Column(Float, default=1000000 ,nullable=True)
     
+    # Hotel Location
+    locality = Column(String, nullable=True)  # e.g., "Downtown", "
     # Hotel selection filters
     select_chain = Column(JSON, nullable=True, default=[])      # Selected chains
     selected_areas = Column(JSON, nullable=True, default=[])
