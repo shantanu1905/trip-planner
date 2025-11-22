@@ -120,6 +120,7 @@ class TravelLeg(BaseModel):
 class SaveTravelOptionsRequest(BaseModel):
     trip_id: int
     option_name: str
+    option_id: int
     legs: List[TravelLeg]
 
 
@@ -131,6 +132,7 @@ class HotelPreferencesCreate(BaseModel):
     min_price: Optional[float] = Field(default=1)
     max_price: Optional[float] = Field(default=1000000)
     selected_property_types: Optional[List[str]] = Field(default=["HOTEL"])
+    locality: Optional[str] = Field(default=None)
 
  
 class BusSearchRequest(BaseModel):

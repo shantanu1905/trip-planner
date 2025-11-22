@@ -32,11 +32,9 @@ def search_hotels_easemytrip(
     min_price: float = 1,
     max_price: float = 1000000,
     sort_type: str = "Popular|DESC",
-    no_of_results: int = 30,
+    no_of_results: int = 50,
 ) -> list:
-    """
-    Search hotels from EaseMyTrip API and return combined list of hotels.
-    """
+
     clean_place = re.sub(r"\s+", "", destination.upper())
 
     payload = {
@@ -65,8 +63,8 @@ def search_hotels_easemytrip(
             "Password": "C2KYph9PJFy6XyF6GT7SAeTq2d5e9Psrq5vmH34S"
         },
         "hotelid": [],
-        "emtToken": "yBAP2WJqhwAQBMyu9kNBUZ3I1W6kSIuGcjFoLCku...",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "emtToken": "...",
+        "token": "...",
         "traceid": "20251017152319",
         "vid": "570ebd20da4411efb9cde7735702e199"
     }
@@ -77,18 +75,42 @@ def search_hotels_easemytrip(
         response = requests.post(EASEMYTRIP_URL, headers=headers, data=json.dumps(payload))
         response.raise_for_status()
         data = response.json()
-        hotels = data.get("htllist", []) + data.get("lmrlist", [])
+        if not data:
+            raise HTTPException(status_code=404, detail="No data received from hotel API")
+
+        # Get lists safely
+        htllist = data.get("htllist") or []
+        lmrlist = data.get("lmrlist") or []
+
+        # Combine
+        hotels = htllist + lmrlist
+
+        if not hotels:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No hotels found for '{destination}'. Try changing dates or filters."
+            )
+
         return hotels
+
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching hotels: {str(e)}")
+    
 
 
+    
 # -------------------------------------------------------------------------
 # 2️⃣ ANALYSIS FUNCTION – Filter, structure, and rank hotel results
 # -------------------------------------------------------------------------
+
+
 def analyze_hotels(hotel_list: list) -> dict:
+
     """
     Analyze and recommend hotels based on ratings, price, and other metrics.
+    Includes every available field in the hotel API response.
     """
 
     if not hotel_list:
@@ -100,45 +122,169 @@ def analyze_hotels(hotel_list: list) -> dict:
         }
 
     clean_hotels = []
+
     for h in hotel_list:
         try:
+            price = float(h.get("prc") or 0)
+            rating = float(h.get("rat") or 0)
+            trip_rating = float(h.get("tr") or 0)
+
             clean_hotels.append({
+                # -------------------------
+                # BASIC HOTEL INFO  
+                # -------------------------
+                "hotel_id": h.get("hid"),
                 "name": h.get("nm"),
-                "price": h.get("prc"),
-                "rating": h.get("rat"),
-                "trip_rating": float(h.get("tr") or 0),
                 "category": h.get("catgry"),
+                "brand": h.get("cName"),
+                "description": h.get("desc"),
+                "highlight": h.get("highlt"),
+                "rank": h.get("rank"),
+
+                # -------------------------
+                # LOCATION INFO  
+                # -------------------------
                 "address": h.get("adrs"),
-                "check_in": h.get("cinTime"),
-                "check_out": h.get("coutTime"),
+                "location": h.get("loc"),
+                "area": h.get("area"),
                 "latitude": h.get("lat"),
                 "longitude": h.get("lon"),
-                "booking_url": h.get("durl"),
-                "policy": h.get("htlPlcy"),
-                "images": h.get("imgarry") or [],
-                "amenities": h.get("amen", []),
-                "brand": h.get("cName"),
                 "distance_km": h.get("distKM"),
+                "distance_raw": h.get("dist"),
+                "hotel_distance": h.get("htlDist"),
+
+                # -------------------------
+                # PRICING INFO  
+                # -------------------------
+                "price": price,
+                "tax": h.get("tax"),
+                "discount": h.get("disc"),
+                "hotel_discount": h.get("hDisc"),
+                "strike_price": h.get("strk"),
+                "total_price": h.get("tPr"),
+                "lowest_app_fare": h.get("appfare"),
+                "lowest_ln_fare": h.get("lnFare"),
+                "currency": h.get("curr"),
+                "discount_markup": h.get("discMrkup"),
+                "cd_value": h.get("cdvalue"),
+                "df_value": h.get("dfvalue"),
+                "is_df_apply": h.get("isDfApply"),
+                "discount_type_text": h.get("notecpndiscount"),
+                "coupon_code": h.get("cpn"),
+                "coupon_list": h.get("cpnLst"),
+                "coupon_offers": h.get("cpnOffers"),
+                "is_lowest_price": h.get("isLowestPrice"),
+                "is_pay_zero": h.get("isPayZero"),
+
+                # -------------------------
+                # RATING INFO  
+                # -------------------------
+                "rating": rating,
+                "trip_rating": trip_rating,
+                "trip_review_count": h.get("tCount"),
+                "trip_rating_url": h.get("trUrl"),
+
+                # -------------------------
+                # IMAGES  
+                # -------------------------
+                "image_url": h.get("imgU"),
+                "image_list": h.get("imglst"),
+                "images": h.get("imgarry") or [],
+
+                # -------------------------
+                # AMENITIES  
+                # -------------------------
+                "amenities": h.get("amen") or [],
+                "amenities_text": h.get("hAmen"),
+                "meal": h.get("meal"),
+
+                # -------------------------
+                # BOOKING INFO  
+                # -------------------------
+                "check_in": h.get("cinTime"),
+                "check_out": h.get("coutTime"),
+                "booking_url": h.get("durl"),
+                "web_url": h.get("weburl"),
+                "hotel_policy": h.get("htlPlcy"),
+                "policy": h.get("plcy"),
+                "external_url": h.get("nUrl"),
+
+                # -------------------------
+                # SAFETY & FRIENDLY  
+                # -------------------------
                 "is_couple_friendly": h.get("isCF", False),
+                "is_safety": h.get("isSafety"),
+                "is_dnd": h.get("isDND"),
+                "is_bank_dnd": h.get("isBankDND"),
+
+                # -------------------------
+                # AVAILABILITY & BOOKING FLOW  
+                # -------------------------
+                "is_sold_out": h.get("isSold"),
+                "mark_up": h.get("markup"),
+                "commission": h.get("cmison"),
+                "cashback": h.get("cback"),
+
+                # -------------------------
+                # EXTRA INFO  
+                # -------------------------
+                "m_view_no": h.get("mViewNo"),
+                "mobile_view": h.get("mview"),
+
+                "locality_ids": h.get("location_ids"),
+                "payment_ids": h.get("payment_ids"),
+                "tags": h.get("tags"),
+
+                # -------------------------
+                # VIEW COUNT  
+                # -------------------------
+                "total_view": h.get("totalView"),
+
+                # -------------------------
+                # INTERNAL / TECH FIELDS  
+                # -------------------------
+                "ar": h.get("ar"),
+                "proDes": h.get("proDes"),
+                "sort_id": h.get("sortID"),
+                "page_no": h.get("pageNo"),
+                "tid": h.get("tid"),
+                "mid": h.get("mid"),
+                "ttype": h.get("ttype"),
+                "bap_uri": h.get("bap_uri"),
+                "bpp_uri": h.get("bpp_uri"),
+                "bap_id": h.get("bap_id"),
+                "bpp_id": h.get("bpp_id"),
+
+                # -------------------------
+                # VALUE SCORE (your scoring)
+                # -------------------------
+                "value_score": round((trip_rating / price), 4) if price > 0 else 0,
             })
-        except Exception:
+
+        except Exception as e:
+            print("Error cleaning hotel: ", e)
             continue
 
-    sorted_by_trip_rating = sorted(clean_hotels, key=lambda x: x["trip_rating"], reverse=True)
+    # -------------------------
+    # SORTING & RECOMMENDATIONS
+    # -------------------------
+    sorted_by_rating = sorted(clean_hotels, key=lambda x: x["trip_rating"], reverse=True)
     sorted_by_price = sorted(clean_hotels, key=lambda x: x["price"] or 999999)
+    sorted_by_value = sorted(clean_hotels, key=lambda x: x["value_score"], reverse=True)
 
     recommendations = {
-        "top_rated_hotels": sorted_by_trip_rating[:5],
-        "best_value_for_money": sorted(sorted_by_trip_rating[:10], key=lambda x: x["price"])[:5],
-        "luxury_stays": [h for h in sorted_by_price[-5:] if (float(h.get("rating") or 0) >= 4)],
-        "budget_friendly": sorted_by_price[:5],
+        "top_rated_hotels": sorted_by_rating[:10],
+        "best_value_for_money": sorted_by_value[:10],
+        "luxury_stays": [h for h in clean_hotels if h["rating"] >= 4][-10:],
+        "budget_friendly": sorted_by_price[:10],
+        "closest_hotels": sorted(clean_hotels, key=lambda x: float(x["distance_km"] or 999))[:10],
     }
 
     return {
         "status": True,
         "message": "Hotel analysis completed",
         "recommendations": recommendations,
-        "hotels": clean_hotels[:30]  # limit results
+        "hotels": clean_hotels[:50]  # return first 50
     }
 
 

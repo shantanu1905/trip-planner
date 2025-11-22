@@ -435,6 +435,7 @@ def create_or_update_hotel_preferences(
             existing_pref.selected_property_types = payload.selected_property_types
             existing_pref.check_in_date = trip.start_date #fetch from trip
             existing_pref.check_out_date = trip.end_date #fetch from trip
+            existing_pref.locality = payload.locality          # NEW FIELD
 
             db.commit()
             db.refresh(existing_pref)
@@ -456,7 +457,8 @@ def create_or_update_hotel_preferences(
             max_price=payload.max_price,
             selected_property_types=payload.selected_property_types,
             check_in_date=trip.start_date,
-            check_out_date=trip.end_date
+            check_out_date=trip.end_date,
+            locality=payload.locality, 
         )
 
         db.add(new_pref)
@@ -498,15 +500,15 @@ def get_hotel_recommendations(trip_id: int,  db: db_dependency, user: user_depen
 
         # Fetch hotel data
         hotels = search_hotels_easemytrip(
-            destination=trip.destination,
+            destination=pref.locality or trip.destination,
             check_in=pref.check_in_date,
             check_out=pref.check_out_date,
-            no_of_rooms=pref.no_of_rooms or 1,
-            no_of_adult=pref.no_of_adult or 2,
-            no_of_child=pref.no_of_child or 0,
-            min_price=pref.min_price or 1,
-            max_price=pref.max_price or 1000000,
-            sort_type=pref.sort_type or "Popular|DESC"
+            no_of_rooms=pref.no_of_rooms,
+            no_of_adult=pref.no_of_adult,
+            no_of_child=pref.no_of_child,
+            min_price=pref.min_price,
+            max_price=pref.max_price,
+  
         )
 
         # Analyze data
@@ -518,6 +520,7 @@ def get_hotel_recommendations(trip_id: int,  db: db_dependency, user: user_depen
             "trip_info": {
                 "trip_id": trip.id,
                 "destination": trip.destination,
+                "locality": pref.locality,
                 "check_in": pref.check_in_date.strftime("%Y-%m-%d"),
                 "check_out": pref.check_out_date.strftime("%Y-%m-%d")
             },
@@ -531,8 +534,6 @@ def get_hotel_recommendations(trip_id: int,  db: db_dependency, user: user_depen
             "message": f"Error processing hotel recommendations: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
         }
-
-
 
 
 @router.get("/trip-cost-breakdown/{trip_id}")
