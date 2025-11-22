@@ -402,6 +402,147 @@ async def analyze_travel_options(
 
 
 
+@router.get("/hotel-locality-recommendation/{trip_id}")
+async def get_hotel_locality_recommendation(
+    trip_id: int,
+    db: db_dependency,
+    user: user_dependency
+):
+    """
+    📘 Fetch hotel locality recommendation for a trip.
+
+    Returns:
+        - selected hotel preferences (user input)
+        - system-generated AI hotel locality recommendation
+    
+    If missing, returns structured informative errors.
+    Auto-translates output if user's language != English.
+    """
+    try:
+        # ✅ Verify Trip Ownership
+        trip = (
+            db.query(Trip)
+            .filter(Trip.id == trip_id, Trip.user_id == user.id)
+            .first()
+        )
+
+        if not trip:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "Trip not found or doesn't belong to you.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                },
+            )
+
+        # ✅ Fetch hotel preferences record
+        hotel_pref = (
+            db.query(HotelPreferences)
+            .filter(HotelPreferences.trip_id == trip.id)
+            .first()
+        )
+
+        if not hotel_pref:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "No hotel preference record found for this trip.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                },
+            )
+
+        # ❗ Ensure AI results exist
+        if not hotel_pref.hotel_locality_recommendation:
+            return JSONResponse(
+                status_code=status.HTTP_404_NOT_FOUND,
+                content={
+                    "status": False,
+                    "data": None,
+                    "message": "AI hotel locality recommendation is not generated yet.",
+                    "status_code": status.HTTP_404_NOT_FOUND,
+                },
+            )
+
+        # ---------------------------------------
+        # Build Response Data
+        # ---------------------------------------
+        response_data = {
+            "ai_hotel_locality_recommendation": hotel_pref.hotel_locality_recommendation,
+        }
+
+        # ---------------------------------------
+        # Fetch User Language
+        # ---------------------------------------
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+
+        # Translation prompt
+        prompt_template = """
+                You are a translation engine.
+                Translate only the VALUES of this JSON object from {source_lang} to {target_lang}.
+                DO NOT translate keys.
+
+                Do NOT translate the values for these keys:
+                - city
+                - area_code
+                - google_search_query
+                - coordinates
+                - recommended_hotels
+                - score
+                - location
+                - region
+
+                Return valid JSON only with the same structure.
+
+                Input JSON:
+                {json_string}
+
+                Return JSON only. No explanations.
+                """
+
+        # Translate only if needed
+        if target_lang != "English":
+            response_data = await translate_with_cache(
+                json_data=response_data,
+                target_lang=target_lang,
+                prompt_template=prompt_template
+            )
+
+        # ---------------------------------------
+        # Final Response
+        # ---------------------------------------
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={
+                "status": True,
+                "data": response_data,
+                "message": "Hotel locality recommendation fetched successfully.",
+                "status_code": status.HTTP_200_OK,
+            },
+        )
+
+    except Exception as e:
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={
+                "status": False,
+                "data": None,
+                "message": f"Error fetching hotel locality recommendation: {str(e)}",
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+            },
+        )
+
+
+
+
+
+
+
+
 @router.post("/hotel-preferences")
 def create_or_update_hotel_preferences(
     payload: HotelPreferencesCreate, 

@@ -300,8 +300,11 @@ class HotelPreferences(Base):
     selected_property_types = Column(JSONB(PGEnum(PropertyTypeEnum, name="property_type_enum", create_type=True)),nullable=False,default=lambda: [PropertyTypeEnum.HOTEL.value])
     selected_ratings = Column(JSON, nullable=True, default=[])
     # Dates
-    check_in_date = Column(DateTime, nullable=False)
-    check_out_date = Column(DateTime, nullable=False)
+    check_in_date = Column(DateTime, nullable=True)
+    check_out_date = Column(DateTime, nullable=True)
+
+    #AI suggested localities
+    hotel_locality_recommendation = Column(JSON, nullable=True, default={})
 
     # Metadata
     created_at = Column(DateTime, default=_dt.datetime.utcnow)

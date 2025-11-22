@@ -4,7 +4,7 @@ from app.database.models import Trip , Settings, TouristPlace , Itinerary, Trave
 from app.database.schemas import CreateTripRequest, UpdateTripRequest
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
-from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data
+from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data , get_hotel_locality_recommendations_task
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
 from app.aiworkflow.get_trip_cost_breakdown import get_cost_breakdown
 from app.utils.redis_utils import translate_with_cache
@@ -441,7 +441,9 @@ async def generate_itinerary(trip_id: int, db: db_dependency, user: user_depende
             }
 
         # 3. Run background task if not cached
-        process_trip_itinerary.delay(trip_id)
+        process_trip_itinerary.delay(trip_id)    # call celery task
+        get_hotel_locality_recommendations_task.delay(trip_id)  # call celery task
+
         return {
             "status": True,
             "data": None,

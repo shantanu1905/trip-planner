@@ -1,10 +1,11 @@
 from app.celery_worker import celery_app
 from app.database.database import SessionLocal
-from app.database.models import Trip, TouristPlace , ItineraryPlace, Itinerary , TravelOptions
+from app.database.models import Trip, TouristPlace , ItineraryPlace, Itinerary , TravelOptions , HotelPreferences
 from app.aiworkflow.get_travelling_options import search_travel_tickets
 from app.aiworkflow.get_travel_locations import get_tourist_places_for_destination
 from app.aiworkflow.get_travel_itinerary import generate_trip_itinerary
 from app.aiworkflow.destination_info_agent import get_destination_data
+from app.aiworkflow.get_hotel_locality_recommendation import get_hotel_locality_recommendations
 from typing import List, Dict
 from datetime import datetime, timedelta
 import re
@@ -327,5 +328,46 @@ def process_trip_itinerary(trip_id: int):
         db.rollback()
         print(f"[Trip {trip_id}] Error generating itinerary: {str(e)}")
     
+    finally:
+        db.close()
+
+
+
+@celery_app.task
+def get_hotel_locality_recommendations_task(trip_id: int):
+    db = SessionLocal()
+
+    try:
+        # 1. Call AI generator function
+        ai_result = get_hotel_locality_recommendations(trip_id)
+
+        if "error" in ai_result:
+            return ai_result
+
+        print(f"[Trip {trip_id}] AI locality analysis completed.")
+
+        # 2. Add metadata
+        ai_result["analysis_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        ai_result["trip_id"] = trip_id
+
+        # 3. INSERT new record into hotel_preferences table
+        new_pref = HotelPreferences(
+            trip_id=trip_id,
+            hotel_locality_recommendation=ai_result
+        )
+
+        db.add(new_pref)
+        db.commit()
+        db.refresh(new_pref)
+
+        print(f"[Trip {trip_id}] New hotel locality recommendation inserted into DB")
+
+        return ai_result
+
+    except Exception as e:
+        db.rollback()
+        print("ERROR:", e)
+        return {"error": str(e)}
+
     finally:
         db.close()
