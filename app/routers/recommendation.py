@@ -1,6 +1,7 @@
 
 from fastapi import APIRouter, Depends, status
-from app.database.models import UserPreferences
+from app.database.models import UserPreferences , Settings
+from app.utils.redis_utils import translate_with_cache
 from app.utils.auth_helpers import user_dependency
 from app.database.database import db_dependency
 import random
@@ -37,12 +38,20 @@ async def get_user_recommendations(
         # 1️⃣ Fetch user preferences instead of settings
         preferences = db.query(UserPreferences).filter(UserPreferences.user_id == user.id).first()
         if not preferences or not preferences.activities:
-            return {
+            response_data = {
                 "status": False,
                 "data": [],
                 "message": "No activities found in user preferences. Please update your preferences in USER Settings.",
                 "status_code": status.HTTP_404_NOT_FOUND
             }
+
+            # Translation
+            settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+            target_lang = settings.native_language if settings and settings.native_language else "English"
+            if target_lang != "English":
+                response_data = await translate_with_cache(response_data, target_lang)
+
+            return response_data
 
         # 2️⃣ Extract user activities as strings
         user_activities = [
@@ -59,41 +68,66 @@ async def get_user_recommendations(
             if activity_data.empty:
                 recommendations[activity] = []
             else:
-                # Randomly select up to 5 records
                 random_records = activity_data.sample(
                     n=min(5, len(activity_data)),
                     random_state=random.randint(1, len(activity_data))
                 )
 
-                # Clean and serialize
                 filtered_records = (
                     random_records[required_columns]
                     .replace([np.inf, -np.inf], None)
                     .where(pd.notnull(random_records[required_columns]), None)
                 )
+
                 recommendations[activity] = filtered_records.to_dict(orient="records")
 
         # 4️⃣ Handle case when all lists are empty
         if all(len(v) == 0 for v in recommendations.values()):
-            return {
+            response_data = {
                 "status": False,
                 "data": [],
                 "message": "No recommendations found for your preferences.",
                 "status_code": status.HTTP_404_NOT_FOUND
             }
 
-        # ✅ Success
-        return {
+            # Translation
+            settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+            target_lang = settings.native_language if settings and settings.native_language else "English"
+            if target_lang != "English":
+                response_data = await translate_with_cache(response_data, target_lang)
+
+            return response_data
+
+        # 5️⃣ Prepare success response
+        response_data = {
             "status": True,
             "data": recommendations,
             "message": "Recommendations fetched successfully.",
             "status_code": status.HTTP_200_OK
         }
 
+        # 6️⃣ Translation (same style as your other endpoint)
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+
+        if target_lang != "English":
+            response_data = await translate_with_cache(response_data, target_lang)
+
+        # Final return
+        return response_data
+
     except Exception as e:
-        return {
+        response_data = {
             "status": False,
             "data": [],
             "message": f"Error fetching recommendations: {str(e)}",
             "status_code": status.HTTP_400_BAD_REQUEST
         }
+
+        # Error translation too
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+        if target_lang != "English":
+            response_data = await translate_with_cache(response_data, target_lang)
+
+        return response_data
