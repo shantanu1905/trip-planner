@@ -7,6 +7,7 @@ from app.database.database import db_dependency
 from app.task.trip_tasks import process_tourist_places , process_trip_itinerary , fetch_and_save_destination_data , get_hotel_locality_recommendations_task
 from app.aiworkflow.get_current_weather_conditions import fetch_travel_update
 from app.aiworkflow.get_trip_cost_breakdown import get_cost_breakdown
+from app.aiworkflow.get_itinearary_sync_weather import update_itinerary_based_on_weather
 from app.utils.redis_utils import translate_with_cache
 from app.database.redis_client import r
 import json
@@ -145,6 +146,7 @@ async def update_trip(
 
         process_tourist_places.delay(trip.id, trip.destination, trip.activities if trip.activities else [])
         process_trip_itinerary.delay(trip.id)
+        get_hotel_locality_recommendations_task.delay(trip_id)  # call celery task
 
         return {
             "status": True,
@@ -531,6 +533,156 @@ async def get_trip_weather(trip_id: int, db: db_dependency, user: user_dependenc
             "message": f"Error fetching weather conditions: {str(e)}",
             "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
         }
+    
+
+
+REDIS_SYNC_ITINERARY_BASED_ON_WEATHER_TTL = 86400  # 24 hours (in seconds)
+@router.get("/sync_weather/{trip_id}")
+async def sync_itinerary_based_on_weather_conditions(
+    trip_id: int,
+    db: db_dependency,
+    user: user_dependency,
+    force_refresh: bool = False  # Optional: bypass cache
+):
+    """
+    Sync itinerary based on current weather conditions.
+    
+    This endpoint:
+    - Fetches current weather via Google Search
+    - Analyzes impact on planned activities
+    - Returns updated itinerary with weather-safe alternatives
+    - Caches result for 24 hours
+    
+    Args:
+        trip_id: Trip ID to sync
+        force_refresh: If True, bypass cache and fetch fresh data
+    
+    Returns:
+        {
+            "status": True,
+            "data": {
+                "trip_id": 9,
+                "destination": "Nashik",
+                "weather_intelligence": {...},
+                "updated_itinerary": {...},
+                "requires_update": true
+            },
+            "cached": false,
+            "message": "Itinerary synced successfully"
+        }
+    """
+    try:
+        # 1️⃣ Try cache first (unless force_refresh)
+        cache_key = f"sync_itinerary_weather:{trip_id}:{user.id}"
+        
+        if not force_refresh:
+            cached_data = r.get(cache_key)
+            if cached_data:
+                cached_json = json.loads(cached_data)
+                return {
+                    "status": True,
+                    "data": cached_json,
+                    "cached": True,
+                    "message": "Weather-synced itinerary retrieved from cache",
+                    "status_code": status.HTTP_200_OK
+                }
+        
+        # 2️⃣ Verify trip ownership
+        trip = db.query(Trip).filter(
+            Trip.id == trip_id,
+            Trip.user_id == user.id
+        ).first()
+        
+        if not trip:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Trip not found or doesn't belong to you."
+            )
+        
+        # 3️⃣ Extract destination
+        destination = trip.destination or trip.destination_full_name
+        
+        if not destination:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Trip destination not found."
+            )
+        
+        # 4️⃣ Call AI workflow to sync itinerary with weather
+        print(f"🔄 Syncing itinerary for trip_id: {trip_id}, destination: {destination}")
+        
+        sync_result = update_itinerary_based_on_weather(trip_id)
+        
+        # 5️⃣ Handle errors from AI workflow
+        if "error" in sync_result:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Error syncing itinerary: {sync_result['error']}"
+            )
+        
+        # 6️⃣ Build response with trip metadata
+        response_data = {
+            "trip_id": trip.id,
+            "trip_name": trip.trip_name,
+            "destination": destination,
+            "start_date": trip.start_date.strftime("%Y-%m-%d") if trip.start_date else None,
+            "end_date": trip.end_date.strftime("%Y-%m-%d") if trip.end_date else None,
+            "analysis_timestamp": sync_result.get("analysis_timestamp"),
+            
+            # Weather intelligence
+            "weather_intelligence": sync_result.get("weather_intelligence", {}),
+            
+            # Updated itinerary
+            "updated_itinerary": sync_result.get("updated_itinerary", {}),
+            
+            # Flag indicating if changes were made
+            "requires_update": sync_result.get("requires_update", False),
+            
+            # Quick summary
+            "changes_summary": {
+                "changes_made": sync_result.get("updated_itinerary", {}).get("changes_made", False),
+                "places_removed": sync_result.get("updated_itinerary", {}).get("places_removed", 0),
+                "places_added": sync_result.get("updated_itinerary", {}).get("places_added", 0),
+                "overall_status": sync_result.get("weather_intelligence", {}).get("overall_travel_status", "UNKNOWN")
+            }
+        }
+        
+        # 7️⃣ Optional translation based on user settings
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
+        
+        if target_lang != "English":
+            print(f"🌐 Translating to {target_lang}...")
+            response_data = await translate_with_cache(response_data, target_lang)
+        
+        # 8️⃣ Cache the final result for 24 hours
+        r.set(cache_key, json.dumps(response_data), ex=REDIS_SYNC_ITINERARY_BASED_ON_WEATHER_TTL)
+        
+        # 9️⃣ Return success response
+        return {
+            "status": True,
+            "data": response_data,
+            "cached": False,
+            "message": "Itinerary synced with current weather conditions successfully",
+            "status_code": status.HTTP_200_OK
+        }
+        
+    except HTTPException as e:
+        # Re-raise HTTP exceptions
+        raise e
+        
+    except Exception as e:
+        # Catch-all for unexpected errors
+        print(f"❌ Error in sync_itinerary_based_on_weather_conditions: {str(e)}")
+        return {
+            "status": False,
+            "data": None,
+            "message": f"Error syncing itinerary with weather: {str(e)}",
+            "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+        }
+
+
+
 
 
 @router.get("/share/{trip_id}")
@@ -551,7 +703,7 @@ async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 "status_code": status.HTTP_404_NOT_FOUND,
             }
 
-        # 2️⃣ If already saved itinerary exists, return it directly (NO TRANSLATION APPLIED AGAIN)
+        # 2️⃣ Return saved itinerary if exists
         if trip.final_itinerary:
             return {
                 "status": True,
@@ -560,28 +712,38 @@ async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 "status_code": status.HTTP_200_OK,
             }
 
-        # 3️⃣ Build itineraries list
-        itineraries = [
-            {
+        # ⭐ 3️⃣ PRE-FETCH tourist places (id → image_url map)
+        tourist_place_images = {
+            tp.name.lower(): tp.image_url
+            for tp in trip.tourist_places
+        }
+
+        # 4️⃣ Build itineraries with image_url fetched from TouristPlace table
+        itineraries = []
+        for i in trip.itinerary:
+            day_places = []
+            for p in i.places:
+
+                image_url = tourist_place_images.get(p.name.lower(), None)
+
+                day_places.append({
+                    "id": p.id,
+                    "name": p.name,
+                    "description": p.description,
+                    "latitude": p.latitude,
+                    "longitude": p.longitude,
+                    "best_time_to_visit": p.best_time_to_visit,
+                    "image_url": image_url,    # ⭐ FETCHED FROM TABLE
+                })
+
+            itineraries.append({
                 "day": i.day,
                 "date": i.date.isoformat() if i.date else None,
                 "travel_tips": i.travel_tips,
                 "food": i.food or [],
                 "culture": i.culture or [],
-                "places": [
-                    {
-                        "id": p.id,
-                        "name": p.name,
-                        "description": p.description,
-                        "latitude": p.latitude,
-                        "longitude": p.longitude,
-                        "best_time_to_visit": p.best_time_to_visit,
-                    }
-                    for p in i.places
-                ],
-            }
-            for i in trip.itinerary
-        ]
+                "places": day_places
+            })
 
         itineraries_status = bool(itineraries)
         itineraries_status_message = (
@@ -590,7 +752,7 @@ async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
             else "No itineraries found. Please generate one first."
         )
 
-        # 4️⃣ Fetch travel options
+        # 5️⃣ Fetch travel options
         existing_travel = (
             db.query(TravelOptions)
             .filter(TravelOptions.trip_id == trip.id)
@@ -603,15 +765,15 @@ async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
                 detail="No travel options found for this trip. Please create travelling options first.",
             )
 
-        # 5️⃣ Cost breakdown
+        # 6️⃣ Cost breakdown
         fresh_data = get_cost_breakdown(user_id=user.id, trip_id=trip_id)
 
-        # 6️⃣ Travel update API
+        # 7️⃣ Travel update API
         destination = trip.destination
         params = json.dumps({"destination": destination})
         travel_update = fetch_travel_update(params)
 
-        # 7️⃣ Prepare response payload
+        # 8️⃣ Final payload
         trip_data = {
             "trip_id": trip.id,
             "trip_name": trip.trip_name,
@@ -633,23 +795,14 @@ async def share_trip(trip_id: int, db: db_dependency, user: user_dependency):
             "travel_update": travel_update,
         }
 
-        # 8️⃣ Handle translation (same logic as weather endpoint)
-        settings = (
-            db.query(Settings)
-            .filter(Settings.user_id == user.id)
-            .first()
-        )
-
-        target_lang = (
-            settings.native_language
-            if settings and settings.native_language
-            else "English"
-        )
+        # 9️⃣ Translation
+        settings = db.query(Settings).filter(Settings.user_id == user.id).first()
+        target_lang = settings.native_language if settings and settings.native_language else "English"
 
         if target_lang != "English":
             trip_data = await translate_with_cache(trip_data, target_lang)
 
-        # 9️⃣ Save translated itinerary to DB only once
+        # 🔟 Save itinerary
         trip.final_itinerary = trip_data
         db.add(trip)
         db.commit()
