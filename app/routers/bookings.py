@@ -647,8 +647,8 @@ def get_hotel_recommendations(trip_id: int,  db: db_dependency, user: user_depen
             no_of_rooms=pref.no_of_rooms,
             no_of_adult=pref.no_of_adult,
             no_of_child=pref.no_of_child,
-            min_price=pref.min_price,
-            max_price=pref.max_price,
+            # min_price=pref.min_price,
+            # max_price=pref.max_price,
   
         )
 
