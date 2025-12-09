@@ -1,20 +1,10 @@
 # AI Trip Planner
 
-AI Trip Planner is a full-stack travel planning application that helps users create, manage, and optimize trips using AI-powered recommendations, Google Maps, and real-time travel data.
+**TripCraft.AI** transforms travel planning from a chaotic chore into a seamless experience. We combine the reasoning power of **Google Gemini** with real-time **EaseMyTrip** inventory to create personalized, actionable itineraries that take you from "dreaming" to "booking" in minutes.
 
 ## Features
-
-- User authentication (Google OAuth & password)
-- Trip creation, update, and deletion
-- Automated tourist place extraction via Google Maps
-- Itinerary generation using AI
-- Travel mode suggestions (train, bus, flight)
-- User preferences and settings management
-- Language translation for trip details
-- RESTful API endpoints (FastAPI)
-- Background task processing (Celery)
-- Dockerized Google Maps  microservice
-
+<img width="1920" height="1080" alt="23" src="https://github.com/user-attachments/assets/36f4dc2c-c1fb-401d-9a8b-77a38c148fca" />
+<img width="1920" height="1080" alt="24" src="https://github.com/user-attachments/assets/87a20d93-93b2-4bc0-807f-15ee232c32d3" />
 
 ## Installation
 
@@ -57,7 +47,8 @@ AI Trip Planner is a full-stack travel planning application that helps users cre
    docker build -t google_maps_scraper .
    docker run -d google_maps_scraper
    ```
-
+## Resources 
+https://drive.google.com/drive/folders/1QwpTSaADXZY7JHXQ3ZIL5Z2DTXCG7YQK?usp=drive_link
 ## Usage
 
 1. Register a new account or log in with an existing account.
